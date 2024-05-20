@@ -1,0 +1,158 @@
+:root {
+    /* --------------------------------------Primary Colors--------------------------------------------- */
+    /* base color pallette */
+    --base-white: #fff;
+    --base-black: #000;
+
+    
+    /* gray color pallette  */
+    --gray-25: #fcfcfd;
+    --gray-50: #f6f8fa;
+    --gray-100: #eef2f6;
+    --gray-200: #e3e8ef;
+    --gray-300: #cdd5df;
+    --gray-400: #9aa4b2;
+    --gray-500: #697586;
+    --gray-600: #4b5565;
+    --gray-700: #364152;
+    --gray-800: #202939;
+    --gray-900: #121926;
+    --gray-950: #0D121C;
+
+    /* brand dark blue color pallette */
+    --brandDarkBlue-25: #F9F9FB;
+    --brandDarkBlue-50: #edeef3;
+    --brandDarkBlue-100: #d3d5e0;
+    --brandDarkBlue-200: #b5b9cc;
+    --brandDarkBlue-300: #9095b2;
+    --brandDarkBlue-400: #464f7f;
+    --brandDarkBlue-500: #212c65;
+    --brandDarkBlue-600: #1e285c;
+    --brandDarkBlue-700: #1c2554;
+    --brandDarkBlue-800: #161d43;
+    --brandDarkBlue-900: #0b0f22;
+    --brandDarkBlue-950: #070914;
+
+    /* brand red color pallette */
+    --brandRed-25: #fffbfa;
+    --brandRed-50: #fef1f2;
+    --brandRed-100: #fde3e5;
+    --brandRed-200: #f9b4ba;
+    --brandRed-300: #f68e98;
+    --brandRed-400: #f36976;
+    --brandRed-500: #e21b2e;
+    --brandRed-600: #cc1a2a;
+    --brandRed-700: #b51726;
+    --brandRed-800: #8c121d;
+    --brandRed-900: #680d16;
+    --brandRed-950: #3f080d;
+
+    /* warning color pallette */
+    --warning-25: #fffcf5;
+    --warning-50: #fffaeb;
+    --warning-100: #fef0c7;
+    --warning-200: #fedf89;
+    --warning-300: #fec84b;
+    --warning-400: #fdb022;
+    --warning-500: #f79009;
+    --warning-600: #dc6803;
+    --warning-700: #b54708;
+    --warning-800: #93370d;
+    --warning-900: #7A2e0e;
+    --warning-950: #4e1d09;
+
+    /* success color pallette  */
+    --success-25: #f6fef9;
+    --success-50: #ecfdf3;
+    --success-100: #dcfaeb;
+    --success-200: #a9efc5;
+    --success-300: #75e0a7;
+    --success-400: #47cd89;
+    --success-500: #17b26a;
+    --success-600: #079455;
+    --success-700: #067647;
+    --success-800: #085d3a;
+    --success-900: #074d31;
+    --success-950: #053321;
+
+
+
+/* ------------------------------------------Secondary Color------------------------------------------- */
+    /* blueLight color pallete */
+    --blueLight-25: #F5FBFF;
+    --blueLight-50: #F0F9FF;
+    --blueLight-100: #E0F2FE;
+    --blueLight-200: #B9E6FE;
+    --blueLight-300: #7CD4FD;
+    --blueLight-400: #7CD4FD;
+    --blueLight-500: #0BA5EC;
+    --blueLight-600: #0086C9;
+    --blueLight-700: #026AA2;
+    --blueLight-800: #065986;
+    --blueLight-900: #0B4A6F;
+    --blueLight-950: #062C41;
+
+    /* blue color pallette */
+    --blue-25: #ECF5FE;
+    --blue-50: #E4F0FC;
+    --blue-100: #C8E0F9;
+    --blue-200: #9AC7F4;
+    --blue-300: #6AA9E7;
+    --blue-400: #378FE6;
+    --blue-500: #075DB2;
+    --blue-600: #064E94;
+    --blue-700: #053E77;
+    --blue-800: #042F59;
+    --blue-900: #022445;
+    --blue-950: #021D37;
+
+    /* Purple color pallete */
+    --purple-25: #FAFAFF;
+    --purple-50: #F4F3FF;
+    --purple-100: #EBE9FE;
+    --purple-200: #D9D6FE;
+    --purple-300: #BDB4FE;
+    --purple-400: #9B8AFB;
+    --purple-500: #7A5AF8;
+    --purple-600: #6938EF;
+    --purple-700: #5925DC;
+    --purple-800: #4A1FB8;
+    --purple-900: #3E1C96;
+    --purple-950: #27115F;
+
+
+    /* pink color pallette */
+    --pink-25: #FEF6FB;
+    --pink-50: #FDF2FA;
+    --pink-100: #FCE7F6;
+    --pink-200: #FCCEEE;
+    --pink-300: #FAA7E0;
+    --pink-400: #F670C7;
+    --pink-500: #EE46BC;
+    --pink-600: #DD2590;
+    --pink-700: #C11574;
+    --pink-800: #9E165F;
+    --pink-900: #851651;
+    --pink-950: #4E0D30;
+
+
+
+    /* ---------------------------------------Token-------------------------------------- */
+    --color-text-bold-lightMode: #202939;       --color-text-bold-darkMode: #0D121C;  
+    --color-text-lightMode:#4B5565 ;            --color-text-darkMode:#0D121C;
+    --color-text-subtle-lightMode:#697586;      --color-text-subtle-darkMode:#0D121C;
+    --color-text-disabled-lightMode:#CDD5DF;    --color-text-disabled-darkMode:#0D121C;
+
+    [data-theme = "light"] {
+        --color-text-bold: var(--gray-800)
+    }
+
+    [data-theme = "dark"] {
+        --color-text-bold: var(--gray-100)
+    }
+
+    [data-theme = "light"] {
+        
+    }
+    
+}
