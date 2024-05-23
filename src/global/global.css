@@ -75,22 +75,25 @@
     --success-900: #074d31;
     --success-950: #053321;
 
+    /* opacity color palette  */
+    --darkBlue200-opacity20: rgba(181, 185, 204, 0.2);
+    --darkBlue500-opacity20: rgba(33, 44, 101, 0.2);
 
 
     /* ------------------------------------------Secondary Color------------------------------------------- */
     /* blueLight color palete */
-    --blueLight-25: #F5FBFF;
-    --blueLight-50: #F0F9FF;
-    --blueLight-100: #E0F2FE;
-    --blueLight-200: #B9E6FE;
-    --blueLight-300: #7CD4FD;
-    --blueLight-400: #7CD4FD;
-    --blueLight-500: #0BA5EC;
-    --blueLight-600: #0086C9;
-    --blueLight-700: #026AA2;
-    --blueLight-800: #065986;
-    --blueLight-900: #0B4A6F;
-    --blueLight-950: #062C41;
+    --lightBlue-25: #F5FBFF;
+    --lightBlue-50: #F0F9FF;
+    --lightBlue-100: #E0F2FE;
+    --lightBlue-200: #B9E6FE;
+    --lightBlue-300: #7CD4FD;
+    --lightBlue-400: #7CD4FD;
+    --lightBlue-500: #0BA5EC;
+    --lightBlue-600: #0086C9;
+    --lightBlue-700: #026AA2;
+    --lightBlue-800: #065986;
+    --lightBlue-900: #0B4A6F;
+    --lightBlue-950: #062C41;
 
     /* blue color palette */
     --blue-25: #ECF5FE;
@@ -827,26 +830,455 @@
 
     /* Emmanuel Kadiri starts from background color */
 
-    
+    /* ----------------Background Color --------------- */
+
+    [data-theme="light"] {
+        --color-background-color-bolder: var(--gray-100);
+    }
+
+    [data-theme="dark"] {
+        --color-background-color-bolder: var(--gray-800);
+    }
+
+    [data-theme="light"] {
+        --color-background-card: var(--base-white);
+    }
+
+    [data-theme="dark"] {
+        --color-background-card: var(--gray-900);
+    }
+
+    [data-theme="light"] {
+        --color-background-input: var(--gray-400);
+    }
+
+    [data-theme="dark"] {
+        --color-background-input: var(--gray-950);
+    }
+
+    [data-theme="light"] {
+        --color-background-disabled: var(--gray-50);
+    }
+
+    [data-theme="dark"] {
+        --color-background-disabled: var(--gray-800);
+    }
+
+    [data-theme="light"] {
+        --color-background-selected: var(--blue-500);
+    }
+
+    [data-theme="dark"] {
+        --color-background-selected: var(--blue-300);
+    }
+
+    [data-theme="light"] {
+        --color-background-darkblue: var(--brandDarkBlue-500);
+    }
+
+    [data-theme="dark"] {
+        --color-background-darkblue: var(--brandDarkBlue-200);
+    }
+
+    [data-theme="light"] {
+        --color-background-red: var(--brandRed-500);
+    }
+
+    [data-theme="dark"] {
+        --color-background-red: var(--brandRed-300);
+    }
+
+    [data-theme="light"] {
+        --color-background-brand-red-hover: var(--brandRed-600);
+    }
+
+    [data-theme="dark"] {
+        --color-background-brand-red-hover: var(--brandRed-200);
+    }
+
+    [data-theme="light"] {
+        --color-background-brand-red-pressed: var(--brandRed-700);
+    }
+
+    [data-theme="dark"] {
+        --color-background-brand-red-pressed: var(--brandRed-100);
+    }
+
+    [data-theme="light"] {
+        --color-background-gray-bolder: var(--gray-400);
+    }
+
+    [data-theme="dark"] {
+        --color-background-gray-bolder: var(--gray-500);
+    }
+
+    [data-theme="light"] {
+        --color-background-gray: var(--gray-300);
+    }
+
+    [data-theme="dark"] {
+        --color-background-gray: var(--gray-600);
+    }
+
+    [data-theme="light"] {
+        --color-background-gray-subtle: var(--gray-200);
+    }
+
+    [data-theme="dark"] {
+        --color-background-gray-subtle: var(--gray-700);
+    }
+
+    [data-theme="light"] {
+        --color-background-gray-subtler: var(--gray-100);
+    }
+
+    [data-theme="dark"] {
+        --color-background-gray-subtler: var(--gray-800);
+    }
+
+    [data-theme="light"] {
+        --color-background-gray-subtlest: var(--gray-50);
+    }
+
+    [data-theme="dark"] {
+        --color-background-gray-subtlest: var(--gray-900);
+    }
+
+    [data-theme="light"] {
+        --color-background-danger-bolder: var(--brandRed-800);
+    }
+
+    [data-theme="dark"] {
+        --color-background-danger-bolder: var(--brandRed-100);
+    }
+
+    [data-theme="light"] {
+        --color-background-danger: var(--brandRed-700);
+    }
+
+    [data-theme="dark"] {
+        --color-background-danger: var(--brandRed-200);
+    }
+
+    [data-theme="light"] {
+        --color-background-danger-subtle: var(--brandRed-200);
+    }
+
+    [data-theme="dark"] {
+        --color-background-danger-subtle: var(--brandRed-800);
+    }
+
+    [data-theme="light"] {
+        --color-background-danger-subtler: var(--brandRed-100);
+    }
+
+    [data-theme="dark"] {
+        --color-background-danger-subtler: var(--brandRed-900);
+    }
+
+    [data-theme="light"] {
+        --color-background-danger-subtlest: var(--brandRed-50);
+    }
+
+    [data-theme="dark"] {
+        --color-background-danger-subtlest: var(--brandRed-950);
+    }
+
+    [data-theme="light"] {
+        --color-background-warning-bold: var(--warning-800)
+    }
+
+    [data-theme="dark"] {
+        --color-background-warning-bold: var(--warning-100);
+    }
+
+    [data-theme="light"] {
+        --color-background-warning: var(--warning-600);
+    }
+
+    [data-theme="dark"] {
+        --color-background-warning: var(--warning-200);
+    }
+
+    [data-theme="light"] {
+        --color-background-warning-subtle: var(--warning-200);
+    }
+
+    [data-theme="dark"] {
+        --color-background-warning-subtle: var(--warning-800);
+    }
+
+    [data-theme="light"] {
+        --color-background-warning-subtler: var(--warning-100);
+    }
+
+    [data-theme="dark"] {
+        --color-background-warning-subtler: var(--warning-900);
+    }
+
+    [data-theme="light"] {
+        --color-background-warning-subtlest: var(--warning-50);
+    }
+
+    [data-theme="dark"] {
+        --color-background-warning-subtlest: var(--warning-950);
+    }
+
+    [data-theme="light"] {
+        --color-background-success-bolder: var(--success-800);
+    }
+
+    [data-theme="dark"] {
+        --color-background-success-bolder: var(--success-100);
+    }
+
+    [data-theme="light"] {
+        --color-background-success: var(--success-600);
+    }
+
+    [data-theme="dark"] {
+        --color-background-success: var(--success-200);
+    }
+
+    [data-theme="light"] {
+        --color-background-success-subtle: var(--success-200);
+    }
+
+    [data-theme="dark"] {
+        --color-background-success-subtle: var(--success-800);
+    }
+
+    [data-theme="light"] {
+        --color-background-success-subtler: var(--success-100); 
+    }
+
+    [data-theme="dark"] {
+        --color-background-success-subtler: var(--success-900);
+    }
+
+    [data-theme="light"] {
+        --color-background-success-subtlest: var(--success-50);
+    }
+
+    [data-theme="dark"] {
+        --color-background-success-subtlest: var(--success-950);
+    }
+
+    [data-theme="light"] {
+        --color-background-discovery-bolder: var(--blueLight-800)
+    }
+
+    [data-theme="dark"] {
+        --color-background-discovery-bolder: var(--blueLight-100);
+    }
+
+    [data-theme="light"] {
+        --color-background-discovery: var(--blueLight-600);
+    }
+
+    [data-theme="dark"] {
+        --color-background-discovery: var(--blueLight-200);
+    }
+
+    [data-theme="light"]{
+        --color-background-discovery-subtle: var(--blueLight-200);
+    }
+
+    [data-theme="dark"] {
+        --color-background-discovery-subtle: var(--blueLight-800);
+    }
+
+    [data-theme="light"] {
+        --color-background-discovery-subtler: var(--blueLight-100);
+    }
+
+    [data-theme="dark"] {
+        --color-background-discovery-subtler: var(--blueLight-900);
+    }
+
+    [data-theme="light"] {
+        --color-background-discovery-subtlest: var(--blueLight-50);
+    }
+
+    [data-theme="dark"] {
+        --color-background-discovery-subtlest: var(--blueLight-950);
+    }
+
+    [data-theme="light"] {
+        --color-background-information-bolder: var(--blue-800);
+    }
+
+    [data-theme="dark"] {
+        --color-background-information-bolder: var(--blue-100)
+    }
+
+    [data-theme="light"] {
+        --color-background-information: var(--blue-600);
+    }
+
+    [data-theme="dark"] {
+        --color-background-information: var(--blue-200);
+    }
+
+    [data-theme="light"] {
+        --color-background-information-subtle: var(--blue-200);
+    }
+
+    [data-theme="dark"] {
+        --color-background-information-subtle: var(--blue-800);
+    }
+
+    [data-them="light"] {
+        --color-background-information-subtler: var(--blue-100);
+    }
+
+    [data-theme="dark"] {
+        --color-background-information-subtler: var(--blue-900);
+    }
+
+    [data-theme="light"] {
+        --color-background-information-subtlest: var(--blue-50);
+    }
+
+    [data-theme="dark"] {
+        --color-background-information-subtlest: var(--blue-950);
+    }
+
+    [data-theme="light"] {
+        --color-background-purple-bolder: var(--purple-800);
+    }
+
+    [data-theme="dark"] {
+        --color-background-purple-bolder: var(--blue-100);
+    }
+
+    [data-theme="light"] {
+        --color-background-purple: var(--purple-600);
+    }
+
+    [data-theme="dark"] {
+        --color-background-purple: var(--blue-200);
+    }
+
+    [data-theme="light"] {
+        --color-background-purple-subtle: var(--purple-200);
+    }
+
+    [data-theme="dark"] {
+        --color-background-purple-subtle: var(--purple-800);
+    }
+
+    [data-theme="light"] {
+        --color-background-purple-subtler: var(--purple-100);
+    }
+
+    [data-theme="dark"] {
+        --color-background-purple-subtler: var(--purple-900);
+    }
+
+    [data-theme="light"] {
+        --color-background-purple-subtlest: var(--purple-50);
+    }
+
+    [data-theme="dark"] {
+        --color-background-purple-subtlest: var(--purple-950);
+    }
+
+    [data-theme="light"] {
+        --color-background-pink-bolder: var(--pink-800);
+    }
+
+    [data-theme="dark"] {
+        --color-background-pink-bolder: var(--pink-100);
+    }
+
+    [data-theme="light"] {
+        --color-background-pink: var(--pink-600);
+    }
+
+    [data-theme="dark"] {
+        --color-background-pink: var(--pink-200);
+    }
+
+    [data-theme="light"] {
+        --color-background-pink-subtle: var(--pink-200);
+    }
+
+    [data-theme="dark"] {
+        --color-background-pink-subtle: var(--pink-800);
+    }
+
+    [data-theme="light"] {
+        --color-background-pink-subtler: var(--pink-100);
+    }
+
+    [data-theme="dark"] {
+        --color-background-pink-subtler: var(--pink-900);
+    }
+
+    [data-theme="light"] {
+        --color-background-pink-subtlest: var(--purple-50);
+    }
+
+    [data-theme="dark"] {
+        --color-background-pink-subtlest: var(--pink-950);
+    }
 
 
 
+    /* ----------------Blanket Color --------------- */
+    [data-theme="light"] {
+        --color-blanket: var(--darkBlue500-opacity20);
+    }
+
+    [data-theme="dark"] {
+        --color-blanket: var(--darkBlue200-opacity20);
+    }
 
 
 
+    /* ----------------Skeleton Color --------------- */
+    [data-theme="light"] {
+        --color-skeleton: var(--gray-200);
+    }
+
+    [data-theme="dark"] {
+        --color-skeleton: var(--gray-800);
+    }
 
 
 
-    
-    
+    /* ----------------Surface Color --------------- */
+    [data-theme="light"] {
+        --color-surface-secondary: var(--gray-50);
+    }
 
+    [data-theme="dark"] {
+        --color-surface-secondary: var(--gray-950);
+    }
 
-    
+    [data-theme="light"] {
+        --color-surface: var(--base-white);
+    }
 
+    [data-theme="dark"] {
+        --color-surface: var(--gray-900);
+    }
 
+    [data-theme="light"] {
+        --color-surface-hovered: var(--gray-100); 
+    }
 
+    [data-theme="dark"] {
+        --color-surface-hovered: var(--gray-800);
+    }
 
+    [data-theme="light"] {
+        --color-surface-pressed: var(--gray-200);
+    }
 
-
+    [data-theme="dark"] {
+        --color-surface-pressed: var(--gray-700);
+    }
 
 }
