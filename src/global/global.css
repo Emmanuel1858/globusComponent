@@ -1,11 +1,11 @@
 :root {
     /* --------------------------------------Primary Colors--------------------------------------------- */
-    /* base color pallette */
+    /* base color palette */
     --base-white: #fff;
     --base-black: #000;
 
-    
-    /* gray color pallette  */
+
+    /* gray color palette  */
     --gray-25: #fcfcfd;
     --gray-50: #f6f8fa;
     --gray-100: #eef2f6;
@@ -19,7 +19,7 @@
     --gray-900: #121926;
     --gray-950: #0D121C;
 
-    /* brand dark blue color pallette */
+    /* brand dark blue color palette */
     --brandDarkBlue-25: #F9F9FB;
     --brandDarkBlue-50: #edeef3;
     --brandDarkBlue-100: #d3d5e0;
@@ -33,7 +33,7 @@
     --brandDarkBlue-900: #0b0f22;
     --brandDarkBlue-950: #070914;
 
-    /* brand red color pallette */
+    /* brand red color palette */
     --brandRed-25: #fffbfa;
     --brandRed-50: #fef1f2;
     --brandRed-100: #fde3e5;
@@ -47,7 +47,7 @@
     --brandRed-900: #680d16;
     --brandRed-950: #3f080d;
 
-    /* warning color pallette */
+    /* warning color palette */
     --warning-25: #fffcf5;
     --warning-50: #fffaeb;
     --warning-100: #fef0c7;
@@ -61,7 +61,7 @@
     --warning-900: #7A2e0e;
     --warning-950: #4e1d09;
 
-    /* success color pallette  */
+    /* success color palette  */
     --success-25: #f6fef9;
     --success-50: #ecfdf3;
     --success-100: #dcfaeb;
@@ -77,8 +77,8 @@
 
 
 
-/* ------------------------------------------Secondary Color------------------------------------------- */
-    /* blueLight color pallete */
+    /* ------------------------------------------Secondary Color------------------------------------------- */
+    /* blueLight color palete */
     --blueLight-25: #F5FBFF;
     --blueLight-50: #F0F9FF;
     --blueLight-100: #E0F2FE;
@@ -92,7 +92,7 @@
     --blueLight-900: #0B4A6F;
     --blueLight-950: #062C41;
 
-    /* blue color pallette */
+    /* blue color palette */
     --blue-25: #ECF5FE;
     --blue-50: #E4F0FC;
     --blue-100: #C8E0F9;
@@ -106,7 +106,7 @@
     --blue-900: #022445;
     --blue-950: #021D37;
 
-    /* Purple color pallete */
+    /* Purple color palete */
     --purple-25: #FAFAFF;
     --purple-50: #F4F3FF;
     --purple-100: #EBE9FE;
@@ -121,7 +121,7 @@
     --purple-950: #27115F;
 
 
-    /* pink color pallette */
+    /* pink color palette */
     --pink-25: #FEF6FB;
     --pink-50: #FDF2FA;
     --pink-100: #FCE7F6;
@@ -137,22 +137,721 @@
 
 
 
-    /* ---------------------------------------Token-------------------------------------- */
-    --color-text-bold-lightMode: #202939;       --color-text-bold-darkMode: #0D121C;  
-    --color-text-lightMode:#4B5565 ;            --color-text-darkMode:#0D121C;
-    --color-text-subtle-lightMode:#697586;      --color-text-subtle-darkMode:#0D121C;
-    --color-text-disabled-lightMode:#CDD5DF;    --color-text-disabled-darkMode:#0D121C;
+    /* -------------------------------------------------Token---------------------------------------------- */
 
-    [data-theme = "light"] {
+    /* -----------Text Color----------- */
+
+    [data-theme="light"] {
         --color-text-bold: var(--gray-800)
     }
 
-    [data-theme = "dark"] {
+    [data-theme="dark"] {
         --color-text-bold: var(--gray-100)
     }
 
-    [data-theme = "light"] {
-        
+    [data-theme="light"] {
+        --color-text: var(--gray-600)
+    }
+
+    [data-theme="dark"] {
+        --color-text: var(--gray-400)
+    }
+
+    [data-theme="light"] {
+        --color-text-subtle: var(--gray-500)
+    }
+
+    [data-theme="light"] {
+        --color-text-subtle: var(--gray-500)
+    }
+
+    [data-theme="dark"] {
+        --color-text-disabled: var(--gray-300)
+    }
+
+    [data-theme="dark"] {
+        --color-text-disabled: var(--gray-700)
+    }
+
+    [data-theme="light"] {
+        --color-text-inverse: var(--base-white)
+    }
+
+    [data-theme="dark"] {
+        --color-text-inverse: var(--base-black)
+    }
+
+    [data-theme="light"] {
+        --color-text-brandDarkBlue: var(--brandDarkBlue-500)
+    }
+
+    [data-theme="dark"] {
+        --color-text-brandDarkBlue: var(--brandDarkBlue-200)
+    }
+
+    [data-theme="light"] {
+        --color-text-brandRed: var(--brandRed-500)
+    }
+
+    [data-theme="dark"] {
+        --color-text-brandRed: var(--brandRed-300)
+    }
+
+    [data-theme="light"] {
+        --color-text-selected: var(--blue-500)
+    }
+
+    [data-theme="dark"] {
+        --color-text-selected: var(--blue-300)
+    }
+
+    [data-theme="light"] {
+        --color-text-danger: var(--brandRed-700)
+    }
+
+    [data-theme="dark"] {
+        --color-text-danger: var(--brandRed-700)
+    }
+
+    [data-theme="light"] {
+        --color-text-danger-inverse: var(--base-white)
+    }
+
+    [data-theme="dark"] {
+        --color-text-danger-inverse: var(--brandRed-950)
+    }
+
+    [data-theme="light"] {
+        --color-text-danger-bolder: var(--brandRed-800)
+    }
+
+    [data-theme="dark"] {
+        --color-text-danger-bolder: var(--brandRed-100)
+    }
+
+    [data-theme="light"] {
+        --color-text-warning: var(--warning-600)
+    }
+
+
+    [data-theme="dark"] {
+        --color-text-warning: var(--warning-300)
+    }
+
+    [data-theme="light"] {
+        --color-text-warning-bolder: var(--warning-800)
+    }
+
+    [data-theme="dark"] {
+        --color-text-warning-bolder: var(--warning-100)
+    }
+
+    [data-theme="light"] {
+        --color-text-sucess: var(--success-600)
+    }
+
+    [data-theme="dark"] {
+        --color-text-sucess: var(--success-300)
+    }
+
+    [data-theme="light"] {
+        --color-text-sucess-bolder: var(--success-800)
+    }
+
+    [data-theme="dark"] {
+        --color-text-sucess-bolder: var(--success-100)
+    }
+
+    [data-theme="light"] {
+        --color-text-discovery: var(--blueLight-800)
+    }
+
+    [data-theme="dark"] {
+        --color-text-discovery: var(--blueLight-100)
+    }
+
+    [data-theme="light"] {
+        --color-text-information: var(--blue-600)
+    }
+
+    [data-theme="dark"] {
+        --color-text-information: var(--blue-300)
+    }
+
+    [data-theme="light"] {
+        --color-text-information-bolder: var(--blue-800)
+    }
+
+    [data-theme="dark"] {
+        --color-text-information-bolder: var(--blue-100)
+    }
+
+    [data-theme="light"] {
+        --color-text-purple: var(--purple-600)
+    }
+
+    [data-theme="dark"] {
+        --color-text-purple: var(--purple-300)
+    }
+
+    [data-theme="light"] {
+        --color-text-purple-bolder: var(--purple-800)
+    }
+
+    [data-theme="dark"] {
+        --color-text-purple-bolder: var(--purple-100)
+    }
+
+
+    /* --------------Link color--------------- */
+
+
+    [data-theme="light"] {
+        --color-link: var(--blue-500)
+    }
+
+    [data-theme="dark"] {
+        --color-link: var(--blue-300)
+    }
+
+    [data-theme="light"] {
+        --color-link-pressed: var(--blue-600)
+    }
+
+    [data-theme="dark"] {
+        --color-link-pressed: var(--blue-600)
+    }
+
+    [data-theme="light"] {
+        --color-link-visited: var(--blueLight-600)
+    }
+
+    [data-theme="dark"] {
+        --color-link-visited: var(--blueLight-300)
+    }
+
+
+    /* --------------Icon color--------------- */
+
+    [data-theme="light"] {
+        --color-icon-bolder: var(--gray-800)
+    }
+
+    [data-theme="dark"] {
+        --color-icon-bolder: var(--gray-100)
     }
     
+    [data-theme="light"] {
+        --color-icon: var(--gray-600)
+    }
+
+    [data-theme="dark"] {
+        --color-icon: var(--gray-400)
+    }
+
+    [data-theme="light"] {
+        --color-icon-subtle: var(--gray-500)
+    }
+
+    [data-theme="dark"] {
+        --color-icon-subtle: var(--gray-500)
+    }
+
+    [data-theme="light"] {
+        --color-icon-disabled: var(--gray-300)
+    }
+
+    [data-theme="dark"] {
+        --color-icon-subtle: var(--gray-700)
+    }
+
+    [data-theme="light"] {
+        --color-icon-inverse: var(--base-white)
+    }
+
+    [data-theme="dark"] {
+        --color-icon-inverse: var(--gray-800)
+    }
+
+    [data-theme="light"] {
+        --color-icon-darkBlue: var(--brandDarkBlue-500)
+    }
+
+    [data-theme="dark"] {
+        --color-icon-darkBlue: var(--brandDarkBlue-200)
+    }
+
+    [data-theme="light"] {
+        --color-icon-brandRed: var(--brandRed-500)
+    }
+
+    [data-theme="dark"] {
+        --color-icon-brandRed: var(--brandRed-300)
+    }
+
+    [data-theme="light"] {
+        --color-icon-danger: var(--brandRed-700)
+    }
+
+    [data-theme="dark"] {
+        --color-icon-danger: var(--brandRed-200)
+    }
+
+    [data-theme="light"] {
+        --color-icon-danger-inverse: var(--base-white)
+    }
+
+    [data-theme="dark"] {
+        --color-icon-danger-inverse: var(--brandRed-950)
+    }
+
+    [data-theme="light"] {
+        --color-icon-danger-bolder: var(--brandRed-800)
+    }
+
+    [data-theme="dark"] {
+        --color-icon-danger-bolder: var(--brandRed-100)
+    }
+
+    [data-theme="light"] {
+        --color-icon-warning: var(--warning-600)
+    }
+
+    [data-theme="dark"] {
+        --color-icon-warning: var(--warning-300)
+    }
+
+    [data-theme="light"] {
+        --color-icon-warning-bolder: var(--warning-800)
+    }
+
+    [data-theme="dark"] {
+        --color-icon-warning-bolder: var(--warning-100)
+    }
+
+    [data-theme="light"] {
+        --color-icon-sucess: var(--success-600)
+    }
+
+    [data-theme="dark"] {
+        --color-icon-sucess: var(--success-300)
+    }
+
+    [data-theme="light"] {
+        --color-icon-sucess-bolder: var(--success-800)
+    }
+
+    [data-theme="dark"] {
+        --color-icon-sucess-bolder: var(--success-100)
+    }
+
+    [data-theme="light"] {
+        --color-icon-discovery: var(--blueLight-600)
+    }
+
+    [data-theme="dark"] {
+        --color-icon-discovery: var(--blueLight-300)
+    }
+
+    [data-theme="light"] {
+        --color-icon-discovery-bolder: var(--blueLight-800)
+    }
+
+    [data-theme="dark"] {
+        --color-icon-discovery-bolder: var(--blueLight-100)
+    }
+
+    [data-theme="light"] {
+        --color-icon-information: var(--blue-600)
+    }
+
+    [data-theme="dark"] {
+        --color-icon-information: var(--blue-300)
+    }
+
+    [data-theme="light"] {
+        --color-icon-information-bolder: var(--blue-800)
+    }
+
+    [data-theme="dark"] {
+        --color-icon-information-bolder: var(--blue-100)
+    }
+
+    [data-theme="light"] {
+        --color-icon-purple: var(--purple-600)
+    }
+
+    [data-theme="dark"] {
+        --color-icon-purple: var(--purple-300)
+    }
+
+    [data-theme="light"] {
+        --color-icon-purple-bolder: var(--purple-800)
+    }
+
+    [data-theme="dark"] {
+        --color-icon-purple-bolder: var(--purple-100)
+    }
+
+    [data-theme="light"] {
+        --color-icon-pink: var(--pink-600)
+    }
+
+    [data-theme="dark"] {
+        --color-icon-pink: var(--pink-300)
+    }
+
+    [data-theme="light"] {
+        --color-icon-pink-bolder: var(--pink-800)
+    }
+
+    [data-theme="dark"] {
+        --color-icon-pink: var(--pink-100)
+    }
+
+    /* ----------------Border Color --------------- */
+
+    [data-theme="light"] {
+        --color-border-bolder: var(--gray-500)
+    }
+
+    [data-theme="dark"] {
+        --color-border-bolder: var(--gray-400)
+    }
+
+    [data-theme="light"] {
+        --color-border: var(--gray-400)
+    }
+
+    [data-theme="dark"] {
+        --color-border-bolder: var(--gray-500)
+    }
+
+    [data-theme="light"] {
+        --color-border-subtle: var(--gray-300)
+    }
+
+    [data-theme="dark"] {
+        --color-border-bolder: var(--gray-700)
+    }
+
+    [data-theme="light"] {
+        --color-border-subtler: var(--gray-200)
+    }
+
+    [data-theme="dark"] {
+        --color-border-subtler: var(--gray-800)
+    }
+
+    [data-theme="light"] {
+        --color-border-disabled: var(--gray-200)
+    }
+
+    [data-theme="dark"] {
+        --color-border-disabled: var(--gray-800)
+    }
+
+    [data-theme="light"] {
+        --color-border-inverse: var(--base-white)
+    }
+
+    [data-theme="dark"] {
+        --color-border-inverse: var(--gray-800)
+    }
+
+    [data-theme="light"] {
+        --color-border-input: var(--gray-300)
+    }
+
+    [data-theme="dark"] {
+        --color-border-input: var(--gray-600)
+    }
+
+    [data-theme="light"] {
+        --color-border-focus: var(--gray-400)
+    }
+
+    [data-theme="dark"] {
+        --color-border-focus: var(--blue-200)
+    }
+
+    [data-theme="light"] {
+        --color-border-selected: var(--blue-500)
+    }
+
+    [data-theme="dark"] {
+        --color-border-selected: var(--blue-300)
+    }
+
+    [data-theme="light"] {
+        --color-border-darkBlue: var(--brandDarkBlue-500)
+    }
+
+    [data-theme="dark"] {
+        --color-border-darkBlue: var(--brandDarkBlue-200)
+    }
+
+    [data-theme="light"] {
+        --color-border-brandRed: var(--brandRed-500)
+    }
+
+    [data-theme="dark"] {
+        --color-border-brandRed: var(--brandRed-300)
+    }
+
+    [data-theme="light"] {
+        --color-border-danger-bolder: var(--brandRed-800)
+    }
+
+    [data-theme="dark"] {
+        --color-border-danger-bolder: var(--brandRed-100)
+    }
+
+    [data-theme="light"] {
+        --color-border-danger: var(--brandRed-700)
+    }
+
+    [data-theme="dark"] {
+        --color-border-danger: var(--brandRed-200)
+    }
+
+    [data-theme="light"] {
+        --color-border-danger-subtle: var(--brandRed-200)
+    }
+
+    [data-theme="dark"] {
+        --color-border-danger-subtle: var(--brandRed-800)
+    }
+
+    [data-theme="light"] {
+        --color-border-danger-subtler: var(--brandRed-100)
+    }
+
+    [data-theme="dark"] {
+        --color-border-danger-subtler: var(--brandRed-900)
+    }
+
+    [data-theme="light"] {
+        --color-border-warning-bolder: var(--warning-800)
+    }
+
+    [data-theme="dark"] {
+        --color-border-warning-bolder: var(--warning-100)
+    }
+
+    [data-theme="light"] {
+        --color-border-warning: var(--warning-600)
+    }
+
+    [data-theme="dark"] {
+        --color-border-warning: var(--warning-300)
+    }
+
+    [data-theme="light"] {
+        --color-border-warning-subtle: var(--warning-200)
+    }
+
+    [data-theme="dark"] {
+        --color-border-warning-subtle: var(--warning-800)
+    }
+
+    [data-theme="light"] {
+        --color-border-warning-subtler: var(--warning-100)
+    }
+
+    [data-theme="dark"] {
+        --color-border-warning-subtler: var(--warning-900)
+    }
+
+    [data-theme="light"] {
+        --color-border-sucess-bolder: var(--success-800)
+    }
+
+    [data-theme="dark"] {
+        --color-border-sucess-bolder: var(--success-100)
+    }
+
+    [data-theme="light"] {
+        --color-border-sucess: var(--success-600)
+    }
+
+    [data-theme="dark"] {
+        --color-border-sucess: var(--success-300)
+    }
+
+    [data-theme="light"] {
+        --color-border-sucess-subtle: var(--success-200)
+    }
+
+    [data-theme="dark"] {
+        --color-border-sucess-subtle: var(--success-800)
+    }
+
+    [data-theme="light"] {
+        --color-border-sucess-subtler: var(--success-100)
+    }
+
+    [data-theme="dark"] {
+        --color-border-sucess-subtler: var(--success-900)
+    }
+
+    [data-theme="light"] {
+        --color-border-discovery-bolder: var(--blueLight-800)
+    }
+
+    [data-theme="dark"] {
+        --color-border-discovery-bolder: var(--blueLight-100)
+    }
+
+    [data-theme="light"] {
+        --color-border-discovery: var(--blueLight-600)
+    }
+
+    [data-theme="dark"] {
+        --color-border-discovery: var(--blueLight-300)
+    }
+
+    [data-theme="light"] {
+        --color-border-discovery-subtle: var(--blueLight-200)
+    }
+
+    [data-theme="dark"] {
+        --color-border-discovery-subtle: var(--blueLight-800)
+    }
+
+    [data-theme="light"] {
+        --color-border-discovery-subtler: var(--blueLight-100)
+    }
+
+    [data-theme="dark"] {
+        --color-border-discovery-subtler: var(--blueLight-900)
+    }
+
+    [data-theme="light"] {
+        --color-border-information-bolder: var(--blue-800)
+    }
+
+    [data-theme="dark"] {
+        --color-border-information-bolder: var(--blue-100)
+    }
+
+    [data-theme="light"] {
+        --color-border-information: var(--blue-600)
+    }
+
+    [data-theme="dark"] {
+        --color-border-information: var(--blue-300)
+    }
+
+    [data-theme="light"] {
+        --color-border-information-subtle: var(--blue-200)
+    }
+
+    [data-theme="dark"] {
+        --color-border-information-subtle: var(--blue-800)
+    }
+
+    [data-theme="light"] {
+        --color-border-information-subtler: var(--blue-100)
+    }
+
+    [data-theme="dark"] {
+        --color-border-information-subtler: var(--blue-900)
+    }
+
+    [data-theme="light"] {
+        --color-border-purple-bolder: var(--purple-800)
+    }
+
+    [data-theme="dark"] {
+        --color-border-purple-bolder: var(--purple-100)
+    }
+
+    [data-theme="light"] {
+        --color-border-purple: var(--purple-600)
+    }
+
+    [data-theme="dark"] {
+        --color-border-purple: var(--purple-300)
+    }
+
+    [data-theme="light"] {
+        --color-border-purple-subtle: var(--purple-200)
+    }
+
+    [data-theme="dark"] {
+        --color-border-purple-subtle: var(--purple-800)
+    }
+
+    [data-theme="light"] {
+        --color-border-purple-subtler: var(--purple-100)
+    }
+
+    [data-theme="dark"] {
+        --color-border-purple-subtler: var(--purple-900)
+    }
+
+    [data-theme="light"] {
+        --color-border-pink-bolder: var(--pink-800)
+    }
+
+    [data-theme="dark"] {
+        --color-border-pink-bolder: var(--pink-100)
+    }
+
+    [data-theme="light"] {
+        --color-border-pink: var(--pink-600)
+    }
+
+    [data-theme="dark"] {
+        --color-border-pink: var(--pink-300)
+    }
+
+    [data-theme="light"] {
+        --color-border-pink-subtle: var(--pink-200)
+    }
+
+    [data-theme="dark"] {
+        --color-border-pink-subtle: var(--pink-800)
+    }
+
+    [data-theme="light"] {
+        --color-border-pink-subtler: var(--pink-100)
+    }
+
+    [data-theme="dark"] {
+        --color-border-pink-subtler: var(--pink-900)
+    }
+
+
+
+
+
+
+
+
+    /* stopped at information */
+
+    
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+    
+
+
+
+
+
+
+
 }
