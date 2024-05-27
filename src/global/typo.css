@@ -1,0 +1,50 @@
+:root {
+    --font-family-sans: sans-serif;
+    /* Heading only  */
+    --font-size-2xl: 4.5rem; 
+    --font-size-xl: 3.75rem; 
+    --font-size-lg: 3rem; 
+    --font-size-md: 2.25rem; 
+    --font-size-sm: 1.875rem; 
+    --font-size-xs: 1.5rem;
+
+    /* For text only  */
+    --font-size-xxs: 1.25rem;  
+    --font-size-3xs: 1.125rem;
+    --font-size-4xs: 1rem;
+    --font-size-5xs: 0.875rem;
+    --font-size-6xs: 0.75rem;
+
+    --font-style: normal;
+
+    /* Heading only */
+    --line-height-2xl: 5rem;
+    --line-height-xl: 4.25rem; 
+    --line-height-lg: 3.75rem; 
+    --line-height-md: 2.75rem; 
+    --line-height-sm: 2.375rem; 
+    --line-height-xs: 2rem; 
+    /* For text only */
+    --line-height-xxs: 1.875rem; 
+    --line-height-3xs: 1.75rem; 
+    --line-height-4xs: 1.5rem; 
+    --line-height-5xs: 1.25rem; 
+    --line-height-6xs: 1.125rem; 
+
+    --letter-spacing-2xl: -0.09rem;
+    --letter-spacing-xl: -0.075rem;
+    --letter-spacing-lg: -0.06rem;
+    --letter-spacing-md: -0.045rem;
+    --fw-400: 400;
+    --fw-500:500;
+    --fw-600:600;
+    --fw-700:700;
+
+
+
+    /* ------------------font size---------------- */
+    /* Display 2xl */
+    --font-family: 'sora';
+
+    
+}

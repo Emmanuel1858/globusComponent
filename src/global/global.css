@@ -94,6 +94,7 @@
     --lightBlue-800: #065986;
     --lightBlue-900: #0B4A6F;
     --lightBlue-950: #062C41;
+   
 
     /* blue color palette */
     --blue-25: #ECF5FE;
@@ -1280,5 +1281,9 @@
     [data-theme="dark"] {
         --color-surface-pressed: var(--gray-700);
     }
+
+ 
+
+    /* -----------------Spacing -------Radius----------Grid */
 
 }
