@@ -1,50 +1,494 @@
 :root {
+    --font-family: 'Sora';
     --font-family-sans: sans-serif;
-    /* Heading only  */
-    --font-size-2xl: 4.5rem; 
-    --font-size-xl: 3.75rem; 
-    --font-size-lg: 3rem; 
-    --font-size-md: 2.25rem; 
-    --font-size-sm: 1.875rem; 
-    --font-size-xs: 1.5rem;
-
-    /* For text only  */
-    --font-size-xxs: 1.25rem;  
-    --font-size-3xs: 1.125rem;
-    --font-size-4xs: 1rem;
-    --font-size-5xs: 0.875rem;
-    --font-size-6xs: 0.75rem;
-
     --font-style: normal;
 
-    /* Heading only */
-    --line-height-2xl: 5rem;
-    --line-height-xl: 4.25rem; 
-    --line-height-lg: 3.75rem; 
-    --line-height-md: 2.75rem; 
-    --line-height-sm: 2.375rem; 
-    --line-height-xs: 2rem; 
-    /* For text only */
-    --line-height-xxs: 1.875rem; 
-    --line-height-3xs: 1.75rem; 
-    --line-height-4xs: 1.5rem; 
-    --line-height-5xs: 1.25rem; 
-    --line-height-6xs: 1.125rem; 
-
-    --letter-spacing-2xl: -0.09rem;
-    --letter-spacing-xl: -0.075rem;
-    --letter-spacing-lg: -0.06rem;
-    --letter-spacing-md: -0.045rem;
-    --fw-400: 400;
-    --fw-500:500;
-    --fw-600:600;
-    --fw-700:700;
-
-
-
-    /* ------------------font size---------------- */
+    /* ------------------base font sizes---------------- */
     /* Display 2xl */
-    --font-family: 'sora';
+    --display-2xl-bold-font-size: 4.5rem;
+    --display-2xl-bold-font-weight: 700;
+    --display-2xl-bold-line-height: 5rem;
+    --display-2xl-bold-letter-spacing: -0.09rem;
 
-    
+    --display-2xl-semiBold-font-size: 4.5rem;
+    --display-2xl-semiBold-font-weight: 600;
+    --display-2xl-semiBold-line-height: 5rem;
+    --dispay-2xl-semiBold-letter-spacing: -0.09rem;
+
+    /* Display xl */
+    --display-xl-bold-font-size: 3.75rem;
+    --display-xl-bold-font-weight: 700;
+    --display-xl-bold-line-height: 4.25rem;
+    --display-xl-bold-letter-spacing: -0.075rem;
+
+    --display-xl-semiBold-font-size: 3.75rem;
+    --display-xl-semiBold-font-weight: 600;
+    --display-xl-semiBold-line-height: 4.25rem;
+    --display-xl-semiBold-letter-spacing: -0.075rem;
+
+    /* Display lg */
+    --display-lg-bold-font-size: 3rem;
+    --display-lg-bold-font-weight: 700;
+    --display-lg-bold-line-height: 4.25rem;
+    --display-lg-bold-letter-spacing: -0.075rem;
+
+    --display-lg-semiBold-font-size: 3rem;
+    --display-lg-semiBold-font-weight: 600;
+    --display-lg-semiBold-line-height: 4.25rem;
+    --display-lg-semiBold-letter-spacing: -0.075rem;
+
+    /* Display sm */
+    --display-sm-bold-font-size: 1.875rem;
+    --display-sm-bold-font-weight: 700;
+    --display-sm-bold-line-height: 2.375rem;
+    --display-sm-bold-letter-spacing: 0rem;
+
+    --display-sm-semiBold-font-size: 1.875rem;
+    --display-sm-semiBold-font-weight: 600;
+    --display-sm-semiBold-line-height: 2.375rem;
+    --display-sm-semiBold-letter-spacing: 0rem;
+
+    /* Display xs */
+    --display-xs-bold-font-size: 1.5rem;
+    --display-xs-bold-font-weight: 700;
+    --display-xs-bold-line-height: 2rem;
+    --display-xs-bold-letter-spacing: 0rem;
+
+    --display-xs-semiBold-font-size: 1.5rem;
+    --display-xs-semiBold-font-weight: 600;
+    --display-xs-semiBold-line-height: 2rem;
+    --display-xs-semiBold-letter-spacing: 0rem;
+
+    /* Text xl */
+    --text-xl-bold-font-size: 1.25rem;
+    --text-xl-bold-font-weight: 700;
+    --text-xl-bold-line-height: 1.875rem;
+
+    --text-xl-semiBold-font-size: 1.25rem;
+    --text-xl-semiBold-font-weight: 600;
+    --text-xl-semiBold-line-height: 1.875rem;
+
+    --text-xl-medium-font-size: 1.25rem;
+    --text-xl-medium-font-weight: 500;
+    --text-xl-medium-line-height: 1.875rem;
+
+    --text-xl-regular-font-size: 1.25rem;
+    --text-xl-regular-font-weight: 400;
+    --text-xl-regular-line-height: 1.875rem;
+
+    /* Text lg */
+    --text-lg-bold-font-size: 1.125rem;
+    --text-lg-bold-font-weight: 700;
+    --text-lg-bold-line-height: 1.75rem;
+
+    --text-lg-semiBold-font-size: 1.125rem;
+    --text-lg-semiBold-font-weight: 600;
+    --text-lg-semiBold-line-height: 1.75rem;
+
+    --text-lg-medium-font-size: 1.125rem;
+    --text-lg-medium-font-weight: 500;
+    --text-lg-medium-line-height: 1.75rem;
+
+    --text-lg-regular-font-size: 1.125rem;
+    --text-lg-regular-font-weight: 400;
+    --text-lg-regular-line-height: 1.75rem;
+
+    /* Text md */
+    --text-md-bold-font-size: 1rem;
+    --text-md-bold-font-weight: 700;
+    --text-md-bold-line-height: 1.5rem;
+
+    --text-md-semiBold-font-size: 1rem;
+    --text-md-semiBold-font-weight: 600;
+    --text-md-semiBold-line-height: 1.5rem;
+
+    --text-md-medium-font-size: 1rem;
+    --text-md-medium-font-weight: 500;
+    --text-md-medium-line-height: 1.5rem;
+
+    --text-md-regular-font-size: 1rem;
+    --text-md-regular-font-weight: 400;
+    --text-md-regular-line-height: 1.5rem;
+
+    /* Text sm */
+    --text-sm-bold-font-size: 0.875rem;
+    --text-sm-bold-font-weight: 700;
+    --text-sm-bold-line-height: 1.25rem;
+
+    --text-sm-semiBold-font-size: 0.875rem;
+    --text-sm-semiBold-font-weight: 600;
+    --text-sm-semiBold-line-height: 1.25rem;
+
+    --text-sm-medium-font-size: 0.875rem;
+    --text-sm-medium-font-weight: 500;
+    --text-sm-medium-line-height: 1.25rem;
+
+    --text-sm-regular-font-size: 0.875rem;
+    --text-sm-regular-font-weight: 400;
+    --text-sm-regular-line-height: 1.25rem;
+
+    /* Text xs */
+    --text-xs-bold-font-size: 0.75rem;
+    --text-xs-bold-font-weight: 700;
+    --text-xs-bold-line-height: 1.125rem;
+
+    --text-xs-semiBold-font-size: 0.75rem;
+    --text-xs-semiBold-font-weight: 600;
+    --text-xs-semiBold-line-height: 1.125rem;
+
+    --text-xs-medium-font-size: 0.75rem;
+    --text-xs-medium-font-weight: 500;
+    --text-xs-medium-line-height: 1.125rem;
+
+    --text-xs-regular-font-size: 0.75rem;
+    --text-xs-regular-font-weight: 400;
+    --text-xs-regular-line-height: 1.125rem;
+}
+
+/* ------------------Responsive adjustments---------------- */
+/* Medium screens */
+@media (max-width: 1199px){
+    :root{
+        /* Display 2xl */
+        --display-2xl-bold-font-size: 3.75rem;
+        --display-2xl-bold-font-weight: 700;
+        --display-2xl-bold-line-height: 4.25rem;
+        --display-2xl-bold-letter-spacing: -0.075rem;
+
+        --display-2xl-semiBold-font-size: 3.75rem;
+        --display-2xl-semiBold-font-weight: 600;
+        --display-2xl-semiBold-line-height: 4.25rem;
+        --display-2xl-semiBold-letter-spacing: -0.075rem;
+
+        /* Display xl */   
+        --display-xl-bold-font-size: 3.5rem;
+        --display-xl-bold-font-weight: 700;
+        --display-xl-bold-line-height: 3.75rem;
+        --display-xl-bold-letter-spacing: -0.065rem; 
+
+        --display-xl-semiBold-font-size: 3.5rem;
+        --display-xl-semiBold-font-weight: 600;
+        --display-xl-semiBold-line-height: 3.75rem;
+        --display-xl-semiBold-letter-spacing: -0.065rem; 
+
+        /* Display lg */   
+        --display-lg-bold-font-size: 2.75rem;
+        --display-lg-bold-font-weight: 700;
+        --display-lg-bold-line-height: 2.4375rem;
+        --display-lg-bold-letter-spacing: -0.045rem; 
+
+        --display-lg-semiBold-font-size: 2.75rem;
+        --display-lg-semiBold-font-weight: 600;
+        --display-lg-semiBold-line-height: 2.4375rem;
+        --display-lg-semiBold-letter-spacing: -0.045rem; 
+
+        /* Display md */   
+        --display-md-bold-font-size: 2.25rem;
+        --display-md-bold-font-weight: 700;
+        --display-md-bold-line-height: 2.75rem;
+        --display-md-bold-letter-spacing: -0.045rem; 
+
+        --display-md-semiBold-font-size: 2.25rem;
+        --display-md-semiBold-font-weight: 600;
+        --display-md-semiBold-line-height: 2.75rem;
+        --display-md-semiBold-letter-spacing: -0.045rem; 
+
+        /* Display sm */   
+        --display-sm-bold-font-size: 1.875rem;
+        --display-sm-bold-font-weight: 700;
+        --display-sm-bold-line-height: 2.375rem;
+        --display-sm-bold-letter-spacing: 0rem; 
+
+        --display-sm-semiBold-font-size: 1.875rem;
+        --display-sm-semiBold-font-weight: 600;
+        --display-sm-semiBold-line-height: 2.375rem;
+        --display-sm-semiBold-letter-spacing: 0rem; 
+
+        /* Display xs */   
+        --display-xs-bold-font-size: 1.5rem;
+        --display-xs-bold-font-weight: 700;
+        --display-xs-bold-line-height: 2rem;
+        --display-xs-bold-letter-spacing: 0rem; 
+
+        --display-xs-semiBold-font-size: 1.5rem;
+        --display-xs-semiBold-font-weight: 600;
+        --display-xs-semiBold-line-height: 2rem;
+        --display-xs-semiBold-letter-spacing: 0rem;
+    }
+}
+
+/* Small screens */
+@media (max-width: 743px){
+    :root{
+         /* Display 2xl */
+        --display-2xl-bold-font-size: 3rem;
+        --display-2xl-bold-font-weight: 700;
+        --display-2xl-bold-line-height: 3.375rem;
+        --display-2xl-bold-letter-spacing: -0.06rem;
+
+        --display-2xl-semiBold-font-size: 3.75rem;
+        --display-2xl-semiBold-font-weight: 600;
+        --display-2xl-semiBold-line-height: 3.375rem;
+        --display-2xl-semiBold-letter-spacing: -0.06rem;
+
+         /* Display xl */
+        --display-xl-bold-font-size: 2.5rem;
+        --display-xl-bold-font-weight: 700;
+        --display-xl-bold-line-height: 2.875rem;
+        --display-xl-bold-letter-spacing: -0.05rem;
+
+        --display-xl-semiBold-font-size: 2.5rem;
+        --display-xl-semiBold-font-weight: 600;
+        --display-xl-semiBold-line-height: 2.875rem;
+        --display-xl-semiBold-letter-spacing: -0.05rem;
+
+         /* Display lg */
+        --display-lg-bold-font-size: 2rem;
+        --display-lg-bold-font-weight: 700;
+        --display-lg-bold-line-height: 2.5rem;
+        --display-lg-bold-letter-spacing: -0.045rem;
+
+        --display-lg-semiBold-font-size: 2rem;
+        --display-lg-semiBold-font-weight: 600;
+        --display-lg-semiBold-line-height: 2.5rem;
+        --display-lg-semiBold-letter-spacing: -0.045rem;
+
+         /* Display md */
+        --display-md-bold-font-size: 1.75rem;
+        --display-md-bold-font-weight: 700;
+        --display-md-bold-line-height: 2.1375rem;
+        --display-md-bold-letter-spacing: 0rem;
+
+        --display-md-semiBold-font-size: 1.75rem;
+        --display-md-semiBold-font-weight: 600;
+        --display-md-semiBold-line-height: 2.1375rem;
+        --display-md-semiBold-letter-spacing: 0rem;
+
+         /* Display sm */
+        --display-sm-bold-font-size: 1.5rem;
+        --display-sm-bold-font-weight: 700;
+        --display-sm-bold-line-height: 2rem;
+        --display-sm-bold-letter-spacing: 0rem;
+
+        --display-sm-semiBold-font-size: 1.5rem;
+        --display-sm-semiBold-font-weight: 600;
+        --display-sm-semiBold-line-height: 2rem;
+        --display-sm-semiBold-letter-spacing: 0rem;
+
+         /* Display xs */
+        --display-xs-bold-font-size: 1.25rem;
+        --display-xs-bold-font-weight: 700;
+        --display-xs-bold-line-height: 1.75rem;
+        --display-xs-bold-letter-spacing: 0rem;
+
+        --display-xs-semiBold-font-size: 1.25rem;
+        --display-xs-semiBold-font-weight: 600;
+        --display-xs-semiBold-line-height: 1.75rem;
+        --display-xs-semiBold-letter-spacing: 0rem;
+    }
+}
+
+
+.display-2xl-bold{
+    font-size: var(--display-2xl-bold-font-size);
+    font-weight: var(--display-2xl-bold-font-weight);
+    line-height: var(--display-2xl-bold-line-height);
+    letter-spacing: var(--display-2xl-bold-letter-spacing);
+}
+
+.display-2xl-semi-bold{
+    font-size: var(--display-2xl-semiBold-font-size);
+    font-weight: var(--display-2xl-semiBold-font-weight);
+    line-height: var(--display-2xl-semiBold-line-height);
+    letter-spacing: var(--display-2xl-semiBold-letter-spacing);
+}
+
+.display-xl-bold{
+    font-size: var(--display-xl-bold-font-size);
+    font-weight: var(--display-xl-bold-font-weight);
+    line-height: var(--display-xl-bold-line-height);
+    letter-spacing: var(--display-xl-bold-letter-spacing);
+}
+
+.display-xl-semi-bold{
+    font-size: var(--display-xl-semiBold-font-size);
+    font-weight: var(--display-xl-semiBold-font-weight);
+    line-height: var(--display-xl-semiBold-line-height);
+    letter-spacing: var(--display-xl-semiBold-letter-spacing);
+}
+
+.display-lg-bold{
+    font-size: var(--display-lg-bold-font-size);
+    font-weight: var(--display-lg-bold-font-weight);
+    line-height: var(--display-lg-bold-line-height);
+    letter-spacing: var(--display-lg-bold-letter-spacing);
+}
+
+.display-lg-semi-bold{
+    font-size: var(--display-lg-semiBold-font-size);
+    font-weight: var(--display-lg-semiBold-font-weight);
+    line-height: var(--display-lg-semiBold-line-height);
+    letter-spacing: var(--display-lg-semiBold-letter-spacing);
+}
+
+.display-md-bold{
+    font-size: var(--display-md-bold-font-size);
+    font-weight: var(--display-md-bold-font-weight);
+    line-height: var(--display-md-bold-line-height);
+    letter-spacing: var(--display-md-bold-letter-spacing);
+}
+
+.display-md-semi-bold{
+    font-size: var(--display-md-semiBold-font-size);
+    font-weight: var(--display-md-semiBold-font-weight);
+    line-height: var(--display-md-semiBold-line-height);
+    letter-spacing: var(--display-md-semiBold-letter-spacing);
+}
+
+.display-sm-bold{
+    font-size: var(--display-sm-bold-font-size);
+    font-weight: var(--display-sm-bold-font-weight);
+    line-height: var(--display-sm-bold-line-height);
+    letter-spacing: var(--display-sm-bold-letter-spacing);
+}
+
+.display-sm-semi-bold{
+    font-size: var(--display-sm-semiBold-font-size);
+    font-weight: var(--display-sm-semiBold-font-weight);
+    line-height: var(--display-sm-semiBold-line-height);
+    letter-spacing: var(--display-sm-semiBold-letter-spacing);
+}
+
+.display-xs-bold{
+    font-size: var(--display-xs-bold-font-size);
+    font-weight: var(--display-xs-bold-font-weight);
+    line-height: var(--display-xs-bold-line-height);
+    letter-spacing: var(--display-xs-bold-letter-spacing);
+}
+
+.display-xs-semi-bold{
+    font-size: var(--display-xs-semiBold-font-size);
+    font-weight: var(--display-xs-semiBold-font-weight);
+    line-height: var(--display-xs-semiBold-line-height);
+    letter-spacing: var(--display-xs-semiBold-letter-spacing);
+}
+
+.text-xl-bold{
+    font-size: var(--text-xl-bold-font-size);
+    font-weight: var(--text-xl-bold-font-weight);
+    line-height: var(--text-xl-bold-line-height);
+}
+
+.text-xl-semi-bold{
+    font-size: var(--text-xl-semiBold-font-size);
+    font-weight: var(--text-xl-semiBold-font-weight);
+    line-height: var(--text-xl-semiBold-line-height);
+}
+
+.text-xl-medium{
+    font-size: var(--text-xl-medium-font-size);
+    font-weight: var(--text-xl-medium-font-weight);
+    line-height: var(--text-xl-medium-line-height);
+}
+
+.text-xl-regular{
+    font-size: var(--text-xl-regular-font-size);
+    font-weight: var(--text-xl-regular-font-weight);
+    line-height: var(--text-xl-regular-line-height);
+}
+
+.text-lg-bold{
+    font-size: var(--text-lg-bold-font-size);
+    font-weight: var(--text-lg-bold-font-weight);
+    line-height: var(--text-lg-bold-line-height);
+}
+
+.text-lg-semi-bold{
+    font-size: var(--text-lg-semiBold-font-size);
+    font-weight: var(--text-lg-semiBold-font-weight);
+    line-height: var(--text-lg-semiBold-line-height);
+}
+
+.text-lg-medium{
+    font-size: var(--text-lg-medium-font-size);
+    font-weight: var(--text-lg-medium-font-weight);
+    line-height: var(--text-lg-medium-line-height);
+}
+
+.text-lg-regular{
+    font-size: var(--text-lg-regular-font-size);
+    font-weight: var(--text-lg-regular-font-weight);
+    line-height: var(--text-lg-regular-line-height);
+}
+
+.text-md-bold{
+    font-size: var(--text-md-bold-font-size);
+    font-weight: var(--text-md-bold-font-weight);
+    line-height: var(--text-md-bold-line-height);
+}
+
+.text-md-semi-bold{
+    font-size: var(--text-md-semiBold-font-size);
+    font-weight: var(--text-md-semiBold-font-weight);
+    line-height: var(--text-md-semiBold-line-height);
+}
+
+.text-md-medium{
+    font-size: var(--text-md-medium-font-size);
+    font-weight: var(--text-md-medium-font-weight);
+    line-height: var(--text-md-medium-line-height);
+}
+
+.text-md-regular{
+    font-size: var(--text-md-regular-font-size);
+    font-weight: var(--text-md-regular-font-weight);
+    line-height: var(--text-md-regular-line-height);
+}
+
+.text-sm-bold{
+    font-size: var(--text-sm-bold-font-size);
+    font-weight: var(--text-sm-bold-font-weight);
+    line-height: var(--text-sm-bold-line-height);
+}
+
+.text-sm-semi-bold{
+    font-size: var(--text-sm-semiBold-font-size);
+    font-weight: var(--text-sm-semiBold-font-weight);
+    line-height: var(--text-sm-semiBold-line-height);
+}
+
+.text-sm-medium{
+    font-size: var(--text-sm-medium-font-size);
+    font-weight: var(--text-sm-medium-font-weight);
+    line-height: var(--text-sm-medium-line-height);
+}
+
+.text-sm-regular{
+    font-size: var(--text-sm-regular-font-size);
+    font-weight: var(--text-sm-regular-font-weight);
+    line-height: var(--text-sm-regular-line-height);
+}
+
+.text-xs-bold{
+    font-size: var(--text-xs-bold-font-size);
+    font-weight: var(--text-xs-bold-font-weight);
+    line-height: var(--text-xs-bold-line-height);
+}
+
+.text-xs-semi-bold{
+    font-size: var(--text-xs-semiBold-font-size);
+    font-weight: var(--text-xs-semiBold-font-weight);
+    line-height: var(--text-xs-semiBold-line-height);
+}
+
+.text-xs-medium{
+    font-size: var(--text-xs-medium-font-size);
+    font-weight: var(--text-xs-medium-font-weight);
+    line-height: var(--text-xs-medium-line-height);
+}
+
+.text-xs-regular{
+    font-size: var(--text-xs-regular-font-size);
+    font-weight: var(--text-xs-regular-font-weight);
+    line-height: var(--text-xs-regular-line-height);
 }
