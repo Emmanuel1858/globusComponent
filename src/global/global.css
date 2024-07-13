@@ -1284,6 +1284,64 @@
 
  
 
-    /* -----------------Spacing -------Radius----------Grid */
+}
 
+/* -----------------Shadow and Blur----------------- */
+:root{
+    --shadow-xs: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    --shadow-sm: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    --shadow-md: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    --shadow-lg: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    --shadow-xl: 0px 8px 8px -4px rgba(16, 24, 40, 0.03);
+    --shadow-2xl: 0px 24px 48px -12px rgba(16, 24, 40, 0.18);
+    --shadow-3xl: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
+
+    --blur-sm: blur(4px);
+    --blur-md: blur(8px);
+    --blur-lg: blur(12px);
+    --blur-xl: blur(20px);
+}
+
+.shadow-xs{
+    box-shadow: var(--shadow-xs);
+}
+
+.shadow-sm{
+    box-shadow: var(--shadow-sm);
+}
+
+.shadow-md{
+    box-shadow: var(--shadow-md);
+}
+
+.shadow-lg{
+    box-shadow: var(--shadow-lg);
+}
+
+.shadow-xl{
+    box-shadow: var(--shadow-xl);
+}
+
+.shadow-2xl{
+    box-shadow: var(--shadow-2xl);
+}
+
+.shadow-3xl{
+    box-shadow: var(--shadow-3xl);
+}
+
+.blur-sm{
+    backdrop-filter: var(--blur-sm);
+}
+
+.blur-md{
+    backdrop-filter: var(--blur-md);
+}
+
+.blur-lg{
+    backdrop-filter: var(--blur-lg);
+}
+
+.blur-xl{
+    backdrop-filter: var(--blur-xl);
 }

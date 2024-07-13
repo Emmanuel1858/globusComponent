@@ -1,5 +1,4 @@
 :root{
-
     /* Positive spacing */
     --spacing-none: 0rem;
     --spacing-half: 0.125rem;
@@ -42,25 +41,4 @@
     --rounded-xl: 1.5rem;
     --rounded-2xl: 2rem;
     --rounded-full: 62.438rem;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
 }

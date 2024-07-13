@@ -1,4 +1,17 @@
+@import './../../global/typo.css';
+@import './../../global/global.css';
+
 :host {
   display: block;
 
+}
+
+div{
+  background: var(--blue-200);
+  padding: var(--spacing-4);
+  width: 300px;
+  border-radius: var(--rounded-md);
+  color: var(--base-white);
+  box-shadow: var(--shadow-2xl);
+  margin-top: var(--spacing-4);
 }

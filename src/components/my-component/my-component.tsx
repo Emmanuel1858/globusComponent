@@ -3,8 +3,7 @@ import { format } from '../../utils/utils';
 
 @Component({
   tag: 'my-component',
-  styleUrl: 'my-component.css',
-  shadow: true,
+  styleUrls: ['my-component.css', './../../global/typo.css'],
 })
 export class MyComponent {
   /**
@@ -27,6 +26,8 @@ export class MyComponent {
   }
 
   render() {
-    return <div>Hello, World! I'm {this.getText()}</div>;
+    return [<div>
+              <p class="text-lg-regular">Hello, World! I'm {this.getText()}</p>
+          </div>];
   }
 }
