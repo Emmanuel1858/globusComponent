@@ -1,6 +1,6 @@
 {
   "name": "globuscomponents",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -13,6 +13,9 @@
       "import": "./dist/globuscomponents/globuscomponents.esm.js",
       "require": "./dist/globuscomponents/globuscomponents.cjs.js"
     },
+    "./global/global.css": "dist/collection/global/global.css",
+    "./global/spacing.css": "dist/collection/global/spacing.css",
+    "./global/typo.css": "dist/collection/global/typo.css",
     "./my-component": {
       "import": "./dist/components/my-component.js",
       "types": "./dist/components/my-component.d.ts"
@@ -29,6 +32,7 @@
   },
   "files": [
     "dist/",
+    "dist/collection/global/",
     "loader/"
   ],
   "scripts": {

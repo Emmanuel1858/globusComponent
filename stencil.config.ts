@@ -7,6 +7,11 @@ export const config: Config = {
     {
       type: 'dist',
       esmLoaderPath: '../loader',
+      copy: [
+        {
+          src: 'global', dest: 'global' //copies the stylesheets from the source folder to the destination folder in the dist folder on build
+        }
+      ]
     },
     {
       type: 'dist-custom-elements',
