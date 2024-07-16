@@ -296,7 +296,7 @@
     letter-spacing: var(--display-2xl-bold-letter-spacing);
 }
 
-.display-2xl-semi-bold{
+.display-2xl-semiBold{
     font-size: var(--display-2xl-semiBold-font-size);
     font-weight: var(--display-2xl-semiBold-font-weight);
     line-height: var(--display-2xl-semiBold-line-height);
@@ -310,7 +310,7 @@
     letter-spacing: var(--display-xl-bold-letter-spacing);
 }
 
-.display-xl-semi-bold{
+.display-xl-semiBold{
     font-size: var(--display-xl-semiBold-font-size);
     font-weight: var(--display-xl-semiBold-font-weight);
     line-height: var(--display-xl-semiBold-line-height);
@@ -324,7 +324,7 @@
     letter-spacing: var(--display-lg-bold-letter-spacing);
 }
 
-.display-lg-semi-bold{
+.display-lg-semiBold{
     font-size: var(--display-lg-semiBold-font-size);
     font-weight: var(--display-lg-semiBold-font-weight);
     line-height: var(--display-lg-semiBold-line-height);
@@ -338,7 +338,7 @@
     letter-spacing: var(--display-md-bold-letter-spacing);
 }
 
-.display-md-semi-bold{
+.display-md-semiBold{
     font-size: var(--display-md-semiBold-font-size);
     font-weight: var(--display-md-semiBold-font-weight);
     line-height: var(--display-md-semiBold-line-height);
@@ -352,7 +352,7 @@
     letter-spacing: var(--display-sm-bold-letter-spacing);
 }
 
-.display-sm-semi-bold{
+.display-sm-semiBold{
     font-size: var(--display-sm-semiBold-font-size);
     font-weight: var(--display-sm-semiBold-font-weight);
     line-height: var(--display-sm-semiBold-line-height);
@@ -366,7 +366,7 @@
     letter-spacing: var(--display-xs-bold-letter-spacing);
 }
 
-.display-xs-semi-bold{
+.display-xs-semiBold{
     font-size: var(--display-xs-semiBold-font-size);
     font-weight: var(--display-xs-semiBold-font-weight);
     line-height: var(--display-xs-semiBold-line-height);
@@ -379,7 +379,7 @@
     line-height: var(--text-xl-bold-line-height);
 }
 
-.text-xl-semi-bold{
+.text-xl-semiBold{
     font-size: var(--text-xl-semiBold-font-size);
     font-weight: var(--text-xl-semiBold-font-weight);
     line-height: var(--text-xl-semiBold-line-height);
@@ -403,7 +403,7 @@
     line-height: var(--text-lg-bold-line-height);
 }
 
-.text-lg-semi-bold{
+.text-lg-semiBold{
     font-size: var(--text-lg-semiBold-font-size);
     font-weight: var(--text-lg-semiBold-font-weight);
     line-height: var(--text-lg-semiBold-line-height);
@@ -427,7 +427,7 @@
     line-height: var(--text-md-bold-line-height);
 }
 
-.text-md-semi-bold{
+.text-md-semiBold{
     font-size: var(--text-md-semiBold-font-size);
     font-weight: var(--text-md-semiBold-font-weight);
     line-height: var(--text-md-semiBold-line-height);
@@ -451,7 +451,7 @@
     line-height: var(--text-sm-bold-line-height);
 }
 
-.text-sm-semi-bold{
+.text-sm-semiBold{
     font-size: var(--text-sm-semiBold-font-size);
     font-weight: var(--text-sm-semiBold-font-weight);
     line-height: var(--text-sm-semiBold-line-height);
@@ -475,7 +475,7 @@
     line-height: var(--text-xs-bold-line-height);
 }
 
-.text-xs-semi-bold{
+.text-xs-semiBold{
     font-size: var(--text-xs-semiBold-font-size);
     font-weight: var(--text-xs-semiBold-font-weight);
     line-height: var(--text-xs-semiBold-line-height);

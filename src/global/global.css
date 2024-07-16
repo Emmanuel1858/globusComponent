@@ -516,119 +516,119 @@
     /* ----------------Border Color --------------- */
 
     [data-theme="light"] {
-        --color-border-bolder: var(--gray-500)
+        --color-border-bolder: var(--gray-500);
     }
 
     [data-theme="dark"] {
-        --color-border-bolder: var(--gray-400)
+        --color-border-bolder: var(--gray-400);
     }
 
     [data-theme="light"] {
-        --color-border: var(--gray-400)
+        --color-border: var(--gray-400);
     }
 
     [data-theme="dark"] {
-        --color-border-bolder: var(--gray-500)
+        --color-border: var(--gray-500);
     }
 
     [data-theme="light"] {
-        --color-border-subtle: var(--gray-300)
+        --color-border-subtle: var(--gray-300);
     }
 
     [data-theme="dark"] {
-        --color-border-bolder: var(--gray-700)
+        --color-border-bolder: var(--gray-700);
     }
 
     [data-theme="light"] {
-        --color-border-subtler: var(--gray-200)
+        --color-border-subtler: var(--gray-200);
     }
 
     [data-theme="dark"] {
-        --color-border-subtler: var(--gray-800)
+        --color-border-subtler: var(--gray-800);
     }
 
     [data-theme="light"] {
-        --color-border-disabled: var(--gray-200)
+        --color-border-disabled: var(--gray-200);
     }
 
     [data-theme="dark"] {
-        --color-border-disabled: var(--gray-800)
+        --color-border-disabled: var(--gray-800);
     }
 
     [data-theme="light"] {
-        --color-border-inverse: var(--base-white)
+        --color-border-inverse: var(--base-white);
     }
 
     [data-theme="dark"] {
-        --color-border-inverse: var(--gray-800)
+        --color-border-inverse: var(--gray-800);
     }
 
     [data-theme="light"] {
-        --color-border-input: var(--gray-300)
+        --color-border-input: var(--gray-300);
     }
 
     [data-theme="dark"] {
-        --color-border-input: var(--gray-600)
+        --color-border-input: var(--gray-600);
     }
 
     [data-theme="light"] {
-        --color-border-focus: var(--gray-400)
+        --color-border-focus: var(--gray-400);
     }
 
     [data-theme="dark"] {
-        --color-border-focus: var(--blue-200)
+        --color-border-focus: var(--blue-200);
     }
 
     [data-theme="light"] {
-        --color-border-selected: var(--blue-500)
+        --color-border-selected: var(--blue-500);
     }
 
     [data-theme="dark"] {
-        --color-border-selected: var(--blue-300)
+        --color-border-selected: var(--blue-300);
     }
 
     [data-theme="light"] {
-        --color-border-darkBlue: var(--brandDarkBlue-500)
+        --color-border-darkBlue: var(--brandDarkBlue-500);
     }
 
     [data-theme="dark"] {
-        --color-border-darkBlue: var(--brandDarkBlue-200)
+        --color-border-darkBlue: var(--brandDarkBlue-200);
     }
 
     [data-theme="light"] {
-        --color-border-brandRed: var(--brandRed-500)
+        --color-border-brandRed: var(--brandRed-500);
     }
 
     [data-theme="dark"] {
-        --color-border-brandRed: var(--brandRed-300)
+        --color-border-brandRed: var(--brandRed-300);
     }
 
     [data-theme="light"] {
-        --color-border-danger-bolder: var(--brandRed-800)
+        --color-border-danger-bolder: var(--brandRed-800);
     }
 
     [data-theme="dark"] {
-        --color-border-danger-bolder: var(--brandRed-100)
+        --color-border-danger-bolder: var(--brandRed-100);
     }
 
     [data-theme="light"] {
-        --color-border-danger: var(--brandRed-700)
+        --color-border-danger: var(--brandRed-700);
     }
 
     [data-theme="dark"] {
-        --color-border-danger: var(--brandRed-200)
+        --color-border-danger: var(--brandRed-200);
     }
 
     [data-theme="light"] {
-        --color-border-danger-subtle: var(--brandRed-200)
+        --color-border-danger-subtle: var(--brandRed-200);
     }
 
     [data-theme="dark"] {
-        --color-border-danger-subtle: var(--brandRed-800)
+        --color-border-danger-subtle: var(--brandRed-800);
     }
 
     [data-theme="light"] {
-        --color-border-danger-subtler: var(--brandRed-100)
+        --color-border-danger-subtler: var(--brandRed-100);
     }
 
     [data-theme="dark"] {
