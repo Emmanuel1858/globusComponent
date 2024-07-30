@@ -10,7 +10,8 @@ export const config: Config = {
       copy: [
         {
           src: 'global', dest: 'global' //copies the stylesheets from the source folder to the destination folder in the dist folder on build
-        }
+        },
+        { src: 'assets', dest: 'assets' }
       ]
     },
     {
@@ -24,6 +25,9 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: null, // disable service workers
+      copy: [
+        { src: 'assets', dest: 'build/assets' }
+      ]
     },
   ],
   testing: {

@@ -6,69 +6,89 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface ButtonClose {
+        "color": 'primary' | 'information' | 'success' | 'gray' | 'warning' | 'error';
+        "size": 'lg' | 'md' | 'sm';
     }
-    interface TestButton {
+    interface ButtonCta {
+        "disabled": boolean;
+        "hierarchy": 'primary' | 'secondary-gray' | 'secondary-color' | 'tertiary-gray' | 'tertiary-color' | 'link-gray' | 'link-color';
+        "leftIcon"?: string;
+        "rightIcon"?: string;
+        "size": '2xl' | 'xl' | 'lg' | 'md' | 'sm';
+    }
+    interface CollapseButton {
+        "isHovered": boolean;
+    }
+    interface NotificationBell {
+        "state": string;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLButtonCloseElement extends Components.ButtonClose, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLButtonCloseElement: {
+        prototype: HTMLButtonCloseElement;
+        new (): HTMLButtonCloseElement;
     };
-    interface HTMLTestButtonElement extends Components.TestButton, HTMLStencilElement {
+    interface HTMLButtonCtaElement extends Components.ButtonCta, HTMLStencilElement {
     }
-    var HTMLTestButtonElement: {
-        prototype: HTMLTestButtonElement;
-        new (): HTMLTestButtonElement;
+    var HTMLButtonCtaElement: {
+        prototype: HTMLButtonCtaElement;
+        new (): HTMLButtonCtaElement;
+    };
+    interface HTMLCollapseButtonElement extends Components.CollapseButton, HTMLStencilElement {
+    }
+    var HTMLCollapseButtonElement: {
+        prototype: HTMLCollapseButtonElement;
+        new (): HTMLCollapseButtonElement;
+    };
+    interface HTMLNotificationBellElement extends Components.NotificationBell, HTMLStencilElement {
+    }
+    var HTMLNotificationBellElement: {
+        prototype: HTMLNotificationBellElement;
+        new (): HTMLNotificationBellElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
-        "test-button": HTMLTestButtonElement;
+        "button-close": HTMLButtonCloseElement;
+        "button-cta": HTMLButtonCtaElement;
+        "collapse-button": HTMLCollapseButtonElement;
+        "notification-bell": HTMLNotificationBellElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface ButtonClose {
+        "color"?: 'primary' | 'information' | 'success' | 'gray' | 'warning' | 'error';
+        "size"?: 'lg' | 'md' | 'sm';
     }
-    interface TestButton {
+    interface ButtonCta {
+        "disabled"?: boolean;
+        "hierarchy"?: 'primary' | 'secondary-gray' | 'secondary-color' | 'tertiary-gray' | 'tertiary-color' | 'link-gray' | 'link-color';
+        "leftIcon"?: string;
+        "rightIcon"?: string;
+        "size"?: '2xl' | 'xl' | 'lg' | 'md' | 'sm';
+    }
+    interface CollapseButton {
+        "isHovered"?: boolean;
+    }
+    interface NotificationBell {
+        "state"?: string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
-        "test-button": TestButton;
+        "button-close": ButtonClose;
+        "button-cta": ButtonCta;
+        "collapse-button": CollapseButton;
+        "notification-bell": NotificationBell;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-            "test-button": LocalJSX.TestButton & JSXBase.HTMLAttributes<HTMLTestButtonElement>;
+            "button-close": LocalJSX.ButtonClose & JSXBase.HTMLAttributes<HTMLButtonCloseElement>;
+            "button-cta": LocalJSX.ButtonCta & JSXBase.HTMLAttributes<HTMLButtonCtaElement>;
+            "collapse-button": LocalJSX.CollapseButton & JSXBase.HTMLAttributes<HTMLCollapseButtonElement>;
+            "notification-bell": LocalJSX.NotificationBell & JSXBase.HTMLAttributes<HTMLNotificationBellElement>;
         }
     }
 }

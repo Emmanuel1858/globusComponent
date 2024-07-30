@@ -1,0 +1,134 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-none);
+    border-radius: var(--rounded-sm);
+    height: fit-content;
+    width: fit-content;
+    cursor: pointer;
+}
+
+/* Sizes */
+div.lg{
+    padding: 0.625rem;
+}
+
+div.lg svg{
+    width: var(--spacing-6);
+    height: var(--spacing-6);
+}
+
+div.md svg{
+    width: var(--spacing-5);
+    height: var(--spacing-5);
+}
+
+div.sm{
+    padding: var(--spacing-2);
+}
+
+/* Colors */
+div.primary, div.information, div.success, div.gray, div.warning, div.error {
+    background-color: transparent;
+}
+
+div.primary path{
+    stroke: var(--color-icon-darkBlue);
+}
+
+div.success path {
+    stroke: var(--color-icon-success);
+}
+
+div.information path{
+    stroke: var(--color-icon-information);
+}
+
+div.gray path{
+    stroke: var(--color-icon);
+}
+
+div.warning path{
+    stroke: var(--color-icon-warning);
+}
+
+div.error path{
+    stroke: var(--color-icon-danger);
+}
+
+/* States */
+div.primary:hover{
+    background-color: var(--color-background-discovery-subtler);
+}
+
+div.primary:hover path{
+    stroke: var(--color-icon-brandRed);
+}
+
+div.primary:active{
+    background-color: var(--color-background-discovery-subtlest);
+}
+
+div.information:hover{
+    background-color: var(--color-background-information-subtler);
+}
+
+div.information:hover path{
+    stroke: var(--color-icon-information-bold);
+}
+
+div.information:active{
+    background-color: var(--color-background-information-subtlest);
+}
+
+div.success:hover {
+    background-color: var(--color-background-success-subtler);
+}
+
+div.success:hover path {
+    stroke: var(--color-icon-success-bold);
+}
+
+div.success:active{
+    background-color: var(--color-background-success-subtlest);
+}
+
+div.gray:hover{
+    background-color: var(--color-background-gray-subtler);
+}
+
+div.gray:hover path{
+    stroke: var(--color-icon-brandRed);
+}
+
+div.gray:active{
+    background-color: var(--color-background-gray-subtlest);
+}
+
+div.warning:hover{
+    background-color: var(--color-background-warning-subtler);
+}
+
+div.warning:hover path{
+    stroke: var(--color-icon-warning-bold);
+}
+
+div.warning:active{
+    background-color: var(--color-background-warning-subtlest);
+}
+
+div.error:hover{
+    background-color: var(--color-background-danger-subtler);
+}
+
+div.error:hover path{
+    stroke: var(--color-icon-danger-bold);
+}
+
+div.error:active{
+    background-color: var(--color-background-danger-subtlest);
+}
