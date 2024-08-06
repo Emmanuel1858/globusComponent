@@ -10,7 +10,7 @@
 | Property | Attribute | Description | Type                                                                        | Default     |
 | -------- | --------- | ----------- | --------------------------------------------------------------------------- | ----------- |
 | `color`  | `color`   |             | `"error" \| "gray" \| "information" \| "primary" \| "success" \| "warning"` | `undefined` |
-| `size`   | `size`    |             | `"lg" \| "md" \| "sm"`                                                      | `undefined` |
+| `size`   | `size`    |             | `"2xl" \| "lg" \| "md" \| "sm" \| "xl"`                                     | `undefined` |
 
 
 ----------------------------------------------

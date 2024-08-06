@@ -1,0 +1,110 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+@import './../../global/typo.css';
+
+.tooltip{
+    border: 1px solid #E3E8EF;
+    border-radius: var(--rounded-sm);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    padding: var(--spacing-3);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-none);
+    align-self: stretch;
+    width: fit-content;
+    height: fit-content; 
+    position: relative;
+}
+
+.tooltip:after, .tooltip:before {
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+}
+.tooltip:after {
+    border-width: 4px;
+}
+.tooltip:before {
+    border-width: 8px;
+}
+
+/* Arrow Positions */
+.tooltip.bottom_center .tooltip_arrow{
+    position: absolute;
+    top: 82%;
+    left: 48%;
+    transform: rotate(90deg);
+}
+
+.tooltip.bottom_left .tooltip_arrow{
+    position: absolute;
+    top: 82%;
+    left: 10%;
+    transform: rotate(90deg);
+}
+
+.tooltip.bottom_right .tooltip_arrow{
+    position: absolute;
+    top: 82%;
+    left: 80%;
+    transform: rotate(90deg);
+}
+
+.tooltip.top_center .tooltip_arrow{
+    position: absolute;
+    bottom: 82%;
+    left: 50%;
+    transform: rotate(-90deg);
+}
+
+.tooltip.left .tooltip_arrow{
+    position: absolute;
+    top: 25%;
+    right: 100%;
+    transform: rotate(180deg);
+}
+
+.tooltip.right .tooltip_arrow{
+    position: absolute;
+    top: 35%;
+    left: 100%;
+    transform: rotate(-0deg);
+}
+
+.tooltip.none .tooltip_arrow{
+    display: none;
+}
+
+svg path{
+    box-shadow: 0px 1px 3px 0px rgba(16, 24, 40, 0.10), 0px 1px 2px 0px rgba(16, 24, 40, 0.06);
+}
+
+svg path{
+    stroke: #FCFCFC;
+    fill: #FCFCFC;
+}
+
+.main{
+    color: #4B5565;
+    font-size: var(--text-xs-semiBold-font-size);
+    font-weight: var(--text-xs-semiBold-font-weight);
+    line-height: var(--text-xs-semiBold-line-height);
+}
+
+.supporting{
+    color: #697586;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: wrap;
+    font-size: var(--text-xs-regular-font-size);
+    font-weight: var(--text-xs-regular-font-weight);
+    line-height: var(--text-xs-regular-line-height);
+    width: 100%;
+}
+
+::slotted(p){
+    margin: 0;
+}

@@ -5,23 +5,34 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { ArrowPositions, GeneralHierarchies, GeneralSizes, StateEnum } from "./models/reusableModels";
+export { ArrowPositions, GeneralHierarchies, GeneralSizes, StateEnum } from "./models/reusableModels";
 export namespace Components {
     interface ButtonClose {
         "color": 'primary' | 'information' | 'success' | 'gray' | 'warning' | 'error';
-        "size": 'lg' | 'md' | 'sm';
+        "size": GeneralSizes;
     }
     interface ButtonCta {
         "disabled": boolean;
-        "hierarchy": 'primary' | 'secondary-gray' | 'secondary-color' | 'tertiary-gray' | 'tertiary-color' | 'link-gray' | 'link-color';
+        "hierarchy": GeneralHierarchies;
         "leftIcon"?: string;
         "rightIcon"?: string;
-        "size": '2xl' | 'xl' | 'lg' | 'md' | 'sm';
+        "size": GeneralSizes;
     }
     interface CollapseButton {
+        "currentIconDirection": string;
         "isHovered": boolean;
     }
     interface NotificationBell {
-        "state": string;
+        "state": StateEnum;
+    }
+    interface ToggleButton {
+        "size": GeneralSizes;
+        "state": StateEnum;
+    }
+    interface ToolTip {
+        "arrowPosition": ArrowPositions;
+        "supportingText": boolean;
     }
 }
 declare global {
@@ -49,36 +60,61 @@ declare global {
         prototype: HTMLNotificationBellElement;
         new (): HTMLNotificationBellElement;
     };
+    interface HTMLToggleButtonElement extends Components.ToggleButton, HTMLStencilElement {
+    }
+    var HTMLToggleButtonElement: {
+        prototype: HTMLToggleButtonElement;
+        new (): HTMLToggleButtonElement;
+    };
+    interface HTMLToolTipElement extends Components.ToolTip, HTMLStencilElement {
+    }
+    var HTMLToolTipElement: {
+        prototype: HTMLToolTipElement;
+        new (): HTMLToolTipElement;
+    };
     interface HTMLElementTagNameMap {
         "button-close": HTMLButtonCloseElement;
         "button-cta": HTMLButtonCtaElement;
         "collapse-button": HTMLCollapseButtonElement;
         "notification-bell": HTMLNotificationBellElement;
+        "toggle-button": HTMLToggleButtonElement;
+        "tool-tip": HTMLToolTipElement;
     }
 }
 declare namespace LocalJSX {
     interface ButtonClose {
         "color"?: 'primary' | 'information' | 'success' | 'gray' | 'warning' | 'error';
-        "size"?: 'lg' | 'md' | 'sm';
+        "size"?: GeneralSizes;
     }
     interface ButtonCta {
         "disabled"?: boolean;
-        "hierarchy"?: 'primary' | 'secondary-gray' | 'secondary-color' | 'tertiary-gray' | 'tertiary-color' | 'link-gray' | 'link-color';
+        "hierarchy"?: GeneralHierarchies;
         "leftIcon"?: string;
         "rightIcon"?: string;
-        "size"?: '2xl' | 'xl' | 'lg' | 'md' | 'sm';
+        "size"?: GeneralSizes;
     }
     interface CollapseButton {
+        "currentIconDirection"?: string;
         "isHovered"?: boolean;
     }
     interface NotificationBell {
-        "state"?: string;
+        "state"?: StateEnum;
+    }
+    interface ToggleButton {
+        "size"?: GeneralSizes;
+        "state"?: StateEnum;
+    }
+    interface ToolTip {
+        "arrowPosition"?: ArrowPositions;
+        "supportingText"?: boolean;
     }
     interface IntrinsicElements {
         "button-close": ButtonClose;
         "button-cta": ButtonCta;
         "collapse-button": CollapseButton;
         "notification-bell": NotificationBell;
+        "toggle-button": ToggleButton;
+        "tool-tip": ToolTip;
     }
 }
 export { LocalJSX as JSX };
@@ -89,6 +125,8 @@ declare module "@stencil/core" {
             "button-cta": LocalJSX.ButtonCta & JSXBase.HTMLAttributes<HTMLButtonCtaElement>;
             "collapse-button": LocalJSX.CollapseButton & JSXBase.HTMLAttributes<HTMLCollapseButtonElement>;
             "notification-bell": LocalJSX.NotificationBell & JSXBase.HTMLAttributes<HTMLNotificationBellElement>;
+            "toggle-button": LocalJSX.ToggleButton & JSXBase.HTMLAttributes<HTMLToggleButtonElement>;
+            "tool-tip": LocalJSX.ToolTip & JSXBase.HTMLAttributes<HTMLToolTipElement>;
         }
     }
 }

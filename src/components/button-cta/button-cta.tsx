@@ -1,4 +1,5 @@
-import { Component, getAssetPath, h, Prop, State } from "@stencil/core";
+import { Component, getAssetPath, h, Prop } from "@stencil/core";
+import { GeneralHierarchies, GeneralSizes } from "../../models/reusableModels";
 
 @Component({
     tag: 'button-cta',
@@ -7,12 +8,11 @@ import { Component, getAssetPath, h, Prop, State } from "@stencil/core";
 })
 
 export class ButtonCta {
-    @Prop() size: '2xl' | 'xl' | 'lg' | 'md' | 'sm' = 'xl';
-    @Prop() hierarchy: 'primary' | 'secondary-gray' | 'secondary-color' | 'tertiary-gray' | 'tertiary-color' | 'link-gray' | 'link-color';
+    @Prop() size: GeneralSizes = 'xl';
+    @Prop() hierarchy: GeneralHierarchies;
     @Prop() leftIcon?: string;
     @Prop() rightIcon?: string;
     @Prop() disabled: boolean = false;
-    @State() isDarkTheme: boolean = false;
 
     render() {
         const classes = {

@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property    | Attribute    | Description | Type      | Default |
-| ----------- | ------------ | ----------- | --------- | ------- |
-| `isHovered` | `is-hovered` |             | `boolean` | `false` |
+| Property               | Attribute                | Description | Type     | Default  |
+| ---------------------- | ------------------------ | ----------- | -------- | -------- |
+| `currentIconDirection` | `current-icon-direction` |             | `string` | `'left'` |
 
 
 ----------------------------------------------

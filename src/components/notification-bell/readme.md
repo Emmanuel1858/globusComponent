@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `state`  | `state`   |             | `string` | `undefined` |
+| Property | Attribute | Description | Type                                     | Default     |
+| -------- | --------- | ----------- | ---------------------------------------- | ----------- |
+| `state`  | `state`   |             | `StateEnum.Active \| StateEnum.Disabled` | `undefined` |
 
 
 ----------------------------------------------

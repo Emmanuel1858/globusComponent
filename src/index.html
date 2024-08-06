@@ -9,13 +9,19 @@
     <script nomodule src="/build/globuscomponents.js"></script>
   </head>
   <body>
-    <button-cta size="_2xl" hierarchy="tertiary-color" left-icon="arrow_pointing_up" right-icon="arrow_pointing_up" disabled>
+    <button-cta size="xl" hierarchy="primary" right-icon="arrow_pointing_up">
       <p>Upload</p>
     </button-cta>
-    <div class="blue-gradient-900-600 display-lg-semiBold" style="width: 200px; height: 200px">
+    <div class="gradient-blue-900-to-600-45d display-lg-semiBold" style="width: 200px; height: 200px">
       <p>Hiiii</p>
     </div>
     <button-close size="sm" color="success"></button-close>
-    <notification-bell state="disabled"></notification-bell>
+    <notification-bell state="active"></notification-bell>
+    <collapse-button></collapse-button>
+    <toggle-button size="sm" state="active"></toggle-button>
+    <tool-tip arrow-position="left">
+      <p slot="main_text">This is a tooltip</p>
+      <!-- <p slot="supporting_text">This is the supporting text osbvowi wonvow  woivwo iev woienv oweiv owievow eowie oiwje oiwjeo wofjnbje  kirvowjr vowjr vow</p> -->
+    </tool-tip>
   </body>
 </html>
