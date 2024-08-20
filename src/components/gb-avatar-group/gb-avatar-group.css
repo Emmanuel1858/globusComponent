@@ -1,0 +1,53 @@
+@import './../../global/spacing.css';
+
+.avatar_group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+}
+
+.avatar_group.xs{
+    width: 18.5rem;
+}
+
+.avatar_group.sm{
+    width: 21rem;
+}
+
+.avatar_group.md{
+    width: 22rem;
+}
+
+.avatar{
+    width: fit-content;
+    border-radius: var(--rounded-full);
+    position: relative;
+}
+
+.avatar.xs{
+    padding: 1.55px;
+    background-color: #FFFFFF;
+}
+
+.avatar.sm{
+    padding: 1px;
+    background-color: #FFFFFF;
+}
+
+.avatar.md{
+    padding: 1.5px;
+    background-color: #FFFFFF;
+}
+
+.avatar.xs:not(:first-child){
+    margin-left: -0.5rem;
+}
+
+.avatar.sm:not(:first-child), .avatar.md:not(:first-child){
+    margin-left: -1.01rem;
+}
+
+::slotted(p){
+    color: #4B5565;
+}

@@ -1,0 +1,51 @@
+@import './../../global/spacing.css';
+
+.inner_border{
+    border-radius: var(--rounded-full);
+    width: fit-content;
+    height: fit-content;
+}
+
+/* Weights */
+.inner_border.light{
+    border: 0.5px solid rgba(33, 44, 101, 0.2);
+}
+
+.inner_border.regular{
+    border: 0.75px solid rgba(33, 44, 101, 0.2);
+}
+
+.inner_border.heavy{
+    border: 1px solid rgba(33, 44, 101, 0.2);
+}
+
+/* Sizes */
+/* .inner_border.xs {
+    width: var(--spacing-6);
+    height: var(--spacing-6);
+}
+
+.inner_border.sm {
+    width: var(--spacing-7);
+    height: var(--spacing-7);
+}
+
+.inner_border.md {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.inner_border.lg {
+    width: 3rem;
+    height: 3rem;
+}
+
+.inner_border.xl {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.inner_border.xl2 {
+    width: 4rem;
+    height: 4rem;
+} */

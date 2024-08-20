@@ -5,128 +5,373 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { ArrowPositions, GeneralHierarchies, GeneralSizes, StateEnum } from "./models/reusableModels";
-export { ArrowPositions, GeneralHierarchies, GeneralSizes, StateEnum } from "./models/reusableModels";
+import { ArrowPositions, BorderWeights, BreakPoints, CheckBoxStates, CheckBoxVariants, GeneralHierarchies, GeneralSizes, OnlineIndicatorStates, StateEnum } from "./models/reusableModels";
+export { ArrowPositions, BorderWeights, BreakPoints, CheckBoxStates, CheckBoxVariants, GeneralHierarchies, GeneralSizes, OnlineIndicatorStates, StateEnum } from "./models/reusableModels";
 export namespace Components {
-    interface ButtonClose {
-        "color": 'primary' | 'information' | 'success' | 'gray' | 'warning' | 'error';
+    interface GbAvatar {
+        "placeholder": boolean;
         "size": GeneralSizes;
+        "state": OnlineIndicatorStates;
+        "statusIcon": string;
+        "text": boolean;
+        "weight": BorderWeights;
     }
-    interface ButtonCta {
+    interface GbAvatarAddButton {
+        "showToolTip": boolean;
+        "size": GeneralSizes;
+        "state": StateEnum;
+    }
+    interface GbAvatarContrastInnerBorder {
+        "borderSize": GeneralSizes;
+        "weight": BorderWeights;
+    }
+    interface GbAvatarGroup {
+        "addMoreButton": boolean;
+        "moreUser": boolean;
+        "size": GeneralSizes;
+        "state": StateEnum;
+        "text": boolean;
+    }
+    interface GbAvatarLabelGroup {
+        "placeholder": boolean;
+        "size": GeneralSizes;
+        "state": OnlineIndicatorStates;
+        "statusIcon": string;
+        "text": boolean;
+        "weight": BorderWeights;
+    }
+    interface GbAvatarProfilePhoto {
+        "placeholder": boolean;
+        "size": GeneralSizes;
+        "state": OnlineIndicatorStates;
+        "statusIcon": string;
+        "text": boolean;
+        "weight": BorderWeights;
+    }
+    interface GbButton {
         "disabled": boolean;
         "hierarchy": GeneralHierarchies;
         "leftIcon"?: string;
         "rightIcon"?: string;
         "size": GeneralSizes;
     }
-    interface CollapseButton {
+    interface GbButtonClose {
+        "color": 'primary' | 'information' | 'success' | 'gray' | 'warning' | 'error';
+        "size": GeneralSizes;
+    }
+    interface GbCheckbox {
+        "checked": boolean;
+        "indeterminate": boolean;
+        "size": GeneralSizes;
+        "state": CheckBoxStates;
+        "supportingText": boolean;
+        "type": CheckBoxVariants;
+    }
+    interface GbCheckboxBase {
+        "checked": boolean;
+        "indeterminate": boolean;
+        "size": GeneralSizes;
+        "state": CheckBoxStates;
+        "type": CheckBoxVariants;
+    }
+    interface GbCheckboxGroup {
+        "breakpoint": BreakPoints;
+        "icon": string;
+        "selected": boolean;
+        "size": GeneralSizes;
+        "type": 'icon_simple' | 'avatar' | 'payment_icon' | 'radio_button' | 'checkbox';
+    }
+    interface GbCollapseButton {
         "currentIconDirection": string;
         "isHovered": boolean;
     }
-    interface NotificationBell {
+    interface GbHeaderIcon {
         "state": StateEnum;
     }
-    interface ToggleButton {
+    interface GbStatusIndicator {
+        "indicatorStateClass": string;
+        "size": GeneralSizes;
+        "state": OnlineIndicatorStates;
+        "statusIcon": string;
+    }
+    interface GbToggle {
+        "size": GeneralSizes;
+        "state": StateEnum;
+        "supportingText": boolean;
+    }
+    interface GbToggleBase {
         "size": GeneralSizes;
         "state": StateEnum;
     }
-    interface ToolTip {
-        "arrowPosition": ArrowPositions;
+    interface GbTooltip {
+        "arrow": ArrowPositions;
         "supportingText": boolean;
     }
 }
 declare global {
-    interface HTMLButtonCloseElement extends Components.ButtonClose, HTMLStencilElement {
+    interface HTMLGbAvatarElement extends Components.GbAvatar, HTMLStencilElement {
     }
-    var HTMLButtonCloseElement: {
-        prototype: HTMLButtonCloseElement;
-        new (): HTMLButtonCloseElement;
+    var HTMLGbAvatarElement: {
+        prototype: HTMLGbAvatarElement;
+        new (): HTMLGbAvatarElement;
     };
-    interface HTMLButtonCtaElement extends Components.ButtonCta, HTMLStencilElement {
+    interface HTMLGbAvatarAddButtonElement extends Components.GbAvatarAddButton, HTMLStencilElement {
     }
-    var HTMLButtonCtaElement: {
-        prototype: HTMLButtonCtaElement;
-        new (): HTMLButtonCtaElement;
+    var HTMLGbAvatarAddButtonElement: {
+        prototype: HTMLGbAvatarAddButtonElement;
+        new (): HTMLGbAvatarAddButtonElement;
     };
-    interface HTMLCollapseButtonElement extends Components.CollapseButton, HTMLStencilElement {
+    interface HTMLGbAvatarContrastInnerBorderElement extends Components.GbAvatarContrastInnerBorder, HTMLStencilElement {
     }
-    var HTMLCollapseButtonElement: {
-        prototype: HTMLCollapseButtonElement;
-        new (): HTMLCollapseButtonElement;
+    var HTMLGbAvatarContrastInnerBorderElement: {
+        prototype: HTMLGbAvatarContrastInnerBorderElement;
+        new (): HTMLGbAvatarContrastInnerBorderElement;
     };
-    interface HTMLNotificationBellElement extends Components.NotificationBell, HTMLStencilElement {
+    interface HTMLGbAvatarGroupElement extends Components.GbAvatarGroup, HTMLStencilElement {
     }
-    var HTMLNotificationBellElement: {
-        prototype: HTMLNotificationBellElement;
-        new (): HTMLNotificationBellElement;
+    var HTMLGbAvatarGroupElement: {
+        prototype: HTMLGbAvatarGroupElement;
+        new (): HTMLGbAvatarGroupElement;
     };
-    interface HTMLToggleButtonElement extends Components.ToggleButton, HTMLStencilElement {
+    interface HTMLGbAvatarLabelGroupElement extends Components.GbAvatarLabelGroup, HTMLStencilElement {
     }
-    var HTMLToggleButtonElement: {
-        prototype: HTMLToggleButtonElement;
-        new (): HTMLToggleButtonElement;
+    var HTMLGbAvatarLabelGroupElement: {
+        prototype: HTMLGbAvatarLabelGroupElement;
+        new (): HTMLGbAvatarLabelGroupElement;
     };
-    interface HTMLToolTipElement extends Components.ToolTip, HTMLStencilElement {
+    interface HTMLGbAvatarProfilePhotoElement extends Components.GbAvatarProfilePhoto, HTMLStencilElement {
     }
-    var HTMLToolTipElement: {
-        prototype: HTMLToolTipElement;
-        new (): HTMLToolTipElement;
+    var HTMLGbAvatarProfilePhotoElement: {
+        prototype: HTMLGbAvatarProfilePhotoElement;
+        new (): HTMLGbAvatarProfilePhotoElement;
+    };
+    interface HTMLGbButtonElement extends Components.GbButton, HTMLStencilElement {
+    }
+    var HTMLGbButtonElement: {
+        prototype: HTMLGbButtonElement;
+        new (): HTMLGbButtonElement;
+    };
+    interface HTMLGbButtonCloseElement extends Components.GbButtonClose, HTMLStencilElement {
+    }
+    var HTMLGbButtonCloseElement: {
+        prototype: HTMLGbButtonCloseElement;
+        new (): HTMLGbButtonCloseElement;
+    };
+    interface HTMLGbCheckboxElement extends Components.GbCheckbox, HTMLStencilElement {
+    }
+    var HTMLGbCheckboxElement: {
+        prototype: HTMLGbCheckboxElement;
+        new (): HTMLGbCheckboxElement;
+    };
+    interface HTMLGbCheckboxBaseElement extends Components.GbCheckboxBase, HTMLStencilElement {
+    }
+    var HTMLGbCheckboxBaseElement: {
+        prototype: HTMLGbCheckboxBaseElement;
+        new (): HTMLGbCheckboxBaseElement;
+    };
+    interface HTMLGbCheckboxGroupElement extends Components.GbCheckboxGroup, HTMLStencilElement {
+    }
+    var HTMLGbCheckboxGroupElement: {
+        prototype: HTMLGbCheckboxGroupElement;
+        new (): HTMLGbCheckboxGroupElement;
+    };
+    interface HTMLGbCollapseButtonElement extends Components.GbCollapseButton, HTMLStencilElement {
+    }
+    var HTMLGbCollapseButtonElement: {
+        prototype: HTMLGbCollapseButtonElement;
+        new (): HTMLGbCollapseButtonElement;
+    };
+    interface HTMLGbHeaderIconElement extends Components.GbHeaderIcon, HTMLStencilElement {
+    }
+    var HTMLGbHeaderIconElement: {
+        prototype: HTMLGbHeaderIconElement;
+        new (): HTMLGbHeaderIconElement;
+    };
+    interface HTMLGbStatusIndicatorElement extends Components.GbStatusIndicator, HTMLStencilElement {
+    }
+    var HTMLGbStatusIndicatorElement: {
+        prototype: HTMLGbStatusIndicatorElement;
+        new (): HTMLGbStatusIndicatorElement;
+    };
+    interface HTMLGbToggleElement extends Components.GbToggle, HTMLStencilElement {
+    }
+    var HTMLGbToggleElement: {
+        prototype: HTMLGbToggleElement;
+        new (): HTMLGbToggleElement;
+    };
+    interface HTMLGbToggleBaseElement extends Components.GbToggleBase, HTMLStencilElement {
+    }
+    var HTMLGbToggleBaseElement: {
+        prototype: HTMLGbToggleBaseElement;
+        new (): HTMLGbToggleBaseElement;
+    };
+    interface HTMLGbTooltipElement extends Components.GbTooltip, HTMLStencilElement {
+    }
+    var HTMLGbTooltipElement: {
+        prototype: HTMLGbTooltipElement;
+        new (): HTMLGbTooltipElement;
     };
     interface HTMLElementTagNameMap {
-        "button-close": HTMLButtonCloseElement;
-        "button-cta": HTMLButtonCtaElement;
-        "collapse-button": HTMLCollapseButtonElement;
-        "notification-bell": HTMLNotificationBellElement;
-        "toggle-button": HTMLToggleButtonElement;
-        "tool-tip": HTMLToolTipElement;
+        "gb-avatar": HTMLGbAvatarElement;
+        "gb-avatar-add-button": HTMLGbAvatarAddButtonElement;
+        "gb-avatar-contrast-inner-border": HTMLGbAvatarContrastInnerBorderElement;
+        "gb-avatar-group": HTMLGbAvatarGroupElement;
+        "gb-avatar-label-group": HTMLGbAvatarLabelGroupElement;
+        "gb-avatar-profile-photo": HTMLGbAvatarProfilePhotoElement;
+        "gb-button": HTMLGbButtonElement;
+        "gb-button-close": HTMLGbButtonCloseElement;
+        "gb-checkbox": HTMLGbCheckboxElement;
+        "gb-checkbox-base": HTMLGbCheckboxBaseElement;
+        "gb-checkbox-group": HTMLGbCheckboxGroupElement;
+        "gb-collapse-button": HTMLGbCollapseButtonElement;
+        "gb-header-icon": HTMLGbHeaderIconElement;
+        "gb-status-indicator": HTMLGbStatusIndicatorElement;
+        "gb-toggle": HTMLGbToggleElement;
+        "gb-toggle-base": HTMLGbToggleBaseElement;
+        "gb-tooltip": HTMLGbTooltipElement;
     }
 }
 declare namespace LocalJSX {
-    interface ButtonClose {
-        "color"?: 'primary' | 'information' | 'success' | 'gray' | 'warning' | 'error';
+    interface GbAvatar {
+        "placeholder"?: boolean;
         "size"?: GeneralSizes;
+        "state"?: OnlineIndicatorStates;
+        "statusIcon"?: string;
+        "text"?: boolean;
+        "weight"?: BorderWeights;
     }
-    interface ButtonCta {
+    interface GbAvatarAddButton {
+        "showToolTip"?: boolean;
+        "size"?: GeneralSizes;
+        "state"?: StateEnum;
+    }
+    interface GbAvatarContrastInnerBorder {
+        "borderSize"?: GeneralSizes;
+        "weight"?: BorderWeights;
+    }
+    interface GbAvatarGroup {
+        "addMoreButton"?: boolean;
+        "moreUser"?: boolean;
+        "size"?: GeneralSizes;
+        "state"?: StateEnum;
+        "text"?: boolean;
+    }
+    interface GbAvatarLabelGroup {
+        "placeholder"?: boolean;
+        "size"?: GeneralSizes;
+        "state"?: OnlineIndicatorStates;
+        "statusIcon"?: string;
+        "text"?: boolean;
+        "weight"?: BorderWeights;
+    }
+    interface GbAvatarProfilePhoto {
+        "placeholder"?: boolean;
+        "size"?: GeneralSizes;
+        "state"?: OnlineIndicatorStates;
+        "statusIcon"?: string;
+        "text"?: boolean;
+        "weight"?: BorderWeights;
+    }
+    interface GbButton {
         "disabled"?: boolean;
         "hierarchy"?: GeneralHierarchies;
         "leftIcon"?: string;
         "rightIcon"?: string;
         "size"?: GeneralSizes;
     }
-    interface CollapseButton {
+    interface GbButtonClose {
+        "color"?: 'primary' | 'information' | 'success' | 'gray' | 'warning' | 'error';
+        "size"?: GeneralSizes;
+    }
+    interface GbCheckbox {
+        "checked"?: boolean;
+        "indeterminate"?: boolean;
+        "size"?: GeneralSizes;
+        "state"?: CheckBoxStates;
+        "supportingText"?: boolean;
+        "type"?: CheckBoxVariants;
+    }
+    interface GbCheckboxBase {
+        "checked"?: boolean;
+        "indeterminate"?: boolean;
+        "size"?: GeneralSizes;
+        "state"?: CheckBoxStates;
+        "type"?: CheckBoxVariants;
+    }
+    interface GbCheckboxGroup {
+        "breakpoint"?: BreakPoints;
+        "icon"?: string;
+        "selected"?: boolean;
+        "size"?: GeneralSizes;
+        "type"?: 'icon_simple' | 'avatar' | 'payment_icon' | 'radio_button' | 'checkbox';
+    }
+    interface GbCollapseButton {
         "currentIconDirection"?: string;
         "isHovered"?: boolean;
     }
-    interface NotificationBell {
+    interface GbHeaderIcon {
         "state"?: StateEnum;
     }
-    interface ToggleButton {
+    interface GbStatusIndicator {
+        "indicatorStateClass"?: string;
+        "size"?: GeneralSizes;
+        "state"?: OnlineIndicatorStates;
+        "statusIcon"?: string;
+    }
+    interface GbToggle {
+        "size"?: GeneralSizes;
+        "state"?: StateEnum;
+        "supportingText"?: boolean;
+    }
+    interface GbToggleBase {
         "size"?: GeneralSizes;
         "state"?: StateEnum;
     }
-    interface ToolTip {
-        "arrowPosition"?: ArrowPositions;
+    interface GbTooltip {
+        "arrow"?: ArrowPositions;
         "supportingText"?: boolean;
     }
     interface IntrinsicElements {
-        "button-close": ButtonClose;
-        "button-cta": ButtonCta;
-        "collapse-button": CollapseButton;
-        "notification-bell": NotificationBell;
-        "toggle-button": ToggleButton;
-        "tool-tip": ToolTip;
+        "gb-avatar": GbAvatar;
+        "gb-avatar-add-button": GbAvatarAddButton;
+        "gb-avatar-contrast-inner-border": GbAvatarContrastInnerBorder;
+        "gb-avatar-group": GbAvatarGroup;
+        "gb-avatar-label-group": GbAvatarLabelGroup;
+        "gb-avatar-profile-photo": GbAvatarProfilePhoto;
+        "gb-button": GbButton;
+        "gb-button-close": GbButtonClose;
+        "gb-checkbox": GbCheckbox;
+        "gb-checkbox-base": GbCheckboxBase;
+        "gb-checkbox-group": GbCheckboxGroup;
+        "gb-collapse-button": GbCollapseButton;
+        "gb-header-icon": GbHeaderIcon;
+        "gb-status-indicator": GbStatusIndicator;
+        "gb-toggle": GbToggle;
+        "gb-toggle-base": GbToggleBase;
+        "gb-tooltip": GbTooltip;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "button-close": LocalJSX.ButtonClose & JSXBase.HTMLAttributes<HTMLButtonCloseElement>;
-            "button-cta": LocalJSX.ButtonCta & JSXBase.HTMLAttributes<HTMLButtonCtaElement>;
-            "collapse-button": LocalJSX.CollapseButton & JSXBase.HTMLAttributes<HTMLCollapseButtonElement>;
-            "notification-bell": LocalJSX.NotificationBell & JSXBase.HTMLAttributes<HTMLNotificationBellElement>;
-            "toggle-button": LocalJSX.ToggleButton & JSXBase.HTMLAttributes<HTMLToggleButtonElement>;
-            "tool-tip": LocalJSX.ToolTip & JSXBase.HTMLAttributes<HTMLToolTipElement>;
+            "gb-avatar": LocalJSX.GbAvatar & JSXBase.HTMLAttributes<HTMLGbAvatarElement>;
+            "gb-avatar-add-button": LocalJSX.GbAvatarAddButton & JSXBase.HTMLAttributes<HTMLGbAvatarAddButtonElement>;
+            "gb-avatar-contrast-inner-border": LocalJSX.GbAvatarContrastInnerBorder & JSXBase.HTMLAttributes<HTMLGbAvatarContrastInnerBorderElement>;
+            "gb-avatar-group": LocalJSX.GbAvatarGroup & JSXBase.HTMLAttributes<HTMLGbAvatarGroupElement>;
+            "gb-avatar-label-group": LocalJSX.GbAvatarLabelGroup & JSXBase.HTMLAttributes<HTMLGbAvatarLabelGroupElement>;
+            "gb-avatar-profile-photo": LocalJSX.GbAvatarProfilePhoto & JSXBase.HTMLAttributes<HTMLGbAvatarProfilePhotoElement>;
+            "gb-button": LocalJSX.GbButton & JSXBase.HTMLAttributes<HTMLGbButtonElement>;
+            "gb-button-close": LocalJSX.GbButtonClose & JSXBase.HTMLAttributes<HTMLGbButtonCloseElement>;
+            "gb-checkbox": LocalJSX.GbCheckbox & JSXBase.HTMLAttributes<HTMLGbCheckboxElement>;
+            "gb-checkbox-base": LocalJSX.GbCheckboxBase & JSXBase.HTMLAttributes<HTMLGbCheckboxBaseElement>;
+            "gb-checkbox-group": LocalJSX.GbCheckboxGroup & JSXBase.HTMLAttributes<HTMLGbCheckboxGroupElement>;
+            "gb-collapse-button": LocalJSX.GbCollapseButton & JSXBase.HTMLAttributes<HTMLGbCollapseButtonElement>;
+            "gb-header-icon": LocalJSX.GbHeaderIcon & JSXBase.HTMLAttributes<HTMLGbHeaderIconElement>;
+            "gb-status-indicator": LocalJSX.GbStatusIndicator & JSXBase.HTMLAttributes<HTMLGbStatusIndicatorElement>;
+            "gb-toggle": LocalJSX.GbToggle & JSXBase.HTMLAttributes<HTMLGbToggleElement>;
+            "gb-toggle-base": LocalJSX.GbToggleBase & JSXBase.HTMLAttributes<HTMLGbToggleBaseElement>;
+            "gb-tooltip": LocalJSX.GbTooltip & JSXBase.HTMLAttributes<HTMLGbTooltipElement>;
         }
     }
 }

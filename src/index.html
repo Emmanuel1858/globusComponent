@@ -7,21 +7,62 @@
 
     <script type="module" src="/build/globuscomponents.esm.js"></script>
     <script nomodule src="/build/globuscomponents.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
   </head>
   <body>
-    <button-cta size="xl" hierarchy="primary" right-icon="arrow_pointing_up">
+    <gb-button size="xl2" hierarchy="primary">
       <p>Upload</p>
-    </button-cta>
-    <div class="gradient-blue-900-to-600-45d display-lg-semiBold" style="width: 200px; height: 200px">
-      <p>Hiiii</p>
-    </div>
-    <button-close size="sm" color="success"></button-close>
-    <notification-bell state="active"></notification-bell>
-    <collapse-button></collapse-button>
-    <toggle-button size="sm" state="active"></toggle-button>
-    <tool-tip arrow-position="left">
+    </gb-button>
+    <gb-tooltip arrow="right" supporting-text="true">
       <p slot="main_text">This is a tooltip</p>
       <!-- <p slot="supporting_text">This is the supporting text osbvowi wonvow  woivwo iev woienv oweiv owievow eowie oiwje oiwjeo wofjnbje  kirvowjr vowjr vow</p> -->
-    </tool-tip>
+    </gb-tooltip>
+    <gb-checkbox-base size="md" variant="checkbox" state="default" checked="false"></gb-checkbox-base>
+    <gb-avatar-add-button size="md" state="active"></gb-avatar-add-button>
+    <gb-avatar weight="light" size="xl" status-icon="verified_tick">
+      <img src="./build/assets/avatar_pic.jpg" alt="">
+      <!-- <h1>NP</h1> -->
+    </gb-avatar>
+    <gb-avatar-profile-photo size="md" weight="light" status-icon="verified_tick">
+      <img src="./build/assets/avatar_pic.jpg" alt="">
+       <!-- <h1>NP</h1> -->
+    </gb-avatar-profile-photo>
+    <gb-avatar-label-group status-icon="online_indicator" state="online" weight="light" size="xl">
+      <img src="./build/assets/avatar_pic.jpg" alt="">
+      <p slot="name">Noah Pierre</p>
+      <p slot="supporting_text">kadiri2047@gmail.com</p>
+      <!-- <h1>NP</h1> -->
+    </gb-avatar-label-group>
+    <gb-avatar-group size="xs" more-user="true" add-more-button="true">
+      <p>+5</p>
+    </gb-avatar-group>
+    <gb-avatar-group size="sm" more-user="true" add-more-button="true">
+      <p>+5</p>
+    </gb-avatar-group>
+    <gb-avatar-group size="md" more-user="true" add-more-button="true">
+      <p>+5</p>
+    </gb-avatar-group>
+    <gb-checkbox size="md" type="check_circle" state="default" supporting-text="false">
+      <p slot="label">Remember Me</p>
+      <!-- <p slot="supporting_text">Save my login details for next time.</p> -->
+    </gb-checkbox>
+    <gb-toggle size="sm" state="active" supporting-text="false">
+      <p slot="main_text">Remember Me</p>
+      <!-- <p slot="supporting_text">Save my login details for next time.</p> -->
+    </gb-toggle>
+    <h1 class="display-2xl-bold">Display</h1>
+    <h1 class="display-2xl-semi-bold">Display</h1>
+    <h1 class="display-xl-bold">Display</h1>
+    <h1 class="display-xl-semi-bold">Display</h1>
+    <h1 class="display-lg-bold">Display</h1>
+    <h1 class="display-lg-semi-bold">Display</h1>
+    <h1 class="display-md-bold">Display</h1>
+    <h1 class="display-md-semi-bold">Display</h1>
+    <h1 class="display-sm-bold">Display</h1>
+    <h1 class="display-sm-semi-bold">Display</h1>
+    <h1 class="display-xs-bold">Display</h1>
+    <h1 class="display-xs-semi-bold">Display</h1>
   </body>
 </html>

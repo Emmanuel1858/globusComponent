@@ -1,0 +1,66 @@
+@import './../../global/spacing.css';
+
+:host{
+    position: relative;
+}
+
+.tooltip{
+    position: absolute;
+    top: -3rem;
+    left: -1.55rem;
+}
+
+.avatar_back.active{
+    border: 1px dashed #CDD5DF;
+    border-radius: var(--rounded-full);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Sizes */
+.avatar_back.xs{
+    width: var(--spacing-6);
+    height: var(--spacing-6);
+}
+
+.avatar_back.sm{
+    width: var(--spacing-7);
+    height: var(--spacing-7);
+}
+
+.avatar_back.md{
+    width: var(--spacing-8);
+    height: var(--spacing-8);
+}
+
+.plus_sign.xs{
+    width: var(--spacing-4);
+    height: var(--spacing-4);
+}
+
+.plus_sign.md{
+    width: var(--spacing-5);
+    height: var(--spacing-5);
+}
+
+/* States */
+.avatar_back.active:hover, .plus_sign.active:hover{
+    background-color: #EEF2F6;
+}
+
+.avatar_back.active:active, .plus_sign.active:active{
+    background-color: #E3E8EF;
+}
+
+.avatar_back.disabled{
+    border: 1px dashed #E3E8EF;
+    background-color: #F6F8FA;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.plus_sign.disabled path{
+    stroke: #CDD5DF;
+}

@@ -1,0 +1,47 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+@import './../../global/typography.css';
+
+.label_pic{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.label{
+    width: fit-content;
+    display: flex;
+    padding: var(--spacing-none);
+    border-radius: var(--rounded-none);
+}
+
+/* Label Sizes */
+.label.sm{
+    gap: 0.625rem;
+}
+
+.label.md{
+    gap: var(--spacing-3);
+}
+
+.label.lg{
+    gap: var(--spacing-3);
+}
+
+.label.xl{
+    gap: var(--spacing-4);
+}
+
+.label_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+::slotted([slot="name"]){
+    color: #344054;
+}
+
+::slotted([slot="supporting_text"]){
+    color: #697586;
+}

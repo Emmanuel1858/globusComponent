@@ -1,0 +1,52 @@
+@import './../../global/spacing.css';
+
+:host{
+    width: fit-content;
+}
+
+/* Checkbox Styles */
+.checkbox_container{
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+}
+
+svg.sm{
+    width: var(--spacing-4);
+    height: var(--spacing-4);
+}
+
+svg.md{
+    width: var(--spacing-5);
+    height: var(--spacing-5);
+}
+
+.checkbox_default_unchecked:hover path{
+    stroke: #075DB2;
+}
+
+.checkbox_default_checked:hover path, .checkbox_default_indeterminate:hover path{
+    fill: #064E94;
+}
+
+.checkbox_default_checked:hover .border, .checkbox_default_indeterminate:hover .border{
+    stroke: #064E94;
+}
+
+/* Radio Styles */
+.radio_default_unchecked:hover rect{
+    stroke: #075DB2;
+}
+
+/* Check Circle Styles */
+.circle_default_unchecked:hover rect{
+    stroke: #075DB2;
+}
+
+.circle_default_checked:hover rect{
+    stroke: #064E94;
+}
+
+.circle_default_checked:hover .background {
+    fill: #064E94;
+}

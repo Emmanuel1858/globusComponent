@@ -1,0 +1,17 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+@import './../../global/typography.css';
+
+.profile_photo{
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    background-color: #FFFFFF;
+    border-radius: var(--rounded-full);
+    box-shadow: var(--shadow-md);
+    padding: 0.2rem;
+}
+
+::slotted(h1){
+    color: #697586;
+}
