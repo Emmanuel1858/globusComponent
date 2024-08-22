@@ -47,9 +47,9 @@ export class GbButton {
         return (
             <button class={classes} disabled={this.disabled}>
                 {this.leftIcon && (
-                <div class="icon left-icon">
-                    <img src={leftIconSrc} alt="Left Icon" />
-                </div>
+                    <div class="icon left-icon">
+                        <img src={leftIconSrc} alt="Left Icon" />
+                    </div>
                 )}
                 <slot></slot>
                 {this.rightIcon && (

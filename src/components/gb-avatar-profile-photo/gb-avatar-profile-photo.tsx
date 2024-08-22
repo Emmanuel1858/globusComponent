@@ -9,7 +9,6 @@ import { BorderWeights, GeneralSizes, OnlineIndicatorStates } from "../../models
 
 export class GbAvatarProfilePhoto {
     @Prop() size: GeneralSizes;
-    @Prop() weight: BorderWeights = BorderWeights.Light;
     @Prop() statusIcon: string = '';
     @Prop() state: OnlineIndicatorStates = OnlineIndicatorStates.Online;
     @Prop() placeholder: boolean = false;
@@ -32,6 +31,14 @@ export class GbAvatarProfilePhoto {
         }
     }
 
+    setWeight() {
+        switch (this.size) {
+            case 'lg' : return BorderWeights.Heavy;
+            case 'md' : return BorderWeights.Heavy;
+            case 'sm' : return BorderWeights.Regular;
+        }
+    }
+
     componentDidLoad() {
         const slottedInitials = this.el.querySelector('h1');
     
@@ -48,10 +55,10 @@ export class GbAvatarProfilePhoto {
                 <gb-avatar
                 size={profileSize}
                 state={this.state}
-                weight={this.weight}
                 placeholder={this.placeholder}
                 text={this.text}
                 status-icon={this.statusIcon}
+                weight={this.setWeight()}
                 >
                     {!this.text ? (
                         <slot></slot>

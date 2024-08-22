@@ -560,7 +560,7 @@
     }
 
     [data-theme="dark"] {
-        --color-border-disabled: var(--gray-800);
+        --color-border-disabled: var(--gray-700);
     }
 
     [data-theme="light"] {
@@ -1485,23 +1485,4 @@
 
 .gradient-blue-900-to-600-45d{
     background: var(--gradient-blue-900-to-600-45d);
-}
-
-:root{
-    /* h1, p {
-        font-size: 1.75rem;
-        line-height: 1.25rem;
-    }
-      
-    h1::before, p::before{
-        content: "";
-        margin-bottom: -0.005em;
-        display: table;
-    }
-      
-    h1::after, p::after {
-        content: "";
-        margin-top: -0.025em;
-        display: table;
-    } */
 }

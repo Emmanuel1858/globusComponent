@@ -9,6 +9,7 @@ import { ArrowPositions, BorderWeights, BreakPoints, CheckBoxStates, CheckBoxVar
 export { ArrowPositions, BorderWeights, BreakPoints, CheckBoxStates, CheckBoxVariants, GeneralHierarchies, GeneralSizes, OnlineIndicatorStates, StateEnum } from "./models/reusableModels";
 export namespace Components {
     interface GbAvatar {
+        "icon": 'user';
         "placeholder": boolean;
         "size": GeneralSizes;
         "state": OnlineIndicatorStates;
@@ -22,7 +23,7 @@ export namespace Components {
         "state": StateEnum;
     }
     interface GbAvatarContrastInnerBorder {
-        "borderSize": GeneralSizes;
+        "size": GeneralSizes;
         "weight": BorderWeights;
     }
     interface GbAvatarGroup {
@@ -46,7 +47,6 @@ export namespace Components {
         "state": OnlineIndicatorStates;
         "statusIcon": string;
         "text": boolean;
-        "weight": BorderWeights;
     }
     interface GbButton {
         "disabled": boolean;
@@ -233,6 +233,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface GbAvatar {
+        "icon"?: 'user';
         "placeholder"?: boolean;
         "size"?: GeneralSizes;
         "state"?: OnlineIndicatorStates;
@@ -246,7 +247,7 @@ declare namespace LocalJSX {
         "state"?: StateEnum;
     }
     interface GbAvatarContrastInnerBorder {
-        "borderSize"?: GeneralSizes;
+        "size"?: GeneralSizes;
         "weight"?: BorderWeights;
     }
     interface GbAvatarGroup {
@@ -270,7 +271,6 @@ declare namespace LocalJSX {
         "state"?: OnlineIndicatorStates;
         "statusIcon"?: string;
         "text"?: boolean;
-        "weight"?: BorderWeights;
     }
     interface GbButton {
         "disabled"?: boolean;

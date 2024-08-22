@@ -23,6 +23,14 @@ export class GbAvatarGroup {
         }
     }
 
+    setWeight() {
+        switch (this.size) {
+            case 'md' : return BorderWeights.Regular;
+            case 'sm' : return BorderWeights.Light;
+            case 'xs' : return BorderWeights.Light;
+        }
+    }
+
     componentDidLoad() {
         const slottedNumber = this.el.querySelector('p');
 
@@ -35,63 +43,63 @@ export class GbAvatarGroup {
         return (
             <div class={`avatar_group ${this.size}`}>
                 <div class={`avatar ${this.size}`}>
-                    <gb-avatar weight={BorderWeights.Light} size={this.size}>
+                    <gb-avatar size={this.size} weight={this.setWeight()}>
                         <img src="./build/assets/avatar_pic.jpg" alt="" />
                     </gb-avatar>
                 </div>
                 <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size}>
+                    <gb-avatar size={this.size} weight={this.setWeight()}>
                         <img src="./build/assets/avatar_pic.jpg" alt="" />
                     </gb-avatar>
                 </div>
                 <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size}>
+                    <gb-avatar size={this.size} weight={this.setWeight()}>
                         <img src="./build/assets/avatar_pic.jpg" alt="" />
                     </gb-avatar>
                 </div>
                 <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size}>
+                    <gb-avatar size={this.size} weight={this.setWeight()}>
                         <img src="./build/assets/avatar_pic.jpg" alt="" />
                     </gb-avatar>
                 </div>
                 <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size}>
+                    <gb-avatar size={this.size} weight={this.setWeight()}>
                         <img src="./build/assets/avatar_pic.jpg" alt="" />
                     </gb-avatar>
                 </div>
                 <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size}>
+                    <gb-avatar size={this.size} weight={this.setWeight()}>
                         <img src="./build/assets/avatar_pic.jpg" alt="" />
                     </gb-avatar>
                 </div>
                 <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size}>
+                    <gb-avatar size={this.size} weight={this.setWeight()}>
                         <img src="./build/assets/avatar_pic.jpg" alt="" />
                     </gb-avatar>
                 </div>
                 <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size}>
+                    <gb-avatar size={this.size} weight={this.setWeight()}>
                         <img src="./build/assets/avatar_pic.jpg" alt="" />
                     </gb-avatar>
                 </div>
                 <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size}>
+                    <gb-avatar size={this.size} weight={this.setWeight()}>
                         <img src="./build/assets/avatar_pic.jpg" alt="" />
                     </gb-avatar>
                 </div>
                 <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size}>
+                    <gb-avatar size={this.size} weight={this.setWeight()}>
                         <img src="./build/assets/avatar_pic.jpg" alt="" />
                     </gb-avatar>
                 </div>
                 <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size}>
+                    <gb-avatar size={this.size} weight={this.setWeight()}>
                         <img src="./build/assets/avatar_pic.jpg" alt="" />
                     </gb-avatar>
                 </div>
                 { this.moreUser && (
                     <div class={`avatar ${this.size}`}>
-                        <gb-avatar text={this.text} size={this.size}>
+                        <gb-avatar text={this.text} size={this.size} weight={this.setWeight()}>
                             <slot></slot>
                         </gb-avatar>
                     </div>

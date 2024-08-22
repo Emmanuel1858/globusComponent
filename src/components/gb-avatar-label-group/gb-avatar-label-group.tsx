@@ -77,7 +77,6 @@ export class GbAvatarLabelGroup {
                 <div class="label_pic">
                     <gb-avatar
                     size={this.size}
-                    weight={this.weight}
                     status-icon={this.statusIcon}
                     state={this.state}
                     text={this.text}
