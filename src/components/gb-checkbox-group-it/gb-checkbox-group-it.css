@@ -1,0 +1,73 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+@import './../../global/typography.css';
+
+.checkbox-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f7ff;
+  border: 0.0625rem solid #cce0ff; 
+  border-radius: 0.5rem;
+  padding: 1rem; 
+  margin-bottom: 0.5rem; 
+  transition: all 0.3s ease;
+}
+
+.checkbox-group-item.checked {
+  background-color: #e6f2ff;
+  border-color: #0066cc;
+}
+
+.checkbox-group-item.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.item-content {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem; 
+}
+
+.label-cost {
+  display: flex;
+  gap: 0.5rem; 
+  align-items: center;
+  margin-bottom: 0.25rem; 
+  flex-direction: row;
+}
+
+.label-cost span {
+  font-size: 1rem; 
+  line-height: 1.2;
+}
+
+.checkbox-container {
+  margin-left: 1rem; 
+}
+
+.icon-slot {
+  font-size: 1.5rem; 
+}
+
+.icon-sm {
+  width: 1.25rem; 
+  height: 1.25rem; 
+}
+
+.icon-md {
+  width: 1.625rem; 
+  height: 1.875rem;
+}
+
+.svg-icon {
+  width: 2rem; 
+  height: 2rem;
+}

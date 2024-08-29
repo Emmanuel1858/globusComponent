@@ -81,6 +81,11 @@ export namespace Components {
         "size": GeneralSizes;
         "type": 'icon_simple' | 'avatar' | 'payment_icon' | 'radio_button' | 'checkbox';
     }
+    interface GbCheckboxGroupIt {
+        "disabled": boolean;
+        "selected": boolean;
+        "size": GeneralSizes;
+    }
     interface GbCollapseButton {
         "currentIconDirection": string;
         "isHovered": boolean;
@@ -175,6 +180,12 @@ declare global {
         prototype: HTMLGbCheckboxGroupElement;
         new (): HTMLGbCheckboxGroupElement;
     };
+    interface HTMLGbCheckboxGroupItElement extends Components.GbCheckboxGroupIt, HTMLStencilElement {
+    }
+    var HTMLGbCheckboxGroupItElement: {
+        prototype: HTMLGbCheckboxGroupItElement;
+        new (): HTMLGbCheckboxGroupItElement;
+    };
     interface HTMLGbCollapseButtonElement extends Components.GbCollapseButton, HTMLStencilElement {
     }
     var HTMLGbCollapseButtonElement: {
@@ -223,6 +234,7 @@ declare global {
         "gb-checkbox": HTMLGbCheckboxElement;
         "gb-checkbox-base": HTMLGbCheckboxBaseElement;
         "gb-checkbox-group": HTMLGbCheckboxGroupElement;
+        "gb-checkbox-group-it": HTMLGbCheckboxGroupItElement;
         "gb-collapse-button": HTMLGbCollapseButtonElement;
         "gb-header-icon": HTMLGbHeaderIconElement;
         "gb-status-indicator": HTMLGbStatusIndicatorElement;
@@ -305,6 +317,11 @@ declare namespace LocalJSX {
         "size"?: GeneralSizes;
         "type"?: 'icon_simple' | 'avatar' | 'payment_icon' | 'radio_button' | 'checkbox';
     }
+    interface GbCheckboxGroupIt {
+        "disabled"?: boolean;
+        "selected"?: boolean;
+        "size"?: GeneralSizes;
+    }
     interface GbCollapseButton {
         "currentIconDirection"?: string;
         "isHovered"?: boolean;
@@ -343,6 +360,7 @@ declare namespace LocalJSX {
         "gb-checkbox": GbCheckbox;
         "gb-checkbox-base": GbCheckboxBase;
         "gb-checkbox-group": GbCheckboxGroup;
+        "gb-checkbox-group-it": GbCheckboxGroupIt;
         "gb-collapse-button": GbCollapseButton;
         "gb-header-icon": GbHeaderIcon;
         "gb-status-indicator": GbStatusIndicator;
@@ -366,6 +384,7 @@ declare module "@stencil/core" {
             "gb-checkbox": LocalJSX.GbCheckbox & JSXBase.HTMLAttributes<HTMLGbCheckboxElement>;
             "gb-checkbox-base": LocalJSX.GbCheckboxBase & JSXBase.HTMLAttributes<HTMLGbCheckboxBaseElement>;
             "gb-checkbox-group": LocalJSX.GbCheckboxGroup & JSXBase.HTMLAttributes<HTMLGbCheckboxGroupElement>;
+            "gb-checkbox-group-it": LocalJSX.GbCheckboxGroupIt & JSXBase.HTMLAttributes<HTMLGbCheckboxGroupItElement>;
             "gb-collapse-button": LocalJSX.GbCollapseButton & JSXBase.HTMLAttributes<HTMLGbCollapseButtonElement>;
             "gb-header-icon": LocalJSX.GbHeaderIcon & JSXBase.HTMLAttributes<HTMLGbHeaderIconElement>;
             "gb-status-indicator": LocalJSX.GbStatusIndicator & JSXBase.HTMLAttributes<HTMLGbStatusIndicatorElement>;
