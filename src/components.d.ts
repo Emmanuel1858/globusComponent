@@ -5,8 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { ArrowPositions, BorderWeights, BreakPoints, CheckBoxStates, CheckBoxVariants, GeneralHierarchies, GeneralSizes, OnlineIndicatorStates, StateEnum } from "./models/reusableModels";
-export { ArrowPositions, BorderWeights, BreakPoints, CheckBoxStates, CheckBoxVariants, GeneralHierarchies, GeneralSizes, OnlineIndicatorStates, StateEnum } from "./models/reusableModels";
+import { ArrowPositions, BorderWeights, BreakPoints, CheckBoxVariants, GeneralHierarchies, GeneralSizes, OnlineIndicatorStates, StateEnum } from "./models/reusableModels";
+export { ArrowPositions, BorderWeights, BreakPoints, CheckBoxVariants, GeneralHierarchies, GeneralSizes, OnlineIndicatorStates, StateEnum } from "./models/reusableModels";
 export namespace Components {
     interface GbAvatar {
         "icon": 'user';
@@ -18,6 +18,7 @@ export namespace Components {
         "weight": BorderWeights;
     }
     interface GbAvatarAddButton {
+        "el": HTMLElement;
         "showToolTip": boolean;
         "size": GeneralSizes;
         "state": StateEnum;
@@ -28,7 +29,7 @@ export namespace Components {
     }
     interface GbAvatarGroup {
         "addMoreButton": boolean;
-        "moreUser": boolean;
+        "moreUsers": boolean;
         "size": GeneralSizes;
         "state": StateEnum;
         "text": boolean;
@@ -39,21 +40,24 @@ export namespace Components {
         "state": OnlineIndicatorStates;
         "statusIcon": string;
         "text": boolean;
-        "weight": BorderWeights;
     }
     interface GbAvatarProfilePhoto {
+        "icon": string;
         "placeholder": boolean;
         "size": GeneralSizes;
-        "state": OnlineIndicatorStates;
-        "statusIcon": string;
         "text": boolean;
+        "verified": boolean;
     }
     interface GbButton {
-        "disabled": boolean;
+        "destructive": boolean;
         "hierarchy": GeneralHierarchies;
-        "leftIcon"?: string;
-        "rightIcon"?: string;
+        "icon": 'default' | 'only';
+        "iconLeading": boolean;
+        "iconLeadingSwap"?: string;
+        "iconTrailing": boolean;
+        "iconTrailingSwap"?: string;
         "size": GeneralSizes;
+        "state": StateEnum;
     }
     interface GbButtonClose {
         "color": 'primary' | 'information' | 'success' | 'gray' | 'warning' | 'error';
@@ -63,7 +67,7 @@ export namespace Components {
         "checked": boolean;
         "indeterminate": boolean;
         "size": GeneralSizes;
-        "state": CheckBoxStates;
+        "state": StateEnum;
         "supportingText": boolean;
         "type": CheckBoxVariants;
     }
@@ -71,7 +75,7 @@ export namespace Components {
         "checked": boolean;
         "indeterminate": boolean;
         "size": GeneralSizes;
-        "state": CheckBoxStates;
+        "state": StateEnum;
         "type": CheckBoxVariants;
     }
     interface GbCheckboxGroup {
@@ -82,11 +86,29 @@ export namespace Components {
         "type": 'icon_simple' | 'avatar' | 'payment_icon' | 'radio_button' | 'checkbox';
     }
     interface GbCollapseButton {
+        "color": 'grey' | 'white';
         "currentIconDirection": string;
         "isHovered": boolean;
     }
+    interface GbFileUploadItemBase {
+        "heightSize": GeneralSizes;
+        "icon": string;
+        "state": 'in_progress' | 'complete' | 'error';
+    }
     interface GbHeaderIcon {
+        "showIndicator": boolean;
         "state": StateEnum;
+    }
+    interface GbProgressBar {
+        "el": HTMLElement;
+        "labelPosition": 'right' | 'bottom' | 'top_floating' | 'bottom_floating';
+        "progress": number;
+        "showLabel": boolean;
+    }
+    interface GbProgressCircle {
+        "label": boolean;
+        "shape": string;
+        "size": GeneralSizes;
     }
     interface GbStatusIndicator {
         "indicatorStateClass": string;
@@ -181,11 +203,29 @@ declare global {
         prototype: HTMLGbCollapseButtonElement;
         new (): HTMLGbCollapseButtonElement;
     };
+    interface HTMLGbFileUploadItemBaseElement extends Components.GbFileUploadItemBase, HTMLStencilElement {
+    }
+    var HTMLGbFileUploadItemBaseElement: {
+        prototype: HTMLGbFileUploadItemBaseElement;
+        new (): HTMLGbFileUploadItemBaseElement;
+    };
     interface HTMLGbHeaderIconElement extends Components.GbHeaderIcon, HTMLStencilElement {
     }
     var HTMLGbHeaderIconElement: {
         prototype: HTMLGbHeaderIconElement;
         new (): HTMLGbHeaderIconElement;
+    };
+    interface HTMLGbProgressBarElement extends Components.GbProgressBar, HTMLStencilElement {
+    }
+    var HTMLGbProgressBarElement: {
+        prototype: HTMLGbProgressBarElement;
+        new (): HTMLGbProgressBarElement;
+    };
+    interface HTMLGbProgressCircleElement extends Components.GbProgressCircle, HTMLStencilElement {
+    }
+    var HTMLGbProgressCircleElement: {
+        prototype: HTMLGbProgressCircleElement;
+        new (): HTMLGbProgressCircleElement;
     };
     interface HTMLGbStatusIndicatorElement extends Components.GbStatusIndicator, HTMLStencilElement {
     }
@@ -224,7 +264,10 @@ declare global {
         "gb-checkbox-base": HTMLGbCheckboxBaseElement;
         "gb-checkbox-group": HTMLGbCheckboxGroupElement;
         "gb-collapse-button": HTMLGbCollapseButtonElement;
+        "gb-file-upload-item-base": HTMLGbFileUploadItemBaseElement;
         "gb-header-icon": HTMLGbHeaderIconElement;
+        "gb-progress-bar": HTMLGbProgressBarElement;
+        "gb-progress-circle": HTMLGbProgressCircleElement;
         "gb-status-indicator": HTMLGbStatusIndicatorElement;
         "gb-toggle": HTMLGbToggleElement;
         "gb-toggle-base": HTMLGbToggleBaseElement;
@@ -242,6 +285,7 @@ declare namespace LocalJSX {
         "weight"?: BorderWeights;
     }
     interface GbAvatarAddButton {
+        "el"?: HTMLElement;
         "showToolTip"?: boolean;
         "size"?: GeneralSizes;
         "state"?: StateEnum;
@@ -252,7 +296,7 @@ declare namespace LocalJSX {
     }
     interface GbAvatarGroup {
         "addMoreButton"?: boolean;
-        "moreUser"?: boolean;
+        "moreUsers"?: boolean;
         "size"?: GeneralSizes;
         "state"?: StateEnum;
         "text"?: boolean;
@@ -263,21 +307,24 @@ declare namespace LocalJSX {
         "state"?: OnlineIndicatorStates;
         "statusIcon"?: string;
         "text"?: boolean;
-        "weight"?: BorderWeights;
     }
     interface GbAvatarProfilePhoto {
+        "icon"?: string;
         "placeholder"?: boolean;
         "size"?: GeneralSizes;
-        "state"?: OnlineIndicatorStates;
-        "statusIcon"?: string;
         "text"?: boolean;
+        "verified"?: boolean;
     }
     interface GbButton {
-        "disabled"?: boolean;
+        "destructive"?: boolean;
         "hierarchy"?: GeneralHierarchies;
-        "leftIcon"?: string;
-        "rightIcon"?: string;
+        "icon"?: 'default' | 'only';
+        "iconLeading"?: boolean;
+        "iconLeadingSwap"?: string;
+        "iconTrailing"?: boolean;
+        "iconTrailingSwap"?: string;
         "size"?: GeneralSizes;
+        "state"?: StateEnum;
     }
     interface GbButtonClose {
         "color"?: 'primary' | 'information' | 'success' | 'gray' | 'warning' | 'error';
@@ -287,7 +334,7 @@ declare namespace LocalJSX {
         "checked"?: boolean;
         "indeterminate"?: boolean;
         "size"?: GeneralSizes;
-        "state"?: CheckBoxStates;
+        "state"?: StateEnum;
         "supportingText"?: boolean;
         "type"?: CheckBoxVariants;
     }
@@ -295,7 +342,7 @@ declare namespace LocalJSX {
         "checked"?: boolean;
         "indeterminate"?: boolean;
         "size"?: GeneralSizes;
-        "state"?: CheckBoxStates;
+        "state"?: StateEnum;
         "type"?: CheckBoxVariants;
     }
     interface GbCheckboxGroup {
@@ -306,11 +353,29 @@ declare namespace LocalJSX {
         "type"?: 'icon_simple' | 'avatar' | 'payment_icon' | 'radio_button' | 'checkbox';
     }
     interface GbCollapseButton {
+        "color"?: 'grey' | 'white';
         "currentIconDirection"?: string;
         "isHovered"?: boolean;
     }
+    interface GbFileUploadItemBase {
+        "heightSize"?: GeneralSizes;
+        "icon"?: string;
+        "state"?: 'in_progress' | 'complete' | 'error';
+    }
     interface GbHeaderIcon {
+        "showIndicator"?: boolean;
         "state"?: StateEnum;
+    }
+    interface GbProgressBar {
+        "el"?: HTMLElement;
+        "labelPosition"?: 'right' | 'bottom' | 'top_floating' | 'bottom_floating';
+        "progress"?: number;
+        "showLabel"?: boolean;
+    }
+    interface GbProgressCircle {
+        "label"?: boolean;
+        "shape"?: string;
+        "size"?: GeneralSizes;
     }
     interface GbStatusIndicator {
         "indicatorStateClass"?: string;
@@ -344,7 +409,10 @@ declare namespace LocalJSX {
         "gb-checkbox-base": GbCheckboxBase;
         "gb-checkbox-group": GbCheckboxGroup;
         "gb-collapse-button": GbCollapseButton;
+        "gb-file-upload-item-base": GbFileUploadItemBase;
         "gb-header-icon": GbHeaderIcon;
+        "gb-progress-bar": GbProgressBar;
+        "gb-progress-circle": GbProgressCircle;
         "gb-status-indicator": GbStatusIndicator;
         "gb-toggle": GbToggle;
         "gb-toggle-base": GbToggleBase;
@@ -367,7 +435,10 @@ declare module "@stencil/core" {
             "gb-checkbox-base": LocalJSX.GbCheckboxBase & JSXBase.HTMLAttributes<HTMLGbCheckboxBaseElement>;
             "gb-checkbox-group": LocalJSX.GbCheckboxGroup & JSXBase.HTMLAttributes<HTMLGbCheckboxGroupElement>;
             "gb-collapse-button": LocalJSX.GbCollapseButton & JSXBase.HTMLAttributes<HTMLGbCollapseButtonElement>;
+            "gb-file-upload-item-base": LocalJSX.GbFileUploadItemBase & JSXBase.HTMLAttributes<HTMLGbFileUploadItemBaseElement>;
             "gb-header-icon": LocalJSX.GbHeaderIcon & JSXBase.HTMLAttributes<HTMLGbHeaderIconElement>;
+            "gb-progress-bar": LocalJSX.GbProgressBar & JSXBase.HTMLAttributes<HTMLGbProgressBarElement>;
+            "gb-progress-circle": LocalJSX.GbProgressCircle & JSXBase.HTMLAttributes<HTMLGbProgressCircleElement>;
             "gb-status-indicator": LocalJSX.GbStatusIndicator & JSXBase.HTMLAttributes<HTMLGbStatusIndicatorElement>;
             "gb-toggle": LocalJSX.GbToggle & JSXBase.HTMLAttributes<HTMLGbToggleElement>;
             "gb-toggle-base": LocalJSX.GbToggleBase & JSXBase.HTMLAttributes<HTMLGbToggleBaseElement>;

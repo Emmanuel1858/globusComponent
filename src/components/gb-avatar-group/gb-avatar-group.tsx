@@ -9,10 +9,10 @@ import { BorderWeights, GeneralSizes, StateEnum } from "../../models/reusableMod
 
 export class GbAvatarGroup {
     @Prop() size: GeneralSizes;
-    @Prop() moreUser: boolean;
+    @Prop() moreUsers: boolean;
     @Prop() addMoreButton: boolean;
     @Prop() text: boolean = true;
-    @Prop() state: StateEnum = StateEnum.Active;
+    @Prop() state: StateEnum = StateEnum.Default;
     @Element() el: HTMLElement;
 
     getNumberSize() {
@@ -97,10 +97,10 @@ export class GbAvatarGroup {
                         <img src="./build/assets/avatar_pic.jpg" alt="" />
                     </gb-avatar>
                 </div>
-                { this.moreUser && (
+                { this.moreUsers && (
                     <div class={`avatar ${this.size}`}>
                         <gb-avatar text={this.text} size={this.size} weight={this.setWeight()}>
-                            <slot></slot>
+                            <slot name="initials" slot="initials"></slot>
                         </gb-avatar>
                     </div>
                 )}

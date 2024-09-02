@@ -90,45 +90,54 @@
 .verified_tick.profile_sm{
     width: var(--spacing-5);
     height: var(--spacing-5);
+    position: absolute;
+    bottom: 0.15rem;
+    right: 0.01rem;
 }
 
 .verified_tick.profile_md{
     width: var(--spacing-6);
     height: var(--spacing-6);
+    position: absolute;
+    bottom: 0.25rem;
+    right: 0.2rem;
 }
 
 .verified_tick.profile_lg{
     width: var(--spacing-7);
     height: var(--spacing-7);
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.2rem;
 }
 
 /* Company Icon Sizes */
-.company_icon.xs{
+.company.xs{
     width: 0.625rem;
     height: 0.625rem;
 }
 
-.company_icon.sm{
+.company.sm{
     width: 0.75rem;
     height: var(--spacing-3);
 }
 
-.company_icon.md{
+.company.md{
     width: 0.875rem;
     height: 0.875rem;
 }
 
-.company_icon.lg{
+.company.lg{
     width: 1rem;
     height: var(--spacing-4);
 }
 
-.company_icon.xl{
+.company.xl{
     width: 1.125rem;
     height: 1.125rem;
 }
 
-.company_icon.xl2{
+.company.xl2{
     width: 1.25rem;
     height: var(--spacing-5);
 }

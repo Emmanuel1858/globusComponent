@@ -1,5 +1,5 @@
 import { Component, Element, h, Prop } from "@stencil/core";
-import { CheckBoxStates, CheckBoxVariants, GeneralSizes } from "../../models/reusableModels";
+import { CheckBoxVariants, GeneralSizes, StateEnum } from "../../models/reusableModels";
 
 @Component({
     tag:'gb-checkbox',
@@ -12,7 +12,7 @@ export class GbCheckbox {
     @Prop() indeterminate: boolean = false;
     @Prop() size: GeneralSizes;
     @Prop() type: CheckBoxVariants;
-    @Prop() state: CheckBoxStates;
+    @Prop() state: StateEnum;
     @Prop() supportingText: boolean = false;
     @Element() el: HTMLElement;
 

@@ -7,23 +7,23 @@
 
 ## Properties
 
-| Property     | Attribute     | Description | Type                                                                       | Default     |
-| ------------ | ------------- | ----------- | -------------------------------------------------------------------------- | ----------- |
-| `borderSize` | `border-size` |             | `"fourxl" \| "lg" \| "md" \| "sm" \| "threexl" \| "twoxl" \| "xl" \| "xs"` | `undefined` |
-| `weight`     | `weight`      |             | `"heavy" \| "light" \| "regular"`                                          | `undefined` |
+| Property | Attribute | Description | Type                                                                                                              | Default     |
+| -------- | --------- | ----------- | ----------------------------------------------------------------------------------------------------------------- | ----------- |
+| `size`   | `size`    |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs"` | `undefined` |
+| `weight` | `weight`  |             | `BorderWeights.Heavy \| BorderWeights.Light \| BorderWeights.Regular`                                             | `undefined` |
 
 
 ## Dependencies
 
 ### Used by
 
- - [avatar-pic](../avatar-pic)
+ - [gb-avatar](../gb-avatar)
 
 ### Graph
 ```mermaid
 graph TD;
-  avatar-pic --> avatar-contrast-inner-border
-  style avatar-contrast-inner-border fill:#f9f,stroke:#333,stroke-width:4px
+  gb-avatar --> gb-avatar-contrast-inner-border
+  style gb-avatar-contrast-inner-border fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

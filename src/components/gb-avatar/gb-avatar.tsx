@@ -15,7 +15,7 @@ export class GbAvatar {
     @Prop() state: OnlineIndicatorStates = OnlineIndicatorStates.Online;
     @Prop() icon: 'user';
     @Element() el: HTMLElement;
-    @Prop() weight: BorderWeights;
+    @Prop() weight: BorderWeights = BorderWeights.Light;
 
     getInitialsSize() {
         switch (this.size) {
@@ -56,7 +56,7 @@ export class GbAvatar {
                             <slot></slot>
                         ) : (
                             <div class="initials">
-                                <slot></slot>
+                                <slot name="initials"></slot>
                             </div>
                         )}
                         { this.placeholder && (

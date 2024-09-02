@@ -1,0 +1,37 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+
+.file_upload_container {
+  display: flex;
+  width: 32rem;
+  border-radius: var(--rounded-sm);
+  padding: var(--spacing-4);
+  background: var(--color-background-card, #ffffff);
+  border: 1px solid var(--color-border-subtler, #e3e8ef);
+  position: relative;
+}
+
+.close_button {
+  position: absolute;
+  top: var(--spacing-4);
+  right: var(--spacing-4);
+}
+
+.delete_button{
+  position: absolute;
+  top: 2.2rem;
+  right: 1.375rem;
+}
+
+/* Size Styles */
+.file_upload_container.md{
+    flex-direction: row;
+    height: 5rem;
+}
+
+.file_upload_container.lg{
+    flex-direction: column;
+    height: 9.8125rem;
+}
+
+/* State Styles */

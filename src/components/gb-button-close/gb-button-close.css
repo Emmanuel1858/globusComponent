@@ -1,134 +1,139 @@
 @import './../../global/global.css';
 @import './../../global/spacing.css';
 
-div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--spacing-none);
-    border-radius: var(--rounded-sm);
-    height: fit-content;
-    width: fit-content;
-    cursor: pointer;
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-none);
+  border-radius: var(--rounded-sm);
+  height: fit-content;
+  width: fit-content;
+  cursor: pointer;
 }
 
 /* Sizes */
-div.lg{
-    padding: 0.625rem;
+div.lg {
+  padding: 0.625rem;
 }
 
-div.lg svg{
-    width: var(--spacing-6);
-    height: var(--spacing-6);
+div.lg svg {
+  width: var(--spacing-6);
+  height: var(--spacing-6);
 }
 
-div.md svg{
-    width: var(--spacing-5);
-    height: var(--spacing-5);
+div.md svg {
+  width: var(--spacing-5);
+  height: var(--spacing-5);
 }
 
-div.sm{
-    padding: var(--spacing-2);
+div.sm {
+  padding: var(--spacing-2);
 }
 
 /* Colors */
-div.primary, div.information, div.success, div.gray, div.warning, div.error {
-    background-color: transparent;
+div.primary,
+div.information,
+div.success,
+div.gray,
+div.warning,
+div.error {
+  background-color: transparent;
 }
 
-div.primary path{
-    stroke: var(--color-icon-darkBlue);
+div.primary path {
+  stroke: var(--color-icon-brandDarkBlue, #212C65);
 }
 
 div.success path {
-    stroke: var(--color-icon-success);
+  stroke: var(--color-icon-success, #079455);
 }
 
-div.information path{
-    stroke: var(--color-icon-information);
+div.information path {
+  stroke: var(--color-icon-information, #064E94);
 }
 
-div.gray path{
-    stroke: var(--color-icon);
+div.gray path {
+  stroke: var(--color-icon, #4b5565);
 }
 
-div.warning path{
-    stroke: var(--color-icon-warning);
+div.warning path {
+  stroke: var(--color-icon-warning, #DC6803);
 }
 
-div.error path{
-    stroke: var(--color-icon-danger);
+div.error path {
+  stroke: var(--color-icon-danger, #B51726);
 }
 
 /* States */
-div.primary:hover{
-    background-color: var(--color-background-discovery-subtler);
+div.primary:hover {
+  background-color: var(--color-background-discovery-subtler, #E0F2FE);
 }
 
-div.primary:hover path{
-    stroke: var(--color-icon-brandRed);
+div.primary:hover path {
+  stroke: var(--color-icon-brandRed, #E21B2E);
 }
 
-div.primary:active{
-    background-color: var(--color-background-discovery-subtlest);
+div.primary:active {
+  background-color: var(--color-background-discovery-subtlest, #F0F9FF);
 }
 
-div.information:hover{
-    background-color: var(--color-background-information-subtler);
+div.information:hover {
+  background-color: var(--color-background-information-subtler, #C8E0F9);
 }
 
-div.information:hover path{
-    stroke: var(--color-icon-information-bold);
+div.information:hover path {
+  stroke: var(--color-icon-information-bold, #042F59);
 }
 
-div.information:active{
-    background-color: var(--color-background-information-subtlest);
+div.information:active {
+  background-color: var(--color-background-information-subtlest, #E4F0FC);
 }
 
 div.success:hover {
-    background-color: var(--color-background-success-subtler);
+  background-color: var(--color-background-success-subtler, #DCFAE6);
 }
 
 div.success:hover path {
-    stroke: var(--color-icon-success-bold);
+  stroke: var(--color-icon-success-bold, #085D3A);
 }
 
-div.success:active{
-    background-color: var(--color-background-success-subtlest);
+div.success:active {
+  background-color: var(--color-background-success-subtlest, #ECFDF3);
 }
 
-div.gray:hover{
-    background-color: var(--color-background-gray-subtler);
+div.gray:hover {
+  background-color: var(--color-background-gray-subtler, #eef2f6);
 }
 
-div.gray:hover path{
-    stroke: var(--color-icon-brandRed);
+div.gray:hover path {
+  stroke: var(--color-icon-brandRed, #e21b2e);
 }
 
-div.gray:active{
-    background-color: var(--color-background-gray-subtlest);
+div.gray:active {
+  background-color: var(--color-background-gray-subtlest, #f6f8fa);
 }
 
-div.warning:hover{
-    background-color: var(--color-background-warning-subtler);
+div.warning:hover {
+  background-color: var(--color-background-warning-subtler, #FEF0C7);
 }
 
-div.warning:hover path{
-    stroke: var(--color-icon-warning-bold);
+div.warning:hover path {
+  stroke: var(--color-icon-warning-bold, #93370D);
 }
 
-div.warning:active{
-    background-color: var(--color-background-warning-subtlest);
+div.warning:active {
+  background-color: var(--color-background-warning-subtlest, #FFFAEB);
 }
 
-div.error:hover{
-    background-color: var(--color-background-danger-subtler);
+div.error:hover {
+  background-color: var(--color-background-danger-subtler, #FDE3E5);
 }
 
-div.error:hover path{
-    stroke: var(--color-icon-danger-bold);
+div.error:hover path {
+  stroke: var(--color-icon-danger-bold, #8C121D);
 }
 
-div.error:active{
-    background-color: var(--color-background-danger-subtlest);
+div.error:active {
+  background-color: var(--color-background-danger-subtlest, #FEF1F2);
 }
