@@ -1,0 +1,92 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+@import './../../global/typography.css';
+
+.checkbox-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f7ff;
+  border: 0.0625rem solid #cce0ff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.checkbox-group-item.selected {
+  border: 2px solid var(--color-border-selected,#075DB2);/* Checked border color */
+background: var(--color-background-information-subtlest,#E4F0FC);/* Checked background color */
+}
+
+
+/* i'm using this to apply the hover effect but its turning white on hover??? */
+.checkbox-group-item:hover {
+  background: var(--color-background-information-subtler,#C8E0F9); 
+  border-color: var(--color-border-selected,#075DB2);
+}
+
+/* i'm using this to change icon color on hover */
+.checkbox-group-item:hover .icon-md,
+.checkbox-group-item:hover .svg-icon {
+  fill: var(--color-icon-information,#064E94); 
+}
+
+.checkbox-group-item:hover slot[name="label"],
+.checkbox-group-item:hover slot[name="cost"],
+.checkbox-group-item:hover slot[name="supporting-text"] {
+  color: var(--color-text-information-bold,#064E94); /*i'm using this to change text color to bold on hover */
+}
+
+.checkbox-group-item.checked {
+  background-color: #e6f2ff;
+  border-color: #0066cc;
+}
+
+.checkbox-group-item.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.item-content {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+
+.label-cost {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.25rem;
+  flex-direction: row;
+}
+
+.label-cost.payment_icon {
+  flex-direction: column;
+}
+
+.label-cost span {
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.checkbox-container {
+  margin-left: 1rem;
+}
+
+.icon-md {
+  width: 2rem; 
+  height: 2rem;
+}
+
+.svg-icon {
+  width: 2rem;
+  height: 2rem;
+}

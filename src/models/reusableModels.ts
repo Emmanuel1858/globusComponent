@@ -11,9 +11,14 @@ export type ArrowPositions = 'bottom_center' | 'bottom_left' | 'bottom_right' | 
 
 export type CheckBoxVariants = 'checkbox' | 'check_circle' | 'radio';
 
+
+
+
 export enum CheckBoxStates {
-    Default = 'default',
-    Disabled = 'disabled'
+  Default = 'default',
+  Disabled = 'disabled',
+  Checked = "Checked",
+  default = "default"
 }
 
 export enum BorderWeights {
