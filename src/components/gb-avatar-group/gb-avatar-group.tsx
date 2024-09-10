@@ -40,74 +40,29 @@ export class GbAvatarGroup {
     }
 
     render() {
+        const array = ['ht', 'hi', 'ht', 'hi', 'ht', 'hi', 'ht', 'hi', 'ht', 'hi', 'ht'];
+
         return (
-            <div class={`avatar_group ${this.size}`}>
-                <div class={`avatar ${this.size}`}>
+          <div class={`avatar_group ${this.size}`}>
+            {array.map(
+              el =>
+                (el = (
+                  <div class={`avatar ${this.size}`}>
                     <gb-avatar size={this.size} weight={this.setWeight()}>
-                        <img src="./build/assets/avatar_pic.jpg" alt="" />
+                        <h1>{el}</h1>
                     </gb-avatar>
-                </div>
-                <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size} weight={this.setWeight()}>
-                        <img src="./build/assets/avatar_pic.jpg" alt="" />
-                    </gb-avatar>
-                </div>
-                <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size} weight={this.setWeight()}>
-                        <img src="./build/assets/avatar_pic.jpg" alt="" />
-                    </gb-avatar>
-                </div>
-                <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size} weight={this.setWeight()}>
-                        <img src="./build/assets/avatar_pic.jpg" alt="" />
-                    </gb-avatar>
-                </div>
-                <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size} weight={this.setWeight()}>
-                        <img src="./build/assets/avatar_pic.jpg" alt="" />
-                    </gb-avatar>
-                </div>
-                <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size} weight={this.setWeight()}>
-                        <img src="./build/assets/avatar_pic.jpg" alt="" />
-                    </gb-avatar>
-                </div>
-                <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size} weight={this.setWeight()}>
-                        <img src="./build/assets/avatar_pic.jpg" alt="" />
-                    </gb-avatar>
-                </div>
-                <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size} weight={this.setWeight()}>
-                        <img src="./build/assets/avatar_pic.jpg" alt="" />
-                    </gb-avatar>
-                </div>
-                <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size} weight={this.setWeight()}>
-                        <img src="./build/assets/avatar_pic.jpg" alt="" />
-                    </gb-avatar>
-                </div>
-                <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size} weight={this.setWeight()}>
-                        <img src="./build/assets/avatar_pic.jpg" alt="" />
-                    </gb-avatar>
-                </div>
-                <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size} weight={this.setWeight()}>
-                        <img src="./build/assets/avatar_pic.jpg" alt="" />
-                    </gb-avatar>
-                </div>
-                { this.moreUsers && (
-                    <div class={`avatar ${this.size}`}>
-                        <gb-avatar text={this.text} size={this.size} weight={this.setWeight()}>
-                            <slot name="initials" slot="initials"></slot>
-                        </gb-avatar>
-                    </div>
-                )}
-                { this.addMoreButton && (
-                    <gb-avatar-add-button state={this.state} size={this.size}></gb-avatar-add-button>
-                )}
-            </div>
-        )
+                  </div>
+                )),
+            )}
+            {this.moreUsers && (
+              <div class={`avatar ${this.size}`}>
+                <gb-avatar text={this.text} size={this.size} weight={this.setWeight()}>
+                  <slot name="initials" slot="initials"></slot>
+                </gb-avatar>
+              </div>
+            )}
+            {this.addMoreButton && <gb-avatar-add-button state={this.state} size={this.size}></gb-avatar-add-button>}
+          </div>
+        );
     }
 }

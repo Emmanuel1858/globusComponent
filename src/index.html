@@ -12,50 +12,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <gb-button size="xl2" hierarchy="tertiary_color" icon="default" icon-leading="true" icon-leading-swap="arrow_pointing_up" icon-trailing="true" icon-trailing-swap="arrow_pointing_up">
+    <gb-button size="xl" hierarchy="primary" icon="default" icon-leading="true" icon-leading-swap="arrow-turn-backward"
+    icon-trailing="true" icon-trailing-swap="arrow_pointing_up">
       <p>Upload</p>
     </gb-button>
-    <gb-collapse-button state="default" color="grey"></gb-collapse-button>
-    <gb-header-icon state="default" show-indicator="true"></gb-header-icon>
-    <gb-button-close size="lg" color="warning"></gb-button-close>
-    <gb-tooltip arrow="bottom_left" supporting-text="true">
-      <p slot="main_text">This is a tooltip</p>
-      <p slot="supporting_text">This is the supporting text osbvowi wonvow woivwo iev woienv oweiv owievow eowie oiwje oiwjeo wofjnbje kirvowjr vowjr vow</p>
-    </gb-tooltip>
-    <gb-checkbox-base size="md" type="check_circle" state="default" checked="false"></gb-checkbox-base>
-    <gb-avatar-add-button size="xs" state="default"></gb-avatar-add-button>
-    <gb-avatar size="xl2" status-icon="verified_tick" text="true" icon="user">
-      <!-- <img src="./build/assets/avatar_pic.jpg" alt=""> -->
-      <h1 slot="initials">NP</h1>
-    </gb-avatar>
-    <gb-avatar-profile-photo size="md" verified="true" text="true">
-      <!-- <img src="./build/assets/avatar_pic.jpg" alt=""> -->
-      <h1 slot="initials">NP</h1>
-    </gb-avatar-profile-photo>
-    <gb-avatar-label-group status-icon="company" size="lg">
-      <img src="./build/assets/avatar_pic.jpg" alt="" />
-      <p slot="name">Noah Pierre</p>
-      <p slot="supporting_text">kadiri2047@gmail.com</p>
-      <!-- <h1>NP</h1> -->
-    </gb-avatar-label-group>
-    <gb-avatar-group size="xs" more-users="true" add-more-button="true">
-      <p slot="initials">+5</p>
-    </gb-avatar-group>
-    <gb-avatar-group size="sm" more-users="true" add-more-button="true">
-      <p slot="initials">+5</p>
-    </gb-avatar-group>
-    <gb-avatar-group size="md" more-users="true" add-more-button="true">
-      <p slot="initials">+5</p>
-    </gb-avatar-group>
-    <gb-checkbox size="md" type="checkbox" state="default" supporting-text="true">
-      <p slot="label">Remember Me</p>
-      <p slot="supporting_text">Save my login details for next time.</p>
-    </gb-checkbox>
-    <gb-toggle size="sm" state="default" supporting-text="true">
-      <p slot="main_text">Remember Me</p>
-      <p slot="supporting_text">Save my login details for next time.</p>
-    </gb-toggle>
-    <gb-progress-bar progress="100" show-label="true" label-position="top_floating"></gb-progress-bar>
-    <gb-file-upload-item-base height-size="md" state="complete"></gb-file-upload-item-base>
+    <gb-file-upload height-size="lg" state="default" show-label="true" destructive="true"></gb-file-upload>
+    <test-button size="xl2" 
+    hierarchy="link_color" 
+    icon="default" 
+    icon-leading="true"
+    icon-leading-swap="arrow_pointing_up"
+    state="default"
+    destructive="false">
+    <p>Upload</p>
+    </test-button>
   </body>
 </html>

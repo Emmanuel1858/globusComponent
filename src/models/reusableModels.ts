@@ -23,3 +23,9 @@ export enum OnlineIndicatorStates {
 }
 
 export type BreakPoints = 'Desktop' | 'Mobile';
+
+export type FileUploadIconType = 'icon' | 'outline';
+
+export type FileUploadStates = 'default' | 'in_progress' | 'complete' | 'hover' | 'disabled' | 'error';
+
+export type FileType = ''   

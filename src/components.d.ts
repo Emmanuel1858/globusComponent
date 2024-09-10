@@ -5,8 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { ArrowPositions, BorderWeights, BreakPoints, CheckBoxVariants, GeneralHierarchies, GeneralSizes, OnlineIndicatorStates, StateEnum } from "./models/reusableModels";
-export { ArrowPositions, BorderWeights, BreakPoints, CheckBoxVariants, GeneralHierarchies, GeneralSizes, OnlineIndicatorStates, StateEnum } from "./models/reusableModels";
+import { ArrowPositions, BorderWeights, BreakPoints, CheckBoxVariants, FileUploadIconType, FileUploadStates, GeneralHierarchies, GeneralSizes, OnlineIndicatorStates, StateEnum } from "./models/reusableModels";
+export { ArrowPositions, BorderWeights, BreakPoints, CheckBoxVariants, FileUploadIconType, FileUploadStates, GeneralHierarchies, GeneralSizes, OnlineIndicatorStates, StateEnum } from "./models/reusableModels";
 export namespace Components {
     interface GbAvatar {
         "icon": 'user';
@@ -90,10 +90,23 @@ export namespace Components {
         "currentIconDirection": string;
         "isHovered": boolean;
     }
-    interface GbFileUploadItemBase {
+    interface GbFileTypeIcon {
+    }
+    interface GbFileUpload {
+        "buttonState": StateEnum;
+        "destructive": boolean;
         "heightSize": GeneralSizes;
-        "icon": string;
-        "state": 'in_progress' | 'complete' | 'error';
+        "icon": FileUploadIconType;
+        "showLabel": boolean;
+        "state": FileUploadStates;
+        "type": 'single' | 'multiple';
+    }
+    interface GbFileUploadItemBase {
+        "buttonState": StateEnum;
+        "fileType": 'pdf' | 'png' | 'jpg' | 'doc' | 'mp4';
+        "heightSize": GeneralSizes;
+        "icon": FileUploadIconType;
+        "state": FileUploadStates;
     }
     interface GbHeaderIcon {
         "showIndicator": boolean;
@@ -107,7 +120,8 @@ export namespace Components {
     }
     interface GbProgressCircle {
         "label": boolean;
-        "shape": string;
+        "progress": number;
+        "shape": 'circle' | 'half_circle';
         "size": GeneralSizes;
     }
     interface GbStatusIndicator {
@@ -128,6 +142,17 @@ export namespace Components {
     interface GbTooltip {
         "arrow": ArrowPositions;
         "supportingText": boolean;
+    }
+    interface TestButton {
+        "destructive": boolean;
+        "hierarchy": GeneralHierarchies;
+        "icon": 'default' | 'only';
+        "iconLeading": boolean;
+        "iconLeadingSwap": string;
+        "iconTrailing": boolean;
+        "iconTrailingSwap": string;
+        "size": GeneralSizes;
+        "state": 'default' | 'hover' | 'disabled' | 'pressed';
     }
 }
 declare global {
@@ -203,6 +228,18 @@ declare global {
         prototype: HTMLGbCollapseButtonElement;
         new (): HTMLGbCollapseButtonElement;
     };
+    interface HTMLGbFileTypeIconElement extends Components.GbFileTypeIcon, HTMLStencilElement {
+    }
+    var HTMLGbFileTypeIconElement: {
+        prototype: HTMLGbFileTypeIconElement;
+        new (): HTMLGbFileTypeIconElement;
+    };
+    interface HTMLGbFileUploadElement extends Components.GbFileUpload, HTMLStencilElement {
+    }
+    var HTMLGbFileUploadElement: {
+        prototype: HTMLGbFileUploadElement;
+        new (): HTMLGbFileUploadElement;
+    };
     interface HTMLGbFileUploadItemBaseElement extends Components.GbFileUploadItemBase, HTMLStencilElement {
     }
     var HTMLGbFileUploadItemBaseElement: {
@@ -251,6 +288,12 @@ declare global {
         prototype: HTMLGbTooltipElement;
         new (): HTMLGbTooltipElement;
     };
+    interface HTMLTestButtonElement extends Components.TestButton, HTMLStencilElement {
+    }
+    var HTMLTestButtonElement: {
+        prototype: HTMLTestButtonElement;
+        new (): HTMLTestButtonElement;
+    };
     interface HTMLElementTagNameMap {
         "gb-avatar": HTMLGbAvatarElement;
         "gb-avatar-add-button": HTMLGbAvatarAddButtonElement;
@@ -264,6 +307,8 @@ declare global {
         "gb-checkbox-base": HTMLGbCheckboxBaseElement;
         "gb-checkbox-group": HTMLGbCheckboxGroupElement;
         "gb-collapse-button": HTMLGbCollapseButtonElement;
+        "gb-file-type-icon": HTMLGbFileTypeIconElement;
+        "gb-file-upload": HTMLGbFileUploadElement;
         "gb-file-upload-item-base": HTMLGbFileUploadItemBaseElement;
         "gb-header-icon": HTMLGbHeaderIconElement;
         "gb-progress-bar": HTMLGbProgressBarElement;
@@ -272,6 +317,7 @@ declare global {
         "gb-toggle": HTMLGbToggleElement;
         "gb-toggle-base": HTMLGbToggleBaseElement;
         "gb-tooltip": HTMLGbTooltipElement;
+        "test-button": HTMLTestButtonElement;
     }
 }
 declare namespace LocalJSX {
@@ -357,10 +403,23 @@ declare namespace LocalJSX {
         "currentIconDirection"?: string;
         "isHovered"?: boolean;
     }
-    interface GbFileUploadItemBase {
+    interface GbFileTypeIcon {
+    }
+    interface GbFileUpload {
+        "buttonState"?: StateEnum;
+        "destructive"?: boolean;
         "heightSize"?: GeneralSizes;
-        "icon"?: string;
-        "state"?: 'in_progress' | 'complete' | 'error';
+        "icon"?: FileUploadIconType;
+        "showLabel"?: boolean;
+        "state"?: FileUploadStates;
+        "type"?: 'single' | 'multiple';
+    }
+    interface GbFileUploadItemBase {
+        "buttonState"?: StateEnum;
+        "fileType"?: 'pdf' | 'png' | 'jpg' | 'doc' | 'mp4';
+        "heightSize"?: GeneralSizes;
+        "icon"?: FileUploadIconType;
+        "state"?: FileUploadStates;
     }
     interface GbHeaderIcon {
         "showIndicator"?: boolean;
@@ -374,7 +433,8 @@ declare namespace LocalJSX {
     }
     interface GbProgressCircle {
         "label"?: boolean;
-        "shape"?: string;
+        "progress"?: number;
+        "shape"?: 'circle' | 'half_circle';
         "size"?: GeneralSizes;
     }
     interface GbStatusIndicator {
@@ -396,6 +456,17 @@ declare namespace LocalJSX {
         "arrow"?: ArrowPositions;
         "supportingText"?: boolean;
     }
+    interface TestButton {
+        "destructive"?: boolean;
+        "hierarchy"?: GeneralHierarchies;
+        "icon"?: 'default' | 'only';
+        "iconLeading"?: boolean;
+        "iconLeadingSwap"?: string;
+        "iconTrailing"?: boolean;
+        "iconTrailingSwap"?: string;
+        "size"?: GeneralSizes;
+        "state"?: 'default' | 'hover' | 'disabled' | 'pressed';
+    }
     interface IntrinsicElements {
         "gb-avatar": GbAvatar;
         "gb-avatar-add-button": GbAvatarAddButton;
@@ -409,6 +480,8 @@ declare namespace LocalJSX {
         "gb-checkbox-base": GbCheckboxBase;
         "gb-checkbox-group": GbCheckboxGroup;
         "gb-collapse-button": GbCollapseButton;
+        "gb-file-type-icon": GbFileTypeIcon;
+        "gb-file-upload": GbFileUpload;
         "gb-file-upload-item-base": GbFileUploadItemBase;
         "gb-header-icon": GbHeaderIcon;
         "gb-progress-bar": GbProgressBar;
@@ -417,6 +490,7 @@ declare namespace LocalJSX {
         "gb-toggle": GbToggle;
         "gb-toggle-base": GbToggleBase;
         "gb-tooltip": GbTooltip;
+        "test-button": TestButton;
     }
 }
 export { LocalJSX as JSX };
@@ -435,6 +509,8 @@ declare module "@stencil/core" {
             "gb-checkbox-base": LocalJSX.GbCheckboxBase & JSXBase.HTMLAttributes<HTMLGbCheckboxBaseElement>;
             "gb-checkbox-group": LocalJSX.GbCheckboxGroup & JSXBase.HTMLAttributes<HTMLGbCheckboxGroupElement>;
             "gb-collapse-button": LocalJSX.GbCollapseButton & JSXBase.HTMLAttributes<HTMLGbCollapseButtonElement>;
+            "gb-file-type-icon": LocalJSX.GbFileTypeIcon & JSXBase.HTMLAttributes<HTMLGbFileTypeIconElement>;
+            "gb-file-upload": LocalJSX.GbFileUpload & JSXBase.HTMLAttributes<HTMLGbFileUploadElement>;
             "gb-file-upload-item-base": LocalJSX.GbFileUploadItemBase & JSXBase.HTMLAttributes<HTMLGbFileUploadItemBaseElement>;
             "gb-header-icon": LocalJSX.GbHeaderIcon & JSXBase.HTMLAttributes<HTMLGbHeaderIconElement>;
             "gb-progress-bar": LocalJSX.GbProgressBar & JSXBase.HTMLAttributes<HTMLGbProgressBarElement>;
@@ -443,6 +519,7 @@ declare module "@stencil/core" {
             "gb-toggle": LocalJSX.GbToggle & JSXBase.HTMLAttributes<HTMLGbToggleElement>;
             "gb-toggle-base": LocalJSX.GbToggleBase & JSXBase.HTMLAttributes<HTMLGbToggleBaseElement>;
             "gb-tooltip": LocalJSX.GbTooltip & JSXBase.HTMLAttributes<HTMLGbTooltipElement>;
+            "test-button": LocalJSX.TestButton & JSXBase.HTMLAttributes<HTMLTestButtonElement>;
         }
     }
 }

@@ -4,7 +4,6 @@ import { GeneralHierarchies, GeneralSizes, StateEnum } from "../../models/reusab
 @Component({
     tag: 'gb-button',
     styleUrl: 'gb-button.css',
-    assetsDirs: ['src/assets'],
 })
 
 export class GbButton {
@@ -43,30 +42,30 @@ export class GbButton {
           const iconTrailingSrc = getAssetPath(`assets/${this.iconTrailingSwap}.svg`);
 
         return (
-            <button class={`${this.size} 
+          <button
+            class={`${this.size} 
             ${this.hierarchy} 
-            ${this.destructive ? 'destructive' : ''} 
+            ${this.destructive ? 'destructive' : ''}
             ${this.state}
-            ${this.icon}`}>
-                {this.icon === 'default' && (
-                    <>
-                        {this.iconLeading && (
-                            <div class="icon left-icon">
-                                <span class="icon" innerHTML={iconLeadingSrc}></span>
-                            </div>
-                        )}
-                        <slot></slot>
-                        {this.iconTrailing && (
-                            <div class="icon right-icon">
-                                <span class="icon" innerHTML={iconTrailingSrc}></span>
-                            </div>
-                        )}
-                    </>
+            ${this.icon}`}
+          >
+            {this.icon === 'default' && (
+              <>
+                {this.iconLeading && (
+                  <div class="button_icon left-icon">
+                    <span class="icon" innerHTML={iconLeadingSrc}></span>
+                  </div>
                 )}
-                {this.icon === 'only' && (
-                    <img src={iconLeadingSrc} alt="Icon" />
+                <slot></slot>
+                {this.iconTrailing && (
+                  <div class="button_icon right-icon">
+                    <span class="icon" innerHTML={iconTrailingSrc}></span>
+                  </div>
                 )}
-            </button>
-        )
+              </>
+            )}
+            {this.icon === 'only' && <img src={iconLeadingSrc} alt="Icon" />}
+          </button>
+        );
     }
 }
