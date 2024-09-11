@@ -24,10 +24,16 @@ button.only{
 
 button .icon {
   display: inline-flex;
+  width: auto;
+  height: auto;
 }
 
-button .icon svg path {
+button .icon svg path[fill] {
   fill: var(--icon-color);
+}
+
+button .icon svg path[stroke] {
+  stroke: var(--icon-color);
 }
 
 button .icon svg circle {

@@ -53,7 +53,7 @@ export class GbAvatar {
                 <gb-avatar-contrast-inner-border border-size={this.size} weight={this.weight}>
                     <div class={`inner_content ${this.size}`}>
                         { !this.text ? (
-                            <slot></slot>
+                            <slot name="image"></slot>
                         ) : (
                             <div class="initials">
                                 <slot name="initials"></slot>
