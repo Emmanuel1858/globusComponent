@@ -1,5 +1,5 @@
 import { Component, Element, h, Prop } from "@stencil/core";
-import { BorderWeights, GeneralSizes, OnlineIndicatorStates } from "../../models/reusableModels";
+import { GeneralSizes, OnlineIndicatorStates } from "../../models/reusableModels";
 
 @Component({
     tag: 'gb-avatar-label-group',
@@ -9,7 +9,6 @@ import { BorderWeights, GeneralSizes, OnlineIndicatorStates } from "../../models
 
 export class GbAvatarLabelGroup {
     @Prop() size: GeneralSizes;
-    @Prop() weight: BorderWeights = BorderWeights.Light;
     @Prop() statusIcon: string = '';
     @Prop() state: OnlineIndicatorStates = OnlineIndicatorStates.Online;
     @Prop() placeholder: boolean = false;
@@ -77,26 +76,21 @@ export class GbAvatarLabelGroup {
                 <div class="label_pic">
                     <gb-avatar
                     size={this.size}
-                    weight={this.weight}
                     status-icon={this.statusIcon}
                     state={this.state}
                     text={this.text}
                     placeholder={this.placeholder}
                     >
                         {!this.text ? (
-                            <slot name="image" slot="image"></slot>
+                            <slot name="image" slot="initials"></slot>
                         ) : (
-                            <slot></slot>
+                            <slot name="initials" slot="initials"></slot>
                         )}
                     </gb-avatar>
                 </div>
                 <div class="label_text">
-                    <div class={`name`}>
-                        <slot name="name"></slot>
-                    </div>
-                    <div class={`supporting_text`}>
-                        <slot name="supporting_text"></slot>
-                    </div>
+                    <slot name="name"></slot>
+                    <slot name="supporting_text"></slot>
                 </div>
             </div>
         )

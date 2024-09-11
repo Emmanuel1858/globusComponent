@@ -14,7 +14,6 @@
 | `state`       | `state`       |             | `OnlineIndicatorStates.Offline \| OnlineIndicatorStates.Online`                                                   | `OnlineIndicatorStates.Online` |
 | `statusIcon`  | `status-icon` |             | `string`                                                                                                          | `''`                           |
 | `text`        | `text`        |             | `boolean`                                                                                                         | `false`                        |
-| `weight`      | `weight`      |             | `BorderWeights.Heavy \| BorderWeights.Light \| BorderWeights.Regular`                                             | `BorderWeights.Light`          |
 
 
 ## Dependencies

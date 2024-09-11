@@ -1,0 +1,124 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+:host{
+  display: block;
+  width: 100%;
+}
+
+.progress_bar_container {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  align-items: stretch;
+  gap: var(--spacing-3);
+  width: 100%;
+  height: fit-content;
+  position: relative;
+}
+
+.progress_bar {
+  position: relative;
+  height: 0.4rem;
+  width: 100%;
+  background: var(--color-border-subtler, #e3e8ef);
+  border-radius: var(--rounded-xs);
+}
+
+.progress_fill {
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  background: var(--color-border-selected, #075db2);
+  border-radius: 15px;
+  transition: width 0.5s ease-in-out;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+}
+
+/* Label Position Styles */
+.progress_bar_container.right {
+  flex-direction: row;
+  gap: var(--spacing-3);
+}
+
+.progress_bar_container.bottom,
+.progress_bar_container.bottom_floating {
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.progress_bar_container.top_floating {
+  flex-direction: column-reverse;
+  gap: var(--spacing-2);
+}
+
+.label.bottom {
+  align-self: flex-end;
+}
+
+.label.top_floating {
+  align-self: flex-start;
+}
+
+.top_tooltip {
+  position: absolute;
+  top: -2.2rem;
+}
+
+.bottom_tooltip {
+  position: absolute;
+  top: 1rem;
+}
+
+.text-sm-medium {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-t-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--font-line-height-t-sm);
+  margin: var(--spacing-none);
+  padding: var(--spacing-none);
+  position: relative;
+  display: inline-block;
+}
+
+.text-sm-medium::before,
+.text-sm-medium::after {
+  content: '';
+  display: table;
+}
+
+.text-sm-medium::before {
+  margin-bottom: -0.299em;
+}
+
+.text-sm-medium::after {
+  margin-top: -0.299em;
+}
+
+.text-xs-semi-bold {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-t-xs);
+  font-weight: var(--font-weight-semi-bold);
+  line-height: var(--font-line-height-t-xs);
+  margin: var(--spacing-none);
+  padding: var(--spacing-none);
+  display: inline-block;
+  position: relative;
+}
+
+.text-xs-semi-bold::before,
+.text-xs-semi-bold::after {
+  content: '';
+  display: table;
+}
+
+.text-xs-semi-bold::before {
+  margin-bottom: -0.321em;
+}
+
+.text-xs-semi-bold::after {
+  margin-top: -0.416em;
+}

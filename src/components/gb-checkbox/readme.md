@@ -19,11 +19,6 @@
 
 ## Dependencies
 
-### Used by
-
- - [gb-dropdown-items-with-shortcut](../gb-dropdown-items-with-shortcut)
- - [gb-input-dropdown-menu-item](../gb-input-dropdown-menu)
-
 ### Depends on
 
 - [gb-checkbox-base](../gb-checkbox-base)
@@ -32,8 +27,6 @@
 ```mermaid
 graph TD;
   gb-checkbox --> gb-checkbox-base
-  gb-dropdown-items-with-shortcut --> gb-checkbox
-  gb-input-dropdown-menu-item --> gb-checkbox
   style gb-checkbox fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

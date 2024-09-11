@@ -560,7 +560,7 @@
     }
 
     [data-theme="dark"] {
-        --color-border-disabled: var(--gray-800);
+        --color-border-disabled: var(--gray-700);
     }
 
     [data-theme="light"] {

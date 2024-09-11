@@ -12,8 +12,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
   </head>
   <body>
+    <gb-button size="xl" hierarchy="primary" icon="default" icon-leading="true" icon-leading-swap="arrow-turn-backward"
+    icon-trailing="true" icon-trailing-swap="arrow_pointing_up">
     <gb-button size="xl2" hierarchy="primary" left-icon="arrow_pointing_up" right-icon="arrow_pointing_up">
       <p>Upload</p>
+    </gb-button>
+    <gb-file-upload height-size="lg" state="default" show-label="true" destructive="true"></gb-file-upload>
+    <test-button size="sm" 
+    hierarchy="primary" 
+    icon="only" 
+    icon-leading="true"
+    icon-leading-swap="circle"
+    state="default"
+    destructive="true">
+    <p>Upload</p>
+    </test-button>
+    <gb-avatar-label-group size="lg" text="true">
+      <h1 slot="initials">EK</h1>
+      <p slot="name">Emmanuel Kadiri</p>
+      <p slot="supporting_text">Kadiri2047@gmail.com</p>
+    </gb-avatar-label-group>
     </gb-button>
     <!-- <gb-slider 
     min="0" 

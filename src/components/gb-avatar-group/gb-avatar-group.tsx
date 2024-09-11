@@ -9,10 +9,10 @@ import { BorderWeights, GeneralSizes, StateEnum } from "../../models/reusableMod
 
 export class GbAvatarGroup {
     @Prop() size: GeneralSizes;
-    @Prop() moreUser: boolean;
+    @Prop() moreUsers: boolean;
     @Prop() addMoreButton: boolean;
     @Prop() text: boolean = true;
-    @Prop() state: StateEnum = StateEnum.Active;
+    @Prop() state: StateEnum = StateEnum.Default;
     @Element() el: HTMLElement;
 
     getNumberSize() {
@@ -20,6 +20,14 @@ export class GbAvatarGroup {
             case 'xs' : return 'text-xs-semi-bold';
             case 'sm' : return 'text-sm-semi-bold';
             case 'md' : return 'text-md-semi-bold';
+        }
+    }
+
+    setWeight() {
+        switch (this.size) {
+            case 'md' : return BorderWeights.Regular;
+            case 'sm' : return BorderWeights.Light;
+            case 'xs' : return BorderWeights.Light;
         }
     }
 
@@ -32,74 +40,29 @@ export class GbAvatarGroup {
     }
 
     render() {
+        const array = ['ht', 'hi', 'ht', 'hi', 'ht', 'hi', 'ht', 'hi', 'ht', 'hi', 'ht'];
+
         return (
-            <div class={`avatar_group ${this.size}`}>
-                <div class={`avatar ${this.size}`}>
-                    <gb-avatar weight={BorderWeights.Light} size={this.size}>
-                        <img src="./build/assets/avatar_pic.jpg" alt="" />
+          <div class={`avatar_group ${this.size}`}>
+            {array.map(
+              el =>
+                (el = (
+                  <div class={`avatar ${this.size}`}>
+                    <gb-avatar size={this.size} weight={this.setWeight()}>
+                        <h1>{el}</h1>
                     </gb-avatar>
-                </div>
-                <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size}>
-                        <img src="./build/assets/avatar_pic.jpg" alt="" />
-                    </gb-avatar>
-                </div>
-                <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size}>
-                        <img src="./build/assets/avatar_pic.jpg" alt="" />
-                    </gb-avatar>
-                </div>
-                <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size}>
-                        <img src="./build/assets/avatar_pic.jpg" alt="" />
-                    </gb-avatar>
-                </div>
-                <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size}>
-                        <img src="./build/assets/avatar_pic.jpg" alt="" />
-                    </gb-avatar>
-                </div>
-                <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size}>
-                        <img src="./build/assets/avatar_pic.jpg" alt="" />
-                    </gb-avatar>
-                </div>
-                <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size}>
-                        <img src="./build/assets/avatar_pic.jpg" alt="" />
-                    </gb-avatar>
-                </div>
-                <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size}>
-                        <img src="./build/assets/avatar_pic.jpg" alt="" />
-                    </gb-avatar>
-                </div>
-                <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size}>
-                        <img src="./build/assets/avatar_pic.jpg" alt="" />
-                    </gb-avatar>
-                </div>
-                <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size}>
-                        <img src="./build/assets/avatar_pic.jpg" alt="" />
-                    </gb-avatar>
-                </div>
-                <div class={`avatar ${this.size}`}>
-                    <gb-avatar size={this.size}>
-                        <img src="./build/assets/avatar_pic.jpg" alt="" />
-                    </gb-avatar>
-                </div>
-                { this.moreUser && (
-                    <div class={`avatar ${this.size}`}>
-                        <gb-avatar text={this.text} size={this.size}>
-                            <slot></slot>
-                        </gb-avatar>
-                    </div>
-                )}
-                { this.addMoreButton && (
-                    <gb-avatar-add-button state={this.state} size={this.size}></gb-avatar-add-button>
-                )}
-            </div>
-        )
+                  </div>
+                )),
+            )}
+            {this.moreUsers && (
+              <div class={`avatar ${this.size}`}>
+                <gb-avatar text={this.text} size={this.size} weight={this.setWeight()}>
+                  <slot name="initials" slot="initials"></slot>
+                </gb-avatar>
+              </div>
+            )}
+            {this.addMoreButton && <gb-avatar-add-button state={this.state} size={this.size}></gb-avatar-add-button>}
+          </div>
+        );
     }
 }

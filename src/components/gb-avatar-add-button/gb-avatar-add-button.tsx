@@ -11,13 +11,14 @@ export class GbAvatarAddButton {
     @Prop() size: GeneralSizes;
     @Prop({ mutable: true }) showToolTip: boolean = false;
     @Prop() state: StateEnum;
+    @Prop() el: HTMLElement;
 
     render() {
         return (
             <div>
                 {this.showToolTip && (
-                    <gb-tooltip class="tooltip" arrow-position="bottom_center" supporting-text="false">
-                        <p slot="main_text">Add User</p>
+                    <gb-tooltip class={`tooltip ${this.size}`} arrow="bottom_center" supporting-text="false">
+                        <p slot="main_text" class="text-xs-semi-bold">Add User</p>
                     </gb-tooltip>
                 )}
                 <div class={`avatar_back ${this.size} ${this.state}`} onMouseEnter={() => {this.showToolTip = true}} onMouseLeave={() => {this.showToolTip = false}}>

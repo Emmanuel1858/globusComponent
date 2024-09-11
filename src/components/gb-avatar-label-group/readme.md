@@ -14,14 +14,9 @@
 | `state`       | `state`       |             | `OnlineIndicatorStates.Offline \| OnlineIndicatorStates.Online`                                                   | `OnlineIndicatorStates.Online` |
 | `statusIcon`  | `status-icon` |             | `string`                                                                                                          | `''`                           |
 | `text`        | `text`        |             | `boolean`                                                                                                         | `false`                        |
-| `weight`      | `weight`      |             | `BorderWeights.Heavy \| BorderWeights.Light \| BorderWeights.Regular`                                             | `BorderWeights.Light`          |
 
 
 ## Dependencies
-
-### Used by
-
- - [gb-avatar-dropdown](../gb-avatar-dropdown)
 
 ### Depends on
 
@@ -33,7 +28,6 @@ graph TD;
   gb-avatar-label-group --> gb-avatar
   gb-avatar --> gb-avatar-contrast-inner-border
   gb-avatar --> gb-status-indicator
-  gb-avatar-dropdown --> gb-avatar-label-group
   style gb-avatar-label-group fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

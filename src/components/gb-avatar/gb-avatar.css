@@ -9,6 +9,7 @@
     position: relative;
     width: fit-content;
     border-radius: var(--rounded-full);
+    cursor: pointer;
 }
 
 .inner_content.xs{
@@ -74,7 +75,14 @@
     align-items: center;
     background-color: #EEF2F6;
     border-radius: var(--rounded-full);
+}
 
+.placeholder:hover, .initials:hover{
+    background-color: #E3E8EF;
+}
+
+.placeholder:active, .initials:active{
+    background-color: #E3E8EF;
 }
 
 .indicator{

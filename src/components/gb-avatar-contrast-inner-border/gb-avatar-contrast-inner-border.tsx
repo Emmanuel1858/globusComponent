@@ -9,11 +9,25 @@ import { BorderWeights, GeneralSizes } from "../../models/reusableModels";
 
 export class GbAvatarContrastInnerBorder {
     @Prop() weight: BorderWeights;
-    @Prop() borderSize: GeneralSizes;
+    @Prop() size: GeneralSizes;
+
+    setWeight() {
+        switch(this.size) {
+            case 'xl2' : return BorderWeights.Regular;
+            case 'xl' : return BorderWeights.Regular;
+            case 'lg' : return BorderWeights.Regular;
+            case 'md' : return BorderWeights.Regular;
+            case 'sm' : return BorderWeights.Light;
+            case 'xs' : return BorderWeights.Light;
+            case 'profile_lg' : return BorderWeights.Heavy;
+            case 'profile_md' : return BorderWeights.Heavy;
+            case 'profile_sm' : return BorderWeights.Regular;
+        }
+    }
 
     render() {
         return (
-            <div class={`inner_border ${this.borderSize} ${this.weight}`}>
+            <div class={`inner_border ${this.size} ${this.weight}`}>
                 <slot></slot>
             </div>
         )
