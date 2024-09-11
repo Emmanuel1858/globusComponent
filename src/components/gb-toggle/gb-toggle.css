@@ -1,0 +1,24 @@
+.toggle_div{
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+}
+
+.toggle_div.sm{
+    gap: var(--spacing-2);
+}
+
+.toggle_div.md{
+    gap: var(--spacing-3);
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.div_centered{
+    justify-content: center;
+    padding-bottom: 0.2rem;
+}

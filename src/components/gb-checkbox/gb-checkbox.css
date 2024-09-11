@@ -1,0 +1,30 @@
+@import './../../global/spacing.css';
+@import './../../global/typo.css';
+
+.checkbox_div{
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+}
+
+.checkbox_div.sm{
+    gap: var(--spacing-2);
+}
+
+.checkbox_div.md{
+    gap: var(--spacing-3);
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.div_centered{
+    justify-content: center;
+}
+
+::slotted(p){
+    color: #4B5565;
+}

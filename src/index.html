@@ -7,21 +7,66 @@
 
     <script type="module" src="/build/globuscomponents.esm.js"></script>
     <script nomodule src="/build/globuscomponents.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
   </head>
   <body>
-    <button-cta size="xl" hierarchy="primary" right-icon="arrow_pointing_up">
+    <gb-button size="xl2" hierarchy="primary" left-icon="arrow_pointing_up" right-icon="arrow_pointing_up">
       <p>Upload</p>
-    </button-cta>
-    <div class="gradient-blue-900-to-600-45d display-lg-semiBold" style="width: 200px; height: 200px">
-      <p>Hiiii</p>
-    </div>
-    <button-close size="sm" color="success"></button-close>
-    <notification-bell state="active"></notification-bell>
-    <collapse-button></collapse-button>
-    <toggle-button size="sm" state="active"></toggle-button>
-    <tool-tip arrow-position="left">
-      <p slot="main_text">This is a tooltip</p>
-      <!-- <p slot="supporting_text">This is the supporting text osbvowi wonvow  woivwo iev woienv oweiv owievow eowie oiwje oiwjeo wofjnbje  kirvowjr vowjr vow</p> -->
-    </tool-tip>
+    </gb-button>
+    <!-- <gb-slider 
+    min="0" 
+    max="100" 
+    thumb-type="tooltip"
+    id="mySlider"></gb-slider>  -->
+    <!-- <gb-badge size="lg" color="error" icon='only' icon-leading-src="arrow_up" type="pill_outline" close-button="true">Label</gb-badge> -->
+    <!-- <div>
+      <gb-input-dropdown-menu-item type="avatar_leading" supporting-text="true" selected>
+        <p slot="main_text">Alissa</p>
+        <img slot="image" src="./build/assets/avatar_pic.jpg" />
+        <p slot="supporting_text">olivia</p>  
+      </gb-input-dropdown-menu-item>
+  
+      <gb-input-dropdown-menu-item type="avatar_leading" supporting-text="true" selected>
+        <p slot="main_text">Pieree</p>
+        <img slot="image" src="./build/assets/avatar_pic.jpg" />
+        <p slot="supporting_text">olivia</p>  
+      </gb-input-dropdown-menu-item>
+    </div> -->
+   
+    <!-- <!-- <gb-input-dropdown size="sm" type="avatar_leading" label="Team member" placeholder="Select a team member" options='["Option 1", "Option 2", "Option 3"]'>
+      <img slot="image" src="./build/assets/avatar_pic.jpg" />
+    </gb-input-dropdown>
+    <gb-input-dropdown size="sm" type="avatar_leading" label="Team member" placeholder="Select an option">
+      <img slot="image" src="./build/assets/avatar_pic.jpg" />
+      <option slot="dropdown-options" value="Option 1">Option 1</option>
+      <option slot="dropdown-options" value="Option 2">Option 2</option>
+      <option slot="dropdown-options" value="Option 3">Option 3</option>
+    </gb-input-dropdown> -->
+  
+    <gb-avatar-dropdown type="simple" show-profile="true" show-dark-theme="true" show-log-out="true" text="true">
+      <h1>AP</h1>
+      <p slot="name">Alissa Pierre</p>
+      <img slot="image" src="./build/assets/avatar_pic.jpg" />
+      <p slot="supporting_text">Initiator</p>
+    </gb-avatar-dropdown> 
+    <!-- <gb-badge-close color="primary" type="square"></gb-badge-close>
+    <gb-tag-checkbox size="md" checked={true}></gb-tag-checkbox>
+    <gb-tag-checkbox size="lg" disabled={true}></gb-tag-checkbox>
+    <gb-tag size="lg" icon="country" checkbox="true" close-button="true" count="true">Label</gb-tag>-->
+    <!-- <gb-dropdown-items-with-shortcut checkbox="true" shortcut="true" label="Placeholder">
+    </gb-dropdown-items-with-shortcut>
+    <gb-help-dropdown show-log-error="true"></gb-help-dropdown>
+    <gb-notification-content icon="alert_02" label="Flagged transaction" time="Just now" supporting-text="Help, find curdy"></gb-notification-content> -->
+
+    <!--<gb-notification-panel state="empty"></gb-notification-panel>
+    <gb-scrollbar length="25%">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere consequuntur voluptatem debitis molestias optio impedit odit libero dolores corporis placeat cumque
+      molestiae sed unde numquam ipsa, voluptas aspernatur? In, nihil. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus dolor tempore fugiat dolores nulla
+      eligendi. Est eum soluta nihil reiciendis, molestias veritatis tempore accusamus possimus dolores officiis, magnam ex quasi? Sunt autem harum recusandae quaerat sed,
+      velit excepturi, provident iusto id eaque delectus, deleniti eos earum ipsum enim. Tenetur, molestiae. Laboriosam officiis eveniet quis nisi necessitatibus tenetur at
+      odio animi!
+    </gb-scrollbar>-->
   </body>
 </html>

@@ -1,0 +1,67 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+@import './../../global/typo.css';
+
+.notification-container {
+    display: inline-flex;
+    padding: var(--spacing-6) var(--spacing-2);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--spacing-2);
+    border-radius: var(--rounded-none);
+    border-bottom: 0.6px solid #e3e8ef;
+}
+
+.notification-container:hover {
+    background-color: #E4F0FC;
+}
+
+.icon img {
+    fill: #075DB2;
+    stroke: #075DB2 ;
+}
+
+label{
+    color: #202939;
+    /* Text md/Medium */
+    font-family: var(--Font-Family-Body, Sora);
+    font-size: var(--Font-Size-T-md, 16px);
+    font-style: normal;
+    font-weight: var(--Font-Weight-Medium, 500);
+    line-height: var(--Font-Line-height-T-md, 24px); /* 150% */
+    letter-spacing: var(--Font-Letter-spacing-T-md, 0px);
+}
+
+.time {
+    color: #697586;
+    /* Text xs/Regular */
+    font-family: var(--Font-Family-Body, Sora);
+    font-size: var(--Font-Size-T-xs, 12px);
+    font-style: normal;
+    font-weight: var(--Font-Weight-Regular, 400);
+    line-height: var(--Font-Line-height-T-xs, 18px); /* 150% */
+    letter-spacing: var(--Font-Letter-spacing-T-xs, 0px);
+}
+
+.notification-title {
+    display: flex;
+    width: 335px;
+    padding: 0px;
+    align-items: center;
+    gap: var(--spacing-2);
+}
+
+.supporting-text {
+    padding-left: 28px;
+    color:#4B5565;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Text sm/Regular */
+    font-family: var(--Font-Family-Body, Sora);
+    font-size: var(--Font-Size-T-sm, 14px);
+    font-style: normal;
+    font-weight: var(--Font-Weight-Regular, 400);
+    line-height: var(--Font-Line-height-T-sm, 20px); /* 142.857% */
+    letter-spacing: var(--Font-Letter-spacing-T-sm, 0px);
+}

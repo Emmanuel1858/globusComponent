@@ -1,0 +1,33 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+
+:host{
+    position: relative;
+}
+
+.collapse_btn{
+    background-color: transparent;
+    border-radius: var(--rounded-full);
+    display: flex;
+    width: var(--spacing-7);
+    height: var(--spacing-7);
+    padding: var(--spacing-2);
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-2);
+}
+
+.collapse_btn:hover{
+    background-color: var(--color-background-gray-subtler);
+    cursor: pointer;
+}
+
+.collapse_btn:active{
+    background-color: var(--color-background-gray-subtle);
+}
+
+.tooltip{
+    position: absolute;
+    left: 3.5rem;
+    bottom: 0.5rem;
+}

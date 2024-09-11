@@ -1,0 +1,36 @@
+@import '../../global/global.css';
+@import '../../global/spacing.css';
+@import '../../global/typo.css';
+
+/* .scrollbar-container::-webkit-scrollbar {
+    width: 16px;
+}
+
+
+ 
+*/
+
+
+
+.scrollbar {
+    max-height: 10vh;
+    overflow: auto;
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 16px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background-color: #CDD5DF;
+} 
+
+.scrollbar::-webkit-scrollbar-track {
+    display: flex;
+    width: 16px;
+    padding: 4px;
+    align-items: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: var(--rounded-none);
+}

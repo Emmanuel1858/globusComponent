@@ -1,0 +1,134 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+
+.online_icon{
+    border: 1.5px solid #FFFFFF;
+    border-radius: var(--rounded-full);
+}
+
+/* Online Indicator States */
+.online_icon.offline{
+    background-color: #CDD5DF;
+}
+
+.online_icon.online{
+    background-color: #079455;
+}
+
+/* Online Indicator Sizes */
+.online_icon.xs{
+    width: 0.375rem;
+    height: 0.375rem;
+}
+
+.online_icon.sm{
+    width: var(--spacing-2);
+    height: var(--spacing-2);
+}
+
+.online_icon.md{
+    width: 0.625rem;
+    height: 0.625rem;
+}
+
+.online_icon.lg{
+    width: var(--spacing-3);
+    height: var(--spacing-3);
+}
+
+.online_icon.xl{
+    width: 0.875rem;
+    height: 0.875rem;
+}
+
+.online_icon.xl2{
+    width: var(--spacing-4);
+    height: var(--spacing-4);
+}
+
+/* Verified Tick Sizes */
+.verified_tick.xs{
+    width: 0.625rem;
+    height: 0.625rem;
+}
+
+.verified_tick.sm{
+    width: var(--spacing-3);
+    height: var(--spacing-3);
+}
+
+.verified_tick.md{
+    width: 0.875rem;
+    height: 0.875rem;
+}
+
+.verified_tick.lg{
+    width: var(--spacing-4);
+    height: var(--spacing-4);
+}
+
+.verified_tick.xl{
+    width: 1.125rem;
+    height: 1.125rem;
+}
+
+.verified_tick.xl2{
+    width: var(--spacing-5);
+    height: var(--spacing-5);
+}
+
+.verified_tick.xl3{
+    width: var(--spacing-6);
+    height: var(--spacing-6);
+}
+
+.verified_tick.xl4{
+    width: var(--spacing-7);
+    height: var(--spacing-7);
+}
+
+.verified_tick.profile_sm{
+    width: var(--spacing-5);
+    height: var(--spacing-5);
+}
+
+.verified_tick.profile_md{
+    width: var(--spacing-6);
+    height: var(--spacing-6);
+}
+
+.verified_tick.profile_lg{
+    width: var(--spacing-7);
+    height: var(--spacing-7);
+}
+
+/* Company Icon Sizes */
+.company_icon.xs{
+    width: 0.625rem;
+    height: 0.625rem;
+}
+
+.company_icon.sm{
+    width: 0.75rem;
+    height: var(--spacing-3);
+}
+
+.company_icon.md{
+    width: 0.875rem;
+    height: 0.875rem;
+}
+
+.company_icon.lg{
+    width: 1rem;
+    height: var(--spacing-4);
+}
+
+.company_icon.xl{
+    width: 1.125rem;
+    height: 1.125rem;
+}
+
+.company_icon.xl2{
+    width: 1.25rem;
+    height: var(--spacing-5);
+}
