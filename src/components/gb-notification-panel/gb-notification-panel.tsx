@@ -54,13 +54,13 @@ export class GbNotificationPanel {
                             <h3>No notification</h3>
                             <p>Your notification inbox is empty at the moment. Rest assured, you'll be promptly notified of any new events.</p>
                         </div>
-                    <gb-button size='sm' hierarchy='tertiary-color' leftIcon='blush_brush' disabled>Mark all as read</gb-button>
+                    <test-button size='sm' hierarchy='tertiary_color' left-icon='blush_brush'>Mark all as read</test-button>
                     </div> 
                 )}  
                 {this.state === 'notification_dropdown' && (
                     <div class="notification-dropdown">
                         <slot></slot> 
-                        <gb-button size='sm' hierarchy='tertiary-color' leftIcon='blush_brush'>Mark all as read</gb-button>
+                        <test-button size='sm' hierarchy='tertiary_color' left-icon='blush_brush'>Mark all as read</test-button>
                     </div>
                 )} 
             </div>

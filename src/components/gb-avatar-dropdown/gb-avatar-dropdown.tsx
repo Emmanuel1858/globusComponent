@@ -28,18 +28,20 @@ export class GbAvatarDropdown {
                         <slot name='supporting_text' slot='supporting_text'></slot>
                         </gb-avatar-label-group>
                     </div>
-                    <div class="list">
-                        {this.showProfile && (
-                            <gb-dropdown-items-with-shortcut icon iconSrc='user_profile' label='View Profile' shortcut shortcutIcon='K + P'>
-                            </gb-dropdown-items-with-shortcut>
-                        )}
-                        {this.showDarkTheme && (
-                            <gb-dropdown-items-with-shortcut icon iconSrc='dark_theme' label='Dark Theme' shortcut shortcutIcon='T'></gb-dropdown-items-with-shortcut>
-                        )}
-                        {this.showLogOut && (
-                            <gb-dropdown-items-with-shortcut icon iconSrc='logout_button' label='Log out' shortcut shortcutIcon='L'></gb-dropdown-items-with-shortcut>
-                        )}
-                    </div>  
+                    <div class="menu-items">
+                        <div class="list">
+                            {this.showProfile && (
+                                <gb-dropdown-items-with-shortcut icon iconSrc='user_profile' label='View Profile' shortcut shortcutIcon='K + P'>
+                                </gb-dropdown-items-with-shortcut>
+                            )}
+                            {this.showDarkTheme && (
+                                <gb-dropdown-items-with-shortcut icon iconSrc='dark_theme' label='Dark Theme' shortcut shortcutIcon='T'></gb-dropdown-items-with-shortcut>
+                            )}
+                            {this.showLogOut && (
+                                <gb-dropdown-items-with-shortcut icon iconSrc='logout_button' label='Log out' shortcut shortcutIcon='L'></gb-dropdown-items-with-shortcut>
+                            )}
+                        </div> 
+                    </div> 
                 </div>
             );
         }

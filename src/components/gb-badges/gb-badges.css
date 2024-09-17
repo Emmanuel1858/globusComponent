@@ -10,13 +10,14 @@ div{
     gap: var(--spacing-none);
     flex-shrink: 0;
     text-align: center;
+    font-family: var(--Font-Family-Body, Sora);
     font-style: normal;
     font-weight: var(--font-weight-medium, 500);
     letter-spacing: 0.5px;
 }
 
 .label {
-    font-family: var(--font-family-body);
+    font-family: var(--Font-Family-Body, Sora);
     padding: 2px;
 }
 
@@ -28,7 +29,7 @@ div{
 div.sm{
     height: 22px;
     min-height: 22px;
-    font-family: sans-serif;
+    font-family: var(--Font-Family-Body, Sora);
     font-size: var(--text-xs-medium-font-size, 12px);
     line-height: var(--text-xs-medium-line-height, 18px); 
 }
@@ -36,7 +37,7 @@ div.sm{
 div.md {
     height: var(--spacing-6);
     min-height: var(--spacing-6);
-    font-family: sans-serif;
+    font-family: var(--Font-Family-Body, Sora);
     font-size: var(--text-sm-medium-font-size, 14px);
     line-height: var(--text-sm-medium-line-height, 20px); 
 }
@@ -45,7 +46,7 @@ div.lg {
     height: 28px;
     min-height: 28px;
     padding: var(--spacing-none) var(--spacing-2);
-    font-family: sans-serif;
+    font-family: var(--Font-Family-Body, Sora);
     font-size: var(--text-sm-medium-font-size, 14px);
     line-height: var(--text-sm-medium-line-height, 1.25rem);
 }
@@ -125,8 +126,6 @@ div.pill_color.gray,
     height: var(--spacing-2);
     display: flex;
     align-items: center;
-    fill: currentColor; /* Use the current text color */
-    stroke: currentColor;
 }
 
 .gray svg path {
@@ -236,53 +235,29 @@ div.pill_color.gray,
     color: #4B5565;
 }
 
-.icon img {
+.badge_modern svg path {
+    stroke: inherit; /* Inherit color from the parent, but set in the component */
+    fill: inherit;
+}
+
+.icon svg {
     width: var(--spacing-4);
     height: var(--spacing-4);
     fill: currentColor;
+}
+
+.icon svg path {
+    fill: currentColor;
     stroke: currentColor;
-    /* Color handling for SVGs */
 }
 
-.icon.left-icon img,
-.icon.right-icon img {
-    color: currentColor; /* Ensures that the image color uses currentColor */
+#icon-only svg {
+    width: var(--spacing-3);
+    height: var(--spacing-3);
 }
 
-.gray .icon img {
-    color: #4B5565;
-}
-
-.primary .icon img {
-    color: #212C65;
-}
-
-.error .icon img {
-    color: #B51726;
-}
-
-.warning .icon img {
-    color: #DC6803;
-}
-
-.success .icon img {
-    color: #079455;
-}
-
-.discovery .icon img {
-    color: #0BA5EC;
-}
-
-.information .icon img {
-    color: #064E94;
-}
-
-.pink .icon img {
-    color: #DD2590;
-}
-
-.purple .icon img {
-    color: #6938EF;
+div.md #icon-only svg {
+    padding: 2px;
 }
 
 #icon-only {
@@ -291,8 +266,6 @@ div.pill_color.gray,
     justify-content: center;
     align-items: center;
     gap: var(--spacing-1);
-    width: var(--spacing-4);
-    height: var(--spacing-4);
     flex-shrink: 0;
     border-radius: var(--rounded-full);
 }

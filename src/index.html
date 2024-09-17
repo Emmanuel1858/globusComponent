@@ -14,24 +14,6 @@
   <body>
     <gb-button size="xl" hierarchy="primary" icon="default" icon-leading="true" icon-leading-swap="arrow-turn-backward"
     icon-trailing="true" icon-trailing-swap="arrow_pointing_up">
-    <gb-button size="xl2" hierarchy="primary" left-icon="arrow_pointing_up" right-icon="arrow_pointing_up">
-      <p>Upload</p>
-    </gb-button>
-    <gb-file-upload height-size="lg" state="default" show-label="true" destructive="true"></gb-file-upload>
-    <test-button size="sm" 
-    hierarchy="primary" 
-    icon="only" 
-    icon-leading="true"
-    icon-leading-swap="circle"
-    state="default"
-    destructive="true">
-    <p>Upload</p>
-    </test-button>
-    <gb-avatar-label-group size="lg" text="true">
-      <h1 slot="initials">EK</h1>
-      <p slot="name">Emmanuel Kadiri</p>
-      <p slot="supporting_text">Kadiri2047@gmail.com</p>
-    </gb-avatar-label-group>
     </gb-button>
     <!-- <gb-slider 
     min="0" 
@@ -53,7 +35,7 @@
       </gb-input-dropdown-menu-item>
     </div> -->
    
-    <!-- <!-- <gb-input-dropdown size="sm" type="avatar_leading" label="Team member" placeholder="Select a team member" options='["Option 1", "Option 2", "Option 3"]'>
+    <!-- <gb-input-dropdown size="sm" type="avatar_leading" label="Team member" placeholder="Select a team member" options='["Option 1", "Option 2", "Option 3"]'>
       <img slot="image" src="./build/assets/avatar_pic.jpg" />
     </gb-input-dropdown>
     <gb-input-dropdown size="sm" type="avatar_leading" label="Team member" placeholder="Select an option">
@@ -62,6 +44,16 @@
       <option slot="dropdown-options" value="Option 2">Option 2</option>
       <option slot="dropdown-options" value="Option 3">Option 3</option>
     </gb-input-dropdown> -->
+
+    <gb-badge 
+      size="md" 
+      icon="only"
+      flag-swap="country_icon" 
+      icon-leading-swap="arrow_up" 
+      color="success" 
+      type="pill_color">
+      Leading
+    </gb-badge>
   
     <gb-avatar-dropdown type="simple" show-profile="true" show-dark-theme="true" show-log-out="true" text="true">
       <h1>AP</h1>
@@ -69,13 +61,27 @@
       <img slot="image" src="./build/assets/avatar_pic.jpg" />
       <p slot="supporting_text">Initiator</p>
     </gb-avatar-dropdown> 
+
+    <gb-input-dropdown-menu-item type="avatar_leading" supporting-text="true" selected="true">
+      <img slot="image" src="./build/assets/avatar_pic.jpg">
+      <p slot="name">Alissa</p>
+      <p slot="supporting_text">olivia</p>
+    </gb-input-dropdown-menu-item>
+    <gb-input-dropdown-menu-item type="checkbox" supporting-text="true">
+      <p slot="name">Alissa</p>
+      <p slot="supporting_text">olivia</p>
+    </gb-input-dropdown-menu-item>
     <!-- <gb-badge-close color="primary" type="square"></gb-badge-close>
     <gb-tag-checkbox size="md" checked={true}></gb-tag-checkbox>
     <gb-tag-checkbox size="lg" disabled={true}></gb-tag-checkbox>
     <gb-tag size="lg" icon="country" checkbox="true" close-button="true" count="true">Label</gb-tag>-->
-    <!-- <gb-dropdown-items-with-shortcut checkbox="true" shortcut="true" label="Placeholder">
+    <gb-dropdown-items-with-shortcut checkbox="true" shortcut="true" label="Placeholder">
     </gb-dropdown-items-with-shortcut>
-    <gb-help-dropdown show-log-error="true"></gb-help-dropdown>
+    <gb-dropdown-items-with-shortcut checkbox="true" shortcut="true" label="Placeholder">
+
+    </gb-dropdown-items-with-shortcut>
+    <gb-tag size="lg" checkbox="true" icon="dot" action="count">Label</gb-tag>
+    <!--<gb-help-dropdown show-log-error="true"></gb-help-dropdown>
     <gb-notification-content icon="alert_02" label="Flagged transaction" time="Just now" supporting-text="Help, find curdy"></gb-notification-content> -->
 
     <!--<gb-notification-panel state="empty"></gb-notification-panel>
