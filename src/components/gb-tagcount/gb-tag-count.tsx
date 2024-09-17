@@ -7,7 +7,7 @@ import { GeneralSizes } from '../../models/reusableModels';
     shadow: true
 })
 
-export class TagCount{
+export class GbTagCount{
     @Prop() size: GeneralSizes;
 
     render() {
