@@ -2,95 +2,144 @@
 @import './../../global/spacing.css';
 @import './../../global/typography.css';
 
-.tooltip{
-    background-color: var(--color-surface-bold, #FCFCFC);
-    border: 0.5px solid var(--color-border-subtler, #E3E8EF);
-    border-radius: var(--rounded-sm);
-    box-shadow: var(--shadow-sm);
-    display: flex;
-    padding: var(--spacing-3);
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--spacing-3);
-    align-self: stretch;
-    width: fit-content;
-    height: fit-content; 
-    position: relative;
+.tooltip_container {
+  position: relative;
+  display: inline-block;
+}
+ 
+.tooltip {
+  position: absolute;
+  background-color: var(--color-surface-bold, #FCFCFC);
+  border: 0.5px solid var(--color-border-subtler, #E3E8EF);
+  border-radius: var(--rounded-sm);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-3);
+  z-index: 10;
 }
 
-.tooltip:after, .tooltip:before {
-    border: solid transparent;
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
+.tooltip_content{
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
 }
-.tooltip:after {
-    border-width: 4px;
-}
-.tooltip:before {
-    border-width: 8px;
-}
-
-/* Arrow Positions */
-.tooltip.bottom_center .tooltip_arrow{
-    position: absolute;
-    top: 75%;
-    left: 40%;
-    transform: rotate(90deg);
+ 
+.arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
 }
 
-.tooltip.bottom_left .tooltip_arrow{
-    position: absolute;
-    top: 95%;
-    left: 10%;
-    z-index: 10;
-    transform: rotate(90deg);
+.arrow::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+ 
+.arrow.bottom_center {
+  top: 100%;
+  left: 50%;
+  border-width: 7.5px 7.5px 0 7.5px;
+  border-color: #E3E8EF transparent transparent transparent;
+  transform: translateX(-50%);
 }
 
-.tooltip.bottom_right .tooltip_arrow{
-    position: absolute;
-    top: 82%;
-    left: 80%;
-    transform: rotate(90deg);
+.arrow.bottom_center::before {
+  left: -0.39rem;
+  bottom: 0.1rem;
+  border-width: 0 9.6px 9.6px 9.6px;
+  transform: translateY(-50%) rotate(135deg);
+  border-color: transparent #fff transparent transparent;
+}
+ 
+.arrow.left {
+  top: 50%;
+  right: 100%;
+  border-width: 6px 0 6px 6px;
+  border-color: transparent transparent transparent #E3E8EF;
+  transform: translateY(-50%) rotate(180deg);
 }
 
-.tooltip.top_center .tooltip_arrow{
-    position: absolute;
-    bottom: 75%;
-    left: 50%;
-    transform: rotate(-90deg);
+.arrow.left::before {
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 7.5px 0 7.5px 7.5px;
+  border-color: transparent transparent transparent #fff;
 }
 
-.tooltip.left .tooltip_arrow{
-    position: absolute;
-    top: 25%;
-    right: 100%;
-    transform: rotate(180deg);
+.arrow.bottom_left {
+  top: 100%;
+  left: 20%;
+  border-width: 7.5px 7.5px 0 7.5px;
+  border-color: #E3E8EF transparent transparent transparent;
+  transform: translateX(-50%);
 }
 
-.tooltip.right .tooltip_arrow{
-    position: absolute;
-    top: 25%;
-    left: 100%;
-    transform: rotate(-0deg);
+.arrow.bottom_left::before {
+  left: -0.39rem;
+  bottom: 0.1rem;
+  border-width: 0 9.6px 9.6px 9.6px;
+  transform: translateY(-50%) rotate(135deg);
+  border-color: transparent #fff transparent transparent;
+}
+ 
+.arrow.right {
+  top: 50%;
+  left: 100%;
+  border-width: 7px 7px 7px 0;
+  border-color: transparent #E3E8EF transparent transparent;
+  transform: translateY(-50%) rotate(-180deg);
 }
 
-.tooltip.none .tooltip_arrow{
-    display: none;
+.arrow.right::before {
+  left: 0.5px;
+  top: 50%;
+  border-width: 6.5px 6.5px 6.5px 0;
+  transform: translateY(-50%) rotate(0deg);
+  border-color: transparent #fff transparent transparent;
 }
 
-svg path{
-    stroke: var(--color-surface-bold,#FCFCFC);
-    fill: var(--color-surface-bold, #FCFCFC);
+.arrow.bottom_right {
+  top: 100%;
+  right: 5%;
+  border-width: 7.5px 7.5px 0 7.5px;
+  border-color: #E3E8EF transparent transparent transparent;
+  transform: translateX(-50%);
 }
 
-::slotted([slot="main_text"]){
-    color: var(--color-text, #4B5565);
-    text-wrap: nowrap;
+.arrow.bottom_right::before {
+  left: -0.39rem;
+  bottom: 0.1rem;
+  border-width: 0 9.6px 9.6px 9.6px;
+  transform: translateY(-50%) rotate(135deg);
+  border-color: transparent #fff transparent transparent;
+}
+ 
+.arrow.top_center {
+  bottom: 100%;
+  right: 45%;
+  border-width: 0 7.5px 7.5px 7.5px;
+  border-color: transparent transparent #E3E8EF transparent;
+}
+
+.arrow.top_center::before {
+  left: -12.8px;
+  bottom: -20.25px;
+  border-width: 0 9.5px 9.5px 9.5px;
+  transform: translateY(-50%) rotate(-45deg);
+  border-color: transparent white transparent transparent;
+}
+
+::slotted([slot="label"]){
+  white-space: nowrap;
+  color: var(--color-text, #4B5565);
 }
 
 ::slotted([slot="supporting_text"]){
-    color: var(--color-text-subtle, #697586);
-    width: 18.5rem;
+  width: 18.5rem;
+  color: var(--color-text-subtle, #697586);
+  margin-top: 5rem;
 }

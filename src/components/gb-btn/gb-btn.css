@@ -14,6 +14,7 @@ button {
   border: none;
   cursor: pointer;
   border-radius: var(--rounded-sm);
+  width: 100%;
 }
 
 button.only{
@@ -299,4 +300,12 @@ button.link_gray.disabled,
 button.link_color.disabled{
   --icon-color: var(--color-icon-disabled, #CDD5DF);
   color: var(--color-text-disabled, #CDD5DF);
+}
+
+.nowrap{
+  white-space: nowrap;
+}
+
+.center{
+  flex-grow: 1;
 }

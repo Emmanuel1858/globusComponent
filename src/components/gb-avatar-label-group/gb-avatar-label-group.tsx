@@ -82,7 +82,7 @@ export class GbAvatarLabelGroup {
                     placeholder={this.placeholder}
                     >
                         {!this.text ? (
-                            <slot name="image" slot="initials"></slot>
+                            <slot name="image" slot="image"></slot>
                         ) : (
                             <slot name="initials" slot="initials"></slot>
                         )}

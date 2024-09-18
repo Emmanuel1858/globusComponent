@@ -13,7 +13,7 @@ export class GbAvatar {
     @Prop() text: boolean = false;
     @Prop() statusIcon: string = '';
     @Prop() state: OnlineIndicatorStates = OnlineIndicatorStates.Online;
-    @Prop() icon: 'user';
+    @Prop() icon: 'user' = 'user';
     @Element() el: HTMLElement;
     @Prop() weight: BorderWeights = BorderWeights.Light;
 

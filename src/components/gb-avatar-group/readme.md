@@ -7,13 +7,14 @@
 
 ## Properties
 
-| Property        | Attribute         | Description | Type                                                                                                              | Default            |
-| --------------- | ----------------- | ----------- | ----------------------------------------------------------------------------------------------------------------- | ------------------ |
-| `addMoreButton` | `add-more-button` |             | `boolean`                                                                                                         | `undefined`        |
-| `moreUser`      | `more-user`       |             | `boolean`                                                                                                         | `undefined`        |
-| `size`          | `size`            |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs"` | `undefined`        |
-| `state`         | `state`           |             | `StateEnum.Active \| StateEnum.Disabled`                                                                          | `StateEnum.Active` |
-| `text`          | `text`            |             | `boolean`                                                                                                         | `true`             |
+| Property        | Attribute         | Description | Type                                                                                                              | Default             |
+| --------------- | ----------------- | ----------- | ----------------------------------------------------------------------------------------------------------------- | ------------------- |
+| `addMoreButton` | `add-more-button` |             | `boolean`                                                                                                         | `undefined`         |
+| `images`        | --                |             | `string[]`                                                                                                        | `[]`                |
+| `moreUsers`     | `more-users`      |             | `boolean`                                                                                                         | `undefined`         |
+| `size`          | `size`            |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs"` | `undefined`         |
+| `state`         | `state`           |             | `StateEnum.Default \| StateEnum.Disabled`                                                                         | `StateEnum.Default` |
+| `text`          | `text`            |             | `boolean`                                                                                                         | `true`              |
 
 
 ## Dependencies

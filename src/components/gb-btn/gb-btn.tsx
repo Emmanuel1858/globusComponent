@@ -1,14 +1,11 @@
-import { Component, Element, h, Prop, State } from '@stencil/core';
-import { getAssetPath } from '@stencil/core';
-import { GeneralHierarchies, GeneralSizes } from '../../models/reusableModels';
+import { Component, Element, getAssetPath, h, Prop, State } from "@stencil/core";
+import { GeneralHierarchies, GeneralSizes } from "../../models/reusableModels";
 
 @Component({
-  tag: 'test-button',
-  styleUrl: 'test-button.css',
-  shadow: true,
-  assetsDirs: ['assets'],
+  tag: 'gb-btn',
+  styleUrl: 'gb-btn.css',
 })
-export class MyButton {
+export class GbButton {
   @Prop() size: GeneralSizes;
   @Prop() hierarchy: GeneralHierarchies;
   @Prop() icon: 'default' | 'only';
@@ -34,11 +31,16 @@ export class MyButton {
 
     if (buttonSlot) {
       buttonSlot.classList.add(this.getButtonTextClasses());
+      buttonSlot.classList.add('nowrap');
+    }
+
+    if(!this.iconLeading && !this.iconTrailing) {
+      buttonSlot.classList.add('center');
     }
   }
 
   async loadIcon(iconName: string, type: 'leading' | 'trailing') {
-    const iconPath = getAssetPath(`./assets/${iconName}.svg`);
+    const iconPath = getAssetPath(`${iconName}`);
     const response = await fetch(iconPath);
     const svg = await response.text();
     if (type === 'leading') {
@@ -57,26 +59,31 @@ export class MyButton {
       destructive: this.destructive,
       disabled: this.state === 'disabled',
       default: this.icon === 'default',
-      only: this.icon === 'only'
+      only: this.icon === 'only',
     };
   }
 
   getButtonTextClasses() {
     switch (this.size) {
-        case 'xl2' : return 'text-lg-semi-bold';
-        case 'xl' : return 'text-md-semi-bold';
-        case 'lg' : return 'text-md-semi-bold';
-        case 'md' : return 'text-sm-semi-bold';
-        case 'sm' : return 'text-sm-semi-bold';
+      case 'xl2':
+        return 'text-lg-semi-bold';
+      case 'xl':
+        return 'text-md-semi-bold';
+      case 'lg':
+        return 'text-md-semi-bold';
+      case 'md':
+        return 'text-sm-semi-bold';
+      case 'sm':
+        return 'text-sm-semi-bold';
     }
   }
 
   renderLeadingIcon() {
-    return this.leadingIconSvg ? <div class={`icon left-icon ${this.size}`} innerHTML={this.leadingIconSvg}></div> : null;
+    return <div class={`icon left-icon ${this.size}`} innerHTML={this.leadingIconSvg}></div>;
   }
 
   renderTrailingIcon() {
-    return this.trailingIconSvg ? <div class="icon right-icon" innerHTML={this.trailingIconSvg}></div> : null;
+    return <div class="icon right-icon" innerHTML={this.trailingIconSvg}></div>;
   }
 
   render() {

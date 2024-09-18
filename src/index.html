@@ -12,24 +12,63 @@
     <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <gb-button size="xl" hierarchy="primary" icon="default" icon-leading="true" icon-leading-swap="arrow-turn-backward"
-    icon-trailing="true" icon-trailing-swap="arrow_pointing_up">
-      <p>Upload</p>
-    </gb-button>
-    <gb-file-upload height-size="lg" state="default" show-label="true" destructive="true"></gb-file-upload>
-    <test-button size="sm" 
+      <gb-btn size="xl" hierarchy="primary" icon="default"
+    >
+      <p>Back to transaction review</p>
+    </gb-btn>
+    <!-- <gb-file-upload height-size="lg" state="default" show-label="true" destructive="true"></gb-file-upload> -->
+    <!-- <gb-input-dropdown 
+    show-placeholder="false" 
+    size="md"
+    state="default" 
+    show-label="true" 
+    label="Team member" 
+    show-help-icon="true"
+    show-hint-text="true"
+    hint-text="This is a hint text to help user."
+    type="dot_leading"
+    ></gb-input-dropdown> -->
+
+    <gb-button size="sm" 
     hierarchy="primary" 
-    icon="only" 
-    icon-leading="true"
-    icon-leading-swap="circle"
+    icon="default" 
     state="default"
     destructive="true">
     <p>Upload</p>
-    </test-button>
-    <gb-avatar-label-group size="lg" text="true">
+    </gb-button>
+
+    <!-- <gb-avatar size="xl2" text="false" status-icon="company">
+      <img slot="image" src="build/assets/avatar_pic.jpg" alt="">
       <h1 slot="initials">EK</h1>
+    </gb-avatar> -->
+    <!-- <gb-avatar-profile-photo size="lg" text="true" verified="true">
+      <h1 slot="initials">EK</h1>
+    </gb-avatar-profile-photo> -->
+    <!-- <gb-avatar-label-group size="xl" status-icon="company" state="online">
+      <img slot="image" src="build/assets/avatar_pic.jpg" alt="">
       <p slot="name">Emmanuel Kadiri</p>
       <p slot="supporting_text">Kadiri2047@gmail.com</p>
-    </gb-avatar-label-group>
+    </gb-avatar-label-group> -->
+
+    <gb-avatar-group size="md" more-users="true" add-more-button="true" images="['build/assets/avatar_pic.jpg', 'build/assets/avatar_pic.jpg', 'build/assets/avatar_pic.jpg', 'hi', 'ht', 'hi', 'ht', 'hi', 'ht', 'hi', 'ht']">
+      <p slot="initials">+5</p>
+    </gb-avatar-group>
+
+    <!-- <gb-header-icon state="default" show-indicator="true"></gb-header-icon> -->
+    <gb-collapse-button color="gray" action="expand"></gb-collapse-button>
+    <!-- <gb-tooltip arrow="right">
+      <p slot="main_text">This is a tooltip</p>
+    </gb-tooltip> -->
+
+    <gb-pagination-number-base shape="circle"></gb-pagination-number-base>
+    <gb-carousel-arrow size="md" chevron="right"></gb-carousel-arrow>
+    <gb-pagination type="card_minimal_center_aligned" breakpoint="desktop"></gb-pagination>
+    <gb-pagination-button-group-base icon="leading" icon-leading="assets/circle.svg">
+      <p>Previous</p>
+    </gb-pagination-button-group-base>
+    <gb-tab-button-base size="md" current="true" type="button_primary" full-width="false" badge="true">
+      <p slot="name">My details</p>
+      <!-- <p slot="count">2</p> -->
+    </gb-tab-button-base>
   </body>
 </html>

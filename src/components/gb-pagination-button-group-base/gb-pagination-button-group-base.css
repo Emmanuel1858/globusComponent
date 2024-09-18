@@ -1,0 +1,31 @@
+.button_base_div{
+    display: flex;
+    align-items: center;
+    border-right: 1px solid var(--color-border-subtle, #CDD5DF);
+    justify-content: center;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.button_base_div:hover{
+    background: var(--color-background-gray-subtler, #EEF2F6);
+}
+
+.button_base_div:active{
+    background: none;
+}
+
+.button_base_div.false{
+    width: 2.5rem;
+    padding: 0.625rem;
+}
+
+.button_base_div.leading,
+.button_base_div.trailing{
+    gap: 0.5rem;
+    padding: 0.625rem var(--spacing-4);
+}
+
+::slotted(p){
+    color: var(--color-text, #4B5565);
+}

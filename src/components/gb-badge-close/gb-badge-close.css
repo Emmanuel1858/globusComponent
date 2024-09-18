@@ -1,0 +1,98 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+
+div {
+    display: flex;
+    padding: var(--spacing-half);
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-none);
+    height: fit-content;
+    width: fit-content;
+    cursor: pointer;
+}
+
+div svg{
+    width: var(--spacing-3);
+    height: var(--spacing-3);
+}
+
+div.square {
+    border-radius: 3px;
+}
+
+div.rounded {
+    border-radius: 8px;
+}
+
+div.gray, div.primary, div.error, div.warning, div.success, div.discovery, div.information, div.pink {
+    background-color: transparent;
+}
+
+div.gray path{
+    stroke: #667085; 
+}
+
+div.primary path{
+    stroke: #212C65;
+}
+
+div.error path{
+    stroke: #F04438;
+}
+
+div.warning path{
+    stroke: #DC6803;
+}
+
+div.success path{
+    stroke: #079455; 
+}
+
+div.discovery path{
+    stroke: #0086C9;
+}
+
+div.information path{
+    stroke: #064E94;
+}
+
+div.pink path{
+    stroke: #DD2590; 
+}
+
+div.gray:hover {
+    background: #EEF2F6;
+}
+
+div.primary:hover {
+    background: #C8E0F9;
+}
+
+div.error:hover path{
+    stroke: #D92D20;
+}
+
+div.error:hover {
+    background: var(--Error-100, #FEE4E2);
+}
+
+div.warning:hover {
+    background: #FEF0C7;
+}
+
+div.success:hover {
+    background: #DCFAE6;
+}
+
+div.discovery:hover {
+    background: #E0F2FE;
+}
+
+div.information:hover {
+    background: #C8E0F9;
+}
+
+div.pink:hover {
+    background: #FCE7F6;
+}

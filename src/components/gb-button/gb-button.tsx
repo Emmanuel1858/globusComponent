@@ -1,71 +1,96 @@
-import { Component, Element, getAssetPath, h, Prop, Fragment } from "@stencil/core";
-import { GeneralHierarchies, GeneralSizes, StateEnum } from "../../models/reusableModels";
+import { Component, Element, getAssetPath, h, Prop, State } from '@stencil/core';
+import { GeneralHierarchies, GeneralSizes } from '../../models/reusableModels';
 
 @Component({
-    tag: 'gb-button',
-    styleUrl: 'gb-button.css',
+  tag: 'gb-button',
+  styleUrl: 'gb-button.css',
+  shadow: true,
+  assetsDirs: [''],
 })
+export class MyButton {
+  @Prop() size: GeneralSizes;
+  @Prop() hierarchy: GeneralHierarchies;
+  @Prop() icon: 'default' | 'only';
+  @Prop() destructive: boolean = false;
+  @Prop() state: 'default' | 'hover' | 'disabled' | 'pressed';
+  @Prop() iconLeading: boolean = false;
+  @Prop() iconLeadingSwap: string;
+  @Prop() iconTrailing: boolean = false;
+  @Prop() iconTrailingSwap: string;
+  @Element() el: HTMLElement;
+  @State() leadingIconSvg: string = '';
+  @State() trailingIconSvg: string = '';
 
-export class GbButton {
-    @Prop() size: GeneralSizes = 'xl';
-    @Prop() hierarchy: GeneralHierarchies;
-    @Prop() icon: 'default' | 'only';
-    @Prop() destructive: boolean = false;
-    @Prop() state: StateEnum;
-    @Prop() iconLeading: boolean = false;
-    @Prop() iconLeadingSwap?: string;
-    @Prop() iconTrailing: boolean = false;
-    @Prop() iconTrailingSwap?: string;
-    @Element() el: HTMLElement;
-
-    getTextClass() {
-        switch (this.size) {
-            case 'xl2' : return 'text-lg-semi-bold';
-            case 'xl' : return 'text-md-semi-bold';
-            case 'lg' : return 'text-md-semi-bold';
-            case 'md' : return 'text-sm-semi-bold';
-            case 'sm' : return 'text-sm-semi-bold';
-        }
+  componentWillLoad() {
+    if (this.iconLeading && this.iconLeadingSwap) {
+      this.loadIcon(this.iconLeadingSwap, 'leading');
+    }
+    if (this.iconTrailing && this.iconTrailingSwap) {
+      this.loadIcon(this.iconTrailingSwap, 'trailing');
     }
 
-    componentDidLoad() {
-        const buttonSlot = this.el.querySelector('p');
+    const buttonSlot = this.el.querySelector('p');
 
-        if(buttonSlot) {
-            buttonSlot.classList.add(this.getTextClass());
-        }
+    if (buttonSlot) {
+      buttonSlot.classList.add(this.getButtonTextClasses());
+      buttonSlot.classList.add('nowrap');
     }
 
-    render() {
-
-          const iconLeadingSrc = getAssetPath(`assets/${this.iconLeadingSwap}.svg`);
-          const iconTrailingSrc = getAssetPath(`assets/${this.iconTrailingSwap}.svg`);
-
-        return (
-          <button
-            class={`${this.size} 
-            ${this.hierarchy} 
-            ${this.destructive ? 'destructive' : ''}
-            ${this.state}
-            ${this.icon}`}
-          >
-            {this.icon === 'default' && (
-              <>
-                {this.iconLeading && (
-                  <div class="button_icon left-icon">
-                    <span class="icon" innerHTML={iconLeadingSrc}></span>
-                  </div>
-                )}
-                <slot></slot>
-                {this.iconTrailing && (
-                  <div class="button_icon right-icon">
-                    <span class="icon" innerHTML={iconTrailingSrc}></span>
-                  </div>
-                )}
-              </>
-            )}
-            {this.icon === 'only' && <img src={iconLeadingSrc} alt="Icon" />}
-          </button>
-        );
+    if (!this.iconLeading && !this.iconTrailing) {
+      buttonSlot.classList.add('center');
     }
+  }
+
+  async loadIcon(iconName: string, type: 'leading' | 'trailing') {
+    const iconPath = getAssetPath(`${iconName}`);
+    const response = await fetch(iconPath);
+    const svg = await response.text();
+    if (type === 'leading') {
+      this.leadingIconSvg = svg;
+    } else {
+      this.trailingIconSvg = svg;
+    }
+  }
+
+  // Helper to apply color styles based on the button state
+  getButtonClasses() {
+    return {
+      button: true,
+      [this.size]: true,
+      [this.hierarchy]: true,
+      destructive: this.destructive,
+      disabled: this.state === 'disabled',
+      default: this.icon === 'default',
+      only: this.icon === 'only'
+    };
+  }
+
+  getButtonTextClasses() {
+    switch (this.size) {
+        case 'xl2' : return 'text-lg-semi-bold';
+        case 'xl' : return 'text-md-semi-bold';
+        case 'lg' : return 'text-md-semi-bold';
+        case 'md' : return 'text-sm-semi-bold';
+        case 'sm' : return 'text-sm-semi-bold';
+    }
+  }
+
+  renderLeadingIcon() {
+    return <div class={`icon left-icon ${this.size}`} innerHTML={this.leadingIconSvg}></div>;
+  }
+
+  renderTrailingIcon() {
+    return <div class="icon right-icon" innerHTML={this.trailingIconSvg}></div>;
+  }
+
+  render() {
+    return (
+      <button class={this.getButtonClasses()}>
+        {this.iconLeading && this.icon === 'default' && this.renderLeadingIcon()}
+        {this.icon === 'default' && <slot></slot>}
+        {this.iconTrailing && this.renderTrailingIcon()}
+        {this.icon === 'only' && this.renderLeadingIcon()}
+      </button>
+    );
+  }
 }

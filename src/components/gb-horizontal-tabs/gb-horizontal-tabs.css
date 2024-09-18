@@ -1,0 +1,12 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+@import './../../global/typography.css';
+
+.horizontal_tab_div{
+    display: flex;
+}
+
+/* Breakpoint Styles */
+.horizontal_tab_div.desktop{
+    width: 80rem;
+}

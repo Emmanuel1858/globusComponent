@@ -7,10 +7,35 @@
 
 ## Properties
 
-| Property               | Attribute                | Description | Type      | Default  |
-| ---------------------- | ------------------------ | ----------- | --------- | -------- |
-| `currentIconDirection` | `current-icon-direction` |             | `string`  | `'left'` |
-| `isHovered`            | `is-hovered`             |             | `boolean` | `false`  |
+| Property               | Attribute                | Description | Type                | Default     |
+| ---------------------- | ------------------------ | ----------- | ------------------- | ----------- |
+| `color`                | `color`                  |             | `"gray" \| "white"` | `undefined` |
+| `currentIconDirection` | `current-icon-direction` |             | `string`            | `'left'`    |
+| `isCollapsed`          | `is-collapsed`           |             | `boolean`           | `false`     |
+| `isHovered`            | `is-hovered`             |             | `boolean`           | `false`     |
+
+
+## Methods
+
+### `collapseSidebar() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+### `expandSidebar() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
 
 
 ## Dependencies

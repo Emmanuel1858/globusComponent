@@ -1,0 +1,48 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+@import './../../global/typo.css';
+@import './../../global/typography.css';
+
+div {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+    border-radius: var(--rounded-xs);
+    border: 1px solid #CDD5DF;
+    background: #FFFFFF;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: var(--font-weight-medium, 500);
+    letter-spacing: 0.5px;
+}
+
+.icon {
+    border: none;
+}
+
+div.sm {
+    height: var(--spacing-6);
+    padding: var(--spacing-none) var(--spacing-2) var(--spacing-none) var(--spacing-1);
+    font-size: var(--text-xs-medium-font-size, 12px);
+    line-height: var(--text-xs-medium-line-height, 18px);
+}
+
+div.md {
+    height: 28px;
+    padding: var(--spacing-none) var(--spacing-2);
+    font-size: var(--text-sm-medium-font-size, 14px);
+    line-height: var(--text-sm-medium-line-height, 1.25rem);
+}
+
+div.lg {
+    height: var(--spacing-7);
+    padding: var(--spacing-1) var(--spacing-2);
+    font-size: var(--text-sm-medium-font-size, 14px);
+    line-height: var(--text-sm-medium-line-height, 1.25rem);
+}
+
+.label {
+    font-family: var(--font-family-body);
+}

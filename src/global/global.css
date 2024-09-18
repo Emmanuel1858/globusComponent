@@ -1297,11 +1297,11 @@
 /* -----------------Shadow and Blur----------------- */
 :root{
     --shadow-xs: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-    --shadow-sm: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-    --shadow-md: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-    --shadow-lg: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-    --shadow-xl: 0px 8px 8px -4px rgba(16, 24, 40, 0.03);
-    --shadow-2xl: 0px 24px 48px -12px rgba(16, 24, 40, 0.18);
+    --shadow-sm: 0px 1px 3px 0px rgba(16, 24, 40, 0.10), 0px 1px 2px 0px rgba(16, 24, 40, 0.06);
+    --shadow-md: 0px 4px 8px -2px rgba(16, 24, 40, 0.10), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+    --shadow-lg: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+    --shadow-xl: 0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03);
+    --shadow-2xl: 0px 24px 48px -12px rgba(16, 24, 40, 0.18);   
     --shadow-3xl: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
 
     --blur-sm: blur(4px);
@@ -1485,4 +1485,23 @@
 
 .gradient-blue-900-to-600-45d{
     background: var(--gradient-blue-900-to-600-45d);
+}
+
+:root{
+    /* h1, p {
+        font-size: 1.75rem;
+        line-height: 1.25rem;
+    }
+      
+    h1::before, p::before{
+        content: "";
+        margin-bottom: -0.005em;
+        display: table;
+    }
+      
+    h1::after, p::after {
+        content: "";
+        margin-top: -0.025em;
+        display: table;
+    } */
 }
