@@ -6,7 +6,7 @@ import { Component, h } from '@stencil/core';
     shadow: true
 })
 
-export class GbWysiwygEditor {
+export class GbWYSIWYGEditor {
   
   private handleCommand(command: string) {
     document.execCommand(command, false, null);

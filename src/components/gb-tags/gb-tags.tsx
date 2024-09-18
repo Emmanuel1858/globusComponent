@@ -6,7 +6,7 @@ import { Component, Prop, getAssetPath, h } from '@stencil/core';
     shadow: true
 })
 
-export class Tag {
+export class GbTag {
     @Prop() size: 'sm' | 'md' | 'lg';
     @Prop() icon?: 'country' | 'avatar' | 'dot';
     @Prop() action: 'X_close' | 'text_only' | 'count' = 'text_only';
