@@ -5,8 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { ArrowPositions, BorderWeights, BreakPoints, CheckBoxStates, CheckBoxVariants, FileUploadIconType, FileUploadStates, GeneralColors, GeneralHierarchies, GeneralSizes, OnlineIndicatorStates, PaginationNumberShapes, PaginationTypes, StateEnum, TabTypes } from "./models/reusableModels";
-export { ArrowPositions, BorderWeights, BreakPoints, CheckBoxStates, CheckBoxVariants, FileUploadIconType, FileUploadStates, GeneralColors, GeneralHierarchies, GeneralSizes, OnlineIndicatorStates, PaginationNumberShapes, PaginationTypes, StateEnum, TabTypes } from "./models/reusableModels";
+import { ArrowPositions, BorderWeights, BreakPoints, CheckBoxVariants, FileUploadIconType, FileUploadStates, GeneralColors, GeneralHierarchies, GeneralSizes, OnlineIndicatorStates, PaginationNumberShapes, PaginationTypes, StateEnum, TabTypes } from "./models/reusableModels";
+export { ArrowPositions, BorderWeights, BreakPoints, CheckBoxVariants, FileUploadIconType, FileUploadStates, GeneralColors, GeneralHierarchies, GeneralSizes, OnlineIndicatorStates, PaginationNumberShapes, PaginationTypes, StateEnum, TabTypes } from "./models/reusableModels";
 export namespace Components {
     interface GbAvatar {
         "icon": 'user';
@@ -63,9 +63,10 @@ export namespace Components {
     interface GbBadge {
         "closeButton"?: boolean;
         "color": GeneralColors;
+        "flagSwap": string;
         "icon": 'dot' | 'avatar' | 'icon_leading' | 'icon_trailing' | 'country' | 'only';
-        "iconLeadingSrc"?: string;
-        "iconTrailingSrc"?: string;
+        "iconLeadingSwap"?: string;
+        "iconTrailingSwap"?: string;
         "size": GeneralSizes;
         "type": 'pill_color' | 'pill_outline' | 'badge_color' | 'badge_modern';
     }
@@ -135,13 +136,12 @@ export namespace Components {
     }
     interface GbDropdownItemsWithShortcut {
         "checkbox": boolean;
-        "checkboxStates": CheckBoxStates;
         "icon": boolean;
         "iconSrc": string;
         "label": string;
         "shortcut": boolean;
         "shortcutIcon": string;
-        "state": StateEnum;
+        "state": 'default' | 'disabled';
     }
     interface GbFileTypeIcon {
     }
@@ -193,7 +193,6 @@ export namespace Components {
         "type": 'default' | 'icon_leading' | 'avatar_leading' | 'dot_leading' | 'search' | 'tags';
     }
     interface GbInputDropdownMenuItem {
-        "checkboxStates": CheckBoxStates;
         "selected": boolean;
         "state": 'default' | 'disabled';
         "supportingText": boolean;
@@ -273,9 +272,9 @@ export namespace Components {
         "type": TabTypes;
     }
     interface GbTag {
+        "action": 'X_close' | 'text_only' | 'count';
         "checkbox"?: boolean;
-        "closeButton"?: boolean;
-        "count"?: boolean;
+        "flagSwap": string;
         "icon"?: 'country' | 'avatar' | 'dot';
         "size": 'sm' | 'md' | 'lg';
     }
@@ -731,9 +730,10 @@ declare namespace LocalJSX {
     interface GbBadge {
         "closeButton"?: boolean;
         "color"?: GeneralColors;
+        "flagSwap"?: string;
         "icon"?: 'dot' | 'avatar' | 'icon_leading' | 'icon_trailing' | 'country' | 'only';
-        "iconLeadingSrc"?: string;
-        "iconTrailingSrc"?: string;
+        "iconLeadingSwap"?: string;
+        "iconTrailingSwap"?: string;
         "size"?: GeneralSizes;
         "type"?: 'pill_color' | 'pill_outline' | 'badge_color' | 'badge_modern';
     }
@@ -801,13 +801,12 @@ declare namespace LocalJSX {
     }
     interface GbDropdownItemsWithShortcut {
         "checkbox"?: boolean;
-        "checkboxStates"?: CheckBoxStates;
         "icon"?: boolean;
         "iconSrc"?: string;
         "label"?: string;
         "shortcut"?: boolean;
         "shortcutIcon"?: string;
-        "state"?: StateEnum;
+        "state"?: 'default' | 'disabled';
     }
     interface GbFileTypeIcon {
     }
@@ -859,7 +858,6 @@ declare namespace LocalJSX {
         "type"?: 'default' | 'icon_leading' | 'avatar_leading' | 'dot_leading' | 'search' | 'tags';
     }
     interface GbInputDropdownMenuItem {
-        "checkboxStates"?: CheckBoxStates;
         "selected"?: boolean;
         "state"?: 'default' | 'disabled';
         "supportingText"?: boolean;
@@ -940,9 +938,9 @@ declare namespace LocalJSX {
         "type"?: TabTypes;
     }
     interface GbTag {
+        "action"?: 'X_close' | 'text_only' | 'count';
         "checkbox"?: boolean;
-        "closeButton"?: boolean;
-        "count"?: boolean;
+        "flagSwap"?: string;
         "icon"?: 'country' | 'avatar' | 'dot';
         "size"?: 'sm' | 'md' | 'lg';
     }

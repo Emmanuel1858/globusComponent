@@ -3,11 +3,11 @@ import { GeneralSizes } from '../../models/reusableModels';
 
 @Component({
     tag: 'gb-tag-count',
-    styleUrl: 'gb-tagcount.css',
+    styleUrl: 'gb-tag-count.css',
     shadow: true
 })
 
-export class TagCount{
+export class GbTagCount{
     @Prop() size: GeneralSizes;
 
     render() {

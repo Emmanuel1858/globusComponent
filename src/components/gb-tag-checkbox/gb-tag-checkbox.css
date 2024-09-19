@@ -26,6 +26,7 @@ input[type="checkbox"] {
   border: 1px solid #CDD5DF;
   background: transparent;
   transition: background 0.2s, border 0.2s;
+  margin-top: 10px;
 }
 
 .sm {
@@ -55,7 +56,6 @@ input[type="checkbox"]:checked + .custom-checkbox .checkmark {
 
 .checkmark {
   display: none;
-  fill: white;
   width: var(--spacing-3);
   height: var(--spacing-3);
 }

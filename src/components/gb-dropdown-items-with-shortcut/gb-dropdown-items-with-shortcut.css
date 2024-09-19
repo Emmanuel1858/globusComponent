@@ -2,22 +2,22 @@
 @import '../../global/spacing.css';
 @import '../../global/typo.css';
 
-:host {
+.shortcut-container {
     display: flex;
     width: 240px;
+    padding: var(--spacing-half) var(--spacing-1);
     align-items: center;
-    gap: 0px;
+    gap: var(--spacing-none);
     border-radius: var(--rounded-none);   
 }
 
-.shortcut-container {
+.shortcut {
     display: flex;
-    width: 224px;
-    height: 40px;
-    min-height: 40px;
+    padding: var(--spacing-2);
+    justify-content: center;
     align-items: center;
-    gap: 6px; /* Keep a small gap between the icon and label */
-    flex-shrink: 0;
+    gap: var(--spacing-2);
+    flex: 1 0 0;
     border-radius: var(--rounded-xs);
 }
 
@@ -51,37 +51,36 @@
 }
 
 gb-checkbox {
-    padding-top: 5px;
+    padding-top: 4px;
     padding-left: 7px;
 }
 
-:host(:hover) {
+.shortcut:hover {
     background-color: #EEF2F6;
 }
-
-:host(:active) {
+.shortcut:active {
     background: #E3E8EF;
 }
 
-:host(.disabled) {
+.shortcut.disabled {
     background-color: #ffffff;
     color: #CDD5DF;
     pointer-events: none;
 }
 
-:host(.disabled) .label,
-:host(.disabled) .shortcut-icon,
-:host(.disabled) gb-checkbox {
+.shortcut.disabled .label,
+.shortcut.disabled .shortcut-icon,
+.shortcut.disabled gb-checkbox {
     color: #CDD5DF; /* Ensures all text/icons use the disabled color */
 }
 
-:host(.disabled) .icon img {
+.shortcut.disabled .icon img {
     opacity: 0.5;
     stroke: #CDD5DF; /* Reduce opacity for the icon in disabled state */
 }
 
 /* Optional: You can also change the checkbox appearance */
-:host(.disabled) gb-checkbox {
+.shortcut.disabled gb-checkbox {
     pointer-events: none;
     opacity: 0.5; /* Dim the checkbox when disabled */
 }
