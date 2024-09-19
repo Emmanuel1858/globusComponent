@@ -36,6 +36,7 @@ export class GbAvatar {
             case 'md' : return BorderWeights.Regular;
             case 'sm' : return BorderWeights.Light;
             case 'xs' : return BorderWeights.Light;
+            case 'xxs' : return BorderWeights.VeryLight;
         }
     }
 
