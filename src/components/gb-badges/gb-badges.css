@@ -28,28 +28,20 @@ div{
 div.sm{
     height: 22px;
     min-height: 22px;
-    font-size: var(--Font-Size-T-xs, 0.75rem);
-    line-height: var(--Font-Line-height-T-xs, 1.125rem);
+    gap: 0.25rem;
 }
 
 div.md {
     height: var(--spacing-6);
     min-height: var(--spacing-6);
-    font-size: var(--Font-Size-T-sm, 0.875rem);
-    line-height: var(--Font-Line-height-T-sm, 1.25rem); 
+    gap: 0.38rem;
 }
 
 div.lg {
     height: 28px;
     min-height: 28px;
+    gap: 0.38rem;
     padding: var(--spacing-none) var(--spacing-2);
-    font-size: var(--Font-Size-T-sm, 0.875rem);
-    line-height: var(--Font-Line-height-T-sm, 1.25rem);
-}
-
-gb-avatar.inner_content.xs {
-    width: var(--spacing-4);
-    height: var(--spacing-4);
 }
 
 div.pill_color {

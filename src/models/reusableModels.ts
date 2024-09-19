@@ -1,4 +1,4 @@
-export type GeneralSizes = 'xl4' | 'xl3' | 'xl2' | 'xl' | 'lg' | 'md' | 'sm' | 'xs' | 'profile_lg' | 'profile_md' | 'profile_sm';
+export type GeneralSizes = 'xl4' | 'xl3' | 'xl2' | 'xl' | 'lg' | 'md' | 'sm' | 'xs' | 'xxs' | 'profile_lg' | 'profile_md' | 'profile_sm';
 
 export type GeneralHierarchies = 'primary' | 'secondary_gray' | 'secondary_color' | 'tertiary_gray' | 'tertiary_color' | 'link_gray' | 'link_color';
 
@@ -17,6 +17,7 @@ export enum CheckBoxStates {
 }
 
 export enum BorderWeights {
+    VeryLight = 'very_light',
     Light = 'light',
     Regular = 'regular',
     Heavy = 'heavy'

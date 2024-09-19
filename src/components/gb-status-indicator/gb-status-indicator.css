@@ -16,6 +16,11 @@
 }
 
 /* Online Indicator Sizes */
+.online_icon.xxs{
+    width: 0.25rem;
+    height: 0.25rem;
+}
+
 .online_icon.xs{
     width: 0.375rem;
     height: 0.375rem;
@@ -47,6 +52,11 @@
 }
 
 /* Verified Tick Sizes */
+.verified.xxs{
+    width: 0.375rem;
+    height: 0.375rem;
+}
+
 .verified.xs{
     width: 0.625rem;
     height: 0.625rem;
@@ -112,6 +122,11 @@
 }
 
 /* Company Icon Sizes */
+.company.xs{
+    width: 0.25rem;
+    height: 0.25rem;
+}
+
 .company.xs{
     width: 0.625rem;
     height: 0.625rem;

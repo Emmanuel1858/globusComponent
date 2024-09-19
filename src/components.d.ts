@@ -170,12 +170,15 @@ export namespace Components {
     }
     interface GbHorizontalTabs {
         "breakpoint": BreakPoints;
+        "eigthTab": boolean;
         "fifthTab": boolean;
         "fourthTab": boolean;
         "fullWidth": boolean;
+        "ninthTab": boolean;
         "seventhTab": boolean;
         "sixthTab": boolean;
         "size": GeneralSizes;
+        "tenthTab": boolean;
         "thirdTab": boolean;
         "type": TabTypes;
     }
@@ -841,12 +844,15 @@ declare namespace LocalJSX {
     }
     interface GbHorizontalTabs {
         "breakpoint"?: BreakPoints;
+        "eigthTab"?: boolean;
         "fifthTab"?: boolean;
         "fourthTab"?: boolean;
         "fullWidth"?: boolean;
+        "ninthTab"?: boolean;
         "seventhTab"?: boolean;
         "sixthTab"?: boolean;
         "size"?: GeneralSizes;
+        "tenthTab"?: boolean;
         "thirdTab"?: boolean;
         "type"?: TabTypes;
     }
