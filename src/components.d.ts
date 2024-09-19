@@ -39,7 +39,8 @@ export namespace Components {
     }
     interface GbAvatarGroup {
         "addMoreButton": boolean;
-        "images": string[];
+        "image": any[];
+        "images": any[];
         "moreUsers": boolean;
         "size": GeneralSizes;
         "state": StateEnum;
@@ -169,8 +170,13 @@ export namespace Components {
     }
     interface GbHorizontalTabs {
         "breakpoint": BreakPoints;
+        "fifthTab": boolean;
+        "fourthTab": boolean;
         "fullWidth": boolean;
+        "seventhTab": boolean;
+        "sixthTab": boolean;
         "size": GeneralSizes;
+        "thirdTab": boolean;
         "type": TabTypes;
     }
     interface GbInputDropdown {
@@ -701,7 +707,8 @@ declare namespace LocalJSX {
     }
     interface GbAvatarGroup {
         "addMoreButton"?: boolean;
-        "images"?: string[];
+        "image"?: any[];
+        "images"?: any[];
         "moreUsers"?: boolean;
         "size"?: GeneralSizes;
         "state"?: StateEnum;
@@ -829,8 +836,13 @@ declare namespace LocalJSX {
     }
     interface GbHorizontalTabs {
         "breakpoint"?: BreakPoints;
+        "fifthTab"?: boolean;
+        "fourthTab"?: boolean;
         "fullWidth"?: boolean;
+        "seventhTab"?: boolean;
+        "sixthTab"?: boolean;
         "size"?: GeneralSizes;
+        "thirdTab"?: boolean;
         "type"?: TabTypes;
     }
     interface GbInputDropdown {

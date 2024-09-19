@@ -4,9 +4,24 @@
 
 .horizontal_tab_div{
     display: flex;
+    justify-content: flex-start;
 }
 
 /* Breakpoint Styles */
 .horizontal_tab_div.desktop{
     width: 80rem;
+}
+
+/* Tab Type Styles */
+
+/* Full Width Styles */
+.horizontal_tab_div.full_width{
+    justify-content: space-between;
+}
+
+.horizontal_tab_div.button_primary,
+.horizontal_tab_div.button_gray,
+.horizontal_tab_div.button_white_border,
+.horizontal_tab_div.rounded_button_white_border{
+    gap: 0.5rem;
 }

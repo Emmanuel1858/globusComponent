@@ -50,8 +50,10 @@
       <p slot="supporting_text">Kadiri2047@gmail.com</p>
     </gb-avatar-label-group> -->
 
-    <gb-avatar-group size="md" more-users="true" add-more-button="true" images="['build/assets/avatar_pic.jpg', 'build/assets/avatar_pic.jpg', 'build/assets/avatar_pic.jpg', 'hi', 'ht', 'hi', 'ht', 'hi', 'ht', 'hi', 'ht']">
+    <gb-avatar-group size="md" more-users="true" add-more-button="true" images='["build/assets/avatar_pic.jpg", "build/assets/avatar_pic.jpg", "build/assets/avatar_pic.jpg"]'>
       <p slot="initials">+5</p>
+      <img src="build/assets/avatar_pic.jpg" alt="" slot="image">
+      <img src="build/assets/avatar_pic.jpg" alt="" slot="image">
     </gb-avatar-group>
 
     <!-- <gb-header-icon state="default" show-indicator="true"></gb-header-icon> -->
@@ -70,5 +72,13 @@
       <p slot="name">My details</p>
       <!-- <p slot="count">2</p> -->
     </gb-tab-button-base>
+    <gb-horizontal-tabs size="sm" type="button_primary" full-width="false">
+      <p slot="first_tab">My details</p>
+      <p slot="second_tab">My Profile</p>
+      <p slot="third_tab">My Profile</p>
+    </gb-horizontal-tabs>
+    <gb-badge size="sm" type="badge_modern" color="success" icon="dot">
+      <p>Okay</p>
+    </gb-badge>
   </body>
 </html>

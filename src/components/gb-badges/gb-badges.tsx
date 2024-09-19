@@ -63,7 +63,7 @@ export class GbBadges {
         )}
         {this.icon === 'avatar' && (
           <gb-avatar class="avatar-icon" size="xs" status-icon="false">
-            <img src="./build/assets/avatar_pic.jpg" alt="Avatar Icon" />
+            <slot name="avatar_image" slot="image"></slot>
           </gb-avatar>
         )}
         {this.icon !== 'only' && (
