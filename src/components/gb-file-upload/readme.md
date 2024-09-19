@@ -22,17 +22,14 @@
 
 ### Depends on
 
-- [test-button](../test-button)
 - [gb-file-upload-item-base](../gb-file-upload-item-base)
 
 ### Graph
 ```mermaid
 graph TD;
-  gb-file-upload --> test-button
   gb-file-upload --> gb-file-upload-item-base
   gb-file-upload-item-base --> gb-progress-bar
   gb-file-upload-item-base --> gb-button-close
-  gb-file-upload-item-base --> test-button
   gb-file-upload-item-base --> gb-button
   gb-progress-bar --> gb-tooltip
   style gb-file-upload fill:#f9f,stroke:#333,stroke-width:4px

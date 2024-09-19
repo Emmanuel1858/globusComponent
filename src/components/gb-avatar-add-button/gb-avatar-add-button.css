@@ -9,18 +9,18 @@
 }
 
 .tooltip.xs{
-    top: -150%;
-    left: -90%;
+    top: -215%;
+    left: -110%;
 }
 
 .tooltip.sm{
-    top: -120%;
-    left: -61%;
+    top: -160%;
+    left: -69%;
 }
 
 .tooltip.md{
-    top: -100%;
-    left: -41%;
+    top: -130%;
+    left: -49%;
 }
 
 .avatar_back.default{

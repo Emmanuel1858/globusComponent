@@ -1,4 +1,4 @@
-# tool-tip
+# test-tooltip
 
 
 
@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property         | Attribute         | Description | Type                                                                                                | Default     |
-| ---------------- | ----------------- | ----------- | --------------------------------------------------------------------------------------------------- | ----------- |
-| `arrow`          | `arrow`           |             | `"bottom_center" \| "bottom_left" \| "bottom_right" \| "left" \| "none" \| "right" \| "top_center"` | `'left'`    |
-| `supportingText` | `supporting-text` |             | `boolean`                                                                                           | `undefined` |
+| Property             | Attribute              | Description | Type                                                                                                | Default           |
+| -------------------- | ---------------------- | ----------- | --------------------------------------------------------------------------------------------------- | ----------------- |
+| `arrow`              | `arrow`                |             | `"bottom_center" \| "bottom_left" \| "bottom_right" \| "left" \| "none" \| "right" \| "top_center"` | `'bottom_center'` |
+| `showArrow`          | `show-arrow`           |             | `boolean`                                                                                           | `true`            |
+| `showSupportingText` | `show-supporting-text` |             | `boolean`                                                                                           | `false`           |
 
 
 ## Dependencies

@@ -1,0 +1,29 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+
+.page_number_base{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+}
+
+/* Shape Styles */
+.page_number_base.square{
+    border-radius: var(--rounded-sm);
+}
+
+.page_number_base.circle{
+    border-radius: 1.25rem;
+}
+
+/* State Styles */
+.page_number_base:hover{
+    background-color: var(--color-background-information-subtler, #C8E0F9);
+}
+
+.page_number_base:active{
+    background-color: var(--color-background-information-subtle, #9AC7F4);
+}

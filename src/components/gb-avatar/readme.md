@@ -9,7 +9,7 @@
 
 | Property      | Attribute     | Description | Type                                                                                                              | Default                        |
 | ------------- | ------------- | ----------- | ----------------------------------------------------------------------------------------------------------------- | ------------------------------ |
-| `icon`        | `icon`        |             | `"user"`                                                                                                          | `undefined`                    |
+| `icon`        | `icon`        |             | `"user"`                                                                                                          | `'user'`                       |
 | `placeholder` | `placeholder` |             | `boolean`                                                                                                         | `false`                        |
 | `size`        | `size`        |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs"` | `undefined`                    |
 | `state`       | `state`       |             | `OnlineIndicatorStates.Offline \| OnlineIndicatorStates.Online`                                                   | `OnlineIndicatorStates.Online` |

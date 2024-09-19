@@ -47,47 +47,47 @@
 }
 
 /* Verified Tick Sizes */
-.verified_tick.xs{
+.verified.xs{
     width: 0.625rem;
     height: 0.625rem;
 }
 
-.verified_tick.sm{
+.verified.sm{
     width: var(--spacing-3);
     height: var(--spacing-3);
 }
 
-.verified_tick.md{
+.verified.md{
     width: 0.875rem;
     height: 0.875rem;
 }
 
-.verified_tick.lg{
+.verified.lg{
     width: var(--spacing-4);
     height: var(--spacing-4);
 }
 
-.verified_tick.xl{
+.verified.xl{
     width: 1.125rem;
     height: 1.125rem;
 }
 
-.verified_tick.xl2{
+.verified.xl2{
     width: var(--spacing-5);
     height: var(--spacing-5);
 }
 
-.verified_tick.xl3{
+.verified.xl3{
     width: var(--spacing-6);
     height: var(--spacing-6);
 }
 
-.verified_tick.xl4{
+.verified.xl4{
     width: var(--spacing-7);
     height: var(--spacing-7);
 }
 
-.verified_tick.profile_sm{
+.verified.profile_sm{
     width: var(--spacing-5);
     height: var(--spacing-5);
     position: absolute;
@@ -95,7 +95,7 @@
     right: 0.01rem;
 }
 
-.verified_tick.profile_md{
+.verified.profile_md{
     width: var(--spacing-6);
     height: var(--spacing-6);
     position: absolute;
@@ -103,7 +103,7 @@
     right: 0.2rem;
 }
 
-.verified_tick.profile_lg{
+.verified.profile_lg{
     width: var(--spacing-7);
     height: var(--spacing-7);
     position: absolute;

@@ -9,9 +9,33 @@
 
 | Property               | Attribute                | Description | Type                | Default     |
 | ---------------------- | ------------------------ | ----------- | ------------------- | ----------- |
-| `color`                | `color`                  |             | `"grey" \| "white"` | `undefined` |
+| `color`                | `color`                  |             | `"gray" \| "white"` | `undefined` |
 | `currentIconDirection` | `current-icon-direction` |             | `string`            | `'left'`    |
+| `isCollapsed`          | `is-collapsed`           |             | `boolean`           | `false`     |
 | `isHovered`            | `is-hovered`             |             | `boolean`           | `false`     |
+
+
+## Methods
+
+### `collapseSidebar() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+### `expandSidebar() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
 
 
 ## Dependencies

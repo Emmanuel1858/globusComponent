@@ -26,7 +26,6 @@
 
 - [gb-progress-bar](../gb-progress-bar)
 - [gb-button-close](../gb-button-close)
-- [test-button](../test-button)
 - [gb-button](../gb-button)
 
 ### Graph
@@ -34,7 +33,6 @@
 graph TD;
   gb-file-upload-item-base --> gb-progress-bar
   gb-file-upload-item-base --> gb-button-close
-  gb-file-upload-item-base --> test-button
   gb-file-upload-item-base --> gb-button
   gb-progress-bar --> gb-tooltip
   gb-file-upload --> gb-file-upload-item-base

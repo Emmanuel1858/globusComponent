@@ -27,11 +27,27 @@ export enum OnlineIndicatorStates {
     Offline = 'offline'
 }
 
-export type BreakPoints = 'Desktop' | 'Mobile';
+export type BreakPoints = 'desktop' | 'mobile';
 
-export type GeneralColors = 'gray' | 'primary' | 'error' | 'warning' | 'success' | 'discovery' | 'information' | 'pink' | 'purple';
 export type FileUploadIconType = 'icon' | 'outline';
 
 export type FileUploadStates = 'default' | 'in_progress' | 'complete' | 'hover' | 'disabled' | 'error';
 
-export type FileType = ''   
+export type FileType = '';
+
+export type GeneralColors = 'gray' | 'primary' | 'error' | 'warning' | 'success' | 'discovery' | 'information' | 'pink' | 'purple';
+
+export type PaginationNumberShapes = 'square' | 'circle';
+
+export type PaginationTypes =
+  | 'page_default'
+  | 'page_minimal_center_aligned'
+  | 'card_default'
+  | 'card_minimal_right_aligned'
+  | 'card_minimal_left_aligned'
+  | 'card_minimal_center_aligned'
+  | 'card_button_group_right_aligned'
+  | 'card_button_group_left_aligned'
+  | 'card_button_group_center_aligned';
+
+export type TabTypes = 'button_primary' | 'button_gray' | 'button_white' | 'underline' | 'underline_filled' | 'line' | 'button_white_border' | 'rounded_button_white_border';

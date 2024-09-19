@@ -17,8 +17,8 @@ export class GbAvatarAddButton {
         return (
             <div>
                 {this.showToolTip && (
-                    <gb-tooltip class={`tooltip ${this.size}`} arrow="bottom_center" supporting-text="false">
-                        <p slot="main_text" class="text-xs-semi-bold">Add User</p>
+                    <gb-tooltip class={`tooltip ${this.size}`} arrow="bottom_center" show-supporting-text="false">
+                        <p slot="label" class="text-xs-semi-bold">Add User</p>
                     </gb-tooltip>
                 )}
                 <div class={`avatar_back ${this.size} ${this.state}`} onMouseEnter={() => {this.showToolTip = true}} onMouseLeave={() => {this.showToolTip = false}}>

@@ -1,4 +1,4 @@
-import { Component} from "@stencil/core";
+import { Component } from "@stencil/core";
 
 @Component({
     tag: 'gb-file-type-icon',
