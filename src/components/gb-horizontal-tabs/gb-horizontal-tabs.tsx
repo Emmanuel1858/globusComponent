@@ -4,7 +4,7 @@ import { BreakPoints, GeneralSizes, TabTypes } from "../../models/reusableModels
 @Component({
   tag: 'gb-horizontal-tabs',
   styleUrl: 'gb-horizontal-tabs.css',
-  shadow: true
+  shadow: true,
 })
 export class GbHorizontalTabs {
   @Prop() type: TabTypes;
@@ -16,6 +16,9 @@ export class GbHorizontalTabs {
   @Prop() fifthTab: boolean = false;
   @Prop() sixthTab: boolean = false;
   @Prop() seventhTab: boolean = false;
+  @Prop() eigthTab: boolean = false;
+  @Prop() ninthTab: boolean = false;
+  @Prop() tenthTab: boolean = false;
   @State() firstClicked: boolean = false;
   @State() secondClicked: boolean = false;
 

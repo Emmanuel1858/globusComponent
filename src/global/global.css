@@ -75,9 +75,18 @@
     --success-900: #074d31;
     --success-950: #053321;
 
-    /* opacity color palette  */
+    /* ------------------------------------------opacity color palette--------------------------------------  */
+    /* 20% opacity */
     --darkBlue200-opacity20: rgba(181, 185, 204, 0.2);
     --darkBlue500-opacity20: rgba(33, 44, 101, 0.2);
+
+    /* 30% opacity */
+    --darkBlue200-opacity30: rgba(181, 185, 204, 0.3);
+    --darkBlue500-opacity30: rgba(33, 44, 101, 0.3);
+
+    /* 40% opacity */
+    --darkBlue200-opacity40: rgba(181, 185, 204, 0.4);
+    --darkBlue500-opacity40: rgba(33, 44, 101, 0.4);
 
 
     /* ------------------------------------------Secondary Color------------------------------------------- */
@@ -251,6 +260,14 @@
     }
 
     [data-theme="light"] {
+        --color-text-warning-subtle: var(--warning-500);
+    }
+
+    [data-theme="dark"] {
+        --color-text-warning-subtle: var(--warning-400);
+    }
+
+    [data-theme="light"] {
         --color-text-sucess: var(--success-600);
     }
 
@@ -283,6 +300,14 @@
     }
 
     [data-theme="light"] {
+        --color-text-discovery-subtle: var(--blueLight-400);
+    }
+
+    [data-theme="dark"] {
+        --color-text-discovery-subtle: var(--blueLight-100);
+    }
+
+    [data-theme="light"] {
         --color-text-information: var(--blue-600);
     }
 
@@ -299,6 +324,14 @@
     }
 
     [data-theme="light"] {
+        --color-text-information-subtle: var(--blue-500);
+    }
+
+    [data-theme="dark"] {
+        --color-text-information-subtle: var(--blue-400);
+    }
+
+    [data-theme="light"] {
         --color-text-purple: var(--purple-600);
     }
 
@@ -312,6 +345,30 @@
 
     [data-theme="dark"] {
         --color-text-purple-bold: var(--purple-100);
+    }
+
+    [data-theme="light"] {
+        --color-text-purple-subtle: var(--purple-500);
+    }
+
+    [data-theme="dark"] {
+        --color-text-purple-subtle: var(--purple-400);
+    }
+
+    [data-theme="light"] {
+        --color-text-pink: var(--purple-600);
+    }
+
+    [data-theme="dark"] {
+        --color-text-pink: var(--purple-300);
+    }
+
+    [data-theme="light"] {
+        --color-text-pink-subtle: var(--purple-500);
+    }
+
+    [data-theme="dark"] {
+        --color-text-pink-subtle: var(--purple-400);
     }
 
 
@@ -1242,6 +1299,22 @@
 
     [data-theme="dark"] {
         --color-blanket: var(--darkBlue200-opacity20);
+    }
+
+    [data-theme="light"] {
+        --color-blanket-subtle: var(--darkBlue500-opacity30);
+    }
+
+    [data-theme="dark"] {
+        --color-blanket-subtle: var(--darkBlue200-opacity30);
+    }
+
+    [data-theme="light"] {
+        --color-blanket-subtler: var(--darkBlue500-opacity40);
+    }
+
+    [data-theme="dark"] {
+        --color-blanket-subtler: var(--darkBlue200-opacity40);
     }
 
 

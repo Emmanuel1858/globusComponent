@@ -1,4 +1,4 @@
-import { Component, Prop, getAssetPath, h, State } from '@stencil/core';
+import { Component, Prop, getAssetPath, h, State, Element } from '@stencil/core';
 import { GeneralColors, GeneralSizes } from '../../models/reusableModels';
 
 @Component({
@@ -19,6 +19,7 @@ export class GbBadges {
 
   @State() leadingIconContent: string;
   @State() trailingIconContent: string;
+  @Element() el: HTMLElement;
 
   private getDotColor(color: GeneralColors): string {
     const colorMap = {
@@ -66,6 +67,22 @@ export class GbBadges {
     }
   }
 
+  getTextClass() {
+    switch (this.size) {
+      case 'sm' : return 'text-xs-medium';
+      case 'md' : return 'text-sm-medium';
+      case 'lg' : return 'text-sm-medium';
+    }
+  }
+
+  componentDidLoad() {
+    const slottedContent = this.el.querySelector('p');
+
+    if(slottedContent) {
+      slottedContent.classList.add(this.getTextClass());
+    }
+  }
+
   render() {
     const classes = {
       'badge': true,
@@ -93,14 +110,12 @@ export class GbBadges {
           </div>
         )}
         {this.icon === 'avatar' && (
-          <gb-avatar class="avatar-icon" size="xs" status-icon="false">
+          <gb-avatar class="avatar-icon" size="xxs" status-icon="false">
             <slot name='image' slot='image'></slot>
           </gb-avatar>
         )}
         {this.icon !== 'only' && (
-          <span class="label">
             <slot></slot>
-          </span>
         )}
         {this.icon === 'icon_trailing' && this.iconTrailingSwap && (
           <div class="icon right-icon" innerHTML={this.trailingIconContent} style={{ color: this.color }}></div>

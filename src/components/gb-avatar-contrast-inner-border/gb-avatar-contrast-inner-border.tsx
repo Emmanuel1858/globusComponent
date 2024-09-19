@@ -12,16 +12,27 @@ export class GbAvatarContrastInnerBorder {
     @Prop() size: GeneralSizes;
 
     setWeight() {
-        switch(this.size) {
-            case 'xl2' : return BorderWeights.Regular;
-            case 'xl' : return BorderWeights.Regular;
-            case 'lg' : return BorderWeights.Regular;
-            case 'md' : return BorderWeights.Regular;
-            case 'sm' : return BorderWeights.Light;
-            case 'xs' : return BorderWeights.Light;
-            case 'profile_lg' : return BorderWeights.Heavy;
-            case 'profile_md' : return BorderWeights.Heavy;
-            case 'profile_sm' : return BorderWeights.Regular;
+        switch (this.size) {
+          case 'xl2':
+            return BorderWeights.Regular;
+          case 'xl':
+            return BorderWeights.Regular;
+          case 'lg':
+            return BorderWeights.Regular;
+          case 'md':
+            return BorderWeights.Regular;
+          case 'sm':
+            return BorderWeights.Light;
+          case 'xs':
+            return BorderWeights.Light;
+          case 'xxs':
+            return BorderWeights.VeryLight;
+          case 'profile_lg':
+            return BorderWeights.Heavy;
+          case 'profile_md':
+            return BorderWeights.Heavy;
+          case 'profile_sm':
+            return BorderWeights.Regular;
         }
     }
 
