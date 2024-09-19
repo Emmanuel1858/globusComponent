@@ -187,17 +187,43 @@ export class GbInputField {
           )}
           {this.inputType === 'trailing_button' && (
             <div class="input-wrapper">
-              <div class="leading-text-input"></div> 
+              <div class="leading-text-input">
+                <input placeholder={this.placeholder}></input>
+                {this.showValidation && (
+                  <span></span>
+                )}
+                {this.showHelpIcon && (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M6.66671 5.99998C6.66671 5.2636 7.26366 4.66665 8.00004 4.66665C8.73642 4.66665 9.33337 5.2636 9.33337 5.99998C9.33337 6.26541 9.25581 6.51273 9.12212 6.72051C8.72365 7.33976 8.00004 7.93027 8.00004 8.66665V8.99998M7.9947 11.3333H8.00069M14.6667 7.99998C14.6667 11.6819 11.6819 14.6666 8.00004 14.6666C4.31814 14.6666 1.33337 11.6819 1.33337 7.99998C1.33337 4.31808 4.31814 1.33331 8.00004 1.33331C11.6819 1.33331 14.6667 4.31808 14.6667 7.99998Z" stroke="#697586" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                )}
+              </div> 
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M14.1666 7.50001C14.1646 5.03576 14.1273 3.75935 13.41 2.88536C13.2715 2.71658 13.1168 2.56182 12.948 2.4233C12.026 1.66667 10.6562 1.66667 7.91667 1.66667C5.1771 1.66667 3.80732 1.66667 2.88536 2.4233C2.71658 2.56182 2.56181 2.71658 2.4233 2.88536C1.66667 3.80732 1.66667 5.1771 1.66667 7.91667C1.66667 10.6562 1.66667 12.026 2.4233 12.948C2.56181 13.1168 2.71658 13.2715 2.88536 13.41C3.75934 14.1273 5.03576 14.1646 7.5 14.1666M12.5 18.3333H13.3333C15.6904 18.3333 16.8689 18.3333 17.6011 17.6011C18.3333 16.8689 18.3333 15.6904 18.3333 13.3333V12.5C18.3333 10.143 18.3333 8.96447 17.6011 8.23224C16.8689 7.50001 15.6904 7.50001 13.3333 7.50001H12.5C10.143 7.50001 8.96447 7.50001 8.23224 8.23224C7.5 8.96447 7.5 10.143 7.5 12.5V13.3333C7.5 15.6904 7.5 16.8689 8.23223 17.6011C8.96447 18.3333 10.143 18.3333 12.5 18.3333Z" stroke="#4B5565" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
             </div>
           )}
           {this.inputType === 'password' && (
-            <input placeholder={this.placeholder}>
-              {this.showHelpIcon && (
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M6.66671 5.99998C6.66671 5.2636 7.26366 4.66665 8.00004 4.66665C8.73642 4.66665 9.33337 5.2636 9.33337 5.99998C9.33337 6.26541 9.25581 6.51273 9.12212 6.72051C8.72365 7.33976 8.00004 7.93027 8.00004 8.66665V8.99998M7.9947 11.3333H8.00069M14.6667 7.99998C14.6667 11.6819 11.6819 14.6666 8.00004 14.6666C4.31814 14.6666 1.33337 11.6819 1.33337 7.99998C1.33337 4.31808 4.31814 1.33331 8.00004 1.33331C11.6819 1.33331 14.6667 4.31808 14.6667 7.99998Z" stroke="#697586" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              )}
-            </input>
+            <div class="input-wrapper">
+              <div class="password-content">
+                <span class="leading-text-input">
+                  <input placeholder={this.placeholder}></input>
+                </span>     
+                {this.showValidation && (
+                  <span></span>
+                )}           
+                {this.showHelpIcon && (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M6.66671 5.99998C6.66671 5.2636 7.26366 4.66665 8.00004 4.66665C8.73642 4.66665 9.33337 5.2636 9.33337 5.99998C9.33337 6.26541 9.25581 6.51273 9.12212 6.72051C8.72365 7.33976 8.00004 7.93027 8.00004 8.66665V8.99998M7.9947 11.3333H8.00069M14.6667 7.99998C14.6667 11.6819 11.6819 14.6666 8.00004 14.6666C4.31814 14.6666 1.33337 11.6819 1.33337 7.99998C1.33337 4.31808 4.31814 1.33331 8.00004 1.33331C11.6819 1.33331 14.6667 4.31808 14.6667 7.99998Z" stroke="#697586" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                )}
+              </div>
+              <div class="password-dropdown">
+                
+              </div>
+            </div>
           )}
           {this.inputType === 'password_icon_leading' && (
             <input placeholder={this.placeholder}>
