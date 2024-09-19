@@ -7,18 +7,18 @@
 
 ## Properties
 
-| Property       | Attribute        | Description | Type                                                                                                              | Default     |
-| -------------- | ---------------- | ----------- | ----------------------------------------------------------------------------------------------------------------- | ----------- |
-| `disabled`     | `disabled`       |             | `boolean`                                                                                                         | `false`     |
-| `hintText`     | `hint-text`      |             | `string`                                                                                                          | `''`        |
-| `label`        | `label`          |             | `string`                                                                                                          | `''`        |
-| `options`      | --               |             | `string[]`                                                                                                        | `[]`        |
-| `placeholder`  | `placeholder`    |             | `string`                                                                                                          | `''`        |
-| `showHelpIcon` | `show-help-icon` |             | `boolean`                                                                                                         | `undefined` |
-| `showHintText` | `show-hint-text` |             | `boolean`                                                                                                         | `undefined` |
-| `showLabel`    | `show-label`     |             | `boolean`                                                                                                         | `undefined` |
-| `size`         | `size`           |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs"` | `undefined` |
-| `type`         | `type`           |             | `"avatar_leading" \| "dot_leading" \| "icon_leading" \| "search" \| "tags"`                                       | `undefined` |
+| Property             | Attribute              | Description | Type                                                                                                              | Default     |
+| -------------------- | ---------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------- | ----------- |
+| `hintText`           | `hint-text`            |             | `string`                                                                                                          | `''`        |
+| `label`              | `label`                |             | `string`                                                                                                          | `''`        |
+| `placeholder`        | `placeholder`          |             | `string`                                                                                                          | `''`        |
+| `showHelpIcon`       | `show-help-icon`       |             | `boolean`                                                                                                         | `undefined` |
+| `showHintText`       | `show-hint-text`       |             | `boolean`                                                                                                         | `undefined` |
+| `showLabel`          | `show-label`           |             | `boolean`                                                                                                         | `undefined` |
+| `showSupportingText` | `show-supporting-text` |             | `boolean`                                                                                                         | `undefined` |
+| `size`               | `size`                 |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs"` | `undefined` |
+| `state`              | `state`                |             | `"default" \| "disabled"`                                                                                         | `'default'` |
+| `type`               | `type`                 |             | `"avatar_leading" \| "dot_leading" \| "icon_leading" \| "search" \| "tags"`                                       | `undefined` |
 
 
 ## Dependencies

@@ -18,6 +18,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [gb-avatar-dropdown](../gb-avatar-dropdown)
+
 ### Depends on
 
 - [gb-avatar](../gb-avatar)
@@ -28,6 +32,7 @@ graph TD;
   gb-avatar-label-group --> gb-avatar
   gb-avatar --> gb-avatar-contrast-inner-border
   gb-avatar --> gb-status-indicator
+  gb-avatar-dropdown --> gb-avatar-label-group
   style gb-avatar-label-group fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

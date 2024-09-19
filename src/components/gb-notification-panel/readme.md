@@ -16,12 +16,12 @@
 
 ### Depends on
 
-- [gb-button](../gb-button)
+- [test-button](../test-button)
 
 ### Graph
 ```mermaid
 graph TD;
-  gb-notification-panel --> gb-button
+  gb-notification-panel --> test-button
   style gb-notification-panel fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

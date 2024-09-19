@@ -15,6 +15,7 @@
 | `showDarkTheme` | `show-dark-theme` |             | `boolean`               | `undefined` |
 | `showLogOut`    | `show-log-out`    |             | `boolean`               | `undefined` |
 | `showProfile`   | `show-profile`    |             | `boolean`               | `undefined` |
+| `text`          | `text`            |             | `boolean`               | `false`     |
 | `type`          | `type`            |             | `"complex" \| "simple"` | `undefined` |
 
 

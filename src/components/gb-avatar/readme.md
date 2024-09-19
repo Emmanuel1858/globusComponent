@@ -15,7 +15,7 @@
 | `state`       | `state`       |             | `OnlineIndicatorStates.Offline \| OnlineIndicatorStates.Online`                                                   | `OnlineIndicatorStates.Online` |
 | `statusIcon`  | `status-icon` |             | `string`                                                                                                          | `''`                           |
 | `text`        | `text`        |             | `boolean`                                                                                                         | `false`                        |
-| `weight`      | `weight`      |             | `BorderWeights.Heavy \| BorderWeights.Light \| BorderWeights.Regular`                                             | `undefined`                    |
+| `weight`      | `weight`      |             | `BorderWeights.Heavy \| BorderWeights.Light \| BorderWeights.Regular`                                             | `BorderWeights.Light`          |
 
 
 ## Dependencies
@@ -25,6 +25,10 @@
  - [gb-avatar-group](../gb-avatar-group)
  - [gb-avatar-label-group](../gb-avatar-label-group)
  - [gb-avatar-profile-photo](../gb-avatar-profile-photo)
+ - [gb-badge](../gb-badges)
+ - [gb-input-dropdown](../gb-input-dropdown)
+ - [gb-input-dropdown-menu-item](../gb-input-dropdown-menu)
+ - [gb-tag](../gb-tags)
 
 ### Depends on
 
@@ -39,6 +43,10 @@ graph TD;
   gb-avatar-group --> gb-avatar
   gb-avatar-label-group --> gb-avatar
   gb-avatar-profile-photo --> gb-avatar
+  gb-badge --> gb-avatar
+  gb-input-dropdown --> gb-avatar
+  gb-input-dropdown-menu-item --> gb-avatar
+  gb-tag --> gb-avatar
   style gb-avatar fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

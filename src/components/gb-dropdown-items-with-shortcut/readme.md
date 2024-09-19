@@ -14,7 +14,7 @@
 | `iconSrc`      | `icon-src`      |             | `string`                  | `undefined` |
 | `label`        | `label`         |             | `string`                  | `''`        |
 | `shortcut`     | `shortcut`      |             | `boolean`                 | `undefined` |
-| `shortcutIcon` | `shortcut-icon` |             | `string`                  | `'⌘C'`      |
+| `shortcutIcon` | `shortcut-icon` |             | `string`                  | `'C'`       |
 | `state`        | `state`         |             | `"default" \| "disabled"` | `'default'` |
 
 

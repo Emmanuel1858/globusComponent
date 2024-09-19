@@ -9,11 +9,10 @@
 
 | Property         | Attribute         | Description | Type                                                                | Default     |
 | ---------------- | ----------------- | ----------- | ------------------------------------------------------------------- | ----------- |
-| `disabled`       | `disabled`        |             | `boolean`                                                           | `false`     |
 | `selected`       | `selected`        |             | `boolean`                                                           | `false`     |
+| `state`          | `state`           |             | `"default" \| "disabled"`                                           | `'default'` |
 | `supportingText` | `supporting-text` |             | `boolean`                                                           | `false`     |
 | `type`           | `type`            |             | `"avatar_leading" \| "checkbox" \| "dot_leading" \| "icon_leading"` | `undefined` |
-| `value`          | `value`           |             | `string`                                                            | `undefined` |
 
 
 ## Dependencies

@@ -167,13 +167,19 @@ export namespace Components {
         "type": 'icon_leading' | 'avatar_leading' | 'dot_leading' | 'checkbox';
     }
     interface GbInputField {
-        "destructive"?: boolean;
-        "helpIcon"?: boolean;
-        "icon"?: string;
+        "destructive": boolean;
+        "hintText": string;
+        "iconSwap"?: string;
         "inputType": 'default' | 'icon_leading' | 'leading_dropdown' | 'trailing_dropdown'|'leading_text'|'payment_input'| 'tags' | 'trailing_button' |'password' | 'password_icon_leading' | 'count';
         "label"?: string;
         "placeholder": string;
+        "showHelpIcon"?: boolean;
+        "showHintText": boolean;
+        "showLabel": boolean;
+        "showPlaceholder": boolean;
+        "showValidation": boolean;
         "size": GeneralSizes;
+        "state": 'disabled';
     }
     interface GbMegainputField {
         "size": GeneralSizes;
@@ -749,12 +755,18 @@ declare namespace LocalJSX {
     }
     interface GbInputField {
         "destructive"?: boolean;
-        "helpIcon"?: boolean;
-        "icon"?: string;
+        "hintText"?: string;
+        "iconSwap"?: string;
         "inputType"?: 'default' | 'icon_leading' | 'leading_dropdown' | 'trailing_dropdown'|'leading_text'|'payment_input'| 'tags' | 'trailing_button' |'password' | 'password_icon_leading' | 'count';
         "label"?: string;
         "placeholder"?: string;
+        "showHelpIcon"?: boolean;
+        "showHintText"?: boolean;
+        "showLabel"?: boolean;
+        "showPlaceholder"?: boolean;
+        "showValidation"?: boolean;
         "size"?: GeneralSizes;
+        "state"?: 'disabled';
     }
     interface GbMegainputField {
         "size"?: GeneralSizes;

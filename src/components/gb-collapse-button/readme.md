@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property               | Attribute                | Description | Type      | Default  |
-| ---------------------- | ------------------------ | ----------- | --------- | -------- |
-| `currentIconDirection` | `current-icon-direction` |             | `string`  | `'left'` |
-| `isHovered`            | `is-hovered`             |             | `boolean` | `false`  |
+| Property               | Attribute                | Description | Type                | Default     |
+| ---------------------- | ------------------------ | ----------- | ------------------- | ----------- |
+| `color`                | `color`                  |             | `"grey" \| "white"` | `undefined` |
+| `currentIconDirection` | `current-icon-direction` |             | `string`            | `'left'`    |
+| `isHovered`            | `is-hovered`             |             | `boolean`           | `false`     |
 
 
 ## Dependencies
