@@ -5,8 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { ArrowPositions, BorderWeights, BreakPoints, CheckBoxVariants, FileUploadIconType, FileUploadStates, GeneralColors, GeneralHierarchies, GeneralSizes, OnlineIndicatorStates, PaginationNumberShapes, PaginationTypes, StateEnum, TabTypes } from "./models/reusableModels";
-export { ArrowPositions, BorderWeights, BreakPoints, CheckBoxVariants, FileUploadIconType, FileUploadStates, GeneralColors, GeneralHierarchies, GeneralSizes, OnlineIndicatorStates, PaginationNumberShapes, PaginationTypes, StateEnum, TabTypes } from "./models/reusableModels";
+import { ArrowPositions, BorderWeights, BreakPoints, CheckBoxVariants, FileUploadIconType, FileUploadStates, GeneralBackgroundCategories, GeneralColors, GeneralHierarchies, GeneralSizes, OnlineIndicatorStates, PaginationNumberShapes, PaginationTypes, StateEnum, TabTypes } from "./models/reusableModels";
+export { ArrowPositions, BorderWeights, BreakPoints, CheckBoxVariants, FileUploadIconType, FileUploadStates, GeneralBackgroundCategories, GeneralColors, GeneralHierarchies, GeneralSizes, OnlineIndicatorStates, PaginationNumberShapes, PaginationTypes, StateEnum, TabTypes } from "./models/reusableModels";
 export namespace Components {
     interface GbAvatar {
         "icon": 'user';
@@ -39,8 +39,7 @@ export namespace Components {
     }
     interface GbAvatarGroup {
         "addMoreButton": boolean;
-        "image": any[];
-        "images": any[];
+        "images": string[];
         "moreUsers": boolean;
         "size": GeneralSizes;
         "state": StateEnum;
@@ -161,7 +160,14 @@ export namespace Components {
         "icon": FileUploadIconType;
         "state": FileUploadStates;
     }
+    interface GbHeader {
+        "placeholder": boolean;
+        "showIndicator": boolean;
+        "state": StateEnum;
+        "text": boolean;
+    }
     interface GbHeaderIcon {
+        "icon": string;
         "showIndicator": boolean;
         "state": StateEnum;
     }
@@ -170,7 +176,7 @@ export namespace Components {
     }
     interface GbHorizontalTabs {
         "breakpoint": BreakPoints;
-        "eigthTab": boolean;
+        "eighthTab": boolean;
         "fifthTab": boolean;
         "fourthTab": boolean;
         "fullWidth": boolean;
@@ -234,6 +240,11 @@ export namespace Components {
         "iconLeading": string;
         "iconTrailing": string;
     }
+    interface GbPaginationDotIndicator {
+        "current": boolean;
+        "size": GeneralSizes;
+        "type": 'dot' | 'line';
+    }
     interface GbPaginationNumberBase {
         "shape": PaginationNumberShapes;
     }
@@ -251,6 +262,30 @@ export namespace Components {
     }
     interface GbScrollbar {
         "length": '25%' | '50%' | '75%';
+    }
+    interface GbSideBarItem {
+        "category": GeneralBackgroundCategories;
+        "icon": string;
+        "label": string;
+        "showArrow": boolean;
+        "showBadge": boolean;
+        "showTooltip": boolean;
+        "state": 'default' | 'active';
+        "type": 'full_with_label' | 'icon_only';
+    }
+    interface GbSidebar {
+        "applicationName": string;
+        "category": GeneralBackgroundCategories;
+        "eighthItem": boolean;
+        "fifthItem": boolean;
+        "fourthItem": boolean;
+        "ninthItem": boolean;
+        "seventhItem": boolean;
+        "showSecondCategory": boolean;
+        "sixthItem": boolean;
+        "state": 'expanded' | 'collapsed';
+        "tenthItem": boolean;
+        "thirdItem": boolean;
     }
     interface GbSlider {
         "max": number;
@@ -315,9 +350,17 @@ export namespace Components {
     interface GbWysiwygEditorIcon {
     }
 }
+export interface GbSideBarItemCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLGbSideBarItemElement;
+}
 export interface GbSliderCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLGbSliderElement;
+}
+export interface GbTabButtonBaseCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLGbTabButtonBaseElement;
 }
 declare global {
     interface HTMLGbAvatarElement extends Components.GbAvatar, HTMLStencilElement {
@@ -446,6 +489,12 @@ declare global {
         prototype: HTMLGbFileUploadItemBaseElement;
         new (): HTMLGbFileUploadItemBaseElement;
     };
+    interface HTMLGbHeaderElement extends Components.GbHeader, HTMLStencilElement {
+    }
+    var HTMLGbHeaderElement: {
+        prototype: HTMLGbHeaderElement;
+        new (): HTMLGbHeaderElement;
+    };
     interface HTMLGbHeaderIconElement extends Components.GbHeaderIcon, HTMLStencilElement {
     }
     var HTMLGbHeaderIconElement: {
@@ -512,6 +561,12 @@ declare global {
         prototype: HTMLGbPaginationButtonGroupBaseElement;
         new (): HTMLGbPaginationButtonGroupBaseElement;
     };
+    interface HTMLGbPaginationDotIndicatorElement extends Components.GbPaginationDotIndicator, HTMLStencilElement {
+    }
+    var HTMLGbPaginationDotIndicatorElement: {
+        prototype: HTMLGbPaginationDotIndicatorElement;
+        new (): HTMLGbPaginationDotIndicatorElement;
+    };
     interface HTMLGbPaginationNumberBaseElement extends Components.GbPaginationNumberBase, HTMLStencilElement {
     }
     var HTMLGbPaginationNumberBaseElement: {
@@ -535,6 +590,29 @@ declare global {
     var HTMLGbScrollbarElement: {
         prototype: HTMLGbScrollbarElement;
         new (): HTMLGbScrollbarElement;
+    };
+    interface HTMLGbSideBarItemElementEventMap {
+        "sideBarItemClicked": void;
+    }
+    interface HTMLGbSideBarItemElement extends Components.GbSideBarItem, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLGbSideBarItemElementEventMap>(type: K, listener: (this: HTMLGbSideBarItemElement, ev: GbSideBarItemCustomEvent<HTMLGbSideBarItemElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLGbSideBarItemElementEventMap>(type: K, listener: (this: HTMLGbSideBarItemElement, ev: GbSideBarItemCustomEvent<HTMLGbSideBarItemElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLGbSideBarItemElement: {
+        prototype: HTMLGbSideBarItemElement;
+        new (): HTMLGbSideBarItemElement;
+    };
+    interface HTMLGbSidebarElement extends Components.GbSidebar, HTMLStencilElement {
+    }
+    var HTMLGbSidebarElement: {
+        prototype: HTMLGbSidebarElement;
+        new (): HTMLGbSidebarElement;
     };
     interface HTMLGbSliderElementEventMap {
         "valueChange": { left: number; right: number };
@@ -565,7 +643,18 @@ declare global {
         prototype: HTMLGbStatusIndicatorElement;
         new (): HTMLGbStatusIndicatorElement;
     };
+    interface HTMLGbTabButtonBaseElementEventMap {
+        "tabClicked": void;
+    }
     interface HTMLGbTabButtonBaseElement extends Components.GbTabButtonBase, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLGbTabButtonBaseElementEventMap>(type: K, listener: (this: HTMLGbTabButtonBaseElement, ev: GbTabButtonBaseCustomEvent<HTMLGbTabButtonBaseElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLGbTabButtonBaseElementEventMap>(type: K, listener: (this: HTMLGbTabButtonBaseElement, ev: GbTabButtonBaseCustomEvent<HTMLGbTabButtonBaseElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLGbTabButtonBaseElement: {
         prototype: HTMLGbTabButtonBaseElement;
@@ -647,6 +736,7 @@ declare global {
         "gb-file-type-icon": HTMLGbFileTypeIconElement;
         "gb-file-upload": HTMLGbFileUploadElement;
         "gb-file-upload-item-base": HTMLGbFileUploadItemBaseElement;
+        "gb-header": HTMLGbHeaderElement;
         "gb-header-icon": HTMLGbHeaderIconElement;
         "gb-help-dropdown": HTMLGbHelpDropdownElement;
         "gb-horizontal-tabs": HTMLGbHorizontalTabsElement;
@@ -658,10 +748,13 @@ declare global {
         "gb-notification-panel": HTMLGbNotificationPanelElement;
         "gb-pagination": HTMLGbPaginationElement;
         "gb-pagination-button-group-base": HTMLGbPaginationButtonGroupBaseElement;
+        "gb-pagination-dot-indicator": HTMLGbPaginationDotIndicatorElement;
         "gb-pagination-number-base": HTMLGbPaginationNumberBaseElement;
         "gb-progress-bar": HTMLGbProgressBarElement;
         "gb-progress-circle": HTMLGbProgressCircleElement;
         "gb-scrollbar": HTMLGbScrollbarElement;
+        "gb-side-bar-item": HTMLGbSideBarItemElement;
+        "gb-sidebar": HTMLGbSidebarElement;
         "gb-slider": HTMLGbSliderElement;
         "gb-slider-control-handle": HTMLGbSliderControlHandleElement;
         "gb-status-indicator": HTMLGbStatusIndicatorElement;
@@ -709,8 +802,7 @@ declare namespace LocalJSX {
     }
     interface GbAvatarGroup {
         "addMoreButton"?: boolean;
-        "image"?: any[];
-        "images"?: any[];
+        "images"?: string[];
         "moreUsers"?: boolean;
         "size"?: GeneralSizes;
         "state"?: StateEnum;
@@ -829,7 +921,14 @@ declare namespace LocalJSX {
         "icon"?: FileUploadIconType;
         "state"?: FileUploadStates;
     }
+    interface GbHeader {
+        "placeholder"?: boolean;
+        "showIndicator"?: boolean;
+        "state"?: StateEnum;
+        "text"?: boolean;
+    }
     interface GbHeaderIcon {
+        "icon"?: string;
         "showIndicator"?: boolean;
         "state"?: StateEnum;
     }
@@ -838,7 +937,7 @@ declare namespace LocalJSX {
     }
     interface GbHorizontalTabs {
         "breakpoint"?: BreakPoints;
-        "eigthTab"?: boolean;
+        "eighthTab"?: boolean;
         "fifthTab"?: boolean;
         "fourthTab"?: boolean;
         "fullWidth"?: boolean;
@@ -902,6 +1001,11 @@ declare namespace LocalJSX {
         "iconLeading"?: string;
         "iconTrailing"?: string;
     }
+    interface GbPaginationDotIndicator {
+        "current"?: boolean;
+        "size"?: GeneralSizes;
+        "type"?: 'dot' | 'line';
+    }
     interface GbPaginationNumberBase {
         "shape"?: PaginationNumberShapes;
     }
@@ -919,6 +1023,31 @@ declare namespace LocalJSX {
     }
     interface GbScrollbar {
         "length"?: '25%' | '50%' | '75%';
+    }
+    interface GbSideBarItem {
+        "category"?: GeneralBackgroundCategories;
+        "icon"?: string;
+        "label"?: string;
+        "onSideBarItemClicked"?: (event: GbSideBarItemCustomEvent<void>) => void;
+        "showArrow"?: boolean;
+        "showBadge"?: boolean;
+        "showTooltip"?: boolean;
+        "state"?: 'default' | 'active';
+        "type"?: 'full_with_label' | 'icon_only';
+    }
+    interface GbSidebar {
+        "applicationName"?: string;
+        "category"?: GeneralBackgroundCategories;
+        "eighthItem"?: boolean;
+        "fifthItem"?: boolean;
+        "fourthItem"?: boolean;
+        "ninthItem"?: boolean;
+        "seventhItem"?: boolean;
+        "showSecondCategory"?: boolean;
+        "sixthItem"?: boolean;
+        "state"?: 'expanded' | 'collapsed';
+        "tenthItem"?: boolean;
+        "thirdItem"?: boolean;
     }
     interface GbSlider {
         "max"?: number;
@@ -940,6 +1069,7 @@ declare namespace LocalJSX {
         "badge"?: boolean;
         "current"?: boolean;
         "fullWidth"?: boolean;
+        "onTabClicked"?: (event: GbTabButtonBaseCustomEvent<void>) => void;
         "size"?: GeneralSizes;
         "type"?: TabTypes;
     }
@@ -1005,6 +1135,7 @@ declare namespace LocalJSX {
         "gb-file-type-icon": GbFileTypeIcon;
         "gb-file-upload": GbFileUpload;
         "gb-file-upload-item-base": GbFileUploadItemBase;
+        "gb-header": GbHeader;
         "gb-header-icon": GbHeaderIcon;
         "gb-help-dropdown": GbHelpDropdown;
         "gb-horizontal-tabs": GbHorizontalTabs;
@@ -1016,10 +1147,13 @@ declare namespace LocalJSX {
         "gb-notification-panel": GbNotificationPanel;
         "gb-pagination": GbPagination;
         "gb-pagination-button-group-base": GbPaginationButtonGroupBase;
+        "gb-pagination-dot-indicator": GbPaginationDotIndicator;
         "gb-pagination-number-base": GbPaginationNumberBase;
         "gb-progress-bar": GbProgressBar;
         "gb-progress-circle": GbProgressCircle;
         "gb-scrollbar": GbScrollbar;
+        "gb-side-bar-item": GbSideBarItem;
+        "gb-sidebar": GbSidebar;
         "gb-slider": GbSlider;
         "gb-slider-control-handle": GbSliderControlHandle;
         "gb-status-indicator": GbStatusIndicator;
@@ -1060,6 +1194,7 @@ declare module "@stencil/core" {
             "gb-file-type-icon": LocalJSX.GbFileTypeIcon & JSXBase.HTMLAttributes<HTMLGbFileTypeIconElement>;
             "gb-file-upload": LocalJSX.GbFileUpload & JSXBase.HTMLAttributes<HTMLGbFileUploadElement>;
             "gb-file-upload-item-base": LocalJSX.GbFileUploadItemBase & JSXBase.HTMLAttributes<HTMLGbFileUploadItemBaseElement>;
+            "gb-header": LocalJSX.GbHeader & JSXBase.HTMLAttributes<HTMLGbHeaderElement>;
             "gb-header-icon": LocalJSX.GbHeaderIcon & JSXBase.HTMLAttributes<HTMLGbHeaderIconElement>;
             "gb-help-dropdown": LocalJSX.GbHelpDropdown & JSXBase.HTMLAttributes<HTMLGbHelpDropdownElement>;
             "gb-horizontal-tabs": LocalJSX.GbHorizontalTabs & JSXBase.HTMLAttributes<HTMLGbHorizontalTabsElement>;
@@ -1071,10 +1206,13 @@ declare module "@stencil/core" {
             "gb-notification-panel": LocalJSX.GbNotificationPanel & JSXBase.HTMLAttributes<HTMLGbNotificationPanelElement>;
             "gb-pagination": LocalJSX.GbPagination & JSXBase.HTMLAttributes<HTMLGbPaginationElement>;
             "gb-pagination-button-group-base": LocalJSX.GbPaginationButtonGroupBase & JSXBase.HTMLAttributes<HTMLGbPaginationButtonGroupBaseElement>;
+            "gb-pagination-dot-indicator": LocalJSX.GbPaginationDotIndicator & JSXBase.HTMLAttributes<HTMLGbPaginationDotIndicatorElement>;
             "gb-pagination-number-base": LocalJSX.GbPaginationNumberBase & JSXBase.HTMLAttributes<HTMLGbPaginationNumberBaseElement>;
             "gb-progress-bar": LocalJSX.GbProgressBar & JSXBase.HTMLAttributes<HTMLGbProgressBarElement>;
             "gb-progress-circle": LocalJSX.GbProgressCircle & JSXBase.HTMLAttributes<HTMLGbProgressCircleElement>;
             "gb-scrollbar": LocalJSX.GbScrollbar & JSXBase.HTMLAttributes<HTMLGbScrollbarElement>;
+            "gb-side-bar-item": LocalJSX.GbSideBarItem & JSXBase.HTMLAttributes<HTMLGbSideBarItemElement>;
+            "gb-sidebar": LocalJSX.GbSidebar & JSXBase.HTMLAttributes<HTMLGbSidebarElement>;
             "gb-slider": LocalJSX.GbSlider & JSXBase.HTMLAttributes<HTMLGbSliderElement>;
             "gb-slider-control-handle": LocalJSX.GbSliderControlHandle & JSXBase.HTMLAttributes<HTMLGbSliderControlHandleElement>;
             "gb-status-indicator": LocalJSX.GbStatusIndicator & JSXBase.HTMLAttributes<HTMLGbStatusIndicatorElement>;

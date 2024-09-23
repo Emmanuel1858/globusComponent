@@ -50,14 +50,14 @@
       <p slot="supporting_text">Kadiri2047@gmail.com</p>
     </gb-avatar-label-group> -->
 
-    <gb-avatar-group size="md" more-users="true" add-more-button="true" images='["build/assets/avatar_pic.jpg", "build/assets/avatar_pic.jpg", "build/assets/avatar_pic.jpg"]'>
+    <gb-avatar-group size="md" more-users="true" add-more-button="true">
       <p slot="initials">+5</p>
-      <img src="build/assets/avatar_pic.jpg" alt="" slot="image">
-      <img src="build/assets/avatar_pic.jpg" alt="" slot="image">
+      <!-- <img src="build/assets/avatar_pic.jpg" alt="" slot="image"> -->
+      <!-- <img src="build/assets/avatar_pic.jpg" alt="" slot="image"> -->
     </gb-avatar-group>
 
     <!-- <gb-header-icon state="default" show-indicator="true"></gb-header-icon> -->
-    <gb-collapse-button color="gray" action="expand"></gb-collapse-button>
+    <!-- <gb-collapse-button color="gray" action="expand"></gb-collapse-button> -->
     <!-- <gb-tooltip arrow="right">
       <p slot="main_text">This is a tooltip</p>
     </gb-tooltip> -->
@@ -65,21 +65,37 @@
     <gb-pagination-number-base shape="circle"></gb-pagination-number-base>
     <gb-carousel-arrow size="md" chevron="right"></gb-carousel-arrow>
     <gb-pagination type="card_minimal_center_aligned" breakpoint="desktop"></gb-pagination>
-    <gb-pagination-button-group-base icon="leading" icon-leading="assets/circle.svg">
+    <!-- <gb-pagination-button-group-base icon="leading" icon-leading="assets/circle.svg">
       <p>Previous</p>
-    </gb-pagination-button-group-base>
-    <gb-tab-button-base size="md" current="true" type="button_primary" full-width="false" badge="true">
+    </gb-pagination-button-group-base> -->
+    <!-- <gb-tab-button-base size="md" current="false" type="button_gray" full-width="true" badge="true">
       <p slot="name">My details</p>
-      <!-- <p slot="count">2</p> -->
-    </gb-tab-button-base>
-    <gb-horizontal-tabs size="sm" type="button_primary" full-width="false">
-      <p slot="first_tab">My details</p>
+      <p slot="count">2</p>
+    </gb-tab-button-base> -->
+    <gb-horizontal-tabs size="sm" type="rounded_button_white_border" full-width="true" third-tab="true" fourth-tab="true" breakpoint="desktop">
+      <p slot="first_tab" onclick="console.log('Hi')">My details</p>
       <p slot="second_tab">My Profile</p>
-      <p slot="third_tab">My Profile</p>
+      <p slot="third_tab">Settings</p>
+      <p slot="fourth_tab">Options</p>
     </gb-horizontal-tabs>
-    <gb-badge size="lg" type="pill_outline" color="information" icon="avatar" icon-trailing-swap="arrow_pointing_right">
+    <!-- <gb-badge size="lg" type="pill_outline" color="information" icon="avatar" icon-trailing-swap="arrow_pointing_right">
       <img src="build/assets/avatar_pic.jpg" alt="" slot="image">
       <p>Label</p>
-    </gb-badge>
+    </gb-badge> -->
+    <gb-tag size="lg" icon="avatar" action="count" checkbox="true">
+      <img src="build/assets/avatar_pic.jpg" alt="" slot="image">
+      <p>Label</p>
+      <p slot="count">5</p>
+    </gb-tag>
+    <gb-header state="default" show-indicator="true" text="false">
+      <img src="build/assets/avatar_pic.jpg" alt="" slot="image">
+      <h1 slot="initials">NP</h1>
+    </gb-header>
+    <gb-side-bar-item state="active" label="Label" type="full_with_label" icon="assets/dashboard-square-03.svg" category="colored_background" show-arrow="true" show-badge="true">
+      <p slot="label">Label</p>
+    </gb-side-bar-item>
+    <gb-sidebar category="colored_background" state="expanded" third-item="true" fourth-item="true" fifth-item="true" sixth-item="true" show-second-category="true">
+      <p slot="first_item">Hi</p>
+    </gb-sidebar>
   </body>
 </html>

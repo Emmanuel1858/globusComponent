@@ -9,7 +9,7 @@ import { Component, Prop, getAssetPath, h } from '@stencil/core';
 export class GbTag {
     @Prop() size: 'sm' | 'md' | 'lg';
     @Prop() icon?: 'country' | 'avatar' | 'dot';
-    @Prop() action: 'X_close' | 'text_only' | 'count' = 'text_only';
+    @Prop() action: 'X_close' | 'text_only' | 'count';
     @Prop() flagSwap: string;
     @Prop() checkbox?: boolean;
 
@@ -38,11 +38,11 @@ export class GbTag {
                             <circle cx="4" cy="4" r="3" fill="#17B26A"/>
                         </svg>
                     )}
-                    <span class="label">
-                        <slot></slot>
-                    </span>
+                    <slot></slot>
                     {this.action === 'count' && (
-                        <gb-tag-count size={this.size}></gb-tag-count>
+                        <gb-tag-count size={this.size}>
+                            <slot slot="count" name="count"></slot>
+                        </gb-tag-count>
                     )}
                 </div>
                 {this.action === 'X_close' && (

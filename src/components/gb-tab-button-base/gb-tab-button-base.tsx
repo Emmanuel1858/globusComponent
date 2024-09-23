@@ -1,4 +1,4 @@
-import { Component, Element, Prop, h } from "@stencil/core";
+import { Component, Element, Event, EventEmitter, Prop, h } from "@stencil/core";
 import { GeneralSizes, TabTypes } from "../../models/reusableModels";
 
 @Component({
@@ -13,6 +13,7 @@ export class GbTabButtonBase {
   @Prop() badge: boolean = false;
   @Prop() type: TabTypes;
   @Element() el: HTMLElement;
+  @Event() tabClicked: EventEmitter<void>;
 
   getTextClasses() {
     switch (this.size) {
@@ -54,23 +55,33 @@ export class GbTabButtonBase {
     if(tabCount) {
         tabCount.classList.add(this.getCountTextClasses());
     }
+  }
 
-    // if (this.current) {
-    //   tabCount.classList.add();
-    // } else {
-    //   tabCount.classList.add();
-    // }
+  handleClick() {
+    this.tabClicked.emit();
   }
 
   render() {
     return (
-      <div class={`tab_button_div ${this.type} ${this.current ? 'current' : ''} ${this.fullWidth ? 'full_width' : ''} ${this.size}`}>
+      <div 
+      class={`tab_button_div ${this.type}
+      ${this.current ? 'current' : ''} 
+      ${this.fullWidth ? 'full_width' : ''} 
+      ${this.size}`} onClick={() => this.handleClick()}>
         <slot name="name"></slot>
-        {/* {this.badge && (
-          <div class={`count_div ${this.type} ${this.current ? 'current' : ''}`}>
+        {this.badge && (
+          <gb-badge
+            size="sm"
+            type="pill_color"
+            color={
+              this.current && this.type === 'button_primary' ? 'information' :
+              this.current && this.type === 'underline' ? 'information' :
+              this.current && this.type === 'line' ? 'information' : 'gray'
+            }
+          >
             <slot name="count"></slot>
-          </div>
-        )} */}
+          </gb-badge>
+        )}
       </div>
     );
   }

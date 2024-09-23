@@ -1,0 +1,24 @@
+.header_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    border-bottom: 0.7px solid var(--color-border-subtle, #CDD5DF);
+    background: var(--color-surface, #FFFFFF);
+}
+
+.content{
+    display: flex;
+    height: 4.5rem;
+    padding: 0rem 2rem;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.inner_content{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--spacing-Positive-spacing-4, 1rem);
+    flex: 1 0 0;
+}

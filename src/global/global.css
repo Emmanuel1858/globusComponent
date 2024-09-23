@@ -219,11 +219,27 @@
     }
 
     [data-theme="light"] {
+        --color-text-danger-bold: var(--brandRed-800);
+    }
+
+    [data-theme="dark"] {
+        --color-text-danger-bold: var(--brandRed-100);
+    }
+
+    [data-theme="light"] {
         --color-text-danger: var(--brandRed-700);
     }
 
     [data-theme="dark"] {
         --color-text-danger: var(--brandRed-700);
+    }
+
+     [data-theme="light"] {
+        --color-text-danger-subtle: var(--brandRed-600);
+    }
+
+    [data-theme="dark"] {
+        --color-text-danger-subtle: var(--brandRed-300);
     }
 
     [data-theme="light"] {
@@ -235,11 +251,11 @@
     }
 
     [data-theme="light"] {
-        --color-text-danger-bold: var(--brandRed-800);
+        --color-text-warning-bold: var(--warning-800);
     }
 
     [data-theme="dark"] {
-        --color-text-danger-bold: var(--brandRed-100);
+        --color-text-warning-bold: var(--warning-100);
     }
 
     [data-theme="light"] {
@@ -251,13 +267,6 @@
         --color-text-warning: var(--warning-300);
     }
 
-    [data-theme="light"] {
-        --color-text-warning-bold: var(--warning-800);
-    }
-
-    [data-theme="dark"] {
-        --color-text-warning-bold: var(--warning-100);
-    }
 
     [data-theme="light"] {
         --color-text-warning-subtle: var(--warning-500);
@@ -268,27 +277,27 @@
     }
 
     [data-theme="light"] {
-        --color-text-sucess: var(--success-600);
+        --color-text-success-bold: var(--success-800);
     }
 
     [data-theme="dark"] {
-        --color-text-sucess: var(--success-300);
+        --color-text-success-bold: var(--success-100);
     }
 
     [data-theme="light"] {
-        --color-text-sucess-bold: var(--success-800);
+        --color-text-success: var(--success-600);
     }
 
     [data-theme="dark"] {
-        --color-text-sucess-bold: var(--success-100);
+        --color-text-success: var(--success-300);
     }
 
     [data-theme="light"] {
-        --color-text-discovery: var(--blueLight-800);
+        --color-text-success-subtle: var(--success-600);
     }
 
     [data-theme="dark"] {
-        --color-text-discovery: var(--blueLight-100);
+        --color-text-success-subtle: var(--success-300);
     }
 
     [data-theme="light"] {
@@ -300,19 +309,19 @@
     }
 
     [data-theme="light"] {
+        --color-text-discovery: var(--blueLight-800);
+    }
+
+    [data-theme="dark"] {
+        --color-text-discovery: var(--blueLight-100);
+    }
+
+    [data-theme="light"] {
         --color-text-discovery-subtle: var(--blueLight-400);
     }
 
     [data-theme="dark"] {
         --color-text-discovery-subtle: var(--blueLight-100);
-    }
-
-    [data-theme="light"] {
-        --color-text-information: var(--blue-600);
-    }
-
-    [data-theme="dark"] {
-        --color-text-information: var(--blue-300);
     }
 
     [data-theme="light"] {
@@ -324,19 +333,19 @@
     }
 
     [data-theme="light"] {
+        --color-text-information: var(--blue-600);
+    }
+
+    [data-theme="dark"] {
+        --color-text-information: var(--blue-300);
+    }
+
+    [data-theme="light"] {
         --color-text-information-subtle: var(--blue-500);
     }
 
     [data-theme="dark"] {
         --color-text-information-subtle: var(--blue-400);
-    }
-
-    [data-theme="light"] {
-        --color-text-purple: var(--purple-600);
-    }
-
-    [data-theme="dark"] {
-        --color-text-purple: var(--purple-300);
     }
 
     [data-theme="light"] {
@@ -348,6 +357,14 @@
     }
 
     [data-theme="light"] {
+        --color-text-purple: var(--purple-600);
+    }
+
+    [data-theme="dark"] {
+        --color-text-purple: var(--purple-300);
+    }
+
+    [data-theme="light"] {
         --color-text-purple-subtle: var(--purple-500);
     }
 
@@ -356,19 +373,27 @@
     }
 
     [data-theme="light"] {
-        --color-text-pink: var(--purple-600);
+        --color-text-pink-bold: var(--pink-800);
     }
 
     [data-theme="dark"] {
-        --color-text-pink: var(--purple-300);
+        --color-text-pink-bold: var(--pink-100);
     }
 
     [data-theme="light"] {
-        --color-text-pink-subtle: var(--purple-500);
+        --color-text-pink: var(--pink-600);
     }
 
     [data-theme="dark"] {
-        --color-text-pink-subtle: var(--purple-400);
+        --color-text-pink: var(--pink-300);
+    }
+
+    [data-theme="light"] {
+        --color-text-pink-subtle: var(--pink-500);
+    }
+
+    [data-theme="dark"] {
+        --color-text-pink-subtle: var(--pink-400);
     }
 
 
@@ -443,11 +468,11 @@
     }
 
     [data-theme="light"] {
-        --color-icon-darkBlue: var(--brandDarkBlue-500);
+        --color-icon-brandDarkBlue: var(--brandDarkBlue-500);
     }
 
     [data-theme="dark"] {
-        --color-icon-darkBlue: var(--brandDarkBlue-200);
+        --color-icon-brandDarkBlue: var(--brandDarkBlue-200);
     }
 
     [data-theme="light"] {
@@ -456,6 +481,22 @@
 
     [data-theme="dark"] {
         --color-icon-brandRed: var(--brandRed-300);
+    }
+
+    [data-theme="light"] {
+        --color-icon-selected: var(--blue-500);
+    }
+
+    [data-theme="dark"] {
+        --color-icon-selected: var(--blue-300);
+    }
+
+    [data-theme="light"] {
+        --color-icon-danger-bold: var(--brandRed-800);
+    }
+
+    [data-theme="dark"] {
+        --color-icon-danger-bold: var(--brandRed-100);
     }
 
     [data-theme="light"] {
@@ -475,11 +516,11 @@
     }
 
     [data-theme="light"] {
-        --color-icon-danger-bold: var(--brandRed-800);
+        --color-icon-warning-bold: var(--warning-800);
     }
 
     [data-theme="dark"] {
-        --color-icon-danger-bold: var(--brandRed-100);
+        --color-icon-warning-bold: var(--warning-100);
     }
 
     [data-theme="light"] {
@@ -491,35 +532,19 @@
     }
 
     [data-theme="light"] {
-        --color-icon-warning-bold: var(--warning-800);
+        --color-icon-success-bold: var(--success-800);
     }
 
     [data-theme="dark"] {
-        --color-icon-warning-bold: var(--warning-100);
+        --color-icon-success-bold: var(--success-100);
     }
 
     [data-theme="light"] {
-        --color-icon-sucess: var(--success-600);
+        --color-icon-success: var(--success-600);
     }
 
     [data-theme="dark"] {
-        --color-icon-sucess: var(--success-300);
-    }
-
-    [data-theme="light"] {
-        --color-icon-sucess-bold: var(--success-800);
-    }
-
-    [data-theme="dark"] {
-        --color-icon-sucess-bold: var(--success-100);
-    }
-
-    [data-theme="light"] {
-        --color-icon-discovery: var(--blueLight-600);
-    }
-
-    [data-theme="dark"] {
-        --color-icon-discovery: var(--blueLight-300);
+        --color-icon-success: var(--success-300);
     }
 
     [data-theme="light"] {
@@ -531,11 +556,11 @@
     }
 
     [data-theme="light"] {
-        --color-icon-information: var(--blue-600);
+        --color-icon-discovery: var(--blueLight-600);
     }
 
     [data-theme="dark"] {
-        --color-icon-information: var(--blue-300);
+        --color-icon-discovery: var(--blueLight-300);
     }
 
     [data-theme="light"] {
@@ -547,11 +572,11 @@
     }
 
     [data-theme="light"] {
-        --color-icon-purple: var(--purple-600);
+        --color-icon-information: var(--blue-600);
     }
 
     [data-theme="dark"] {
-        --color-icon-purple: var(--purple-300);
+        --color-icon-information: var(--blue-300);
     }
 
     [data-theme="light"] {
@@ -563,11 +588,11 @@
     }
 
     [data-theme="light"] {
-        --color-icon-pink: var(--pink-600);
+        --color-icon-purple: var(--purple-600);
     }
 
     [data-theme="dark"] {
-        --color-icon-pink: var(--pink-300);
+        --color-icon-purple: var(--purple-300);
     }
 
     [data-theme="light"] {
@@ -575,7 +600,15 @@
     }
 
     [data-theme="dark"] {
-        --color-icon-pink: var(--pink-100);
+        --color-icon-pink-bold: var(--pink-100);
+    }
+
+    [data-theme="light"] {
+        --color-icon-pink: var(--pink-600);
+    }
+
+    [data-theme="dark"] {
+        --color-icon-pink: var(--pink-300);
     }
 
     /* ----------------Border Color --------------- */
@@ -653,11 +686,11 @@
     }
 
     [data-theme="light"] {
-        --color-border-darkBlue: var(--brandDarkBlue-500);
+        --color-border-brandDarkBlue: var(--brandDarkBlue-500);
     }
 
     [data-theme="dark"] {
-        --color-border-darkBlue: var(--brandDarkBlue-200);
+        --color-border-brandDarkBlue: var(--brandDarkBlue-200);
     }
 
     [data-theme="light"] {
@@ -733,35 +766,35 @@
     }
 
     [data-theme="light"] {
-        --color-border-sucess-bold: var(--success-800);
+        --color-border-success-bold: var(--success-800);
     }
 
     [data-theme="dark"] {
-        --color-border-sucess-bold: var(--success-100);
+        --color-border-success-bold: var(--success-100);
     }
 
     [data-theme="light"] {
-        --color-border-sucess: var(--success-600);
+        --color-border-success: var(--success-600);
     }
 
     [data-theme="dark"] {
-        --color-border-sucess: var(--success-300);
+        --color-border-success: var(--success-300);
     }
 
     [data-theme="light"] {
-        --color-border-sucess-subtle: var(--success-200);
+        --color-border-success-subtle: var(--success-200);
     }
 
     [data-theme="dark"] {
-        --color-border-sucess-subtle: var(--success-800);
+        --color-border-success-subtle: var(--success-800);
     }
 
     [data-theme="light"] {
-        --color-border-sucess-subtler: var(--success-100);
+        --color-border-success-subtler: var(--success-100);
     }
 
     [data-theme="dark"] {
-        --color-border-sucess-subtler: var(--success-900);
+        --color-border-success-subtler: var(--success-900);
     }
 
     [data-theme="light"] {
@@ -939,11 +972,11 @@
     }
 
     [data-theme="light"] {
-        --color-background-darkblue: var(--brandDarkBlue-500);
+        --color-background-brandDarkblue: var(--brandDarkBlue-500);
     }
 
     [data-theme="dark"] {
-        --color-background-darkblue: var(--brandDarkBlue-200);
+        --color-background-brandDarkblue: var(--brandDarkBlue-200);
     }
 
     [data-theme="light"] {
@@ -1332,11 +1365,11 @@
 
     /* ----------------Surface Color --------------- */
     [data-theme="light"] {
-        --color-surface-secondary: var(--gray-50);
+        --color-surface-bold: var(--gray-25);
     }
 
     [data-theme="dark"] {
-        --color-surface-secondary: var(--gray-950);
+        --color-surface-bold: var(--gray-950);
     }
 
     [data-theme="light"] {
@@ -1362,9 +1395,6 @@
     [data-theme="dark"] {
         --color-surface-pressed: var(--gray-700);
     }
-
- 
-
 }
 
 /* -----------------Shadow and Blur----------------- */

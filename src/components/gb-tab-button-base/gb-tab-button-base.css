@@ -2,6 +2,11 @@
 @import './../../global/spacing.css';
 @import './../../global/typography.css';
 
+:host{
+    display: flex;
+    align-items: center;
+}
+
 .tab_button_div{
     cursor: pointer;
 }
@@ -13,6 +18,13 @@
     justify-content: center;
     align-items: center;
     border-radius: var(--rounded-xs);
+}
+
+.rounded_button_white{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--rounded-full);
 }
 
 .underline,
@@ -38,6 +50,7 @@
 .button_primary,
 .button_gray,
 .button_white,
+.rounded_button_white,
 .underline_filled,
 .line{
     gap: var(--spacing-2);
@@ -51,6 +64,7 @@
 .tab_button_div.button_primary,
 .tab_button_div.button_gray,
 .tab_button_div.button_white,
+.tab_button_div.rounded_button_white,
 .tab_button_div.underline_filled,
 .tab_button_div.line{
     background: transparent;
@@ -69,13 +83,15 @@
 }
 
 .tab_button_div.button_gray:hover,
-.tab_button_div.button_white:hover{
+.tab_button_div.button_white:hover,
+.tab_button_div.rounded_button_white:hover{
     background: var(--color-background-gray-subtler, #EEF2F6);
     color: var(--color-text, #4B5565);
 }
 
 .tab_button_div.button_gray:active,
-.tab_button_div.button_white:active{
+.tab_button_div.button_white:active,
+.tab_button_div.rounded_button_white:active{
     background: transparent;
     color: var(--color-text, #4B5565);
 }
@@ -115,7 +131,8 @@
 }
 
 .tab_button_div.button_gray.current:hover,
-.tab_button_div.button_white.current:hover{
+.tab_button_div.button_white.current:hover,
+.tab_button_div.rounded_button_white.current:hover{
     background: var(--color-background-gray-subtler, #EEF2F6);
     color: var(--color-text-bold, #202939);
 }
@@ -125,7 +142,8 @@
     color: var(--color-text-bold, #202939);
 }
 
-.tab_button_div.button_white.current:active{
+.tab_button_div.button_white.current:active,
+.tab_button_div.rounded_button_white.current:active{
     background: var(--color-background-card, #FFFFFF);
     color: var(--color-text-bold, #202939);
 }
@@ -179,7 +197,8 @@
     color: var(--color-text-bold, #202939);
 }
 
-.tab_button_div.button_white.current{
+.tab_button_div.button_white.current,
+.tab_button_div.rounded_button_white.current{
     background: var(--color-background-card, #FFFFFF);
     color: var(--color-text-bold, #202939);
 }
@@ -206,6 +225,7 @@
 .button_primary.sm,
 .button_gray.sm,
 .button_white.sm,
+.rounded_button_white.sm,
 .underline.sm{
     height: 2.375rem;
     padding: var(--spacing-none) var(--spacing-4);
@@ -220,6 +240,7 @@
 .button_primary.md,
 .button_gray.md,
 .button_white.md,
+.rounded_button_white.md,
 .underline.md,
 .underline_filled.md,
 .line.md{
@@ -229,7 +250,8 @@
 
 .button_primary.full_width.sm,
 .button_gray.full_width.sm,
-.button_white.full_width.sm{
+.button_white.full_width.sm,
+.rounded_button_white.full_width.sm{
     width: 20rem;
     height: 2.375rem;
     padding: var(--spacing-none) var(--spacing-3);
@@ -244,7 +266,8 @@
 
 .button_primary.full_width.md,
 .button_gray.full_width.md,
-.button_white.full_width.md{
+.button_white.full_width.md,
+.rounded_button_white.full_width.md{
     width: 20rem;
     height: 2.25rem;
     padding: var(--spacing-none) var(--spacing-3);
@@ -256,8 +279,3 @@
     height: 2.25rem;
     padding: var(--spacing-none) var(--spacing-3);
 }
-
-/* Count Div Styles */
-/* .count_div.button_primary{
-    
-} */

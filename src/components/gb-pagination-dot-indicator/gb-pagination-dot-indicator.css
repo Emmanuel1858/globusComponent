@@ -1,0 +1,20 @@
+.dot_indicator_div{
+    border-radius: var(--rounded-full);
+    background: var(--color-icon-disabled);
+}
+
+/* Size Styles */
+.dot_indicator_div.md{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.dot_indicator_div.lg{
+    width: 0.625rem;
+    height: 0.625rem;
+}
+
+/* Current Styles */
+.dot_indicator_div.current{
+    background: var(--color-icon-brandSelected);
+}

@@ -13,6 +13,7 @@
     --font-size-t-md: 1rem;
     --font-size-t-sm: 0.875rem;
     --font-size-t-xs: 0.75rem;
+    --font-size-t-xxs: 0.625rem;
 
     /* Font Weights */
     --font-weight-bold: 700;
@@ -32,14 +33,16 @@
     --font-line-height-t-md: 1.5rem;
     --font-line-height-t-sm: 1.25rem;
     --font-line-height-t-xs: 1.125rem;
+    --font-line-height-t-xxs: 0.938rem;
 
     /* Letter Spacings */
     --font-letter-spacing-d-2xl: -0.09rem;
     --font-letter-spacing-d-xl: -0.075rem;
     --font-letter-spacing-d-lg: -0.075rem;
     --font-letter-spacing-d-md: -0.045rem;
-    --font-letter-spacing-d-sm: 0rem;
-    --font-letter-spacing-d-xs: 0rem;
+    --font-letter-spacing-d-sm: 0;
+    --font-letter-spacing-d-xs: 0;
+    --font-letter-spacing-d-xxs: 0;
 
     /* Font Families */
     --font-family-title: 'Sora';
@@ -914,4 +917,104 @@
 
 .text-xs-regular::after{
     margin-top: -0.396em;
+}
+
+.text-xxs-bold{
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-t-xxs);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--font-line-height-t-xxs);
+    margin: var(--spacing-none);
+    padding: var(--spacing-none);
+    display: inline-block;
+    position: relative;
+}
+
+.text-xxs-bold::before,
+.text-xxs-bold::after{
+    content: "";
+    display: table;
+}
+
+.text-xxs-bold::before{
+    margin-bottom: -0.291em;
+}
+
+.text-xxs-bold::after{
+    margin-top: -0.416em;
+}
+
+.text-xxs-semi-bold{
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-t-xxs);
+    font-weight: var(--font-weight-semi-bold);
+    line-height: var(--font-line-height-t-xxs);
+    margin: var(--spacing-none);
+    padding: var(--spacing-none);
+    display: inline-block;
+    position: relative;
+}
+
+.text-xxs-semi-bold::before,
+.text-xxs-semi-bold::after{
+    content: "";
+    display: table;
+}
+
+.text-xxs-semi-bold::before{
+    margin-bottom: -0.291em;
+}
+
+.text-xxs-semi-bold::after{
+    margin-top: -0.416em;
+}
+
+.text-xxs-medium{
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-t-xxs);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--font-line-height-t-xxs);
+    margin: var(--spacing-none);
+    padding: var(--spacing-none);
+    display: inline-block;
+    position: relative;
+}
+
+.text-xxs-medium::before,
+.text-xxs-medium::after{
+    content: "";
+    display: table;
+}
+
+.text-xxs-medium::before{
+    margin-bottom: -0.291em;
+}
+
+.text-xxs-medium::after{
+    margin-top: -0.416em;
+}
+
+.text-xxs-regular{
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-t-xxs);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--font-line-height-t-xxs);
+    margin: var(--spacing-none);
+    padding: var(--spacing-none);
+    display: inline-block;
+    position: relative;
+}
+
+.text-xxs-regular::before,
+.text-xxs-regular::after{
+    content: "";
+    display: table;
+}
+
+.text-xxs-regular::before{
+    margin-bottom: -0.291em;
+}
+
+.text-xxs-regular::after{
+    margin-top: -0.416em;
 }

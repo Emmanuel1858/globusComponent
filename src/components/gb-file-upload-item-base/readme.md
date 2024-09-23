@@ -7,13 +7,13 @@
 
 ## Properties
 
-| Property      | Attribute      | Description | Type                                                                                                              | Default             |
-| ------------- | -------------- | ----------- | ----------------------------------------------------------------------------------------------------------------- | ------------------- |
-| `buttonState` | `button-state` |             | `StateEnum.Default \| StateEnum.Disabled`                                                                         | `StateEnum.Default` |
-| `fileType`    | `file-type`    |             | `"doc" \| "jpg" \| "mp4" \| "pdf" \| "png"`                                                                       | `undefined`         |
-| `heightSize`  | `height-size`  |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs"` | `'md'`              |
-| `icon`        | `icon`         |             | `"icon" \| "outline"`                                                                                             | `undefined`         |
-| `state`       | `state`        |             | `"complete" \| "default" \| "disabled" \| "error" \| "hover" \| "in_progress"`                                    | `undefined`         |
+| Property      | Attribute      | Description | Type                                                                                                                       | Default             |
+| ------------- | -------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| `buttonState` | `button-state` |             | `StateEnum.Default \| StateEnum.Disabled`                                                                                  | `StateEnum.Default` |
+| `fileType`    | `file-type`    |             | `"doc" \| "jpg" \| "mp4" \| "pdf" \| "png"`                                                                                | `undefined`         |
+| `heightSize`  | `height-size`  |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs" \| "xxs"` | `'md'`              |
+| `icon`        | `icon`         |             | `"icon" \| "outline"`                                                                                                      | `undefined`         |
+| `state`       | `state`        |             | `"complete" \| "default" \| "disabled" \| "error" \| "hover" \| "in_progress"`                                             | `undefined`         |
 
 
 ## Dependencies

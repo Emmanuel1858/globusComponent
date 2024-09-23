@@ -1,0 +1,104 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+@import './../../global/typography.css';
+
+.sidebar_div{
+    transition: 0.5s ease-out;
+    position: relative;
+}
+
+.pattern{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    mix-blend-mode: multiply;
+}
+
+.pattern img{
+    width: 100%;
+    height: auto;
+}
+
+.sidebar_div.expanded{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    /* padding: 1.5rem; */
+}
+
+.sidebar_div.collapsed{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 5rem;
+}
+
+.nav{
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    gap: var(--spacing-6);
+}
+
+/* .navigation{
+    margin-bottom: 1.5rem;
+} */
+
+.sidebar_header.expanded{
+    display: flex;
+    padding: var(--spacing-none) var(--spacing-6);
+    justify-content: space-between;
+    align-items: center;
+    width: 16.75rem;
+    margin-top: 1rem;
+}
+
+.sidebar_header.collapsed{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1.5rem;
+}
+
+.logo_and_name.expanded{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo_and_name.collapsed{
+    display: flex;
+    justify-content: center;
+}
+
+.collapse_button.collapsed{
+    display: flex;
+    justify-content: center;
+}
+
+/* Sidebar Category Styles */
+.sidebar_div.plain_background{
+    height: 44.375rem;
+    padding-bottom: var(--spacing-5);
+    border-right: 0.7px solid var(--color-border-subtle, #CDD5DF);
+    background: var(--color-surface, #FFFFFF);
+}
+
+.sidebar_div.colored_background{
+    height: 45.625rem;
+    padding-bottom: var(--spacing-6);
+    background-image: linear-gradient(180deg, #064E94 0%, #02182E 100%);
+    background-size: cover;
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--spacing-1);
+}

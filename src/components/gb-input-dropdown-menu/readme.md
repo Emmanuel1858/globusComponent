@@ -9,7 +9,6 @@
 
 | Property         | Attribute         | Description | Type                                                                | Default     |
 | ---------------- | ----------------- | ----------- | ------------------------------------------------------------------- | ----------- |
-| `checkboxStates` | `checkbox-states` |             | `CheckBoxStates.Default \| CheckBoxStates.Disabled`                 | `undefined` |
 | `selected`       | `selected`        |             | `boolean`                                                           | `false`     |
 | `state`          | `state`           |             | `"default" \| "disabled"`                                           | `'default'` |
 | `supportingText` | `supporting-text` |             | `boolean`                                                           | `false`     |

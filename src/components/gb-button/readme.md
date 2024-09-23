@@ -16,7 +16,7 @@
 | `iconLeadingSwap`  | `icon-leading-swap`  |             | `string`                                                                                                                   | `undefined` |
 | `iconTrailing`     | `icon-trailing`      |             | `boolean`                                                                                                                  | `false`     |
 | `iconTrailingSwap` | `icon-trailing-swap` |             | `string`                                                                                                                   | `undefined` |
-| `size`             | `size`               |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs"`          | `undefined` |
+| `size`             | `size`               |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs" \| "xxs"` | `undefined` |
 | `state`            | `state`              |             | `"default" \| "disabled" \| "hover" \| "pressed"`                                                                          | `undefined` |
 
 
@@ -25,14 +25,12 @@
 ### Used by
 
  - [gb-file-upload-item-base](../gb-file-upload-item-base)
- - [gb-notification-panel](../gb-notification-panel)
  - [gb-pagination](../gb-pagination)
 
 ### Graph
 ```mermaid
 graph TD;
   gb-file-upload-item-base --> gb-button
-  gb-notification-panel --> gb-button
   gb-pagination --> gb-button
   style gb-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
