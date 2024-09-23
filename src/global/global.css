@@ -75,9 +75,18 @@
     --success-900: #074d31;
     --success-950: #053321;
 
-    /* opacity color palette  */
+    /* ------------------------------------------opacity color palette--------------------------------------  */
+    /* 20% opacity */
     --darkBlue200-opacity20: rgba(181, 185, 204, 0.2);
     --darkBlue500-opacity20: rgba(33, 44, 101, 0.2);
+
+    /* 30% opacity */
+    --darkBlue200-opacity30: rgba(181, 185, 204, 0.3);
+    --darkBlue500-opacity30: rgba(33, 44, 101, 0.3);
+
+    /* 40% opacity */
+    --darkBlue200-opacity40: rgba(181, 185, 204, 0.4);
+    --darkBlue500-opacity40: rgba(33, 44, 101, 0.4);
 
 
     /* ------------------------------------------Secondary Color------------------------------------------- */
@@ -251,6 +260,14 @@
     }
 
     [data-theme="light"] {
+        --color-text-warning-subtle: var(--warning-500);
+    }
+
+    [data-theme="dark"] {
+        --color-text-warning-subtle: var(--warning-400);
+    }
+
+    [data-theme="light"] {
         --color-text-sucess: var(--success-600);
     }
 
@@ -283,6 +300,14 @@
     }
 
     [data-theme="light"] {
+        --color-text-discovery-subtle: var(--blueLight-400);
+    }
+
+    [data-theme="dark"] {
+        --color-text-discovery-subtle: var(--blueLight-100);
+    }
+
+    [data-theme="light"] {
         --color-text-information: var(--blue-600);
     }
 
@@ -299,6 +324,14 @@
     }
 
     [data-theme="light"] {
+        --color-text-information-subtle: var(--blue-500);
+    }
+
+    [data-theme="dark"] {
+        --color-text-information-subtle: var(--blue-400);
+    }
+
+    [data-theme="light"] {
         --color-text-purple: var(--purple-600);
     }
 
@@ -312,6 +345,30 @@
 
     [data-theme="dark"] {
         --color-text-purple-bold: var(--purple-100);
+    }
+
+    [data-theme="light"] {
+        --color-text-purple-subtle: var(--purple-500);
+    }
+
+    [data-theme="dark"] {
+        --color-text-purple-subtle: var(--purple-400);
+    }
+
+    [data-theme="light"] {
+        --color-text-pink: var(--purple-600);
+    }
+
+    [data-theme="dark"] {
+        --color-text-pink: var(--purple-300);
+    }
+
+    [data-theme="light"] {
+        --color-text-pink-subtle: var(--purple-500);
+    }
+
+    [data-theme="dark"] {
+        --color-text-pink-subtle: var(--purple-400);
     }
 
 
@@ -1244,6 +1301,22 @@
         --color-blanket: var(--darkBlue200-opacity20);
     }
 
+    [data-theme="light"] {
+        --color-blanket-subtle: var(--darkBlue500-opacity30);
+    }
+
+    [data-theme="dark"] {
+        --color-blanket-subtle: var(--darkBlue200-opacity30);
+    }
+
+    [data-theme="light"] {
+        --color-blanket-subtler: var(--darkBlue500-opacity40);
+    }
+
+    [data-theme="dark"] {
+        --color-blanket-subtler: var(--darkBlue200-opacity40);
+    }
+
 
 
     /* ----------------Skeleton Color --------------- */
@@ -1297,11 +1370,11 @@
 /* -----------------Shadow and Blur----------------- */
 :root{
     --shadow-xs: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-    --shadow-sm: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-    --shadow-md: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-    --shadow-lg: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-    --shadow-xl: 0px 8px 8px -4px rgba(16, 24, 40, 0.03);
-    --shadow-2xl: 0px 24px 48px -12px rgba(16, 24, 40, 0.18);
+    --shadow-sm: 0px 1px 3px 0px rgba(16, 24, 40, 0.10), 0px 1px 2px 0px rgba(16, 24, 40, 0.06);
+    --shadow-md: 0px 4px 8px -2px rgba(16, 24, 40, 0.10), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+    --shadow-lg: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+    --shadow-xl: 0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03);
+    --shadow-2xl: 0px 24px 48px -12px rgba(16, 24, 40, 0.18);   
     --shadow-3xl: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
 
     --blur-sm: blur(4px);
@@ -1485,4 +1558,23 @@
 
 .gradient-blue-900-to-600-45d{
     background: var(--gradient-blue-900-to-600-45d);
+}
+
+:root{
+    /* h1, p {
+        font-size: 1.75rem;
+        line-height: 1.25rem;
+    }
+      
+    h1::before, p::before{
+        content: "";
+        margin-bottom: -0.005em;
+        display: table;
+    }
+      
+    h1::after, p::after {
+        content: "";
+        margin-top: -0.025em;
+        display: table;
+    } */
 }

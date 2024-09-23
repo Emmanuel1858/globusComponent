@@ -56,11 +56,11 @@ export class GbAvatarProfilePhoto {
                 size={profileSize}
                 icon="user"
                 text={this.text}
-                status-icon={this.verified && ('verified_tick')}
+                status-icon={this.verified && ('verified')}
                 weight={this.setWeight()}
                 >
                     {!this.text ? (
-                        <slot></slot>
+                        <slot name="image" slot="image"></slot>
                     ) : (
                         <slot name="initials" slot="initials"></slot>
                     )}

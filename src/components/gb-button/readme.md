@@ -1,4 +1,4 @@
-# button-cta
+# test-button
 
 
 
@@ -7,14 +7,35 @@
 
 ## Properties
 
-| Property    | Attribute    | Description | Type                                                                                                                       | Default     |
-| ----------- | ------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| `disabled`  | `disabled`   |             | `boolean`                                                                                                                  | `false`     |
-| `hierarchy` | `hierarchy`  |             | `"link_color" \| "link_gray" \| "primary" \| "secondary_color" \| "secondary_gray" \| "tertiary_color" \| "tertiary_gray"` | `undefined` |
-| `leftIcon`  | `left-icon`  |             | `string`                                                                                                                   | `undefined` |
-| `rightIcon` | `right-icon` |             | `string`                                                                                                                   | `undefined` |
-| `size`      | `size`       |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs"`          | `'xl'`      |
+| Property           | Attribute            | Description | Type                                                                                                                       | Default     |
+| ------------------ | -------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| `destructive`      | `destructive`        |             | `boolean`                                                                                                                  | `false`     |
+| `hierarchy`        | `hierarchy`          |             | `"link_color" \| "link_gray" \| "primary" \| "secondary_color" \| "secondary_gray" \| "tertiary_color" \| "tertiary_gray"` | `undefined` |
+| `icon`             | `icon`               |             | `"default" \| "only"`                                                                                                      | `undefined` |
+| `iconLeading`      | `icon-leading`       |             | `boolean`                                                                                                                  | `false`     |
+| `iconLeadingSwap`  | `icon-leading-swap`  |             | `string`                                                                                                                   | `undefined` |
+| `iconTrailing`     | `icon-trailing`      |             | `boolean`                                                                                                                  | `false`     |
+| `iconTrailingSwap` | `icon-trailing-swap` |             | `string`                                                                                                                   | `undefined` |
+| `size`             | `size`               |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs"`          | `undefined` |
+| `state`            | `state`              |             | `"default" \| "disabled" \| "hover" \| "pressed"`                                                                          | `undefined` |
 
+
+## Dependencies
+
+### Used by
+
+ - [gb-file-upload-item-base](../gb-file-upload-item-base)
+ - [gb-notification-panel](../gb-notification-panel)
+ - [gb-pagination](../gb-pagination)
+
+### Graph
+```mermaid
+graph TD;
+  gb-file-upload-item-base --> gb-button
+  gb-notification-panel --> gb-button
+  gb-pagination --> gb-button
+  style gb-button fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

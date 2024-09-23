@@ -1,0 +1,75 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+@import './../../global/typo.css';
+
+.checkbox-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--rounded-xs);
+  border: 1px solid #CDD5DF;
+  background: transparent;
+  transition: background 0.2s, border 0.2s;
+  margin-top: 10px;
+}
+
+.sm {
+  width: 14px;
+  height: 14px;
+}
+
+.md {
+  width: var(--spacing-4);
+  height: var(--spacing-4);
+  flex-shrink: 0;
+}
+
+.lg {
+  width: 18px;
+  height: 18px;
+}
+
+input[type="checkbox"]:checked + .custom-checkbox {
+  background: #075DB2;
+  border: 1px solid #075DB2;
+}
+
+input[type="checkbox"]:checked + .custom-checkbox .checkmark {
+  display: block;
+}
+
+.checkmark {
+  display: none;
+  width: var(--spacing-3);
+  height: var(--spacing-3);
+}
+
+.checkbox-container:hover .custom-checkbox {
+  border: 1px solid #075DB2;
+}
+
+.checkbox-container.disabled .custom-checkbox {
+  background: #F6F8FA;
+  border: 1px solid #E3E8EF;
+}
+
+.checkbox-container.disabled .checkmark {
+  fill: #E3E8EF;
+}
+

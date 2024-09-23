@@ -1,0 +1,57 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+@import './../../global/typo.css';
+
+input{
+    display: flex;   
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--spacing-2);
+    border-radius: 8px;
+    border: 1px solid #CDD5DF;
+    color: #CDD5DF;
+    text-align: center;
+    /*font-family: Sora;*/
+    font-style: normal;
+    font-weight: 500;
+}
+
+input.sm {
+    min-width: 44px;
+    min-height: 44px;
+    padding: var(--spacing-half) var(--spacing-2);
+    font-size: 24px;
+    line-height: 32px; /* 133.333% */
+}
+
+input.md {
+    min-width: 48px;
+    min-height: 48px;
+    padding: 10px var(--spacing-2);
+    font-size: 30px;
+    line-height: 38px; /* 126.667% */
+}
+
+input.lg {
+    min-width: 56px;
+    min-height: 56px;
+    padding: var(--spacing-3) var(--spacing-2);
+    font-size: 30px;
+    line-height: 38px; /* 126.667% */
+}
+
+input:not(:placeholder-shown) {
+    color: #4B5565;
+}
+
+input:focus:not(:placeholder-shown){
+    border: 1.3px solid #075DB2;
+    color: #4B5565;
+}
+
+input:disabled {
+    background: #F6F8FA;
+    border: 1px solid #E3E8EF;
+    color: #CDD5DF;
+}

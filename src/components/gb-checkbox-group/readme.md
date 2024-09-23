@@ -9,7 +9,7 @@
 
 | Property     | Attribute    | Description | Type                                                                                                              | Default     |
 | ------------ | ------------ | ----------- | ----------------------------------------------------------------------------------------------------------------- | ----------- |
-| `breakpoint` | `breakpoint` |             | `"Desktop" \| "Mobile"`                                                                                           | `undefined` |
+| `breakpoint` | `breakpoint` |             | `"desktop" \| "mobile"`                                                                                           | `undefined` |
 | `icon`       | `icon`       |             | `string`                                                                                                          | `''`        |
 | `selected`   | `selected`   |             | `boolean`                                                                                                         | `false`     |
 | `size`       | `size`       |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs"` | `undefined` |

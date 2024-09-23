@@ -1,0 +1,23 @@
+@import '../../global/global.css';
+@import '../../global/spacing.css';
+@import '../../global/typo.css';
+
+.dropdown-container {
+    display: flex;
+    width: 213px;
+    padding: var(--spacing-half) 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-half);
+    border-radius: var(--rounded-sm);
+    border: 1px solid #E3E8EF;
+    background: #FFFFFF;
+    /* Shadow/sm */
+    box-shadow: 0px 1px 3px 0px rgba(16, 24, 40, 0.10), 0px 1px 2px 0px rgba(16, 24, 40, 0.06);
+}
+
+gb-dropdown-items-with-shortcut {
+    width: fit-content;
+    max-width: 213px;
+}

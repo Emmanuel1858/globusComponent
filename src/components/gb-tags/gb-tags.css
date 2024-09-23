@@ -1,0 +1,65 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+@import './../../global/typo.css';
+@import './../../global/typography.css';
+
+.container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-1);
+    flex-shrink: 0;
+    border-radius: var(--rounded-xs);
+    border: 1px solid var(--color-boarder-subtle, #CDD5DF);
+    background: var(--color-background-card, #FFFFFF);  
+}
+
+.content {
+    display: flex;
+    padding: var(--spacing-none);
+    text-align: center;
+    align-items: center;
+    border-radius: var(--rounded-none);
+    color: var(--color-text, #4B5565);
+    font-family: var(--Font-Family-Body, Sora);
+    font-style: normal;
+    font-weight: var(--Font-Weight-Medium, 500);
+    letter-spacing: var(--Font-Letter-spacing-T-sm, 0rem);
+}
+
+.icon {
+    border: none;
+}
+
+.container.sm {
+    height: var(--spacing-6);
+    padding: var(--spacing-none) var(--spacing-2) var(--spacing-none) var(--spacing-1);
+}
+
+.container.md {
+    height: 1.75rem;
+    padding: var(--spacing-none) var(--spacing-2);
+}
+
+.container.lg {
+    height: var(--spacing-7);
+    padding: var(--spacing-1) var(--spacing-2);
+}
+
+.content.sm {
+    gap: var(--spacing-1);
+    font-size: var(--Font-Size-T-xs, 0.75rem);
+    line-height: var(--Font-Line-height-T-xs, 1.125rem);
+}
+
+.content.md {
+    gap: 0.3125rem;
+    font-size: var(--Font-Size-T-sm, 0.875rem);   
+    line-height: var(--Font-Line-height-T-sm, 1.25rem); 
+}
+
+.content.lg {
+    gap: 0.375rem;
+    font-size: var(--Font-Size-T-sm, 0.875rem);
+    line-height: var(--Font-Line-height-T-sm, 1.25rem); /* 142.857% */
+}

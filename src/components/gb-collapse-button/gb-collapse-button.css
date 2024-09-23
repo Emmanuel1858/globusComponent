@@ -15,6 +15,7 @@
     justify-content: center;
     align-items: center;
     gap: var(--spacing-2);
+    cursor: pointer;
 }
 
 .collapse_btn.grey:hover{
@@ -46,7 +47,7 @@
 .tooltip{
     position: absolute;
     left: 3.5rem;
-    bottom: 0.5rem;
+    bottom: 2.3rem;
 }
 
 .text-xs-semi-bold{

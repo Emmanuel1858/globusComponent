@@ -1,0 +1,263 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+@import './../../global/typo.css';
+@import './../../global/typography.css';
+
+div{
+    display: inline-flex;
+    padding: var(--spacing-none) var(--spacing-1);
+    align-items: center;
+    gap: 0px;
+    flex-shrink: 0;
+    text-align: center;
+    font-family: var(--Font-Family-Body, Sora);
+    font-style: normal;
+    font-weight: var(--Font-Weight-Medium, 500);
+    letter-spacing: var(--Font-Letter-spacing-T-xs, 0rem);
+}
+
+.label {
+    padding: 2px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+}
+
+div.sm{
+    height: 22px;
+    min-height: 22px;
+    gap: 0.25rem;
+}
+
+div.md {
+    height: var(--spacing-6);
+    min-height: var(--spacing-6);
+    gap: 0.38rem;
+}
+
+div.lg {
+    height: 28px;
+    min-height: 28px;
+    gap: 0.38rem;
+    padding: var(--spacing-none) var(--spacing-2);
+}
+
+div.pill_color {
+    border-radius: var(--rounded-full);
+}
+
+div.pill_color.gray,
+.badge_color.gray {
+    border: 1px solid var(--color-boarder-subtler, #E3E8EF);
+    background: var(--color-background-gray-subtler, #EEF2F6 );
+    color: var(--color-text, #4B5565);
+}
+
+.pill_color.primary,
+.badge_color.primary {
+    border: 1px solid #C8E0F9 /*Color/Border/border-information-subtler*/;
+    background: var(--color-background-information-subtlest, #E4F0FC); 
+    color: var(--color-text-brandDarkBlue, #212C65);
+}
+
+.pill_color.error,
+.badge_color.error {
+    border: 1px solid var(--color-border-danger-subtler, #FDE3E5);
+    background: var(--color-background-danger-subtlest, #FEF1F2 );
+    color: var(--color-text-danger, #B51726);
+}
+
+.pill_color.warning,
+.badge_color.warning {
+    border: 1px solid var(--color-border-warning-subtler, #FEF0C7);
+    background: var(--color-background-warning-subtlest, #FFFAEB);
+    color: var(--color-text-warning, #DC6803);
+}
+
+.pill_color.success,
+.badge_color.success {
+    border: 1px solid var(--color-border-success-subtler, #DCFAE6);
+    background: var(--color-background-success-subtlest, #ECFDF3);
+    color: var(--color-text-success, #079455);
+}
+
+.pill_color.discovery,
+.badge_color.discovery {
+    border: 1px solid var(--color-border-discovery-subtler, #E0F2FE);
+    background: var(--color-background-discovery-subtlest,#F0F9FF);
+    color: var(--color-text-discovery, #0086C9);
+}
+
+.pill_color.information,
+.badge_color.information {
+    border: 1px solid #C8E0F9 /*Color/Border/border-information-subtler*/;
+    background: var(--color-background-information-subtlest, #E4F0FC);
+    color: var(--color-text-information, #064E94);
+}
+
+.pill_color.pink,
+.badge_color.pink {
+    border: 1px solid var(--color-border-pink-subtler, #FCE7F6);
+    background: var(--color-background-pink-subtlest, #FDF2FA);
+    color: var(--color-text-pink, #DD2590);
+}
+
+.pill_color.purple,
+.badge_color.purple {
+    border: 1px solid var(--color-border-purple-subtler, #EBE9FE);
+    background: var(--color-background-purple-subtlest, #F4F3FF);
+    color: var(--color-text-purple, #6938EF);
+}
+
+.pill_color svg,
+.badge_color svg,
+.pill_outline svg,
+.badge_modern svg {
+    width: var(--spacing-2);
+    height: var(--spacing-2);
+    display: flex;
+    align-items: center;
+}
+
+.gray svg path {
+    fill: var(--color-text, #4B5565);
+    stroke:  var(--color-text, #4B5565) /*var(--color-icon)*/;
+}
+
+.primary svg path {
+    fill: var(--color-text-brandDarkBlue, #212C65);
+    stroke: var(--color-text-brandDarkBlue, #212C65);
+}
+
+.error svg path {
+    fill: var(--color-text-danger, #B51726);
+    stroke: var(--color-text-danger, #B51726);
+}
+
+.warning svg path {
+    fill: var(--color-text-warning, #DC6803);
+    stroke: var(--color-text-warning, #DC6803);
+}
+
+.success svg path{
+    fill: var(--color-text-success, #079455);
+    stroke: var(--color-text-success, #079455);
+}
+
+.discovery svg path {
+    fill: #0BA5EC;
+    stroke: #0BA5EC/*Blue light/500*/;
+}
+
+.information svg path {
+    fill: var(--color-text-information, #064E94);
+    stroke: var(--color-text-information, #064E94);
+}
+
+.pink svg path{
+    fill: var(--color-text-pink, #DD2590);
+    stroke: var(--color-text-pink, #DD2590);
+}
+
+.purple svg path {
+    fill: var(--color-text-purple, #6938EF);
+    stroke: var(--color-text-purple, #6938EF);
+}
+
+.pill_outline {
+    border-radius: var(--rounded-full);
+}
+
+.pill_outline.gray {
+    border: 1.5px solid var(--color-text, #4B5565);
+    color: var(--color-text, #4B5565);
+}
+
+.pill_outline.primary {
+    border: 1.5px solid var(--color-text-brandDarkBlue, #212C65);
+    color:var(--color-text-brandDarkBlue, #212C65);
+}
+
+.pill_outline.error {
+    border: 1.5px solid var(--color-text-danger, #B51726);
+    color:var(--color-text-danger, #B51726);
+}
+
+.pill_outline.warning {
+    border: 1.5px solid var(--color-text-warning, #DC6803);
+    color:var(--color-text-warning, #DC6803);
+}
+
+.pill_outline.success {
+    border: 1.5px solid var(--color-text-success, #079455);
+    color:var(--color-text-success, #079455);
+}
+
+.pill_outline.discovery {
+    border: 1.5px solid var(--color-text-discovery, #0086C9);
+    color: var(--color-text-discovery, #0086C9);
+}
+
+.pill_outline.information {
+    border: 1.5px solid var(--color-text-information, #064E94);
+    color: var(--color-text-information, #064E94);
+}
+
+.pill_outline.pink {
+    border: 1.5px solid var(--color-text-pink, #DD2590);
+    color: var(--color-text-pink, #DD2590);
+}
+
+.pill_outline.purple {
+    border: 1.5px solid var(--color-text-purple, #6938EF);
+    color: var(--color-text-purple, #6938EF);
+}
+
+.badge_color {
+    border-radius: var(--rounded-xs);
+}
+
+.badge_modern {
+    border-radius: var(--rounded-xs);
+    border: 1px solid var(--color-boarder-subtler, #E3E8EF);
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    color: var(--color-text, #4B5565);
+}
+
+.badge_modern svg path {
+    stroke: inherit; /* Inherit color from the parent, but set in the component */
+    fill: inherit;
+}
+
+.icon svg {
+    width: var(--spacing-4);
+    height: var(--spacing-4);
+    margin-top: -2px;
+    fill: currentColor;
+}
+
+.icon svg path {
+    fill: currentColor;
+    stroke: currentColor;
+}
+
+#icon-only svg {
+    width: var(--spacing-3);
+    height: var(--spacing-3);
+}
+
+div.md #icon-only svg {
+    padding: 2px;
+}
+
+#icon-only {
+    display: flex;
+    padding: var(--spacing-none);
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-1);
+    flex-shrink: 0;
+    border-radius: var(--rounded-full);
+}

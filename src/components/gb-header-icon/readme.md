@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                                     | Default     |
-| -------- | --------- | ----------- | ---------------------------------------- | ----------- |
-| `state`  | `state`   |             | `StateEnum.Active \| StateEnum.Disabled` | `undefined` |
+| Property        | Attribute        | Description | Type                                      | Default     |
+| --------------- | ---------------- | ----------- | ----------------------------------------- | ----------- |
+| `showIndicator` | `show-indicator` |             | `boolean`                                 | `false`     |
+| `state`         | `state`          |             | `StateEnum.Default \| StateEnum.Disabled` | `undefined` |
 
 
 ----------------------------------------------

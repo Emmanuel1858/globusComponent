@@ -1,0 +1,87 @@
+@import '../../global/global.css';
+@import '../../global/spacing.css';
+@import '../../global/typo.css';
+
+.shortcut-container {
+    display: flex;
+    width: 240px;
+    padding: var(--spacing-half) var(--spacing-1);
+    align-items: center;
+    gap: var(--spacing-none);
+    border-radius: var(--rounded-none);   
+}
+
+.shortcut {
+    display: flex;
+    padding: var(--spacing-2);
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-2);
+    flex: 1 0 0;
+    border-radius: var(--rounded-xs);
+}
+
+.label {
+    flex-grow: 1;
+    color: #4B5565;
+    font-family: var(--Font-Family-Body, Sora);
+    font-size: var(--Font-Size-T-sm, 12px);
+    font-style: normal;
+    font-weight: var(--Font-Weight-Medium, 500);
+    line-height: var(--Font-Line-height-T-sm, 20px); /* 142.857% */
+    letter-spacing: var(--Font-Letter-spacing-T-sm, 0px);
+}
+
+.shortcut-icon {
+    display: flex;
+    justify-content: flex-end;
+    color: #4B5565;
+    font-family: var(--Font-Family-Body, Sora);
+    font-size: var(--Font-Size-T-xs, 12px);
+    font-style: normal;
+    font-weight: var(--Font-Weight-Regular, 400);
+    line-height: var(--Font-Line-height-T-xs, 18px); /* 150% */
+    letter-spacing: var(--Font-Letter-spacing-T-xs, 0px);
+}
+
+.icon {
+    padding-left: 7px;
+    width: 20px;
+    height: 20px;
+}
+
+gb-checkbox {
+    padding-top: 4px;
+    padding-left: 7px;
+}
+
+.shortcut:hover {
+    background-color: #EEF2F6;
+}
+.shortcut:active {
+    background: #E3E8EF;
+}
+
+.shortcut.disabled {
+    background-color: #ffffff;
+    color: #CDD5DF;
+    pointer-events: none;
+}
+
+.shortcut.disabled .label,
+.shortcut.disabled .shortcut-icon,
+.shortcut.disabled gb-checkbox {
+    color: #CDD5DF; /* Ensures all text/icons use the disabled color */
+}
+
+.shortcut.disabled .icon img {
+    opacity: 0.5;
+    stroke: #CDD5DF; /* Reduce opacity for the icon in disabled state */
+}
+
+/* Optional: You can also change the checkbox appearance */
+.shortcut.disabled gb-checkbox {
+    pointer-events: none;
+    opacity: 0.5; /* Dim the checkbox when disabled */
+}
+
