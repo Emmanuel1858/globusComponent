@@ -25,8 +25,8 @@ export class GbStatusIndicator {
                 {this.statusIcon === 'verified_tick' && (
                     <img src={tickSrc} alt="" class={`verified_tick ${this.size}`}/>
                 )}
-                {this.statusIcon === 'company_icon' && (
-                    <img src={companyIconSrc} alt="" class={`company_icon ${this.size}`}/>
+                {this.statusIcon === 'company' && (
+                    <img src={companyIconSrc} alt="" class={`company ${this.size}`}/>
                 )}
             </div>
         ];

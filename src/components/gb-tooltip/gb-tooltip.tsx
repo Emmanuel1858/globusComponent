@@ -32,7 +32,7 @@ export class GbTooltip {
                 {this.supportingText && (
                   <slot name="supporting_text"></slot>
                 )}
-                { this.arrow && (
+                {this.arrow && (
                     <div class={`tooltip_arrow`}>
                       <svg xmlns="http://www.w3.org/2000/svg" width="6" height="17" viewBox="0 0 6 17" fill="none">
                         <g clip-path="url(#clip0_19_31150)">

@@ -10,7 +10,7 @@ svg {
     height: var(--spacing-5);
 }
 
-.background {
+.background.default{
     width: var(--spacing-8);
     height: var(--spacing-8);
     background-color: transparent;
@@ -21,12 +21,12 @@ svg {
 }
 
 .background:hover {
-    background-color: var(--color-background-gray-subtler);
+    background-color: var(--color-background-gray-subtler, #EEF2F6);
     cursor: pointer;
 }
 
 .background:active {
-    background-color: var(--color-background-gray-subtle);
+    background-color: var(--color-background-gray-subtle, #E3E8EF);
 }
 
 .background.disabled:hover{
@@ -38,8 +38,8 @@ svg {
     width: 0.52rem;
     height: var(--spacing-2);
     border-radius: var(--rounded-full);
-    background-color: var(--color-icon-brandRed);
-    border: 2px solid var(--color-surface);
+    background-color: var(--color-icon-brandRed, #E21B2E);
+    border: 2px solid var(--color-surface, #FFFFFF);
     position: absolute;
     top: 0.6rem;
     left: 1.2rem;

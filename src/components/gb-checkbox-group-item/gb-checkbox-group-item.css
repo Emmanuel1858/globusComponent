@@ -14,6 +14,22 @@
   transition: all 0.3s ease;
 }
 
+
+/* Update for avatar 
+.checkbox-group-item .avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+} 
+*/
+
+.checkbox-group-item .avatar {/* this is correct*/
+flex: 1 0 0;
+margin-top: 0.5rem;
+border-radius: 12.5rem;
+border: 0.5px solid var(--color-blanket-subtler);
+} 
+
+
 .checkbox-group-item.selected {
   border: 2px solid var(--color-border-selected,#075DB2);/* Checked border color */
 background: var(--color-background-information-subtlest,#E4F0FC);/* Checked background color */
@@ -50,14 +66,14 @@ background: var(--color-background-information-subtlest,#E4F0FC);/* Checked back
 
 .item-content {
   display: flex;
-  align-items: center;
-  flex-grow: 1;
+  flex: 1 0 0;
+  align-self: stretch;
 }
 
 .text-container {
-  display: flex;
   flex-direction: column;
   margin-left: 1rem;
+  margin-top: -0.2rem;
 }
 
 .label-cost {
@@ -89,4 +105,38 @@ background: var(--color-background-information-subtlest,#E4F0FC);/* Checked back
 .svg-icon {
   width: 2rem;
   height: 2rem;
+}
+
+.checkbox-group-item.default {
+border-radius: var(--rounded-md);
+border: 2px solid var(--color-border-selected,#075DB2);
+background: var(--color-background-information-subtlest,#E4F0FC);
+color: var(--color-text-information-bold,#064E94)
+}
+
+.checkbox-group-item.default slot[name="cost"],
+.checkbox-group-item.default slot[name="supporting-text"] {
+  color: var(--Primary-700, var(--Color-Background-background-information, #064E94)); /* Fallback to the specific color */
+}
+
+.checkbox-group-item.default slot[name="label"] {
+  color: var(--color-text-information-bold,#042F59);
+}
+
+/* Hover effect for the default state */
+.checkbox-group-item.default:hover {
+  background: var(--color-background-information-subtler, #C8E0F9);
+  border-color: var(--color-border-selected, #075DB2);
+}
+
+/* Change icon and text colors on hover for the default state */
+.checkbox-group-item.default:hover .icon-md,
+.checkbox-group-item.default:hover .svg-icon {
+  fill: var(--color-icon-information, #064E94);
+}
+
+.checkbox-group-item.default:hover slot[name="label"],
+.checkbox-group-item.default:hover slot[name="cost"],
+.checkbox-group-item.default:hover slot[name="supporting-text"] {
+  color: var(--color-text-information-bold, #064E94);
 }

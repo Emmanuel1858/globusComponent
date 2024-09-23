@@ -6,11 +6,24 @@
 
 .tooltip{
     position: absolute;
-    top: -3rem;
-    left: -1.55rem;
 }
 
-.avatar_back.active{
+.tooltip.xs{
+    top: -150%;
+    left: -90%;
+}
+
+.tooltip.sm{
+    top: -120%;
+    left: -61%;
+}
+
+.tooltip.md{
+    top: -100%;
+    left: -41%;
+}
+
+.avatar_back.default{
     border: 1px dashed #CDD5DF;
     border-radius: var(--rounded-full);
     display: flex;
@@ -46,11 +59,11 @@
 }
 
 /* States */
-.avatar_back.active:hover, .plus_sign.active:hover{
+.avatar_back.default:hover, .plus_sign.default:hover{
     background-color: #EEF2F6;
 }
 
-.avatar_back.active:active, .plus_sign.active:active{
+.avatar_back.default:active, .plus_sign.default:active{
     background-color: #E3E8EF;
 }
 
@@ -63,4 +76,28 @@
 
 .plus_sign.disabled path{
     stroke: #CDD5DF;
+}
+
+.text-xs-semi-bold{
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-t-xs);
+    font-weight: var(--font-weight-semi-bold);
+    line-height: var(--font-line-height-t-xs);
+    margin: var(--spacing-none);
+    padding: var(--spacing-none);
+    display: inline-block;
+}
+
+.text-xs-semi-bold::before,
+.text-xs-semi-bold::after{
+    content: "";
+    display: table;
+}
+
+.text-xs-semi-bold::before{
+    margin-bottom: -0.321em;
+}
+
+.text-xs-semi-bold::after{
+    margin-top: -0.416em;
 }

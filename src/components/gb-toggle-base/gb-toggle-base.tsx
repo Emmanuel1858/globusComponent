@@ -3,7 +3,8 @@ import { GeneralSizes, StateEnum } from "../../models/reusableModels";
 
 @Component({
     tag: 'gb-toggle-base',
-    styleUrl: 'gb-toggle-base.css'
+    styleUrl: 'gb-toggle-base.css',
+    shadow: true
 })
 
 export class GbToggleBase {

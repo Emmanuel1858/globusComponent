@@ -9,7 +9,7 @@
 
 | Property         | Attribute         | Description | Type                                                                                                | Default     |
 | ---------------- | ----------------- | ----------- | --------------------------------------------------------------------------------------------------- | ----------- |
-| `arrowPosition`  | `arrow-position`  |             | `"bottom_center" \| "bottom_left" \| "bottom_right" \| "left" \| "none" \| "right" \| "top_center"` | `'left'`    |
+| `arrow`          | `arrow`           |             | `"bottom_center" \| "bottom_left" \| "bottom_right" \| "left" \| "none" \| "right" \| "top_center"` | `'left'`    |
 | `supportingText` | `supporting-text` |             | `boolean`                                                                                           | `undefined` |
 
 
@@ -17,15 +17,15 @@
 
 ### Used by
 
- - [avatar-add-button](../avatar-add-button)
- - [collapse-button](../collapse-button)
+ - [gb-avatar-add-button](../gb-avatar-add-button)
+ - [gb-collapse-button](../gb-collapse-button)
 
 ### Graph
 ```mermaid
 graph TD;
-  avatar-add-button --> tool-tip
-  collapse-button --> tool-tip
-  style tool-tip fill:#f9f,stroke:#333,stroke-width:4px
+  gb-avatar-add-button --> gb-tooltip
+  gb-collapse-button --> gb-tooltip
+  style gb-tooltip fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

@@ -1,5 +1,5 @@
 import { Component, h, Prop, Element, State } from '@stencil/core';
-import { CheckBoxStates, GeneralSizes } from '../../models/reusableModels';
+import {  GeneralSizes, StateEnum } from '../../models/reusableModels';
 
 @Component({
   tag: 'gb-checkbox-group-item',
@@ -10,13 +10,14 @@ import { CheckBoxStates, GeneralSizes } from '../../models/reusableModels';
 export class GbCheckboxGroupItem {
   @Prop() selected: boolean = false;
   @Prop() disabled: boolean = false;
+  @Prop() default: boolean = false; // New prop added for default state
   @Prop() size: GeneralSizes;
   @Prop() breakpoint: 'desktop' | 'mobile';
   @Prop() type: 'icon_simple' | 'avatar' | 'payment_icon';
-  @Prop() state: 'hover' | 'disabled' | 'default';
+  @Prop() state: 'disabled' | 'hover' | 'default';
   @Prop() showCost: boolean = false; // to control cost visibility
   @Element() el: HTMLElement;
-  @State() isSelected: boolean = this.selected; // Internal state for handling selection
+  @State() isSelected: boolean = this.selected; // Internal state for handling the selection
   
 
   private getLabelSizeClass() {
@@ -90,14 +91,12 @@ export class GbCheckboxGroupItem {
   }
 
   render() {
-    const state = this.disabled ? CheckBoxStates.Disabled : CheckBoxStates.Default ;
-    const selectedClass = this.isSelected ? 'selected' : '';
     return (
       <div
-        class={`checkbox-group-item ${this.size} ${
-          this.disabled ? 'disabled' : ''
-        } ${this.state ? 'default' : ''}`}
-      >
+      class={`checkbox-group-item ${this.size} ${
+        this.disabled ? 'disabled' : ''
+      } ${this.default ? 'default' : ''} ${this.isSelected ? 'selected' : ''}`}
+    >
         <div class="item-content" onClick={() => this.toggleSelection()}>
           {this.renderIcon()}
           <div class="text-container">
@@ -116,7 +115,7 @@ export class GbCheckboxGroupItem {
           <gb-checkbox-base
             type="check_circle"
             size={this.size}
-            state={state}
+            state={StateEnum.Default}
             checked={this.isSelected} // Bind to selected state
           ></gb-checkbox-base>
         </div>

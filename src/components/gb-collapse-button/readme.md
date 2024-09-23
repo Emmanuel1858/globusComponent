@@ -17,13 +17,13 @@
 
 ### Depends on
 
-- [tool-tip](../tool-tip)
+- [gb-tooltip](../gb-tooltip)
 
 ### Graph
 ```mermaid
 graph TD;
-  collapse-button --> tool-tip
-  style collapse-button fill:#f9f,stroke:#333,stroke-width:4px
+  gb-collapse-button --> gb-tooltip
+  style gb-collapse-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

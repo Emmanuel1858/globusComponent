@@ -3,7 +3,8 @@
 @import './../../global/typography.css';
 
 .tooltip{
-    border: 0.5px solid #E3E8EF;
+    background-color: var(--color-surface-bold, #FCFCFC);
+    border: 0.5px solid var(--color-border-subtler, #E3E8EF);
     border-radius: var(--rounded-sm);
     box-shadow: var(--shadow-sm);
     display: flex;
@@ -34,15 +35,16 @@
 /* Arrow Positions */
 .tooltip.bottom_center .tooltip_arrow{
     position: absolute;
-    top: 82%;
-    left: 48%;
+    top: 75%;
+    left: 40%;
     transform: rotate(90deg);
 }
 
 .tooltip.bottom_left .tooltip_arrow{
     position: absolute;
-    top: 82%;
+    top: 95%;
     left: 10%;
+    z-index: 10;
     transform: rotate(90deg);
 }
 
@@ -79,32 +81,16 @@
 }
 
 svg path{
-    box-shadow: 0px 1px 3px 0px rgba(16, 24, 40, 0.10), 0px 1px 2px 0px rgba(16, 24, 40, 0.06);
-}
-
-svg path{
-    stroke: #FCFCFC;
-    fill: #FCFCFC;
-}
-
-.main{
-    height: fit-content;
-}
-
-.supporting{
-    color: #697586;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: wrap;
-    width: 100%;
+    stroke: var(--color-surface-bold,#FCFCFC);
+    fill: var(--color-surface-bold, #FCFCFC);
 }
 
 ::slotted([slot="main_text"]){
-    color: #4B5565;
+    color: var(--color-text, #4B5565);
     text-wrap: nowrap;
 }
 
 ::slotted([slot="supporting_text"]){
-    color: #697586;
+    color: var(--color-text-subtle, #697586);
     width: 18.5rem;
 }

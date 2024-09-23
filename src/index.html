@@ -7,71 +7,76 @@
 
     <script type="module" src="/build/globuscomponents.esm.js"></script>
     <script nomodule src="/build/globuscomponents.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <gb-button size="xl2" hierarchy="primary" left-icon="arrow_pointing_up" right-icon="arrow_pointing_up">
+     <gb-button size="xl" hierarchy="primary" icon="default" icon-leading="true" icon-leading-swap="arrow-turn-backward"
+    icon-trailing="true" icon-trailing-swap="arrow_pointing_up">
       <p>Upload</p>
     </gb-button>
-    <gb-tooltip arrow="right" supporting-text="true">
+    <!-- <gb-tooltip arrow="right" supporting-text="true">
       <p slot="main_text">This is a tooltip</p>
-      <!-- <p slot="supporting_text">This is the supporting text osbvowi wonvow  woivwo iev woienv oweiv owievow eowie oiwje oiwjeo wofjnbje  kirvowjr vowjr vow</p> -->
+      <p slot="supporting_text">This is the supporting text osbvowi wonvow  woivwo iev woienv oweiv owievow eowie oiwje oiwjeo wofjnbje  kirvowjr vowjr vow</p>
     </gb-tooltip>
     <gb-checkbox-base size="md" type="check_circle" state="disabled" checked="true" indeterminate="true"></gb-checkbox-base>
     <gb-avatar-add-button size="md" state="active"></gb-avatar-add-button>
     <gb-avatar size="xl2" status-icon="online_indicator" text="true" weight="light">
-      <!-- <img src="./build/assets/avatar_pic.jpg" alt=""> -->
+      <img src="./build/assets/avatar_pic.jpg" alt="">
       <h1>NP</h1>
     </gb-avatar>
     <gb-avatar-profile-photo size="lg" status-icon="verified_tick" text="true">
-      <!-- <img src="./build/assets/avatar_pic.jpg" alt=""> -->
-       <h1>NP</h1>
+      <img src="./build/assets/avatar_pic.jpg" alt=""> --> 
+       <!-- <h1>NP</h1>
     </gb-avatar-profile-photo>
     <gb-avatar-label-group status-icon="online_indicator" state="online" weight="light" size="xl">
       <img src="./build/assets/avatar_pic.jpg" alt="">
       <p slot="name">Noah Pierre</p>
-      <p slot="supporting_text">kadiri2047@gmail.com</p>
+      <p slot="supporting_text">kadiri2047@gmail.com</p> -->
       <!-- <h1>NP</h1> -->
-    </gb-avatar-label-group>
+    <!-- </gb-avatar-label-group>
     <gb-avatar-group size="xs" more-user="true" add-more-button="true">
       <p>+5</p>
     </gb-avatar-group>
-    <gb-avatar-group size="sm" more-user="true" add-more-button="true">
-      <p>+5</p>
+    <gb-avatar-group size="sm" more-user="true" add-more-button="true"> -->
+      <!-- <p>+5</p>
     </gb-avatar-group>
     <gb-avatar-group size="md" more-user="true" add-more-button="true">
       <p>+5</p>
-    </gb-avatar-group>
-    <gb-checkbox size="md" type="check_circle" state="default" supporting-text="false">
+    </gb-avatar-group> -->
+    <!-- <gb-checkbox size="md" type="check_circle" state="default" supporting-text="false">
       <p slot="label">Remember Me</p>
-      <!-- <p slot="supporting_text">Save my login details for next time.</p> -->
-    </gb-checkbox>
+       <p slot="supporting_text">Save my login details for next time.</p> -->
+    <!-- </gb-checkbox>
     <gb-toggle size="sm" state="active" supporting-text="false">
       <p slot="main_text">Remember Me</p>
-      <!-- <p slot="supporting_text">Save my login details for next time.</p> -->
-    </gb-toggle>
+      <p slot="supporting_text">Save my login details for next time.</p> -->
+    <!-- </gb-toggle>  -->
 
-    <gb-checkbox-group-item type="avatar" size="md" show-Cost="true" selected>
-      <p slot="label">Basic plan</p>
+    <gb-checkbox-group-item type="avatar" size="md" showCost="false" default>
+      <div slot="label">Basic plan</div>
       <div slot="cost">$10/month</div>
       <div slot="supporting-text">Product Manager Integrations</div>
     </gb-checkbox-group-item>
     
-    <gb-checkbox-group-item type="payment_icon" size="md" show-Cost="true">
+    <gb-checkbox-group-item type="payment_icon" size="md" showCost="true">
       <div slot="label">Visa Ending in 1234</div>
-      <div slot="cost">Expriry 06/24</div>
-      <div slot="supporting-text">set as default</div>
+      <div slot="cost">Expiry 06/24</div>
+      <div slot="supporting-text">set as default Edit</div>
     </gb-checkbox-group-item>
-
+    
     <gb-checkbox-group-item type="icon_simple" size="md">
       <div slot="label">Basic plan</div>
       <div slot="cost">$10/month</div>
       <div slot="supporting-text">Product Manager Integrations</div>
     </gb-checkbox-group-item>
     
-    <p class="text-xl-bold">Text</p>
+
+
+
+
+    <!-- <p class="text-xl-bold">Text</p>
     <p class="text-xl-semi-bold">Text</p>
     <p class="text-xl-medium">Text</p>
     <p class="text-xl-regular">Text</p>
@@ -90,6 +95,6 @@
     <p class="text-xs-bold">Text</p>
     <p class="text-xs-semi-bold">Text</p>
     <p class="text-xs-medium">Text</p>
-    <p class="text-xs-regular">Text</p>
+    <p class="text-xs-regular">Text</p> -->
   </body>
 </html>

@@ -3,7 +3,8 @@ import { BreakPoints, GeneralSizes } from "../../models/reusableModels";
 
 @Component({
     tag: 'gb-checkbox-group',
-    styleUrl: 'gb-checkbox-group.css'
+    styleUrl: 'gb-checkbox-group.css',
+    shadow: true
 })
 
 export class GbCheckboxGroup {

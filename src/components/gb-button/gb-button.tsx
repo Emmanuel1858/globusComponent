@@ -1,18 +1,21 @@
-import { Component, Element, getAssetPath, h, Prop } from "@stencil/core";
-import { GeneralHierarchies, GeneralSizes } from "../../models/reusableModels";
+import { Component, Element, getAssetPath, h, Prop, Fragment } from "@stencil/core";
+import { GeneralHierarchies, GeneralSizes, StateEnum } from "../../models/reusableModels";
 
 @Component({
     tag: 'gb-button',
     styleUrl: 'gb-button.css',
-    assetsDirs: ['src/assets'],
 })
 
 export class GbButton {
     @Prop() size: GeneralSizes = 'xl';
     @Prop() hierarchy: GeneralHierarchies;
-    @Prop() leftIcon?: string;
-    @Prop() rightIcon?: string;
-    @Prop() disabled: boolean = false;
+    @Prop() icon: 'default' | 'only';
+    @Prop() destructive: boolean = false;
+    @Prop() state: StateEnum;
+    @Prop() iconLeading: boolean = false;
+    @Prop() iconLeadingSwap?: string;
+    @Prop() iconTrailing: boolean = false;
+    @Prop() iconTrailingSwap?: string;
     @Element() el: HTMLElement;
 
     getTextClass() {
@@ -34,30 +37,35 @@ export class GbButton {
     }
 
     render() {
-        const classes = {
-            button: true,
-            [this.size]: true,
-            [this.hierarchy]: true,
-            disabled: this.disabled
-          };
 
-          const leftIconSrc = getAssetPath(`assets/${this.leftIcon}.svg`);
-          const rightIconSrc = getAssetPath(`assets/${this.rightIcon}.svg`);
+          const iconLeadingSrc = getAssetPath(`assets/${this.iconLeadingSwap}.svg`);
+          const iconTrailingSrc = getAssetPath(`assets/${this.iconTrailingSwap}.svg`);
 
         return (
-            <button class={classes} disabled={this.disabled}>
-                {this.leftIcon && (
-                    <div class="icon left-icon">
-                        <img src={leftIconSrc} alt="Left Icon" />
-                    </div>
+          <button
+            class={`${this.size} 
+            ${this.hierarchy} 
+            ${this.destructive ? 'destructive' : ''}
+            ${this.state}
+            ${this.icon}`}
+          >
+            {this.icon === 'default' && (
+              <>
+                {this.iconLeading && (
+                  <div class="button_icon left-icon">
+                    <span class="icon" innerHTML={iconLeadingSrc}></span>
+                  </div>
                 )}
                 <slot></slot>
-                {this.rightIcon && (
-                    <div class="icon right-icon">
-                        <img src={rightIconSrc} alt="Right Icon" />
-                    </div>
+                {this.iconTrailing && (
+                  <div class="button_icon right-icon">
+                    <span class="icon" innerHTML={iconTrailingSrc}></span>
+                  </div>
                 )}
-            </button>
-        )
+              </>
+            )}
+            {this.icon === 'only' && <img src={iconLeadingSrc} alt="Icon" />}
+          </button>
+        );
     }
 }

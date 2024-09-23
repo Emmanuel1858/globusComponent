@@ -7,7 +7,7 @@
     margin: 0;
 }
 
-label.active{
+label.default{
     position: relative;
     display: inline-block;
     background-color: #E3E8EF;

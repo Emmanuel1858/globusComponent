@@ -7,25 +7,25 @@
 
 ## Properties
 
-| Property              | Attribute               | Description | Type                                                                       | Default      |
-| --------------------- | ----------------------- | ----------- | -------------------------------------------------------------------------- | ------------ |
-| `indicatorStateClass` | `indicator-state-class` |             | `string`                                                                   | `this.state` |
-| `size`                | `size`                  |             | `"fourxl" \| "lg" \| "md" \| "sm" \| "threexl" \| "twoxl" \| "xl" \| "xs"` | `undefined`  |
-| `state`               | `state`                 |             | `"offline" \| "online"`                                                    | `'offline'`  |
-| `statusIcon`          | `status-icon`           |             | `string`                                                                   | `''`         |
+| Property              | Attribute               | Description | Type                                                                                                              | Default                         |
+| --------------------- | ----------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------- | ------------------------------- |
+| `indicatorStateClass` | `indicator-state-class` |             | `string`                                                                                                          | `this.state`                    |
+| `size`                | `size`                  |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs"` | `undefined`                     |
+| `state`               | `state`                 |             | `OnlineIndicatorStates.Offline \| OnlineIndicatorStates.Online`                                                   | `OnlineIndicatorStates.Offline` |
+| `statusIcon`          | `status-icon`           |             | `string`                                                                                                          | `''`                            |
 
 
 ## Dependencies
 
 ### Used by
 
- - [avatar-pic](../avatar-pic)
+ - [gb-avatar](../gb-avatar)
 
 ### Graph
 ```mermaid
 graph TD;
-  avatar-pic --> status-indicator
-  style status-indicator fill:#f9f,stroke:#333,stroke-width:4px
+  gb-avatar --> gb-status-indicator
+  style gb-status-indicator fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------
