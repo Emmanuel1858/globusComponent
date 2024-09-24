@@ -1,4 +1,4 @@
-import { Component, h, Prop, Fragment, getAssetPath, State, Event, EventEmitter } from "@stencil/core";
+import { Component, h, Prop, Fragment, getAssetPath, State, Event, EventEmitter, Element } from "@stencil/core";
 import { GeneralBackgroundCategories } from "../../models/reusableModels";
 
 @Component({
@@ -17,6 +17,7 @@ export class GbSideBarItem {
   @Prop({ mutable: true }) showTooltip: boolean = false;
   @State() leadingIconSvg: string = '';
   @Event() sideBarItemClicked: EventEmitter<void>;
+  @Element() el: HTMLElement;
 
   async loadIcon(iconName: string) {
     const iconPath = getAssetPath(`${iconName}`);
@@ -33,6 +34,13 @@ export class GbSideBarItem {
     this.sideBarItemClicked.emit();
   }
 
+  getLabel() {
+    const slottedLabel = this.el.querySelector('[slot="item_label"]');
+
+    console.log(slottedLabel.textContent);
+    return slottedLabel.textContent;
+  }
+
   render() {
     return (
       <div class={`side_bar_item_container`} onMouseEnter={() => (this.showTooltip = true)} onMouseLeave={() => (this.showTooltip = false)}>
@@ -42,14 +50,7 @@ export class GbSideBarItem {
           <div class="content">
             <div class={`icon ${this.state} ${this.category}`} innerHTML={this.leadingIconSvg}></div>
             {this.type === 'full_with_label' && (
-              // <p
-              //   class={`label_text
-              //   ${this.state === 'active' ? 'text-md-semi-bold' : 'text-md-medium'}
-              //   ${this.state} ${this.category}`}
-              // >
-              //   {this.label}
-              // </p>
-              <slot name="first_item"></slot>
+              <slot name="item_label"></slot>
             )}
           </div>
           {this.type === 'full_with_label' && (
@@ -75,7 +76,7 @@ export class GbSideBarItem {
         </div>
         {this.type === 'icon_only' && this.showTooltip && (
           <gb-tooltip show-arrow={true} arrow="left" class="tooltip">
-            <slot name="first_item" slot="label"></slot>
+            <p slot="label">{this.getLabel()}</p>
           </gb-tooltip>
         )}
       </div>

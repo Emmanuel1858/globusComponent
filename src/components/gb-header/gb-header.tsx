@@ -1,5 +1,5 @@
 import { Component, Element, h, Prop } from "@stencil/core";
-import { StateEnum } from "../models/reusableModels";
+import { StateEnum } from "../../models/reusableModels";
 
 @Component({
   tag: 'gb-header',

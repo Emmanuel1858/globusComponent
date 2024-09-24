@@ -83,48 +83,54 @@
     color: var(--color-text-inverse, #FFFFFF);
 }
 
-.icon.default.plain_background path[fill] {
-  fill: var(--color-icon, #4B5565);
-  opacity: 0.4;
-}
-
-.icon.default.plain_background path[stroke] {
-    stroke: var(--color-icon, #4B5565);
-}
-
-.icon.default.plain_background circle[stroke] {
-  stroke: var(--color-icon, #4B5565);
-}
-
-.icon.default.plain_background circle[fill] {
-  fill: var(--color-icon, #4B5565);
-  opacity: 0.4;
-}
-
-.icon.active.plain_background path[fill] {
-  fill: var(--color-icon-information-bold, #042F59);
-  opacity: 0.4;
-}
-
-.icon.active.plain_background path[stroke] {
+/* Icon Color Styles */
+.icon.plain_background path[stroke] {
     stroke: var(--color-icon-information-bold, #042F59);
 }
 
-.icon.active.plain_background circle[stroke] {
-  stroke: var(--color-icon-information-bold, #042F59);
+.icon.plain_background path[fill] {
+    fill: var(--color-icon-information-bold, #042F59);
 }
 
-.icon.active.plain_background circle[fill] {
-  fill: var(--color-icon-information-bold, #042F59);
-  opacity: 0.4;
+.icon.colored_background path[stroke] {
+    stroke: var(--color-icon-inverse, #FFFFFF);
 }
 
+.icon.colored_background path[fill] {
+    fill: var(--color-icon-inverse, #FFFFFF);
+}
+
+.icon.plain_background circle[stroke] {
+    stroke: var(--color-icon-information-bold, #042F59);
+}
+
+.icon.plain_background circle[fill] {
+    fill: var(--color-icon-information-bold, #042F59);
+}
+
+.icon.colored_background circle[stroke] {
+    stroke: var(--color-icon-inverse, #FFFFFF);
+}
+
+.icon.colored_background circle[fill] {
+    fill: var(--color-icon-inverse, #FFFFFF);
+}
+
+/* Arrow Color Styles */
 .arrow.default.plain_background path{
     stroke: var(--color-icon, #4B5565);
 }
 
 .arrow.active.plain_background path{
     stroke: var(--color-icon-information-bold, #042F59);
+}
+
+.arrow.default.colored_background path{
+    stroke: var(--color-icon-inverse, #FFFFFF);
+}
+
+.arrow.active.colored_background path{
+    stroke: var(--color-icon-inverse, #FFFFFF);
 }
 
 .tooltip{

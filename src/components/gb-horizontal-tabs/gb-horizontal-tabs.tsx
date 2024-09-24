@@ -25,6 +25,10 @@ export class GbHorizontalTabs {
     this.activeIndex = index;
   }
 
+  componentDidLoad() {
+    this.activeIndex = 0;
+  }
+
   render() {
     return (
       <div class={`horizontal_tab_div ${this.type} ${this.breakpoint} ${this.fullWidth ? 'full_width' : ''}`}>
