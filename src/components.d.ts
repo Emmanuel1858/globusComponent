@@ -127,9 +127,10 @@ export namespace Components {
         "type": 'icon_simple' | 'avatar' | 'payment_icon' | 'radio_button' | 'checkbox';
     }
     interface GbCheckboxGroupItem {
-        "breakpoint": 'desktop' | 'mobile';
+        "breakpoint": BreakPoints;
         "default": boolean;
         "disabled": boolean;
+        "notselected": boolean;
         "selected": boolean;
         "showCost": boolean;
         "size": GeneralSizes;
@@ -814,9 +815,10 @@ declare namespace LocalJSX {
         "type"?: 'icon_simple' | 'avatar' | 'payment_icon' | 'radio_button' | 'checkbox';
     }
     interface GbCheckboxGroupItem {
-        "breakpoint"?: 'desktop' | 'mobile';
+        "breakpoint"?: BreakPoints;
         "default"?: boolean;
         "disabled"?: boolean;
+        "notselected"?: boolean;
         "selected"?: boolean;
         "showCost"?: boolean;
         "size"?: GeneralSizes;

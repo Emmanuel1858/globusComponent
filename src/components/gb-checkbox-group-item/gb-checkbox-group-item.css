@@ -140,3 +140,39 @@ color: var(--color-text-information-bold,#064E94)
 .checkbox-group-item.default:hover slot[name="supporting-text"] {
   color: var(--color-text-information-bold, #064E94);
 }
+
+
+
+
+/* i did this For the not selected state */
+.gb-checkbox-group-item[notselected] {
+  background-color: var(--color-background-card, #FFFFFF); /* Light background */
+  border: 1px solid var(--color-boarder-subtler, #E3E8EF); /* Subtle border */
+  color: var(--color-text, #4B5565); /* Subtle text color */
+}
+
+/* For label and supporting text in the not selected state */
+.gb-checkbox-group-item[notselected] .label {
+  font-weight: bold;
+  color: var(--color-text-bold, #202939); /* Bold label text */
+}
+
+.gb-checkbox-group-item[notselected] .supporting-text {
+  color: var(--color-text, #4B5565); /* Supporting text is gray */
+}
+
+/* Checkbox circle (unselected state) */
+.gb-checkbox-group-item[notselected] .checkbox-circle {
+  border: 1px solid var(--color-boarder-input, #CDD5DF); /* Light border for circle */
+}
+
+/* Hover state for the notselected checkbox item */
+.gb-checkbox-group-item[notselected]:hover {
+  border-color: var(--color-border-hover, #064E94); /* Hover border for item */
+}
+
+/* Hover state for the checkbox circle */
+.gb-checkbox-group-item[notselected]:hover .checkbox-circle {
+  border-color: var(--color-border-hover, #064E94); /* Hover effect on circle */
+}
+/* none of it is working sha */

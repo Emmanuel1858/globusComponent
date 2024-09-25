@@ -1,5 +1,5 @@
 import { Component, h, Prop, Element, State } from '@stencil/core';
-import {  GeneralSizes, StateEnum } from '../../models/reusableModels';
+import {  GeneralSizes, StateEnum, BreakPoints } from '../../models/reusableModels';
 
 @Component({
   tag: 'gb-checkbox-group-item',
@@ -9,10 +9,11 @@ import {  GeneralSizes, StateEnum } from '../../models/reusableModels';
 
 export class GbCheckboxGroupItem {
   @Prop() selected: boolean = false;
+  @Prop() notselected: boolean = false; // new prop added for notselected state and its not working i'm tired 
   @Prop() disabled: boolean = false;
-  @Prop() default: boolean = false; // New prop added for default state
+  @Prop() default: boolean = false; // new prop added for default state
   @Prop() size: GeneralSizes;
-  @Prop() breakpoint: 'desktop' | 'mobile';
+  @Prop() breakpoint: BreakPoints;
   @Prop() type: 'icon_simple' | 'avatar' | 'payment_icon';
   @Prop() state: 'disabled' | 'hover' | 'default';
   @Prop() showCost: boolean = false; // to control cost visibility
@@ -65,7 +66,7 @@ export class GbCheckboxGroupItem {
   private renderIcon() {
     switch (this.type) {
       case 'avatar':
-        return <gb-avatar class="icon-md" size='md' placeholder= {false} icon='user'><img src='build/assets/avatar_pic.jpg'></img></gb-avatar>;
+        return <gb-avatar class="icon-md" size='md' placeholder= {false} icon='user'><img src='build/assets/avatar_pic.jpg' slot='image'></img></gb-avatar>;
       case 'payment_icon':
         return (
           <svg xmlns="http://www.w3.org/2000/svg" width="46" height="32" viewBox="0 0 46 32" fill="none">
