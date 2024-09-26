@@ -1,0 +1,28 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+@import './../../global/typo.css';
+
+div.container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-2);
+}
+
+.input-with-label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-2);
+    align-self: stretch;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-Positive-spacing-2, 0.5rem);
+}
+
+p{
+    color: var(--color-boarder-input, #CDD5DF)
+}

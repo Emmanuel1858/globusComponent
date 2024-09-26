@@ -7,16 +7,15 @@
 
 ## Properties
 
-| Property         | Attribute         | Description | Type                                                | Default     |
-| ---------------- | ----------------- | ----------- | --------------------------------------------------- | ----------- |
-| `checkbox`       | `checkbox`        |             | `boolean`                                           | `false`     |
-| `checkboxStates` | `checkbox-states` |             | `CheckBoxStates.Default \| CheckBoxStates.Disabled` | `undefined` |
-| `icon`           | `icon`            |             | `boolean`                                           | `false`     |
-| `iconSrc`        | `icon-src`        |             | `string`                                            | `undefined` |
-| `label`          | `label`           |             | `string`                                            | `''`        |
-| `shortcut`       | `shortcut`        |             | `boolean`                                           | `undefined` |
-| `shortcutIcon`   | `shortcut-icon`   |             | `string`                                            | `'⌘C'`      |
-| `state`          | `state`           |             | `StateEnum.Default \| StateEnum.Disabled`           | `undefined` |
+| Property       | Attribute       | Description | Type                      | Default     |
+| -------------- | --------------- | ----------- | ------------------------- | ----------- |
+| `checkbox`     | `checkbox`      |             | `boolean`                 | `false`     |
+| `icon`         | `icon`          |             | `boolean`                 | `false`     |
+| `iconSrc`      | `icon-src`      |             | `string`                  | `undefined` |
+| `label`        | `label`         |             | `string`                  | `''`        |
+| `shortcut`     | `shortcut`      |             | `boolean`                 | `undefined` |
+| `shortcutIcon` | `shortcut-icon` |             | `string`                  | `'C'`       |
+| `state`        | `state`         |             | `"default" \| "disabled"` | `'default'` |
 
 
 ## Dependencies

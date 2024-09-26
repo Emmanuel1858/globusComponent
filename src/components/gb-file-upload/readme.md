@@ -7,15 +7,15 @@
 
 ## Properties
 
-| Property      | Attribute      | Description | Type                                                                                                              | Default             |
-| ------------- | -------------- | ----------- | ----------------------------------------------------------------------------------------------------------------- | ------------------- |
-| `buttonState` | `button-state` |             | `StateEnum.Default \| StateEnum.Disabled`                                                                         | `StateEnum.Default` |
-| `destructive` | `destructive`  |             | `boolean`                                                                                                         | `false`             |
-| `heightSize`  | `height-size`  |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs"` | `undefined`         |
-| `icon`        | `icon`         |             | `"icon" \| "outline"`                                                                                             | `undefined`         |
-| `showLabel`   | `show-label`   |             | `boolean`                                                                                                         | `false`             |
-| `state`       | `state`        |             | `"complete" \| "default" \| "disabled" \| "error" \| "hover" \| "in_progress"`                                    | `undefined`         |
-| `type`        | `type`         |             | `"multiple" \| "single"`                                                                                          | `undefined`         |
+| Property      | Attribute      | Description | Type                                                                                                                       | Default             |
+| ------------- | -------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| `buttonState` | `button-state` |             | `StateEnum.Default \| StateEnum.Disabled`                                                                                  | `StateEnum.Default` |
+| `destructive` | `destructive`  |             | `boolean`                                                                                                                  | `false`             |
+| `heightSize`  | `height-size`  |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs" \| "xxs"` | `undefined`         |
+| `icon`        | `icon`         |             | `"icon" \| "outline"`                                                                                                      | `undefined`         |
+| `showLabel`   | `show-label`   |             | `boolean`                                                                                                                  | `false`             |
+| `state`       | `state`        |             | `"complete" \| "default" \| "disabled" \| "error" \| "hover" \| "in_progress"`                                             | `undefined`         |
+| `type`        | `type`         |             | `"multiple" \| "single"`                                                                                                   | `undefined`         |
 
 
 ## Dependencies

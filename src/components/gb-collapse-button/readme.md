@@ -7,12 +7,12 @@
 
 ## Properties
 
-| Property               | Attribute                | Description | Type                | Default     |
-| ---------------------- | ------------------------ | ----------- | ------------------- | ----------- |
-| `color`                | `color`                  |             | `"gray" \| "white"` | `undefined` |
-| `currentIconDirection` | `current-icon-direction` |             | `string`            | `'left'`    |
-| `isCollapsed`          | `is-collapsed`           |             | `boolean`           | `false`     |
-| `isHovered`            | `is-hovered`             |             | `boolean`           | `false`     |
+| Property      | Attribute      | Description | Type                | Default      |
+| ------------- | -------------- | ----------- | ------------------- | ------------ |
+| `action`      | `action`       |             | `string`            | `'collapse'` |
+| `color`       | `color`        |             | `"gray" \| "white"` | `undefined`  |
+| `isCollapsed` | `is-collapsed` |             | `boolean`           | `false`      |
+| `isHovered`   | `is-hovered`   |             | `boolean`           | `false`      |
 
 
 ## Methods

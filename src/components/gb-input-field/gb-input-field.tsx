@@ -10,17 +10,18 @@ import { GeneralSizes } from '../../models/reusableModels'
 export class GbInputField {
   @Prop() size: GeneralSizes;
   @Prop() inputType: 'default' | 'icon_leading' | 'leading_dropdown' | 'trailing_dropdown'|'leading_text'|'payment_input'| 'tags' | 'trailing_button' |'password' | 'password_icon_leading' | 'count';
-  @Prop() destructive: boolean;
-  @Prop() state: 'disabled';
+  @Prop() destructive: boolean = false;
+  @Prop() state: 'placeholder' | 'filled' | 'active' | 'disabled' ;
   @Prop() showLabel: boolean;
-  @Prop() label?: string = '';
+  @Prop() label: string = '';
   @Prop() showHintText: boolean;
   @Prop() hintText: string = '';
   @Prop() showPlaceholder: boolean;
   @Prop() placeholder: string = ''; 
-  @Prop() showHelpIcon?: boolean = false;
+  @Prop() showHelpIcon: boolean = false;
   @Prop() showValidation: boolean;
   @Prop() iconSwap?: string;
+  @Prop() showCloseButton?: boolean;
 
   
 
@@ -30,48 +31,54 @@ export class GbInputField {
 
     const classes = {
       [this.size]: true,
+      destructive: this.destructive,
+      disabled: this.state === 'disabled'
     }
 
     return (
       <div class={classes}>
         <div class="input-with-label">
-          <label>{this.label}</label>
+          <label class="text-sm-medium">{this.label}</label>
           {this.inputType === 'default' && (
             <div class="input-wrapper">
-              <input placeholder={this.placeholder}>
+              <input class="text-md-regular" placeholder={this.showPlaceholder ? this.placeholder : ''}>
               </input>
               {this.showValidation && (
                 <span></span>
               )}
               {this.showHelpIcon && (
-                <div class="help-icon">
+                <span class="help-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path d="M6.66671 5.99998C6.66671 5.2636 7.26366 4.66665 8.00004 4.66665C8.73642 4.66665 9.33337 5.2636 9.33337 5.99998C9.33337 6.26541 9.25581 6.51273 9.12212 6.72051C8.72365 7.33976 8.00004 7.93027 8.00004 8.66665V8.99998M7.9947 11.3333H8.00069M14.6667 7.99998C14.6667 11.6819 11.6819 14.6666 8.00004 14.6666C4.31814 14.6666 1.33337 11.6819 1.33337 7.99998C1.33337 4.31808 4.31814 1.33331 8.00004 1.33331C11.6819 1.33331 14.6667 4.31808 14.6667 7.99998Z" stroke="#697586" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
-                </div> 
+                </span> 
               )}
             </div>
           )}
           {this.inputType === 'icon_leading' && (
             <div class="input-wrapper">
               <div class="content">
-                {this.iconSwap && (
-                  <div class="icon">
-                    <img src={iconSwap} alt="Icon"></img>
-                  </div>
-                )}
-                <input placeholder={this.placeholder} type='email'>
+                <div class="icon">
+                  {this.iconSwap ? (
+                    <img src={this.iconSwap} alt="Icon" />
+                  ) : (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M5.83342 7.08333L8.2851 8.53285C9.71443 9.37793 10.2857 9.37793 11.7151 8.53285L14.1668 7.08333M7.58243 2.94711C9.1995 2.90649 10.8007 2.90649 12.4177 2.94712C15.0415 3.01304 16.3534 3.046 17.296 3.9922C18.2386 4.93839 18.2658 6.2157 18.3203 8.77031C18.3378 9.59171 18.3378 10.4083 18.3203 11.2297C18.2658 13.7843 18.2386 15.0616 17.296 16.0078C16.3533 16.954 15.0415 16.9869 12.4177 17.0528C10.8007 17.0935 9.19951 17.0935 7.58244 17.0528C4.95869 16.9869 3.64682 16.954 2.70421 16.0078C1.76161 15.0616 1.73437 13.7843 1.67989 11.2297C1.66237 10.4083 1.66237 9.5917 1.67989 8.77029C1.73436 6.21568 1.7616 4.93838 2.70421 3.99218C3.64682 3.04599 4.95869 3.01303 7.58243 2.94711Z" stroke="#4B5565" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  )}
+                </div>  
+                <input class="text-md-regular" placeholder={this.showPlaceholder ? this.placeholder : ''} type='email'>
                 </input>
               </div>
               {this.showValidation && (
                 <span></span>
               )}
               {this.showHelpIcon && (
-                <div class="help-icon">
+                <span class="help-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path d="M6.66671 5.99998C6.66671 5.2636 7.26366 4.66665 8.00004 4.66665C8.73642 4.66665 9.33337 5.2636 9.33337 5.99998C9.33337 6.26541 9.25581 6.51273 9.12212 6.72051C8.72365 7.33976 8.00004 7.93027 8.00004 8.66665V8.99998M7.9947 11.3333H8.00069M14.6667 7.99998C14.6667 11.6819 11.6819 14.6666 8.00004 14.6666C4.31814 14.6666 1.33337 11.6819 1.33337 7.99998C1.33337 4.31808 4.31814 1.33331 8.00004 1.33331C11.6819 1.33331 14.6667 4.31808 14.6667 7.99998Z" stroke="#697586" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
-                </div> 
+                </span> 
               )}
             </div>
           )}
@@ -90,15 +97,17 @@ export class GbInputField {
                 </select>
               </div>
               <div class="text-input">
-                <input placeholder={this.placeholder}>
+                <input class="text-md-regular" placeholder={this.showPlaceholder ? this.placeholder : ''}>
                 </input>
                 {this.showValidation && (
                 <span></span>
                 )}
                 {this.showHelpIcon && (
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M6.66671 5.99998C6.66671 5.2636 7.26366 4.66665 8.00004 4.66665C8.73642 4.66665 9.33337 5.2636 9.33337 5.99998C9.33337 6.26541 9.25581 6.51273 9.12212 6.72051C8.72365 7.33976 8.00004 7.93027 8.00004 8.66665V8.99998M7.9947 11.3333H8.00069M14.6667 7.99998C14.6667 11.6819 11.6819 14.6666 8.00004 14.6666C4.31814 14.6666 1.33337 11.6819 1.33337 7.99998C1.33337 4.31808 4.31814 1.33331 8.00004 1.33331C11.6819 1.33331 14.6667 4.31808 14.6667 7.99998Z" stroke="#697586" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
+                  <span class="help-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M6.66671 5.99998C6.66671 5.2636 7.26366 4.66665 8.00004 4.66665C8.73642 4.66665 9.33337 5.2636 9.33337 5.99998C9.33337 6.26541 9.25581 6.51273 9.12212 6.72051C8.72365 7.33976 8.00004 7.93027 8.00004 8.66665V8.99998M7.9947 11.3333H8.00069M14.6667 7.99998C14.6667 11.6819 11.6819 14.6666 8.00004 14.6666C4.31814 14.6666 1.33337 11.6819 1.33337 7.99998C1.33337 4.31808 4.31814 1.33331 8.00004 1.33331C11.6819 1.33331 14.6667 4.31808 14.6667 7.99998Z" stroke="#697586" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span> 
                 )}
               </div>                         
             </div>
@@ -108,15 +117,17 @@ export class GbInputField {
               <div class="content">
                 <div class="text-input">
                   <p>$</p>
-                  <input placeholder={this.placeholder}></input>
+                  <input class="text-md-regular" placeholder={this.showPlaceholder ? this.placeholder : ''}></input>
                 </div>
                 {this.showValidation && (
                 <span></span>
                 )}
                 {this.showHelpIcon && (
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M6.66671 5.99998C6.66671 5.2636 7.26366 4.66665 8.00004 4.66665C8.73642 4.66665 9.33337 5.2636 9.33337 5.99998C9.33337 6.26541 9.25581 6.51273 9.12212 6.72051C8.72365 7.33976 8.00004 7.93027 8.00004 8.66665V8.99998M7.9947 11.3333H8.00069M14.6667 7.99998C14.6667 11.6819 11.6819 14.6666 8.00004 14.6666C4.31814 14.6666 1.33337 11.6819 1.33337 7.99998C1.33337 4.31808 4.31814 1.33331 8.00004 1.33331C11.6819 1.33331 14.6667 4.31808 14.6667 7.99998Z" stroke="#697586" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
+                  <span class="help-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M6.66671 5.99998C6.66671 5.2636 7.26366 4.66665 8.00004 4.66665C8.73642 4.66665 9.33337 5.2636 9.33337 5.99998C9.33337 6.26541 9.25581 6.51273 9.12212 6.72051C8.72365 7.33976 8.00004 7.93027 8.00004 8.66665V8.99998M7.9947 11.3333H8.00069M14.6667 7.99998C14.6667 11.6819 11.6819 14.6666 8.00004 14.6666C4.31814 14.6666 1.33337 11.6819 1.33337 7.99998C1.33337 4.31808 4.31814 1.33331 8.00004 1.33331C11.6819 1.33331 14.6667 4.31808 14.6667 7.99998Z" stroke="#697586" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span> 
                 )}
               </div>
               <div class="currency-dropdown">
@@ -133,14 +144,16 @@ export class GbInputField {
                 <p>http://</p>
               </div>
               <div class="trailing-text-input">
-                <input placeholder={this.placeholder}></input>
+                <input class="text-md-regular" placeholder={this.showPlaceholder ? this.placeholder : ''}></input>
                 {this.showValidation && (
                 <span></span>
                 )}
                 {this.showHelpIcon && (
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M6.66671 5.99998C6.66671 5.2636 7.26366 4.66665 8.00004 4.66665C8.73642 4.66665 9.33337 5.2636 9.33337 5.99998C9.33337 6.26541 9.25581 6.51273 9.12212 6.72051C8.72365 7.33976 8.00004 7.93027 8.00004 8.66665V8.99998M7.9947 11.3333H8.00069M14.6667 7.99998C14.6667 11.6819 11.6819 14.6666 8.00004 14.6666C4.31814 14.6666 1.33337 11.6819 1.33337 7.99998C1.33337 4.31808 4.31814 1.33331 8.00004 1.33331C11.6819 1.33331 14.6667 4.31808 14.6667 7.99998Z" stroke="#697586" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
+                  <span class="help-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M6.66671 5.99998C6.66671 5.2636 7.26366 4.66665 8.00004 4.66665C8.73642 4.66665 9.33337 5.2636 9.33337 5.99998C9.33337 6.26541 9.25581 6.51273 9.12212 6.72051C8.72365 7.33976 8.00004 7.93027 8.00004 8.66665V8.99998M7.9947 11.3333H8.00069M14.6667 7.99998C14.6667 11.6819 11.6819 14.6666 8.00004 14.6666C4.31814 14.6666 1.33337 11.6819 1.33337 7.99998C1.33337 4.31808 4.31814 1.33331 8.00004 1.33331C11.6819 1.33331 14.6667 4.31808 14.6667 7.99998Z" stroke="#697586" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span> 
                 )}
               </div>
             </div>
@@ -155,7 +168,7 @@ export class GbInputField {
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M11.179 11.8294C12.6369 10.6005 13.5614 8.77193 13.5614 6.72999C13.5614 4.68805 12.6369 2.85946 11.179 1.63055C9.72109 2.85946 8.79663 4.68805 8.79663 6.72999C8.79663 8.77193 9.72109 10.6005 11.179 11.8294Z" fill="#FF5E00"/>
                   </svg>
                 </span>
-                <input placeholder={this.placeholder}></input>
+                <input class="text-md-regular" placeholder={this.showPlaceholder ? this.placeholder : ''}></input>
               </div>
               {this.showValidation && (
                 <span></span>
@@ -188,14 +201,16 @@ export class GbInputField {
           {this.inputType === 'trailing_button' && (
             <div class="input-wrapper">
               <div class="leading-text-input">
-                <input placeholder={this.placeholder}></input>
+                <input class="text-md-regular" placeholder={this.showPlaceholder ? this.placeholder : ''}></input>
                 {this.showValidation && (
                   <span></span>
                 )}
                 {this.showHelpIcon && (
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M6.66671 5.99998C6.66671 5.2636 7.26366 4.66665 8.00004 4.66665C8.73642 4.66665 9.33337 5.2636 9.33337 5.99998C9.33337 6.26541 9.25581 6.51273 9.12212 6.72051C8.72365 7.33976 8.00004 7.93027 8.00004 8.66665V8.99998M7.9947 11.3333H8.00069M14.6667 7.99998C14.6667 11.6819 11.6819 14.6666 8.00004 14.6666C4.31814 14.6666 1.33337 11.6819 1.33337 7.99998C1.33337 4.31808 4.31814 1.33331 8.00004 1.33331C11.6819 1.33331 14.6667 4.31808 14.6667 7.99998Z" stroke="#697586" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
+                  <span class="help-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M6.66671 5.99998C6.66671 5.2636 7.26366 4.66665 8.00004 4.66665C8.73642 4.66665 9.33337 5.2636 9.33337 5.99998C9.33337 6.26541 9.25581 6.51273 9.12212 6.72051C8.72365 7.33976 8.00004 7.93027 8.00004 8.66665V8.99998M7.9947 11.3333H8.00069M14.6667 7.99998C14.6667 11.6819 11.6819 14.6666 8.00004 14.6666C4.31814 14.6666 1.33337 11.6819 1.33337 7.99998C1.33337 4.31808 4.31814 1.33331 8.00004 1.33331C11.6819 1.33331 14.6667 4.31808 14.6667 7.99998Z" stroke="#697586" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span> 
                 )}
               </div> 
               <button>
@@ -209,65 +224,76 @@ export class GbInputField {
             <div class="input-wrapper">
               <div class="password-content">
                 <span class="leading-text-input">
-                  <input placeholder={this.placeholder}></input>
+                  <input class="text-md-regular" placeholder={this.showPlaceholder ? this.placeholder : ''} type='password'></input>
                 </span>     
                 {this.showValidation && (
                   <span></span>
                 )}           
                 {this.showHelpIcon && (
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M6.66671 5.99998C6.66671 5.2636 7.26366 4.66665 8.00004 4.66665C8.73642 4.66665 9.33337 5.2636 9.33337 5.99998C9.33337 6.26541 9.25581 6.51273 9.12212 6.72051C8.72365 7.33976 8.00004 7.93027 8.00004 8.66665V8.99998M7.9947 11.3333H8.00069M14.6667 7.99998C14.6667 11.6819 11.6819 14.6666 8.00004 14.6666C4.31814 14.6666 1.33337 11.6819 1.33337 7.99998C1.33337 4.31808 4.31814 1.33331 8.00004 1.33331C11.6819 1.33331 14.6667 4.31808 14.6667 7.99998Z" stroke="#697586" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
+                  <span class="help-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M6.66671 5.99998C6.66671 5.2636 7.26366 4.66665 8.00004 4.66665C8.73642 4.66665 9.33337 5.2636 9.33337 5.99998C9.33337 6.26541 9.25581 6.51273 9.12212 6.72051C8.72365 7.33976 8.00004 7.93027 8.00004 8.66665V8.99998M7.9947 11.3333H8.00069M14.6667 7.99998C14.6667 11.6819 11.6819 14.6666 8.00004 14.6666C4.31814 14.6666 1.33337 11.6819 1.33337 7.99998C1.33337 4.31808 4.31814 1.33331 8.00004 1.33331C11.6819 1.33331 14.6667 4.31808 14.6667 7.99998Z" stroke="#697586" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span> 
                 )}
               </div>
               <div class="password-dropdown">
-                
+                <gb-password-button></gb-password-button>
               </div>
             </div>
           )}
           {this.inputType === 'password_icon_leading' && (
-            <input placeholder={this.placeholder}>
-              {this.iconSwap && (
-                <div class="icon">
-                  <img src={iconSwap} alt="Icon"></img>
-                </div>
-              )}
+            <div class="input-wrapper">
+              <div class="passwordicon-content">
+                {this.iconSwap && (
+                  <div class="icon">
+                    <img src={iconSwap} alt="Icon"></img>
+                  </div>
+                )}
+                <input class="text-md-regular" placeholder={this.showPlaceholder ? this.placeholder : ''}></input>
+              </div>
+              {this.showValidation && (
+                  <span></span>
+                )}
               {this.showHelpIcon && (
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M6.66671 5.99998C6.66671 5.2636 7.26366 4.66665 8.00004 4.66665C8.73642 4.66665 9.33337 5.2636 9.33337 5.99998C9.33337 6.26541 9.25581 6.51273 9.12212 6.72051C8.72365 7.33976 8.00004 7.93027 8.00004 8.66665V8.99998M7.9947 11.3333H8.00069M14.6667 7.99998C14.6667 11.6819 11.6819 14.6666 8.00004 14.6666C4.31814 14.6666 1.33337 11.6819 1.33337 7.99998C1.33337 4.31808 4.31814 1.33331 8.00004 1.33331C11.6819 1.33331 14.6667 4.31808 14.6667 7.99998Z" stroke="#697586" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               )}
-            </input>
+              <gb-gb-password-button></gb-gb-password-button>
+            </div>            
           )}
           {this.inputType === 'count' && (
-            <input placeholder={this.placeholder}>
-            {this.iconSwap && (
-              <div class="icon">
-                <img src={iconSwap} alt="Icon"></img>
+            <div class="input-wrapper">
+              <div class="leading-text-input">
+                <input class="text-md-regular" placeholder={this.showPlaceholder ? this.placeholder : ''}></input>
+                {this.showHelpIcon && (
+                  <span class="help-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M6.66671 5.99998C6.66671 5.2636 7.26366 4.66665 8.00004 4.66665C8.73642 4.66665 9.33337 5.2636 9.33337 5.99998C9.33337 6.26541 9.25581 6.51273 9.12212 6.72051C8.72365 7.33976 8.00004 7.93027 8.00004 8.66665V8.99998M7.9947 11.3333H8.00069M14.6667 7.99998C14.6667 11.6819 11.6819 14.6666 8.00004 14.6666C4.31814 14.6666 1.33337 11.6819 1.33337 7.99998C1.33337 4.31808 4.31814 1.33331 8.00004 1.33331C11.6819 1.33331 14.6667 4.31808 14.6667 7.99998Z" stroke="#697586" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span> 
+                )}
               </div>
-            )}
-            {this.showHelpIcon && (
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M6.66671 5.99998C6.66671 5.2636 7.26366 4.66665 8.00004 4.66665C8.73642 4.66665 9.33337 5.2636 9.33337 5.99998C9.33337 6.26541 9.25581 6.51273 9.12212 6.72051C8.72365 7.33976 8.00004 7.93027 8.00004 8.66665V8.99998M7.9947 11.3333H8.00069M14.6667 7.99998C14.6667 11.6819 11.6819 14.6666 8.00004 14.6666C4.31814 14.6666 1.33337 11.6819 1.33337 7.99998C1.33337 4.31808 4.31814 1.33331 8.00004 1.33331C11.6819 1.33331 14.6667 4.31808 14.6667 7.99998Z" stroke="#697586" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            )}
-            <span>
-              <button class="decrease-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M16.6666 10L3.33329 10" stroke="#4B5565" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              </button>
-              <button class="increase-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M10 3.33334L10 16.6667M16.6667 10L3.33337 10" stroke="#4B5565" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>        
-              </button>
-            </span>
-          </input>
+              <span class="count-action">
+                {this.showCloseButton && (
+                  <button class="decrease-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M16.6666 10L3.33329 10" stroke="#4B5565" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                )}
+                <button class="increase-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M10 3.33334L10 16.6667M16.6667 10L3.33337 10" stroke="#4B5565" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>        
+                </button>
+              </span>
+            </div>
           )}
         </div>
         {this.showHintText && (
-          <p class="hint-text">{this.hintText}</p>
+          <div class="text-sm-regular hint-text">{this.hintText}</div>
         )}
       </div>
     )

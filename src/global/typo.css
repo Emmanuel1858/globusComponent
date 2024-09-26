@@ -466,7 +466,7 @@
 }
 
 .text-sm-regular{
-    font-size: var(--text-sm-regular-font-size);
+    font-size: var(--text-sm-regular-font-size, 0.875rem);
     font-weight: var(--text-sm-regular-font-weight);
     line-height: var(--text-sm-regular-line-height);
 }

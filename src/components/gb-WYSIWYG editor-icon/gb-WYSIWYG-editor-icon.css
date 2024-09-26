@@ -1,3 +1,54 @@
 @import './../../global/global.css';
 @import './../../global/spacing.css';
 @import './../../global/typo.css';
+
+div.container {
+    display: flex;
+    width: var(--spacing-Positive-spacing-7, 2rem);
+    height: var(--spacing-Positive-spacing-7, 2rem);
+    padding: 0.375rem;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: var(--rounded-sm);
+}
+
+.container svg {
+    width: var(--spacing-Positive-spacing-5, 1.25rem);
+    height: var(--spacing-Positive-spacing-5, 1.25rem);
+    flex-shrink: 0;
+}
+
+div.container:hover {
+    background: var(--color-background-gray-subtler, #EEF2F6);
+}
+
+div.container.active {
+    background: var(--color-background-information-subtlest, #E4F0FC);
+}
+
+.link-icon {
+    display: flex;
+    justify-content: center;
+    width: var(--spacing-Positive-spacing-5, 1.25rem);
+    height: var(--spacing-Positive-spacing-5, 1.25rem);
+    padding: 0.3125rem 0.05206rem;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    width: var(--spacing-Positive-spacing-5, 1.25rem);
+    height: var(--spacing-Positive-spacing-5, 1.25rem);
+    padding: 0.07813rem 0.07806rem 0.07806rem 0.07813rem;
+}
+
+.active svg path{
+    stroke: var(--color-icon-selected, #075DB2);
+    fill:   var(--color-icon-selected, #075DB2);
+}
+
+.disabled svg path {
+    stroke: var(--color-icon-disabled, #CDD5DF);
+    fill: var(--color-icon-disabled, #CDD5DF);
+}
