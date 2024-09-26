@@ -24,14 +24,14 @@
     /* Line Heights */
     --font-line-height-d-2xl: 5rem;
     --font-line-height-d-xl: 4.25rem;
-    --font-line-height-d-lg: 4.25rem; /**/
+    --font-line-height-d-lg: 3.75rem;
     --font-line-height-d-md: 2.75rem;
     --font-line-height-d-sm: 2.375rem;   
     --font-line-height-d-xs: 2rem;   
     --font-line-height-t-xl: 1.875rem;
-    --font-line-height-t-lg: 1.75rem;
+    --font-line-height-t-lg: 1.688rem;
     --font-line-height-t-md: 1.5rem;
-    --font-line-height-t-sm: 1.25rem;
+    --font-line-height-t-sm: 1.313rem;
     --font-line-height-t-xs: 1.125rem;
     --font-line-height-t-xxs: 0.938rem;
 

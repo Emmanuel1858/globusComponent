@@ -1,14 +1,15 @@
 @import './../../global/global.css';
 @import './../../global/spacing.css';
-@import './../../global/typo.css';
+@import './../../global/typography.css';
 
 .dropdown-container {
     display: flex;
-    width: 320px;
+    width: 100%;
     padding: var(--spacing-1);
     align-items: center;
     gap: var(--spacing-none);
     border-radius: var(--rounded-none);
+    cursor: pointer;
 }
 
 .dropdown-item {
@@ -27,7 +28,7 @@
     letter-spacing: var(--Font-Letter-spacing-T-md, 0px);
 }
 
-::slotted([slot = 'name']) {
+::slotted([slot='name']) {
     font-size: var(--Font-Size-T-md, 16px);
     font-weight: var(--Font-Weight-Medium, 500);
     line-height: var(--Font-Line-height-T-md, 24px); /* 150% */

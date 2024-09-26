@@ -12,9 +12,9 @@ export class GbAvatarDropdown {
     @Prop() showProfile: boolean;
     @Prop() showDarkTheme: boolean;
     @Prop() showLogOut: boolean;
-    @Prop() listGroup1: boolean;
-    @Prop() listGroup2: boolean;
-    @Prop() listGroup3: boolean;
+    @Prop() listGroupOne: boolean;
+    @Prop() listGroupTwo: boolean;
+    @Prop() listGroupThree: boolean;
 
     render() {
 
@@ -54,21 +54,21 @@ export class GbAvatarDropdown {
                             <slot name="name" slot="name"></slot>
                         </gb-avatar-label-group>
                     </div>
-                    {this.listGroup1 && (
+                    {this.listGroupOne && (
                         <div class="list-group-1">
                             <gb-dropdown-items-with-shortcut icon iconSrc='user_profile' label='View Profile' shortcut shortcutIcon='⌘K+P'>
                             </gb-dropdown-items-with-shortcut>
                             <gb-dropdown-items-with-shortcut icon iconSrc='dark_theme' label='Dark Theme' shortcut shortcutIcon='⌘T'></gb-dropdown-items-with-shortcut>
                         </div>
                     )}
-                    {this.listGroup2 && (
+                    {this.listGroupTwo && (
                         <div class="list-group-2">
                             <gb-dropdown-items-with-shortcut icon iconSrc='configuration_02' label="Configuration" shortcut shortcutIcon='S'></gb-dropdown-items-with-shortcut>
                             <gb-dropdown-items-with-shortcut icon iconSrc='user_group' label="Team" shortcut shortcutIcon='K->T'></gb-dropdown-items-with-shortcut>
                             <gb-dropdown-items-with-shortcut icon iconSrc='user_add' label='Invite Members' shortcut shortcutIcon='I'></gb-dropdown-items-with-shortcut>
                         </div>
                     )}
-                    {this.listGroup3 && (
+                    {this.listGroupThree && (
                         <div class="list-group-3">
                             <gb-dropdown-items-with-shortcut icon iconSrc='logout_button' label='Log out' shortcut shortcutIcon='⌘L'></gb-dropdown-items-with-shortcut>
                         </div>

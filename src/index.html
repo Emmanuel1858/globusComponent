@@ -94,7 +94,7 @@
     <gb-side-bar-item state="active" label="Label" type="full_with_label" icon="assets/circle.svg" category="plain_background" show-arrow="true" show-badge="true">
       <p slot="label">Label</p>
     </gb-side-bar-item>
-    <gb-sidebar category="plain_background" 
+    <gb-sidebar category="colored_background" 
     icon-instance="assets/shuffle-square.svg" 
     first-item-icon="assets/dashboard-square-03.svg" 
     second-item-icon="assets/exchange-01.svg" 
@@ -104,5 +104,13 @@
       <p slot="second_item_label">Exchange</p>
       <p slot="application_name">Automated Call-Over System (ACS)</p>
     </gb-sidebar>
+    <gb-input-dropdown-menu-item type="checkbox" state="default" supporting-text="false" selected="true">
+      <p slot="name">10</p>
+    </gb-input-dropdown-menu-item>
+    <gb-avatar-dropdown type="simple" show-profile="true" show-log-out="true">
+      <p slot="name">Noah Pierre</p>
+      <p slot="supporting_text">Initiator</p>
+      <img src="build/assets/avatar_pic.jpg" alt="" slot="image">
+    </gb-avatar-dropdown>
   </body>
 </html>

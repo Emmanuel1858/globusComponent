@@ -35,13 +35,17 @@ export class GbSideBarItem {
   }
 
   getLabel() {
-    const slottedLabel = this.el.querySelector('[slot="item_label"]');
+    const slottedLabel = this.el.querySelector('slot');
 
     console.log(slottedLabel.textContent);
     return slottedLabel.textContent;
   }
 
   render() {
+    const slot = this.el.querySelector('slot');
+    const textClass = this.state === 'active' ? 'text-md-semi-bold' : 'text-md-medium';
+    slot.classList.add(textClass)
+
     return (
       <div class={`side_bar_item_container`} onMouseEnter={() => (this.showTooltip = true)} onMouseLeave={() => (this.showTooltip = false)}>
         <div class={`nav_item_base ${this.state} ${this.type} ${this.category}`}>
@@ -50,7 +54,9 @@ export class GbSideBarItem {
           <div class="content">
             <div class={`icon ${this.state} ${this.category}`} innerHTML={this.leadingIconSvg}></div>
             {this.type === 'full_with_label' && (
-              <slot name="item_label"></slot>
+              <div class={`label_text ${textClass}`}>
+                <slot></slot>
+              </div>
             )}
           </div>
           {this.type === 'full_with_label' && (

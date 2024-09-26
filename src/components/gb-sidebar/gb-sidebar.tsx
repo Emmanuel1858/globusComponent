@@ -71,7 +71,7 @@ export class GbSidebar {
   componentDidLoad() {
     const applicationName = this.el.querySelector('[slot="application_name"]');
 
-    applicationName.classList.add('text-lg-bold');
+    applicationName.classList.add('text-lg-bold'); 
 
     if(this.category === 'plain_background') {
       applicationName.classList.add('plain_background_color')
@@ -83,6 +83,8 @@ export class GbSidebar {
   }
 
   render() {
+    const textClass = this.category === 'plain_background' ? 'plain_background_color' : 'colored_background_color';
+
     return (
       <div class={`sidebar_div ${this.state} ${this.category}`}>
         {this.category === 'colored_background' && (
@@ -115,7 +117,7 @@ export class GbSidebar {
                 type={this.state === 'collapsed' ? 'icon_only' : 'full_with_label'}
                 onClick={() => this.sideBarItemClicked(0)}
               >
-                <slot slot="item_label" name="first_item_label"></slot>
+                <slot name="first_item_label"></slot>
               </gb-side-bar-item>
               <gb-side-bar-item
                 state={this.activeIndex === 1 ? 'active' : 'default'}
@@ -124,9 +126,7 @@ export class GbSidebar {
                 type={this.state === 'collapsed' ? 'icon_only' : 'full_with_label'}
                 onClick={() => this.sideBarItemClicked(1)}
               >
-                <slot slot="item_label" name="second_item_label">
-                  {this.secondItemLabel}
-                </slot>
+                <slot name="second_item_label"></slot>
               </gb-side-bar-item>
               {this.thirdItem && (
                 <gb-side-bar-item
@@ -224,7 +224,9 @@ export class GbSidebar {
                 </div>
               )}
               <div class={`icon ${this.category}`} innerHTML={this.leadingIconSvg}></div>
-              <slot name="application_name"></slot>
+              <span class={textClass}>
+                <slot name="application_name"></slot>
+              </span>
             </div>
           </div>
         )}

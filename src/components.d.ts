@@ -28,9 +28,9 @@ export namespace Components {
         "weight": BorderWeights;
     }
     interface GbAvatarDropdown {
-        "listGroup1": boolean;
-        "listGroup2": boolean;
-        "listGroup3": boolean;
+        "listGroupOne": boolean;
+        "listGroupThree": boolean;
+        "listGroupTwo": boolean;
         "showDarkTheme": boolean;
         "showLogOut": boolean;
         "showProfile": boolean;
@@ -813,9 +813,9 @@ declare namespace LocalJSX {
         "weight"?: BorderWeights;
     }
     interface GbAvatarDropdown {
-        "listGroup1"?: boolean;
-        "listGroup2"?: boolean;
-        "listGroup3"?: boolean;
+        "listGroupOne"?: boolean;
+        "listGroupThree"?: boolean;
+        "listGroupTwo"?: boolean;
         "showDarkTheme"?: boolean;
         "showLogOut"?: boolean;
         "showProfile"?: boolean;

@@ -144,9 +144,9 @@
     color: var(--color-text-information-bold, #042F59);
 }
 
-/* .colored_background_color{
+.colored_background_color{
     color: var(--color-text-inverse, #FFFFFF);
-} */
+}
 
 /* Sidebar Category Styles */
 .sidebar_div.plain_background{
