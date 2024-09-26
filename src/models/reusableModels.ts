@@ -51,4 +51,6 @@ export type PaginationTypes =
   | 'card_button_group_left_aligned'
   | 'card_button_group_center_aligned';
 
-export type TabTypes = 'button_primary' | 'button_gray' | 'button_white' | 'underline' | 'underline_filled' | 'line' | 'button_white_border' | 'rounded_button_white_border';
+export type TabTypes = 'button_primary' | 'button_gray' | 'button_white' | 'rounded_button_white' | 'underline' | 'underline_filled' | 'line' | 'button_white_border' | 'rounded_button_white_border';
+
+export type GeneralBackgroundCategories = 'plain_background' | 'colored_background';

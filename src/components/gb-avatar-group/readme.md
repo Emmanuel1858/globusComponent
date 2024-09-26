@@ -10,8 +10,7 @@
 | Property        | Attribute         | Description | Type                                                                                                                       | Default             |
 | --------------- | ----------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------- |
 | `addMoreButton` | `add-more-button` |             | `boolean`                                                                                                                  | `undefined`         |
-| `image`         | --                |             | `any[]`                                                                                                                    | `[]`                |
-| `images`        | --                |             | `any[]`                                                                                                                    | `[]`                |
+| `images`        | --                |             | `string[]`                                                                                                                 | `[]`                |
 | `moreUsers`     | `more-users`      |             | `boolean`                                                                                                                  | `undefined`         |
 | `size`          | `size`            |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs" \| "xxs"` | `undefined`         |
 | `state`         | `state`           |             | `StateEnum.Default \| StateEnum.Disabled`                                                                                  | `StateEnum.Default` |

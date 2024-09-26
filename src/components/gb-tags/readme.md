@@ -22,7 +22,7 @@
 
 - [gb-tag-checkbox](../gb-tag-checkbox)
 - [gb-avatar](../gb-avatar)
-- [gb-tag-count](../gb-tag-count)
+- [gb-tag-count](../gb-tagcount)
 - [gb-tag-close](../gb-tag-close)
 
 ### Graph

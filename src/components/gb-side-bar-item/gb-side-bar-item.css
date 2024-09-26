@@ -1,0 +1,140 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+@import './../../global/typography.css';
+
+:host{
+    position: relative;
+}
+
+.side_bar_item_container{
+    display: flex;
+    padding: 0rem var(--spacing-4);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.nav_item_base.icon_only{
+    width: fit-content;
+}
+
+.nav_item_base{
+    display: flex;
+    padding: var(--spacing-2) var(--spacing-3);
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: stretch;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-grow: 1;
+}
+
+.bar{
+    position: absolute;
+    left: 0rem;
+    width: 0.25rem;
+    height: 1.25rem;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+}
+
+/* State and Category Styles */
+.nav_item_base.plain_background.default,
+.nav_item_base.colored_background.default{
+    background: transparent;
+}
+
+.nav_item_base.plain_background.active{
+    background: var(--color-background-information-subtler, #C8E0F9);
+}
+
+.nav_item_base.plain_background:hover{
+    background: var(--color-background-gray-subtler, #EEF2F6);
+}
+
+.nav_item_base.colored_background.active{
+    background: var(--color-background-information-bold, #042F59);
+}
+
+.nav_item_base.colored_background:hover{
+    background: var(--color-blanket, rgba(33, 44, 101, 0.4));
+}
+
+.label_text.plain_background.default{
+    color: var(--color-text, #4B5565);
+}
+
+.label_text.plain_background.active{
+    color: var(--color-text-information-bold, #042F59);
+}
+
+.label_text.colored_background{
+    color: var(--color-text-inverse, #FFFFFF);
+}
+
+/* Icon Color Styles */
+.icon.plain_background path[stroke] {
+    stroke: var(--color-icon-information-bold, #042F59);
+}
+
+.icon.plain_background path[fill] {
+    fill: var(--color-icon-information-bold, #042F59);
+}
+
+.icon.colored_background path[stroke] {
+    stroke: var(--color-icon-inverse, #FFFFFF);
+}
+
+.icon.colored_background path[fill] {
+    fill: var(--color-icon-inverse, #FFFFFF);
+}
+
+.icon.plain_background circle[stroke] {
+    stroke: var(--color-icon-information-bold, #042F59);
+}
+
+.icon.plain_background circle[fill] {
+    fill: var(--color-icon-information-bold, #042F59);
+}
+
+.icon.colored_background circle[stroke] {
+    stroke: var(--color-icon-inverse, #FFFFFF);
+}
+
+.icon.colored_background circle[fill] {
+    fill: var(--color-icon-inverse, #FFFFFF);
+}
+
+/* Arrow Color Styles */
+.arrow.default.plain_background path{
+    stroke: var(--color-icon, #4B5565);
+}
+
+.arrow.active.plain_background path{
+    stroke: var(--color-icon-information-bold, #042F59);
+}
+
+.arrow.default.colored_background path{
+    stroke: var(--color-icon-inverse, #FFFFFF);
+}
+
+.arrow.active.colored_background path{
+    stroke: var(--color-icon-inverse, #FFFFFF);
+}
+
+.tooltip{
+    position: absolute;
+    top: -0.7rem;
+    left: 4.3rem;
+}

@@ -13,7 +13,7 @@ export class GbTagCount{
     render() {
         return (
             <div class={this.size}>
-                <p>5</p>
+                <slot name="count"></slot>
             </div>
         )
     }

@@ -5,6 +5,8 @@
 .horizontal_tab_div{
     display: flex;
     justify-content: flex-start;
+    height: fit-content;
+    width: 100%;
 }
 
 /* Breakpoint Styles */
@@ -13,6 +15,26 @@
 }
 
 /* Tab Type Styles */
+.horizontal_tab_div.underline,
+.horizontal_tab_div.underline_filled{
+    border-bottom: 1px solid var(--color-border-subtle, #CDD5DF);
+}
+
+.horizontal_tab_div.button_white_border,
+.horizontal_tab_div.rounded_button_white_border{
+    padding: var(--spacing-1);
+    background: var(--color-background-gray-subtlest, #F6F8FA);
+    border: 1px solid var(--color-border-subtler, #E3E8EF);
+}
+
+.horizontal_tab_div.button_white_border{
+    border-radius: var(--rounded-sm);
+}
+
+
+.horizontal_tab_div.rounded_button_white_border{
+    border-radius: var(--rounded-full);
+}
 
 /* Full Width Styles */
 .horizontal_tab_div.full_width{

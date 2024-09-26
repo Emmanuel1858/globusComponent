@@ -1,0 +1,171 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+@import './../../global/typography.css';
+
+.sidebar_div{
+    transition: 0.5s ease-out;
+    position: relative;
+}
+
+.pattern{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    mix-blend-mode: multiply;
+}
+
+.pattern img{
+    width: 100%;
+    height: auto;
+}
+
+.sidebar_div.expanded{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    /* padding: 1.5rem; */
+}
+
+.sidebar_div.collapsed{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 5rem;
+}
+
+.nav{
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    gap: var(--spacing-6);
+}
+
+.sidebar_header.expanded{
+    display: flex;
+    padding: var(--spacing-none) var(--spacing-6);
+    justify-content: space-between;
+    align-items: center;
+    width: 16.75rem;
+    margin-top: 1rem;
+}
+
+.sidebar_header.collapsed{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1.5rem;
+}
+
+.logo_and_name.expanded{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo_and_name.collapsed{
+    display: flex;
+    justify-content: center;
+}
+
+.collapse_button.collapsed{
+    display: flex;
+    justify-content: center;
+}
+
+.application_name{
+    display: flex;
+    padding: 0rem var(--spacing-6);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: stretch;
+}
+
+.wrapper{
+    display: flex;
+    padding: var(--spacing-4) var(--spacing-5) var(--spacing-5) var(--spacing-5);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--spacing-4);
+    align-self: stretch;
+    border-radius: var(--rounded-sm);
+    position: relative;
+    width: 13.75rem;
+    height: auto;
+    overflow: hidden;
+}
+
+.icon.plain_background path[stroke] {
+    stroke: var(--color-icon-information-bold, #042F59);
+}
+
+.icon.plain_background path[fill] {
+    fill: var(--color-icon-information-bold, #042F59);
+}
+
+.icon.colored_background path[stroke] {
+    stroke: var(--color-icon-inverse, #FFFFFF);
+}
+
+.icon.colored_background path[fill] {
+    fill: var(--color-icon-inverse, #FFFFFF);
+}
+
+.application_name_pattern{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    mix-blend-mode: multiply;
+}
+
+.application_name_pattern img{
+    width: 100%;
+}
+
+.wrapper.colored_background{
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(0, 0, 0, 0.10);
+}
+
+.wrapper.plain_background{
+    background: var(--color-background-gray-subtlest, #F6F8FA);
+    border: var(--Spacing-None, 1px) solid var(--color-border-subtler, #E3E8EF);
+}
+
+.plain_background_color{
+    color: var(--color-text-information-bold, #042F59);
+}
+
+/* .colored_background_color{
+    color: var(--color-text-inverse, #FFFFFF);
+} */
+
+/* Sidebar Category Styles */
+.sidebar_div.plain_background{
+    height: 44.375rem;
+    padding-bottom: var(--spacing-5);
+    border-right: 0.7px solid var(--color-border-subtle, #CDD5DF);
+    background: var(--color-surface, #FFFFFF);
+}
+
+.sidebar_div.colored_background{
+    height: 45.625rem;
+    padding-bottom: var(--spacing-6);
+    background-image: linear-gradient(180deg, #064E94 0%, #02182E 100%);
+    background-size: cover;
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--spacing-1);
+}
