@@ -40,6 +40,10 @@ Type: `Promise<void>`
 
 ## Dependencies
 
+### Used by
+
+ - [gb-sidebar](../gb-sidebar)
+
 ### Depends on
 
 - [gb-tooltip](../gb-tooltip)
@@ -48,6 +52,7 @@ Type: `Promise<void>`
 ```mermaid
 graph TD;
   gb-collapse-button --> gb-tooltip
+  gb-sidebar --> gb-collapse-button
   style gb-collapse-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

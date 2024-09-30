@@ -26,6 +26,7 @@
  - [gb-avatar-label-group](../gb-avatar-label-group)
  - [gb-avatar-profile-photo](../gb-avatar-profile-photo)
  - [gb-badge](../gb-badges)
+ - [gb-header](../gb-header)
  - [gb-input-dropdown](../gb-input-dropdown)
  - [gb-input-dropdown-menu-item](../gb-input-dropdown-menu)
  - [gb-tag](../gb-tags)
@@ -44,6 +45,7 @@ graph TD;
   gb-avatar-label-group --> gb-avatar
   gb-avatar-profile-photo --> gb-avatar
   gb-badge --> gb-avatar
+  gb-header --> gb-avatar
   gb-input-dropdown --> gb-avatar
   gb-input-dropdown-menu-item --> gb-avatar
   gb-tag --> gb-avatar

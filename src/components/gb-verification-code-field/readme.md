@@ -7,14 +7,14 @@
 
 ## Properties
 
-| Property       | Attribute        | Description | Type                                                                                                                       | Default         |
-| -------------- | ---------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| `digits`       | `digits`         |             | `4 \| 6 \| 8`                                                                                                              | `undefined`     |
-| `hintText`     | `hint-text`      |             | `string`                                                                                                                   | `undefined`     |
-| `label`        | `label`          |             | `string`                                                                                                                   | `'Secure code'` |
-| `shoowLabel`   | `shoow-label`    |             | `boolean`                                                                                                                  | `undefined`     |
-| `showHintText` | `show-hint-text` |             | `boolean`                                                                                                                  | `undefined`     |
-| `size`         | `size`           |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs" \| "xxs"` | `undefined`     |
+| Property       | Attribute        | Description | Type                                                                                                                       | Default     |
+| -------------- | ---------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| `digits`       | `digits`         |             | `4 \| 6 \| 8`                                                                                                              | `undefined` |
+| `hintText`     | `hint-text`      |             | `string`                                                                                                                   | `''`        |
+| `label`        | `label`          |             | `string`                                                                                                                   | `''`        |
+| `shoowLabel`   | `shoow-label`    |             | `boolean`                                                                                                                  | `undefined` |
+| `showHintText` | `show-hint-text` |             | `boolean`                                                                                                                  | `undefined` |
+| `size`         | `size`           |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs" \| "xxs"` | `undefined` |
 
 
 ## Dependencies

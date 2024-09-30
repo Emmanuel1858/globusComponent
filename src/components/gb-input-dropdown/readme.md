@@ -24,6 +24,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [gb-wysiwyg-toolbar](../gb-WYSIWYG-toolbar)
+
 ### Depends on
 
 - [gb-avatar](../gb-avatar)
@@ -34,6 +38,7 @@ graph TD;
   gb-input-dropdown --> gb-avatar
   gb-avatar --> gb-avatar-contrast-inner-border
   gb-avatar --> gb-status-indicator
+  gb-wysiwyg-toolbar --> gb-input-dropdown
   style gb-input-dropdown fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

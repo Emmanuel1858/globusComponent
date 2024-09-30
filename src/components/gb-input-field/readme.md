@@ -29,11 +29,13 @@
 
 ### Depends on
 
+- [gb-btn](../gb-btn)
 - [gb-password-button](../gb-password-button)
 
 ### Graph
 ```mermaid
 graph TD;
+  gb-input-field --> gb-btn
   gb-input-field --> gb-password-button
   gb-password-button --> gb-btn
   style gb-input-field fill:#f9f,stroke:#333,stroke-width:4px

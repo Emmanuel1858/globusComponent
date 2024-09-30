@@ -17,11 +17,13 @@
 
 ### Used by
 
+ - [gb-token-field](../gb-token-field)
  - [gb-verification-code-field](../gb-verification-code-field)
 
 ### Graph
 ```mermaid
 graph TD;
+  gb-token-field --> gb-megainput-field
   gb-verification-code-field --> gb-megainput-field
   style gb-megainput-field fill:#f9f,stroke:#333,stroke-width:4px
 ```

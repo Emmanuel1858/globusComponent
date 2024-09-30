@@ -17,6 +17,19 @@
 | `supportingText`     | `supporting-text`      |             | `string`                                                                                                                   | `''`            |
 
 
+## Dependencies
+
+### Depends on
+
+- [gb-megainput-field](../gb-megainput-field-base)
+
+### Graph
+```mermaid
+graph TD;
+  gb-token-field --> gb-megainput-field
+  style gb-token-field fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

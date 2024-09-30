@@ -24,11 +24,13 @@
 
 ### Used by
 
+ - [gb-input-field](../gb-input-field)
  - [gb-password-button](../gb-password-button)
 
 ### Graph
 ```mermaid
 graph TD;
+  gb-input-field --> gb-btn
   gb-password-button --> gb-btn
   style gb-btn fill:#f9f,stroke:#333,stroke-width:4px
 ```

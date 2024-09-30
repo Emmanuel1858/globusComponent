@@ -21,6 +21,11 @@
 
 ## Dependencies
 
+### Used by
+
+ - [gb-side-bar-item](../gb-side-bar-item)
+ - [gb-tab-button-base](../gb-tab-button-base)
+
 ### Depends on
 
 - [gb-avatar](../gb-avatar)
@@ -33,6 +38,8 @@ graph TD;
   gb-badge --> gb-badge-close
   gb-avatar --> gb-avatar-contrast-inner-border
   gb-avatar --> gb-status-indicator
+  gb-side-bar-item --> gb-badge
+  gb-tab-button-base --> gb-badge
   style gb-badge fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

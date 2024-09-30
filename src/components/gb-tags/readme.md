@@ -7,13 +7,13 @@
 
 ## Properties
 
-| Property   | Attribute   | Description | Type                                  | Default       |
-| ---------- | ----------- | ----------- | ------------------------------------- | ------------- |
-| `action`   | `action`    |             | `"X_close" \| "count" \| "text_only"` | `'text_only'` |
-| `checkbox` | `checkbox`  |             | `boolean`                             | `undefined`   |
-| `flagSwap` | `flag-swap` |             | `string`                              | `undefined`   |
-| `icon`     | `icon`      |             | `"avatar" \| "country" \| "dot"`      | `undefined`   |
-| `size`     | `size`      |             | `"lg" \| "md" \| "sm"`                | `undefined`   |
+| Property   | Attribute   | Description | Type                                  | Default     |
+| ---------- | ----------- | ----------- | ------------------------------------- | ----------- |
+| `action`   | `action`    |             | `"X_close" \| "count" \| "text_only"` | `undefined` |
+| `checkbox` | `checkbox`  |             | `boolean`                             | `undefined` |
+| `flagSwap` | `flag-swap` |             | `string`                              | `undefined` |
+| `icon`     | `icon`      |             | `"avatar" \| "country" \| "dot"`      | `undefined` |
+| `size`     | `size`      |             | `"lg" \| "md" \| "sm"`                | `undefined` |
 
 
 ## Dependencies
@@ -22,7 +22,7 @@
 
 - [gb-tag-checkbox](../gb-tag-checkbox)
 - [gb-avatar](../gb-avatar)
-- [gb-tag-count](../gb-tagcount)
+- [gb-tag-count](../gb-tag-count)
 - [gb-tag-close](../gb-tag-close)
 
 ### Graph

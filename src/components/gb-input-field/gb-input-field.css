@@ -32,30 +32,36 @@ div.md {
   align-self: stretch;
 }
 
-.sm .input-wrapper {
-  display: flex;
-  justify-content: space-between;
-  min-height: 40px 2.5rem;
-  padding: var(--spacing-Positive-spacing-2, 0.5rem) var(--spacing-Positive-spacing-3, 0.75rem) var(--spacing-Positive-spacing-2, 0.5rem) var(--spacing-3);
-  align-items: center;
-  gap: var(--spacing-Positive-spacing-2, 0.5rem);
-  align-self: stretch;
-}
-
-.md .input-wrapper{
-  display: flex;
-  justify-content: space-between;
-  min-height: 3rem;
-  padding: var(--spacing-3) 0.875rem var(--spacing-3) var(--spacing-3);
-  align-items: center;
-  gap: var(--spacing-Positive-spacing-2, 0.5rem);
-  align-self: stretch;
-}
-
 .input-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-Positive-spacing-2, 0.5rem);
+  align-self: stretch;
   border-radius: var(--rounded-sm);
   border: 1px solid var(--color-boarder-input, #CDD5DF);
   background: var(--color-background-card, #FFFFFF);
+}
+
+.sm .input-wrapper {
+  height: var(--spacing-Positive-spacing-8, 2.5rem);
+  padding: 0.25rem var(--spacing-3, 0.75rem);
+}
+
+.md .input-wrapper{
+  height: 3rem;
+  padding: 0.45rem var(--spacing-3, 0.75rem);
+}
+
+.leading_text .input-wrapper.sm,
+.leading_text .input-wrapper.md {
+  flex-direction: row;
+}
+
+.count .input-wrapper.md,
+.count .input-wrapper.sm {
+  padding: 0;
+  flex-direction: row;
 }
 
 .input-wrapper:active {
@@ -70,18 +76,190 @@ div.md {
   background: var(--color-background-disabled, #F6F8FA);
 }
 
+.content{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 0.5rem var(--spacing-Positive-spacing-2, 0.5rem);
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.payment_input .content {
+  flex-wrap: wrap;
+}
+
+.password .content{
+  padding: var(--spacing-Positive-spacing-2, 0.5rem) var(--spacing-Positive-spacing-None, 0rem) var(--spacing-Positive-spacing-2, 0.5rem) var(--spacing-Positive-spacing-3, 0.75rem);
+  flex-wrap: wrap;
+}
+
+.icon {
+  position: relative;
+  top: 3px;
+}
+
+.add-on {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+}
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-Positive-Spacing-1, 0.25rem);
+  align-self: stretch;
+}
+
+select {
+  border: none; 
+  background-color: var(--color-background-card, #FFFFFF); 
+  color: #374151; /* Text color */
+  box-shadow: none; /* Remove default box shadow */
+  outline: none;
+}
+
+select:focus {
+  border:none; /* Maintain light border on focus */
+  box-shadow: none; /* Ensure no additional shadow appears on focus */
+}
+
+.text-input {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-Positive-spacing-2, 0.5rem);
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.trailing_button .text-input {
+  padding: var(--spacing-Positive-spacing-2, 0.5rem) var(--spacing-Positive-spacing-3, 0.75rem);
+}
+
+.count .text-input {
+  padding: var(--spacing-Positive-spacing-2, 0.5rem) 0rem var(--spacing-Positive-spacing-2, 0.5rem) var(--spacing-Positive-spacing-3, 0.75rem);
+  border-radius: 0.5rem var(--Radius-rounded-none, 0rem) var(--Radius-rounded-none, 0rem) 0.5rem;
+  border: 1px solid var(--color-boarder-input, #CDD5DF);
+  margin-right: -2px;
+}
+
+.leading_dropdown .text-input {
+  padding: var(--spacing-Positive-spacing-2, 0.5rem) var(--spacing-Positive-spacing-3, 0.75rem) var(--spacing-Positive-spacing-2, 0.5rem) 0rem;
+}
+
+.leading_text .text-input {
+  padding: 0.65rem 0.85rem;
+  border-left: 1px solid var(--Gray-300, #D0D5DD);
+}
+
+.trailing_dropdown .dropdown {
+  display: flex;
+  padding: var(--spacing-Positive-spacing-2, 0.5rem) var(--spacing-Positive-spacing-3, 0.75rem) var(--spacing-Positive-spacing-2, 0.5rem) 0rem;
+  justify-content: space-between;
+}
+
+.count-action {
+  display: flex;
+  justify-content: center;
+  padding-top: 3px;
+  padding-right: var(--spacing-1);
+  align-items: center;
+  gap: var(--spacing-none);
+}
+
+.decrease-btn {
+  display: flex;
+  width: var(--spacing-Positive-spacing-8, 2.5rem);
+  height: var(--spacing-Positive-spacing-8, 2.5rem);
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--rounded-none);
+  border-right: 1px solid var(--color-boarder-input, #CDD5DF);
+}
+
+.payment-method {
+  display: flex;
+  width: 2.125rem;
+  height: var(--spacing-Positive-spacing-6, 1.5rem);
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--Radius-rounded-xs, 0.25rem);
+  border: 1px solid var(--color-boarder-subtler, #E3E8EF);
+  background: var(--color-background-card, #FFFFFF);
+}
+
+.tags-box {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 0.375rem;
+  flex-wrap: wrap;
+}
+
+.tags input {
+  width: 160px;
+  padding-right: 8px;
+}
+
 input {
   border: none; 
   background-color: var(--color-background-card, #FFFFFF); 
-  padding: 2px;
   color: #374151; /* Text color */
   box-shadow: none; /* Remove default box shadow */
   outline: none; /* Remove the blue outline on focus */
+  font-family: var(--Font-Family-Body, Sora);
+  font-style: normal;
+  letter-spacing: var(--Font-Letter-spacing-T-md, 0rem);
 }
 
 input:focus {
   border:none; /* Maintain light border on focus */
   box-shadow: none; /* Ensure no additional shadow appears on focus */
+}
+
+.trailing-btn {
+  display: flex;
+  width: var(--spacing-Positive-spacing-8, 2.5rem);
+  height: var(--spacing-Positive-spacing-8, 2.5rem);
+  justify-content: center;
+  align-items: center;
+}
+
+.leading_dropdown .help-icon svg{
+  left: -130%;
+}
+
+.trailing_dropdown .help-icon {
+  margin-left: -5px;
+}
+
+.password_icon_leading .help-icon {
+  margin-left: -15px;
+}
+
+.password_icon_leading .help-icon svg {
+  padding-right: 5px;
+}
+
+.trailing_dropdown .help-icon svg {
+  position: relative;
+  left: 5%;
+  top: 2px;
+}
+
+.leading_text .help-icon svg {
+  left: 180%;
+}
+
+.tags .help-icon svg {
+  left: -52%;
+}
+
+.help-svg {
+  position: relative;
+  left: -6%;
+  margin-right: -8px;
 }
 
 .help-icon svg{
