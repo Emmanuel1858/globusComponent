@@ -63,9 +63,9 @@
 
 .label-cost {
   display: flex;
-  gap: 0.5rem;
   align-items: center;
   flex-direction: row;
+  gap: var(--spacing-3);
 }
 
 .label-cost.payment_icon {
@@ -138,20 +138,28 @@
   cursor: not-allowed;
 }
 
-/* Change icon and text colors on hover for the default state */
-.checkbox_group_item.default:hover .icon-md,
-.checkbox_group_item.default:hover .svg-icon {
-  fill: var(--color-icon-information, #064E94);
+.checkbox_group_item.selected ::slotted([slot="label"]){
+  color: var(--color-text-information-bold, #042F59);
 }
 
-.label{
-  color: var(--color-text-bold, #202939);
-}
-
-.cost{
+.checkbox_group_item ::slotted([slot="cost"]){
   color: var(--color-text, #4B5565);
 }
 
-.supporting_text{
+.checkbox_group_item.selected ::slotted([slot="cost"]){
+  color: var(--color-text-information, #064E94);
+}
+
+.checkbox_group_item ::slotted([slot="supporting_text"]){
   color: var(--color-text, #4B5565);
+}
+
+.checkbox_group_item.selected ::slotted([slot="supporting_text"]){
+  color: var(--color-text-information, #064E94);
+}
+
+.checkbox_group_item.disabled ::slotted([slot="cost"]),
+.checkbox_group_item.disabled ::slotted([slot="label"]),
+.checkbox_group_item.disabled ::slotted([slot="supporting_text"]){
+  color: var(--color-text-disabled, #CDD5DF);
 }

@@ -3,7 +3,7 @@
 @import './../../global/typography.css';
 
 .sidebar_div{
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
     position: relative;
     height: 100vh;
 }
@@ -26,9 +26,7 @@
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    width: fit-content;
-    /* padding: 1.5rem; */
+    width: 16.75rem;
 }
 
 .sidebar_div.collapsed{
@@ -40,17 +38,16 @@
 
 .nav{
     display: flex;
-    width: fit-content;
+    width: 100%;
     flex-direction: column;
     gap: var(--spacing-6);
 }
 
 .sidebar_header.expanded{
     display: flex;
-    padding: var(--spacing-none) var(--spacing-6);
+    padding: var(--spacing-none) var(--spacing-4);
     justify-content: space-between;
     align-items: center;
-    width: 16.75rem;
     margin-top: 1rem;
 }
 
@@ -81,11 +78,6 @@
 .application_name{
     display: flex;
     padding: 0rem var(--spacing-6);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    align-self: stretch;
 }
 
 .wrapper{
@@ -128,6 +120,10 @@
 }
 
 .application_name_pattern img{
+    width: 100%;
+}
+
+.wrapper{
     width: 100%;
 }
 

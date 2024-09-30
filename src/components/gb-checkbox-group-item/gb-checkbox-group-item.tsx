@@ -39,6 +39,28 @@ export class GbCheckboxGroupItem {
     }
   }
 
+  private getLabelColorClasses() {
+    switch(this.selected) {
+      case true : return 'label_selected';
+      case false : return 'label_not_selected';
+    }
+  }
+
+  private getCostColorClasses() {
+    switch(this.selected) {
+      case true : return 'cost_selected';
+      case false : return 'cost_not_selected';
+    }
+  }
+
+  componentDidUpdate() {
+    const labelSlot = this.el.querySelector('[slot="label"]');
+    const costSlot = this.el.querySelector('[slot="cost"]');
+
+      labelSlot.classList.add(this.getLabelColorClasses());
+      costSlot.classList.add(this.getCostColorClasses());
+  }
+
   componentDidLoad() {
     const labelSlot = this.el.querySelector('[slot="label"]');
     const costSlot = this.el.querySelector('[slot="cost"]');
@@ -46,20 +68,11 @@ export class GbCheckboxGroupItem {
 
     if (labelSlot) {
       labelSlot.classList.add(this.getLabelSizeClass());
-      labelSlot.classList.add('label');
-
-      if (this.state === 'disabled') {
-        labelSlot.classList.add('disabled');
-      }
     }
 
     if (costSlot) {
       costSlot.classList.add(this.getCostSizeClass());
-      costSlot.classList.add('cost');
-
-      if (this.state === 'disabled') {
-        costSlot.classList.add('disabled');
-      }
+      costSlot.classList.add(this.getCostColorClasses());
     }
 
     if (supportingTextSlot) {
@@ -118,8 +131,9 @@ export class GbCheckboxGroupItem {
   }
 
   render() {
+    console.log(this.selected);
     return [
-      <div class={`checkbox_group_item ${this.size} ${this.state} ${this.selected && 'selected'}`} onClick={() => this.toggleSelection()}>
+      <div class={`checkbox_group_item ${this.size} ${this.state} ${this.selected ? 'selected' : ''}`} onClick={() => this.toggleSelection()}>
         <div class="item-content">
           {this.renderIcon()}
           <div class="text-container">

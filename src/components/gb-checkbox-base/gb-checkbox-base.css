@@ -21,7 +21,7 @@ svg.md{
     height: var(--spacing-5);
 }
 
-.checkbox_default_unchecked:hover path{
+.checkbox_default_unchecked.hover:hover path{
     stroke: #075DB2;
 }
 
