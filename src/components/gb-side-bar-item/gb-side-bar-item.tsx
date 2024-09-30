@@ -16,7 +16,9 @@ export class GbSideBarItem {
   @Prop() showBadge: boolean = false;
   @Prop({ mutable: true }) showTooltip: boolean = false;
   @State() leadingIconSvg: string = '';
-  @Event() sideBarItemClicked: EventEmitter<void>;
+  @State() textState: any;
+  @Event()
+  sideBarItemClicked: EventEmitter<void>;
   @Element() el: HTMLElement;
 
   async loadIcon(iconName: string) {
@@ -28,6 +30,7 @@ export class GbSideBarItem {
 
   componentWillLoad() {
     this.loadIcon(this.icon);
+    this.textState = this.state === 'active' ? 'text-md-semi-bold' : 'text-md-medium';
   }
 
   onSideBarItemClicked() {
@@ -42,10 +45,6 @@ export class GbSideBarItem {
   }
 
   render() {
-    const slot = this.el.querySelector('slot');
-    const textClass = this.state === 'active' ? 'text-md-semi-bold' : 'text-md-medium';
-    slot.classList.add(textClass)
-
     return (
       <div class={`side_bar_item_container`} onMouseEnter={() => (this.showTooltip = true)} onMouseLeave={() => (this.showTooltip = false)}>
         <div class={`nav_item_base ${this.state} ${this.type} ${this.category}`}>
@@ -54,9 +53,7 @@ export class GbSideBarItem {
           <div class="content">
             <div class={`icon ${this.state} ${this.category}`} innerHTML={this.leadingIconSvg}></div>
             {this.type === 'full_with_label' && (
-              <div class={`label_text ${textClass}`}>
-                <slot></slot>
-              </div>
+              <p class={`label_text ${this.category} ${this.state} ${this.state === 'active' ? 'text-md-semi-bold' : 'text-md-medium'}`}>{this.label}</p>
             )}
           </div>
           {this.type === 'full_with_label' && (
@@ -82,7 +79,7 @@ export class GbSideBarItem {
         </div>
         {this.type === 'icon_only' && this.showTooltip && (
           <gb-tooltip show-arrow={true} arrow="left" class="tooltip">
-            <p slot="label">{this.getLabel()}</p>
+            <p slot="label">{this.label}</p>
           </gb-tooltip>
         )}
       </div>

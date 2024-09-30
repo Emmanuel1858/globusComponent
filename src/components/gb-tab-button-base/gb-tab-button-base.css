@@ -252,14 +252,14 @@
 .button_gray.full_width.sm,
 .button_white.full_width.sm,
 .rounded_button_white.full_width.sm{
-    width: 20rem;
+    width: 100%;
     height: 2.375rem;
     padding: var(--spacing-none) var(--spacing-3);
 }
 
 .underline.full_width.sm,
 .underline_filled.full_width.sm{
-    width: 15rem;
+    width: 100%;
     height: 2.375rem;
     padding: var(--spacing-none) var(--spacing-3);
 }
@@ -268,14 +268,14 @@
 .button_gray.full_width.md,
 .button_white.full_width.md,
 .rounded_button_white.full_width.md{
-    width: 20rem;
+    width: 100%;
     height: 2.25rem;
     padding: var(--spacing-none) var(--spacing-3);
 }
 
 .underline.full_width.md,
 .underline_filled.full_width.md{
-    width: 15rem;
+    width: 100%;
     height: 2.25rem;
     padding: var(--spacing-none) var(--spacing-3);
 }

@@ -16,3 +16,28 @@
     display: flex;
     gap: var(--spacing-3);
 }
+
+/* Pagination Type Styles */
+.pagination_div.page_default.desktop,
+.pagination_div.page_minimal_center_aligned.desktop{
+    padding-top: var(--spacing-5);
+}
+
+.pagination_div.card_default.desktop,
+.pagination_div.card_minimal_right_aligned.desktop,
+.pagination_div.card_minimal_left_aligned.desktop,
+.pagination_div.card_minimal_center_aligned.desktop{
+    padding: var(--spacing-3) var(--spacing-6) var(--spacing-4) var(--spacing-6);
+}
+
+.pagination_div.page_default.mobile,
+.pagination_div.page_minimal_center_aligned.mobile{
+    padding-top: var(--spacing-4);
+}
+
+.pagination_div.card_default.mobile,
+.pagination_div.card_minimal_left_aligned.mobile,
+.pagination_div.card_minimal_right_aligned.mobile,
+.pagination_div.card_minimal_center_aligned.mobile{
+    padding: var(--spacing-3) var(--spacing-4);
+}

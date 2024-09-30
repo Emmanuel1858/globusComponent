@@ -96,7 +96,7 @@ export namespace Components {
         "state": 'default' | 'hover' | 'disabled' | 'pressed';
     }
     interface GbButtonClose {
-        "color": 'primary' | 'information' | 'success' | 'gray' | 'warning' | 'error';
+        "color": GeneralColors;
         "size": GeneralSizes;
     }
     interface GbCarouselArrow {
@@ -123,6 +123,14 @@ export namespace Components {
         "icon": string;
         "selected": boolean;
         "size": GeneralSizes;
+        "type": 'icon_simple' | 'avatar' | 'payment_icon' | 'radio_button' | 'checkbox';
+    }
+    interface GbCheckboxGroupItem {
+        "breakpoint": BreakPoints;
+        "selected": boolean;
+        "showCost": boolean;
+        "size": GeneralSizes;
+        "state": StateEnum;
         "type": 'icon_simple' | 'avatar' | 'payment_icon' | 'radio_button' | 'checkbox';
     }
     interface GbCollapseButton {
@@ -177,15 +185,25 @@ export namespace Components {
     interface GbHorizontalTabs {
         "breakpoint": BreakPoints;
         "eighthTab": boolean;
+        "eighthTabName": string;
         "fifthTab": boolean;
+        "fifthTabName": string;
+        "firstTabName": string;
         "fourthTab": boolean;
+        "fourthTabName": string;
         "fullWidth": boolean;
         "ninthTab": boolean;
+        "ninthTabName": string;
+        "secondTabName": string;
         "seventhTab": boolean;
+        "seventhTabName": string;
         "sixthTab": boolean;
+        "sixthTabName": string;
         "size": GeneralSizes;
         "tenthTab": boolean;
+        "tenthTabName": string;
         "thirdTab": boolean;
+        "thirdTabName": string;
         "type": TabTypes;
     }
     interface GbInputDropdown {
@@ -199,6 +217,7 @@ export namespace Components {
         "showPlaceholder": boolean;
         "size": GeneralSizes;
         "state": 'default' | 'focused' | 'disabled' | 'filled';
+        "text": boolean;
         "type": 'default' | 'icon_leading' | 'avatar_leading' | 'dot_leading' | 'search' | 'tags';
     }
     interface GbInputDropdownMenuItem {
@@ -230,9 +249,9 @@ export namespace Components {
     }
     interface GbPagination {
         "breakpoint": BreakPoints;
-        "currentPage": string;
+        "currentPage": number;
         "shape": PaginationNumberShapes;
-        "totalPages": string;
+        "totalPages": number;
         "type": PaginationTypes;
     }
     interface GbPaginationButtonGroupBase {
@@ -276,36 +295,29 @@ export namespace Components {
     interface GbSidebar {
         "applicationName": string;
         "category": GeneralBackgroundCategories;
-        "eighthItem": boolean;
         "eighthItemIcon": string;
         "eighthItemLabel": string;
-        "fifthItem": boolean;
         "fifthItemIcon": string;
         "fifthItemLabel": string;
         "firstItemIcon": string;
         "firstItemLabel": string;
-        "fourthItem": boolean;
         "fourthItemIcon": string;
         "fourthItemLabel": string;
         "iconInstance": string;
         "label": string;
-        "ninthItem": boolean;
         "ninthItemIcon": string;
         "ninthItemLabel": string;
         "secondItemIcon": string;
         "secondItemLabel": string;
-        "seventhItem": boolean;
         "seventhItemIcon": string;
         "seventhItemLabel": string;
         "showSecondCategory": boolean;
-        "sixthItem": boolean;
+        "sideBarItemClicked": (index: number) => Promise<void>;
         "sixthItemIcon": string;
         "sixthItemLabel": string;
         "state": 'expanded' | 'collapsed';
-        "tenthItem": boolean;
         "tenthItemIcon": string;
         "tenthItemLabel": string;
-        "thirdItem": boolean;
         "thirdItemIcon": string;
         "thirdItemLabel": string;
     }
@@ -329,6 +341,7 @@ export namespace Components {
         "current": boolean;
         "fullWidth": boolean;
         "size": GeneralSizes;
+        "tabName": string;
         "type": TabTypes;
     }
     interface GbTag {
@@ -354,6 +367,18 @@ export namespace Components {
         "label": string;
         "placeholder": string;
         "type": 'default' | 'tags';
+    }
+    interface GbToast {
+        "actions": boolean;
+        "breakpoint": BreakPoints;
+        "color": GeneralColors;
+        "showSupportingText": boolean;
+        "size": 'floating' | 'full_width';
+        "xCloseButton": boolean;
+    }
+    interface GbToastButton {
+        "color": GeneralColors;
+        "state": StateEnum;
     }
     interface GbToggle {
         "size": GeneralSizes;
@@ -480,6 +505,12 @@ declare global {
     var HTMLGbCheckboxGroupElement: {
         prototype: HTMLGbCheckboxGroupElement;
         new (): HTMLGbCheckboxGroupElement;
+    };
+    interface HTMLGbCheckboxGroupItemElement extends Components.GbCheckboxGroupItem, HTMLStencilElement {
+    }
+    var HTMLGbCheckboxGroupItemElement: {
+        prototype: HTMLGbCheckboxGroupItemElement;
+        new (): HTMLGbCheckboxGroupItemElement;
     };
     interface HTMLGbCollapseButtonElement extends Components.GbCollapseButton, HTMLStencilElement {
     }
@@ -712,6 +743,18 @@ declare global {
         prototype: HTMLGbTextareaInputFieldElement;
         new (): HTMLGbTextareaInputFieldElement;
     };
+    interface HTMLGbToastElement extends Components.GbToast, HTMLStencilElement {
+    }
+    var HTMLGbToastElement: {
+        prototype: HTMLGbToastElement;
+        new (): HTMLGbToastElement;
+    };
+    interface HTMLGbToastButtonElement extends Components.GbToastButton, HTMLStencilElement {
+    }
+    var HTMLGbToastButtonElement: {
+        prototype: HTMLGbToastButtonElement;
+        new (): HTMLGbToastButtonElement;
+    };
     interface HTMLGbToggleElement extends Components.GbToggle, HTMLStencilElement {
     }
     var HTMLGbToggleElement: {
@@ -753,6 +796,7 @@ declare global {
         "gb-checkbox": HTMLGbCheckboxElement;
         "gb-checkbox-base": HTMLGbCheckboxBaseElement;
         "gb-checkbox-group": HTMLGbCheckboxGroupElement;
+        "gb-checkbox-group-item": HTMLGbCheckboxGroupItemElement;
         "gb-collapse-button": HTMLGbCollapseButtonElement;
         "gb-dropdown-items-with-shortcut": HTMLGbDropdownItemsWithShortcutElement;
         "gb-file-type-icon": HTMLGbFileTypeIconElement;
@@ -786,6 +830,8 @@ declare global {
         "gb-tag-close": HTMLGbTagCloseElement;
         "gb-tag-count": HTMLGbTagCountElement;
         "gb-textarea-input-field": HTMLGbTextareaInputFieldElement;
+        "gb-toast": HTMLGbToastElement;
+        "gb-toast-button": HTMLGbToastButtonElement;
         "gb-toggle": HTMLGbToggleElement;
         "gb-toggle-base": HTMLGbToggleBaseElement;
         "gb-tooltip": HTMLGbTooltipElement;
@@ -881,7 +927,7 @@ declare namespace LocalJSX {
         "state"?: 'default' | 'hover' | 'disabled' | 'pressed';
     }
     interface GbButtonClose {
-        "color"?: 'primary' | 'information' | 'success' | 'gray' | 'warning' | 'error';
+        "color"?: GeneralColors;
         "size"?: GeneralSizes;
     }
     interface GbCarouselArrow {
@@ -908,6 +954,14 @@ declare namespace LocalJSX {
         "icon"?: string;
         "selected"?: boolean;
         "size"?: GeneralSizes;
+        "type"?: 'icon_simple' | 'avatar' | 'payment_icon' | 'radio_button' | 'checkbox';
+    }
+    interface GbCheckboxGroupItem {
+        "breakpoint"?: BreakPoints;
+        "selected"?: boolean;
+        "showCost"?: boolean;
+        "size"?: GeneralSizes;
+        "state"?: StateEnum;
         "type"?: 'icon_simple' | 'avatar' | 'payment_icon' | 'radio_button' | 'checkbox';
     }
     interface GbCollapseButton {
@@ -960,15 +1014,25 @@ declare namespace LocalJSX {
     interface GbHorizontalTabs {
         "breakpoint"?: BreakPoints;
         "eighthTab"?: boolean;
+        "eighthTabName"?: string;
         "fifthTab"?: boolean;
+        "fifthTabName"?: string;
+        "firstTabName"?: string;
         "fourthTab"?: boolean;
+        "fourthTabName"?: string;
         "fullWidth"?: boolean;
         "ninthTab"?: boolean;
+        "ninthTabName"?: string;
+        "secondTabName"?: string;
         "seventhTab"?: boolean;
+        "seventhTabName"?: string;
         "sixthTab"?: boolean;
+        "sixthTabName"?: string;
         "size"?: GeneralSizes;
         "tenthTab"?: boolean;
+        "tenthTabName"?: string;
         "thirdTab"?: boolean;
+        "thirdTabName"?: string;
         "type"?: TabTypes;
     }
     interface GbInputDropdown {
@@ -982,6 +1046,7 @@ declare namespace LocalJSX {
         "showPlaceholder"?: boolean;
         "size"?: GeneralSizes;
         "state"?: 'default' | 'focused' | 'disabled' | 'filled';
+        "text"?: boolean;
         "type"?: 'default' | 'icon_leading' | 'avatar_leading' | 'dot_leading' | 'search' | 'tags';
     }
     interface GbInputDropdownMenuItem {
@@ -1013,9 +1078,9 @@ declare namespace LocalJSX {
     }
     interface GbPagination {
         "breakpoint"?: BreakPoints;
-        "currentPage"?: string;
+        "currentPage"?: number;
         "shape"?: PaginationNumberShapes;
-        "totalPages"?: string;
+        "totalPages"?: number;
         "type"?: PaginationTypes;
     }
     interface GbPaginationButtonGroupBase {
@@ -1060,36 +1125,28 @@ declare namespace LocalJSX {
     interface GbSidebar {
         "applicationName"?: string;
         "category"?: GeneralBackgroundCategories;
-        "eighthItem"?: boolean;
         "eighthItemIcon"?: string;
         "eighthItemLabel"?: string;
-        "fifthItem"?: boolean;
         "fifthItemIcon"?: string;
         "fifthItemLabel"?: string;
         "firstItemIcon"?: string;
         "firstItemLabel"?: string;
-        "fourthItem"?: boolean;
         "fourthItemIcon"?: string;
         "fourthItemLabel"?: string;
         "iconInstance"?: string;
         "label"?: string;
-        "ninthItem"?: boolean;
         "ninthItemIcon"?: string;
         "ninthItemLabel"?: string;
         "secondItemIcon"?: string;
         "secondItemLabel"?: string;
-        "seventhItem"?: boolean;
         "seventhItemIcon"?: string;
         "seventhItemLabel"?: string;
         "showSecondCategory"?: boolean;
-        "sixthItem"?: boolean;
         "sixthItemIcon"?: string;
         "sixthItemLabel"?: string;
         "state"?: 'expanded' | 'collapsed';
-        "tenthItem"?: boolean;
         "tenthItemIcon"?: string;
         "tenthItemLabel"?: string;
-        "thirdItem"?: boolean;
         "thirdItemIcon"?: string;
         "thirdItemLabel"?: string;
     }
@@ -1115,6 +1172,7 @@ declare namespace LocalJSX {
         "fullWidth"?: boolean;
         "onTabClicked"?: (event: GbTabButtonBaseCustomEvent<void>) => void;
         "size"?: GeneralSizes;
+        "tabName"?: string;
         "type"?: TabTypes;
     }
     interface GbTag {
@@ -1140,6 +1198,18 @@ declare namespace LocalJSX {
         "label"?: string;
         "placeholder"?: string;
         "type"?: 'default' | 'tags';
+    }
+    interface GbToast {
+        "actions"?: boolean;
+        "breakpoint"?: BreakPoints;
+        "color"?: GeneralColors;
+        "showSupportingText"?: boolean;
+        "size"?: 'floating' | 'full_width';
+        "xCloseButton"?: boolean;
+    }
+    interface GbToastButton {
+        "color"?: GeneralColors;
+        "state"?: StateEnum;
     }
     interface GbToggle {
         "size"?: GeneralSizes;
@@ -1174,6 +1244,7 @@ declare namespace LocalJSX {
         "gb-checkbox": GbCheckbox;
         "gb-checkbox-base": GbCheckboxBase;
         "gb-checkbox-group": GbCheckboxGroup;
+        "gb-checkbox-group-item": GbCheckboxGroupItem;
         "gb-collapse-button": GbCollapseButton;
         "gb-dropdown-items-with-shortcut": GbDropdownItemsWithShortcut;
         "gb-file-type-icon": GbFileTypeIcon;
@@ -1207,6 +1278,8 @@ declare namespace LocalJSX {
         "gb-tag-close": GbTagClose;
         "gb-tag-count": GbTagCount;
         "gb-textarea-input-field": GbTextareaInputField;
+        "gb-toast": GbToast;
+        "gb-toast-button": GbToastButton;
         "gb-toggle": GbToggle;
         "gb-toggle-base": GbToggleBase;
         "gb-tooltip": GbTooltip;
@@ -1233,6 +1306,7 @@ declare module "@stencil/core" {
             "gb-checkbox": LocalJSX.GbCheckbox & JSXBase.HTMLAttributes<HTMLGbCheckboxElement>;
             "gb-checkbox-base": LocalJSX.GbCheckboxBase & JSXBase.HTMLAttributes<HTMLGbCheckboxBaseElement>;
             "gb-checkbox-group": LocalJSX.GbCheckboxGroup & JSXBase.HTMLAttributes<HTMLGbCheckboxGroupElement>;
+            "gb-checkbox-group-item": LocalJSX.GbCheckboxGroupItem & JSXBase.HTMLAttributes<HTMLGbCheckboxGroupItemElement>;
             "gb-collapse-button": LocalJSX.GbCollapseButton & JSXBase.HTMLAttributes<HTMLGbCollapseButtonElement>;
             "gb-dropdown-items-with-shortcut": LocalJSX.GbDropdownItemsWithShortcut & JSXBase.HTMLAttributes<HTMLGbDropdownItemsWithShortcutElement>;
             "gb-file-type-icon": LocalJSX.GbFileTypeIcon & JSXBase.HTMLAttributes<HTMLGbFileTypeIconElement>;
@@ -1266,6 +1340,8 @@ declare module "@stencil/core" {
             "gb-tag-close": LocalJSX.GbTagClose & JSXBase.HTMLAttributes<HTMLGbTagCloseElement>;
             "gb-tag-count": LocalJSX.GbTagCount & JSXBase.HTMLAttributes<HTMLGbTagCountElement>;
             "gb-textarea-input-field": LocalJSX.GbTextareaInputField & JSXBase.HTMLAttributes<HTMLGbTextareaInputFieldElement>;
+            "gb-toast": LocalJSX.GbToast & JSXBase.HTMLAttributes<HTMLGbToastElement>;
+            "gb-toast-button": LocalJSX.GbToastButton & JSXBase.HTMLAttributes<HTMLGbToastButtonElement>;
             "gb-toggle": LocalJSX.GbToggle & JSXBase.HTMLAttributes<HTMLGbToggleElement>;
             "gb-toggle-base": LocalJSX.GbToggleBase & JSXBase.HTMLAttributes<HTMLGbToggleBaseElement>;
             "gb-tooltip": LocalJSX.GbTooltip & JSXBase.HTMLAttributes<HTMLGbTooltipElement>;

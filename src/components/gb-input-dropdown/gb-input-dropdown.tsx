@@ -1,4 +1,4 @@
-import { Component, Prop, h, Fragment } from "@stencil/core";
+import { Component, Prop, h, Fragment, Element } from "@stencil/core";
 import { GeneralSizes } from "../../models/reusableModels";
 
 @Component({
@@ -18,6 +18,8 @@ export class GbInputDropdown {
   @Prop() hintText: string = '';
   @Prop() showHelpIcon: boolean;
   @Prop() iconSwap: string = '';
+  @Prop() text: boolean = false;
+  @Element() el: HTMLElement;
 
   getAvatarSize() {
     switch (this.size) {
@@ -26,6 +28,12 @@ export class GbInputDropdown {
       case 'md':
         return 'xs';
     }
+  }
+
+  componentDidLoad() {
+    const slottedInitials = this.el.querySelector('[slot="initials"]');
+
+    slottedInitials.classList.add('text-xs-semi-bold');
   }
 
   render() {
@@ -51,7 +59,13 @@ export class GbInputDropdown {
               />
             </svg>
           )}
-          {this.type === 'avatar_leading' && <gb-avatar size="xs"></gb-avatar>}
+          {this.type === 'avatar_leading' && (
+            <gb-avatar size="xs" text={this.text}>
+              {!this.text ? (<slot slot="image" name="image"></slot>) : 
+              (<slot slot="initials" name="initials"></slot>)
+              }
+            </gb-avatar>
+          )}
           {this.type === 'search' && (
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path

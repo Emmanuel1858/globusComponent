@@ -1,0 +1,90 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+
+.toast_div{
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+    padding: var(--spacing-3) var(--spacing-4);
+    border-radius: var(--rounded-md);
+    box-shadow: var(--shadow-xs);
+    width: 53.25rem;
+    position: relative;
+}
+
+.icon_container{
+    width: fit-content;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.actions{
+    display: flex;
+    gap: var(--spacing-5);
+}
+
+.close_button{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+/* Toast Color Styles */
+.toast_div.default{
+    border: 1px solid var(--color-border-subtler, #E3E8EF);
+    background: var(--color-background-card, #FFFFFF);
+}
+
+.toast_div.gray{
+    border: 1px solid var(--color-border-subtle, #CDD5DF);
+    background: var(--color-background-gray-subtlest, #F6F8FA);
+}
+
+.toast_div.information{
+    border: 1px solid var(--color-border-infromation-subtle, #9AC7F4);
+    background: var(--color-background-information-subtlest, #E4F0FC);
+}
+
+.toast_div.error{
+    border: 1px solid var(--color-border-danger-subtle, #F9B4BA);
+    background: var(--color-background-danger-subtlest, #FEF1F2);
+}
+
+.toast_div.warning{
+    border: 1px solid var(--color-border-warning-subtle, #FEDF89);
+    background: var(--color-background-warning-subtlest, #FFFAEB);
+}
+
+.toast_div.success{
+    border: 1px solid var(--color-border-success-subtle, #A9EFC5);
+    background: var(--color-background-success-subtlest, #ECFDF3);
+}
+
+.svg_icon.default path,
+.svg_icon.gray path{
+    fill: var(--color-icon, #4B5565);
+}
+
+.svg_icon.information path{
+    fill: var(--color-icon-information, #064E94);
+}
+
+.svg_icon.error path{
+    fill: var(--color-icon-danger, #B51726);
+}
+
+.svg_icon.warning path{
+    fill: var(--color-icon-warning, #DC6803);
+}
+
+.svg_icon.success path{
+    fill: var(--color-icon-success, #079455);
+}
+
+.main_text_success{
+    color: gray;
+}

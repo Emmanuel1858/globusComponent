@@ -11,6 +11,8 @@ export class GbPaginationDotIndicator {
   @Prop() size: GeneralSizes;
 
   render() {
-    return <div class={`dot_indicator_div ${this.current ? 'current' : ''} ${this.size}`}></div>;
+    return <div class={`dot_indicator_div 
+      ${this.type} ${this.current ? 'current' : ''} 
+      ${this.size}`}></div>;
   }
 }

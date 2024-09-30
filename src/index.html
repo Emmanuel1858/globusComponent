@@ -12,12 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet" />
   </head>
   <body>
-      <gb-btn size="xl" hierarchy="primary" icon="default"
-    >
-      <p>Back to transaction review</p>
+    <gb-btn size="xl" hierarchy="primary" icon="default">
+      <p>Upload</p>
     </gb-btn>
     <!-- <gb-file-upload height-size="lg" state="default" show-label="true" destructive="true"></gb-file-upload> -->
-    <!-- <gb-input-dropdown 
+    <gb-input-dropdown 
     show-placeholder="false" 
     size="md"
     state="default" 
@@ -26,17 +25,12 @@
     show-help-icon="true"
     show-hint-text="true"
     hint-text="This is a hint text to help user."
-    type="dot_leading"
-    ></gb-input-dropdown> -->
-
-    <gb-button size="sm" 
-    hierarchy="primary" 
-    icon="default" 
-    state="default"
-    destructive="true">
-    <p>Upload</p>
-    </gb-button>
-
+    type="avatar_leading"
+    text="true"
+    >
+      <h1 slot="initials">EK</h1>
+      <!-- <img src="build/assets/avatar_pic.jpg" alt="" slot="image"> -->
+  </gb-input-dropdown>
     <!-- <gb-avatar size="xl2" text="false" status-icon="company">
       <img slot="image" src="build/assets/avatar_pic.jpg" alt="">
       <h1 slot="initials">EK</h1>
@@ -62,21 +56,23 @@
       <p slot="main_text">This is a tooltip</p>
     </gb-tooltip> -->
 
-    <gb-pagination-number-base shape="circle"></gb-pagination-number-base>
+    <gb-pagination-number-base shape="square">
+      <p slot="page_number">1</p>
+    </gb-pagination-number-base>
+    <gb-pagination-dot-indicator size="lg" type="line" current="true"></gb-pagination-dot-indicator>
     <gb-carousel-arrow size="md" chevron="right"></gb-carousel-arrow>
-    <gb-pagination type="card_minimal_center_aligned" breakpoint="desktop"></gb-pagination>
-    <!-- <gb-pagination-button-group-base icon="leading" icon-leading="assets/circle.svg">
+    <gb-pagination type="card_default" current-page="1" breakpoint="desktop"></gb-pagination>
+    <gb-pagination-button-group-base icon="leading" icon-leading="assets/circle.svg">
       <p>Previous</p>
-    </gb-pagination-button-group-base> -->
+    </gb-pagination-button-group-base>
     <!-- <gb-tab-button-base size="md" current="false" type="button_gray" full-width="true" badge="true">
       <p slot="name">My details</p>
       <p slot="count">2</p>
     </gb-tab-button-base> -->
-    <gb-horizontal-tabs size="sm" type="rounded_button_white_border" full-width="true" third-tab="true" fourth-tab="true" breakpoint="desktop">
-      <p slot="first_tab" onclick="console.log('Hi')">My details</p>
-      <p slot="second_tab">My Profile</p>
-      <p slot="third_tab">Settings</p>
-      <p slot="fourth_tab">Options</p>
+    <gb-horizontal-tabs size="sm" 
+    type="rounded_button_white_border" 
+    full-width="true" breakpoint="desktop"
+    first-tab-name="My Profile" second-tab-name="Settings">
     </gb-horizontal-tabs>
     <!-- <gb-badge size="lg" type="pill_outline" color="information" icon="avatar" icon-trailing-swap="arrow_pointing_right">
       <img src="build/assets/avatar_pic.jpg" alt="" slot="image">
@@ -95,16 +91,18 @@
       <p slot="label">Label</p>
     </gb-side-bar-item>
     <gb-sidebar category="colored_background" 
-    icon-instance="assets/shuffle-square.svg" 
+    icon-instance="assets/file-verified.svg" 
     first-item-icon="assets/dashboard-square-03.svg" 
-    second-item-icon="assets/exchange-01.svg" 
+    second-item-icon="assets/exchange-01.svg"
+    third-item-icon="assets/flag-01.svg"
     state="expanded" 
-    show-second-category="false">
-      <p slot="first_item_label">Overview</p>
-      <p slot="second_item_label">Exchange</p>
+    show-second-category="false"
+    first-item-label="Overview"
+    second-item-label="Exchange"
+    third-item-label="Flagged Transaction">
       <p slot="application_name">Automated Call-Over System (ACS)</p>
     </gb-sidebar>
-    <gb-input-dropdown-menu-item type="checkbox" state="default" supporting-text="false" selected="true">
+    <gb-input-dropdown-menu-item type="default" state="default" supporting-text="false" selected="true">
       <p slot="name">10</p>
     </gb-input-dropdown-menu-item>
     <gb-avatar-dropdown type="simple" show-profile="true" show-log-out="true">
@@ -112,5 +110,14 @@
       <p slot="supporting_text">Initiator</p>
       <img src="build/assets/avatar_pic.jpg" alt="" slot="image">
     </gb-avatar-dropdown>
+    <gb-checkbox-group-item type="avatar" size="sm" state="default" show-cost="true" selected="false">
+      <p slot="label">Basic Plan</p>
+      <p slot="cost">$10/month</p>
+      <p slot="supporting_text">Product Manager, Integrations</p>
+    </gb-checkbox-group-item>
+    <gb-toast color="success" actions="true" show-supporting-text="true">
+      <p slot="main_text">New feature alert</p>
+      <p slot="supporting_text">Lorem ipsum dolor sit amet consectetur.</p>
+    </gb-toast>
   </body>
 </html>

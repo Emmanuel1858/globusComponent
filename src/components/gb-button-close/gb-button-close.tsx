@@ -1,5 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
-import { GeneralSizes } from '../../models/reusableModels';
+import { GeneralColors, GeneralSizes } from '../../models/reusableModels';
 @Component({
     tag: 'gb-button-close',
     styleUrl: 'gb-button-close.css',
@@ -8,7 +8,7 @@ import { GeneralSizes } from '../../models/reusableModels';
 
 export class GbButtonClose {
     @Prop() size: GeneralSizes;
-    @Prop() color: 'primary' | 'information' | 'success' | 'gray' | 'warning' | 'error';
+    @Prop() color: GeneralColors;
 
     render() {
         return (

@@ -1,0 +1,157 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+@import './../../global/typography.css';
+
+.checkbox_group_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f7ff;
+  border: 0.0625rem solid #cce0ff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+  border-radius: var(--rounded-md);
+}
+
+.checkbox_group_item .avatar {/* this is correct*/
+  flex: 1 0 0;
+  margin-top: 0.5rem;
+  border-radius: 12.5rem;
+  border: 0.5px solid var(--color-blanket-subtler);
+} 
+
+
+.checkbox_group_item.selected {
+  border: 2px solid var(--color-border-selected,#075DB2);/* Checked border color */
+  background: var(--color-background-information-subtlest,#E4F0FC);/* Checked background color */
+}
+
+
+/* i'm using this to apply the hover effect but its turning white on hover??? */
+.checkbox_group_item:hover {
+  background: var(--color-background-information-subtler,#C8E0F9); 
+  border-color: var(--color-border-selected,#075DB2);
+}
+
+/* i'm using this to change icon color on hover */
+.checkbox_group_item:hover .icon-md,
+.checkbox_group_item:hover .svg-icon {
+  fill: var(--color-icon-information,#064E94); 
+}
+
+.checkbox_group_item.checked {
+  background-color: #e6f2ff;
+  border-color: #0066cc;
+}
+
+.item-content {
+  display: flex;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  margin-left: 1rem;
+  margin-top: -0.2rem;
+}
+
+.label-cost {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-direction: row;
+}
+
+.label-cost.payment_icon {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+}
+
+.label-cost span {
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.checkbox_container {
+  margin-left: 1rem;
+}
+
+.icon-md {
+  width: 2rem; 
+  height: 2rem;
+}
+
+.svg-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.buttons{
+  display: flex;
+  gap: var(--spacing-3);
+}
+
+/* State Styles */
+.checkbox_group_item.default {
+  border: 1px solid var(--color-border-subtler, #E3E8EF);
+  background: var(--color-background-card, #FFFFFF);
+}
+
+.checkbox_group_item.default:hover{
+  border: 1px solid var(--color-border-selected, #075DB2);
+  background: var(--color-background-card, #FFFFFF);
+}
+
+.checkbox_group_item.selected{
+  border: 2px solid var(--color-border-selected, #075DB2);
+  background: var(--color-background-information-subtlest, #E4F0FC);
+}
+
+.checkbox_group_item.selected:hover .cost,
+.checkbox_group_item.selected:hover .supporting_text{
+  color: var(--color-text-information, #064E94)
+}
+
+.checkbox_group_item.selected:hover{
+  border: 2px solid var(--color-border-selected, #075DB2);
+  background: var(--color-background-information-subtler, #C8E0F9);
+}
+
+.checkbox_group_item.disabled{
+  border: 1px solid var(--color-border-disabled, #E3E8EF);
+  background: var(--color-background-disabled, #F6F8FA);
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.checkbox_group_item.selected.disabled{
+  border: 2px solid var(--color-border-disabled, #E3E8EF);
+  background: var(--color-background-disabled, #F6F8FA);
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* Change icon and text colors on hover for the default state */
+.checkbox_group_item.default:hover .icon-md,
+.checkbox_group_item.default:hover .svg-icon {
+  fill: var(--color-icon-information, #064E94);
+}
+
+.label{
+  color: var(--color-text-bold, #202939);
+}
+
+.cost{
+  color: var(--color-text, #4B5565);
+}
+
+.supporting_text{
+  color: var(--color-text, #4B5565);
+}

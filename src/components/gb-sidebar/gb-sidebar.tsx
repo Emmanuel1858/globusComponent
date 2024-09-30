@@ -1,4 +1,4 @@
-import { Component, Element, h, Prop, Fragment, State, getAssetPath } from "@stencil/core";
+import { Component, Element, h, Prop, Fragment, State, getAssetPath, Method } from "@stencil/core";
 import { GeneralBackgroundCategories } from "../../models/reusableModels";
 
 @Component({
@@ -11,14 +11,6 @@ export class GbSidebar {
   @Prop() category: GeneralBackgroundCategories;
   @Prop() showSecondCategory: boolean = false;
   @Prop() applicationName: string = '';
-  @Prop() thirdItem: boolean = false;
-  @Prop() fourthItem: boolean = false;
-  @Prop() fifthItem: boolean = false;
-  @Prop() sixthItem: boolean = false;
-  @Prop() seventhItem: boolean = false;
-  @Prop() eighthItem: boolean = false;
-  @Prop() ninthItem: boolean = false;
-  @Prop() tenthItem: boolean = false;
   @Prop() firstItemIcon: string = '';
   @Prop() secondItemIcon: string = '';
   @Prop() thirdItemIcon: string = '';
@@ -64,18 +56,16 @@ export class GbSidebar {
     }
   }
 
-  sideBarItemClicked(index: number) {
+  @Method()
+  async sideBarItemClicked(index: number) {
     this.activeIndex = index;
+    console.log(index);
   }
 
   componentDidLoad() {
     const applicationName = this.el.querySelector('[slot="application_name"]');
 
-    applicationName.classList.add('text-lg-bold'); 
-
-    if(this.category === 'plain_background') {
-      applicationName.classList.add('plain_background_color')
-    }
+    applicationName.classList.add('text-lg-bold');
   }
 
   componentWillLoad() {
@@ -116,8 +106,8 @@ export class GbSidebar {
                 category={this.category}
                 type={this.state === 'collapsed' ? 'icon_only' : 'full_with_label'}
                 onClick={() => this.sideBarItemClicked(0)}
+                label={this.firstItemLabel}
               >
-                <slot name="first_item_label"></slot>
               </gb-side-bar-item>
               <gb-side-bar-item
                 state={this.activeIndex === 1 ? 'active' : 'default'}
@@ -125,35 +115,37 @@ export class GbSidebar {
                 category={this.category}
                 type={this.state === 'collapsed' ? 'icon_only' : 'full_with_label'}
                 onClick={() => this.sideBarItemClicked(1)}
+                label={this.secondItemLabel}
               >
-                <slot name="second_item_label"></slot>
               </gb-side-bar-item>
-              {this.thirdItem && (
+              {this.thirdItemLabel && (
                 <gb-side-bar-item
                   state={this.activeIndex === 2 ? 'active' : 'default'}
                   icon={this.thirdItemIcon}
                   category={this.category}
                   type={this.state === 'collapsed' ? 'icon_only' : 'full_with_label'}
                   onClick={() => this.sideBarItemClicked(2)}
+                  label={this.thirdItemLabel}
                 ></gb-side-bar-item>
               )}
-              {this.fourthItem && (
+              {this.fourthItemLabel && (
                 <gb-side-bar-item
                   state={this.activeIndex === 3 ? 'active' : 'default'}
                   icon={this.fourthItemIcon}
                   category={this.category}
                   type={this.state === 'collapsed' ? 'icon_only' : 'full_with_label'}
                   onClick={() => this.sideBarItemClicked(3)}
+                  label={this.fourthItemLabel}
                 ></gb-side-bar-item>
               )}
-              {this.fifthItem && (
+              {this.fifthItemLabel && (
                 <gb-side-bar-item
                   state={this.activeIndex === 4 ? 'active' : 'default'}
-                  label="Label"
                   icon={this.fifthItemIcon}
                   category={this.category}
                   type={this.state === 'collapsed' ? 'icon_only' : 'full_with_label'}
                   onClick={() => this.sideBarItemClicked(4)}
+                  label={this.fifthItemLabel}
                 ></gb-side-bar-item>
               )}
             </div>
@@ -161,54 +153,54 @@ export class GbSidebar {
           {this.showSecondCategory && (
             <div class="navigation">
               <div class="item">
-                {this.sixthItem && (
+                {this.sixthItemLabel && (
                   <gb-side-bar-item
                     state={this.activeIndex === 5 ? 'active' : 'default'}
-                    label="Label"
                     icon={this.sixthItemIcon}
                     category={this.category}
                     type={this.state === 'collapsed' ? 'icon_only' : 'full_with_label'}
                     onClick={() => this.sideBarItemClicked(5)}
+                    label={this.sixthItemLabel}
                   ></gb-side-bar-item>
                 )}
-                {this.seventhItem && (
+                {this.seventhItemLabel && (
                   <gb-side-bar-item
                     state={this.activeIndex === 6 ? 'active' : 'default'}
-                    label="Label"
                     icon={this.seventhItemIcon}
                     category={this.category}
                     type={this.state === 'collapsed' ? 'icon_only' : 'full_with_label'}
                     onClick={() => this.sideBarItemClicked(6)}
+                    label={this.seventhItemLabel}
                   ></gb-side-bar-item>
                 )}
-                {this.eighthItem && (
+                {this.eighthItemLabel && (
                   <gb-side-bar-item
                     state={this.activeIndex === 7 ? 'active' : 'default'}
-                    label="Label"
                     icon={this.eighthItemIcon}
                     category={this.category}
                     type={this.state === 'collapsed' ? 'icon_only' : 'full_with_label'}
                     onClick={() => this.sideBarItemClicked(7)}
+                    label={this.eighthItemLabel}
                   ></gb-side-bar-item>
                 )}
-                {this.ninthItem && (
+                {this.ninthItemLabel && (
                   <gb-side-bar-item
                     state={this.activeIndex === 8 ? 'active' : 'default'}
-                    label="Label"
                     icon={this.ninthItemIcon}
                     category={this.category}
                     type={this.state === 'collapsed' ? 'icon_only' : 'full_with_label'}
                     onClick={() => this.sideBarItemClicked(8)}
+                    label={this.ninthItemLabel}
                   ></gb-side-bar-item>
                 )}
-                {this.tenthItem && (
+                {this.tenthItemLabel && (
                   <gb-side-bar-item
                     state={this.activeIndex === 9 ? 'active' : 'default'}
-                    label="Label"
                     icon={this.tenthItemIcon}
                     category={this.category}
                     type={this.state === 'collapsed' ? 'icon_only' : 'full_with_label'}
                     onClick={() => this.sideBarItemClicked(9)}
+                    label={this.tenthItemLabel}
                   ></gb-side-bar-item>
                 )}
               </div>
@@ -223,7 +215,7 @@ export class GbSidebar {
                   <img src="build/assets/pattern_wrapper.svg" alt="" />
                 </div>
               )}
-              <div class={`icon ${this.category}`} innerHTML={this.leadingIconSvg}></div>
+              <div class={`application_icon ${this.category}`} innerHTML={this.leadingIconSvg}></div>
               <span class={textClass}>
                 <slot name="application_name"></slot>
               </span>

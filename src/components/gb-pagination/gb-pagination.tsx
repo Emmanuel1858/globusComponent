@@ -10,46 +10,62 @@ export class GbPagination {
   @Prop() type: PaginationTypes;
   @Prop() shape: PaginationNumberShapes;
   @Prop() breakpoint: BreakPoints;
-  @Prop() currentPage: string = '1';
-  @Prop() totalPages: string = '10';
+  @Prop() currentPage: number = 1;
+  @Prop() totalPages: number = 10;
 
   render() {
     return (
-      <div class={`pagination_div`}>
-        {this.type === 'card_minimal_right_aligned' && this.breakpoint === 'desktop' && (
+      <div class={`pagination_div ${this.type} ${this.breakpoint}`}>
+        {/* Desktop Breakpoint Pagination */}
+        {this.type === 'page_default' && this.breakpoint === 'desktop' && (
+          <>
+            <gb-button size="sm" hierarchy="tertiary_gray" icon="default" state="default" icon-leading={true} icon-leading-swap="assets/arrow-left-02.svg">
+              <p>Previous</p>
+            </gb-button>
+
+            {/* <div class="page_default_numbers">
+              <gb-pagination-number-base shape={this.shape}></gb-pagination-number-base>
+            </div> */}
+
+            <gb-button size="sm" hierarchy="tertiary_gray" icon="default" state="default" icon-trailing={true} icon-trailing-swap="assets/arrow-right-02.svg">
+              <p>Next</p>
+            </gb-button>
+          </>
+        )}
+        {this.type === 'page_minimal_center_aligned' && this.breakpoint === 'desktop' && (
+          <>
+            <gb-button size="sm" hierarchy="secondary_gray" icon="default" state="default" icon-leading={true} icon-leading-swap="assets/arrow-left-02.svg">
+              <p>Previous</p>
+            </gb-button>
+
+            <gb-button size="sm" hierarchy="secondary_gray" icon="default" state="default" icon-trailing={true} icon-trailing-swap="assets/arrow-right-02.svg">
+              <p>Next</p>
+            </gb-button>
+          </>
+        )}
+        {this.type === 'card_default' && this.breakpoint === 'desktop' && (
           <>
             <div class="entries">
-              <p>Entries</p>
-              <input type="text" />
+              Entries
             </div>
-            <div class="pages">
-              Page {this.currentPage} of {this.totalPages}
-            </div>
+            <div class="page_numbers"></div>
             <div class="buttons">
-              <gb-button size="sm" hierarchy="secondary_gray" icon="default">
-                <p>Previous</p>
-              </gb-button>
-              <gb-button size="sm" hierarchy="secondary_gray" icon="default">
-                <p>Next</p>
-              </gb-button>
+              <gb-button size="sm" hierarchy="secondary_gray" icon="only" state="default" icon-leading={true} icon-leading-swap="assets/arrow-left-02.svg"></gb-button>
+              <gb-button size="sm" hierarchy="secondary_gray" icon="only" state="default" icon-leading={true} icon-leading-swap="assets/arrow-right-02.svg"></gb-button>
             </div>
           </>
         )}
-        {this.type === 'card_minimal_center_aligned' && this.breakpoint === 'desktop' && (
+
+        {/* Mobile Breakpoint Pagination */}
+        {this.type === 'page_default' && this.breakpoint === 'mobile' && (
           <>
-            <div class="prev">
-              <gb-button size="sm" hierarchy="secondary_gray" icon="default">
-                <p>Previous</p>
-              </gb-button>
+            <gb-button size="sm" hierarchy="secondary_gray" icon="only" state="default" icon-leading={true} icon-leading-swap="assets/arrow-left-02.svg"></gb-button>
+            <div class="page_number_text">
+              <p class="text-sm-medium">
+                Page {this.currentPage} of {this.totalPages}
+              </p>
             </div>
-            <div class="pages">
-              Page {this.currentPage} of {this.totalPages}
-            </div>
-            <div class="next">
-              <gb-button size="sm" hierarchy="secondary_gray" icon="default">
-                <p>Next</p>
-              </gb-button>
-            </div>
+            <gb-button size="sm" hierarchy="secondary_gray" icon="only" state="default" icon-leading={true} icon-leading-swap="assets/arrow-right-02.svg"></gb-button>
           </>
         )}
       </div>

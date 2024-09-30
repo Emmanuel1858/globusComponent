@@ -25,6 +25,7 @@ export class GbAvatar {
             case 'md': return 'text-md-semi-bold';
             case 'sm': return 'text-sm-semi-bold';
             case 'xs': return 'text-xs-semi-bold';
+            case 'xxs': return 'text-xxs-semi-bold';
         }
     }
 

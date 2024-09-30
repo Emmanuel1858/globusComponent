@@ -10,7 +10,7 @@ import { StateEnum } from '../../models/reusableModels';
 export class GbInputDropdownMenuItem {
     @Prop() type: 'icon_leading' | 'avatar_leading' | 'dot_leading' | 'checkbox';
     @Prop() supportingText: boolean = false;
-    @Prop() selected: boolean = false;
+    @Prop({ mutable: true }) selected: boolean = false;
     @Prop() state: 'default' | 'disabled' = 'default';
 
     render() {

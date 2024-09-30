@@ -147,6 +147,7 @@ button.link_gray {
   background-color: transparent;
   --icon-color: var(--color-icon, #4B5565);
   color: var(--color-text, #4B5565);
+  padding: var(--spacing-none);
   height: fit-content;
 }
 

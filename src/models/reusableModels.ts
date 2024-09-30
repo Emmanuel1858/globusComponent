@@ -36,7 +36,7 @@ export type FileUploadStates = 'default' | 'in_progress' | 'complete' | 'hover' 
 
 export type FileType = '';
 
-export type GeneralColors = 'gray' | 'primary' | 'error' | 'warning' | 'success' | 'discovery' | 'information' | 'pink' | 'purple';
+export type GeneralColors = 'default' | 'gray' | 'primary' | 'error' | 'warning' | 'success' | 'discovery' | 'information' | 'pink' | 'purple';
 
 export type PaginationNumberShapes = 'square' | 'circle';
 

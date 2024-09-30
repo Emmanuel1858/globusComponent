@@ -12,6 +12,7 @@ export class GbTabButtonBase {
   @Prop() fullWidth: boolean = false;
   @Prop() badge: boolean = false;
   @Prop() type: TabTypes;
+  @Prop() tabName: string = '';
   @Element() el: HTMLElement;
   @Event() tabClicked: EventEmitter<void>;
 
@@ -68,7 +69,7 @@ export class GbTabButtonBase {
       ${this.current ? 'current' : ''} 
       ${this.fullWidth ? 'full_width' : ''} 
       ${this.size}`} onClick={() => this.handleClick()}>
-        <slot name="name"></slot>
+        <p class={`${this.current ? this.getCurrentTextClasses() : this.getTextClasses()}`}>{this.tabName}</p>
         {this.badge && (
           <gb-badge
             size="sm"

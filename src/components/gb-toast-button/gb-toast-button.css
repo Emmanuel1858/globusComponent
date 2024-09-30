@@ -1,0 +1,65 @@
+@import './../../global/global.css';
+@import './../../global/typography.css';
+
+.toast_button{
+    width: fit-content;
+    cursor: pointer;
+}
+
+/* Toast Button Color Styles */
+.toast_button.gray{
+    color: var(--color-text, #4B5565);
+}
+
+.toast_button.information{
+    color: var(--color-text-information, #064E94);
+}
+
+.toast_button.error{
+    color: var(--color-text-danger, #B51726);
+}
+
+.toast_button.success{
+    color: var(--color-text-success, #079455);
+}
+
+.toast_button.warning{
+    color: var(--color-text-warning, #DC6803);
+}
+
+/* Toast Button State Styles */
+.toast_button:hover ::slotted(p){
+    text-decoration: underline;
+}
+
+.toast_button:active ::slotted(p){
+    text-decoration: none;
+}
+
+.toast_button.gray:active ::slotted(p){
+    color: var(--color-text-bold, #202939);
+}
+
+.toast_button.information:active ::slotted(p){
+    color: var(--color-text-information-bold, #042F59);
+}
+
+.toast_button.error:active ::slotted(p){
+    color: var(--color-text-danger-bold, #8C121D);
+}
+
+.toast_button.success:active ::slotted(p){
+    color: var(--color-text-success-bold, #085D3A);
+}
+.toast_button.warning:active ::slotted(p){
+    color: var(--color-text-warning-bold, #93370D);
+}
+
+.toast_button.disabled{
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.toast_button.disabled ::slotted(p){
+    color: var(--color-text-disabled, #CDD5DF);
+}
