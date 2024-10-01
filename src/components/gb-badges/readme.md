@@ -7,19 +7,24 @@
 
 ## Properties
 
-| Property           | Attribute            | Description | Type                                                                                                                       | Default     |
-| ------------------ | -------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| `closeButton`      | `close-button`       |             | `boolean`                                                                                                                  | `false`     |
-| `color`            | `color`              |             | `"discovery" \| "error" \| "gray" \| "information" \| "pink" \| "primary" \| "purple" \| "success" \| "warning"`           | `undefined` |
-| `flagSwap`         | `flag-swap`          |             | `string`                                                                                                                   | `undefined` |
-| `icon`             | `icon`               |             | `"avatar" \| "country" \| "dot" \| "icon_leading" \| "icon_trailing" \| "only"`                                            | `undefined` |
-| `iconLeadingSwap`  | `icon-leading-swap`  |             | `string`                                                                                                                   | `undefined` |
-| `iconTrailingSwap` | `icon-trailing-swap` |             | `string`                                                                                                                   | `undefined` |
-| `size`             | `size`               |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs" \| "xxs"` | `undefined` |
-| `type`             | `type`               |             | `"badge_color" \| "badge_modern" \| "pill_color" \| "pill_outline"`                                                        | `undefined` |
+| Property           | Attribute            | Description | Type                                                                                                                          | Default     |
+| ------------------ | -------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| `closeButton`      | `close-button`       |             | `boolean`                                                                                                                     | `false`     |
+| `color`            | `color`              |             | `"default" \| "discovery" \| "error" \| "gray" \| "information" \| "pink" \| "primary" \| "purple" \| "success" \| "warning"` | `undefined` |
+| `flagSwap`         | `flag-swap`          |             | `string`                                                                                                                      | `undefined` |
+| `icon`             | `icon`               |             | `"avatar" \| "country" \| "dot" \| "icon_leading" \| "icon_trailing" \| "only"`                                               | `undefined` |
+| `iconLeadingSwap`  | `icon-leading-swap`  |             | `string`                                                                                                                      | `undefined` |
+| `iconTrailingSwap` | `icon-trailing-swap` |             | `string`                                                                                                                      | `undefined` |
+| `size`             | `size`               |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs" \| "xxs"`    | `undefined` |
+| `type`             | `type`               |             | `"badge_color" \| "badge_modern" \| "pill_color" \| "pill_outline"`                                                           | `undefined` |
 
 
 ## Dependencies
+
+### Used by
+
+ - [gb-side-bar-item](../gb-side-bar-item)
+ - [gb-tab-button-base](../gb-tab-button-base)
 
 ### Depends on
 
@@ -33,6 +38,8 @@ graph TD;
   gb-badge --> gb-badge-close
   gb-avatar --> gb-avatar-contrast-inner-border
   gb-avatar --> gb-status-indicator
+  gb-side-bar-item --> gb-badge
+  gb-tab-button-base --> gb-badge
   style gb-badge fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

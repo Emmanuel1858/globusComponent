@@ -6,6 +6,7 @@ import { GeneralBackgroundCategories } from "../../models/reusableModels";
   styleUrl: 'gb-side-bar-item.css',
   shadow: true,
 })
+
 export class GbSideBarItem {
   @Prop() state: 'default' | 'active';
   @Prop() type: 'full_with_label' | 'icon_only';
@@ -17,8 +18,7 @@ export class GbSideBarItem {
   @Prop({ mutable: true }) showTooltip: boolean = false;
   @State() leadingIconSvg: string = '';
   @State() textState: any;
-  @Event()
-  sideBarItemClicked: EventEmitter<void>;
+  @Event() sideBarItemClicked: EventEmitter<void>;
   @Element() el: HTMLElement;
 
   async loadIcon(iconName: string) {
@@ -45,11 +45,14 @@ export class GbSideBarItem {
   }
 
   render() {
+    const redBarSrc = getAssetPath(`assets/bar.svg`);
+    const whiteBarSrc = getAssetPath(`assets/bar_white.svg`);
+
     return (
       <div class={`side_bar_item_container`} onMouseEnter={() => (this.showTooltip = true)} onMouseLeave={() => (this.showTooltip = false)}>
         <div class={`nav_item_base ${this.state} ${this.type} ${this.category}`}>
-          {this.state === 'active' && this.category === 'plain_background' && <img src="build/assets/bar.svg" alt="" class="bar" />}
-          {this.state === 'active' && this.category === 'colored_background' && <img src="build/assets/bar_white.svg" alt="" class="bar" />}
+          {this.state === 'active' && this.category === 'plain_background' && <img src={redBarSrc} alt="" class="bar" />}
+          {this.state === 'active' && this.category === 'colored_background' && <img src={whiteBarSrc} alt="" class="bar" />}
           <div class="content">
             <div class={`icon ${this.state} ${this.category}`} innerHTML={this.leadingIconSvg}></div>
             {this.type === 'full_with_label' && (

@@ -1,4 +1,4 @@
-import { Component, Prop, State, h } from "@stencil/core";
+import { Component, Event, EventEmitter, Prop, State, h } from "@stencil/core";
 import { BreakPoints, GeneralSizes, TabTypes } from "../../models/reusableModels";
 
 @Component({
@@ -6,6 +6,7 @@ import { BreakPoints, GeneralSizes, TabTypes } from "../../models/reusableModels
   styleUrl: 'gb-horizontal-tabs.css',
   shadow: true,
 })
+
 export class GbHorizontalTabs {
   @Prop() type: TabTypes;
   @Prop() size: GeneralSizes;
@@ -30,9 +31,11 @@ export class GbHorizontalTabs {
   @Prop() ninthTabName: string = '';
   @Prop() tenthTabName: string = '';
   @State() activeIndex: number = 0;
+  @Event() tabItemClicked: EventEmitter<number>;
 
-  handleTabClick(index: number) {
+  async handleTabClick(index: number) {
     this.activeIndex = index;
+    this.tabItemClicked.emit(index);
   }
 
   componentDidLoad() {

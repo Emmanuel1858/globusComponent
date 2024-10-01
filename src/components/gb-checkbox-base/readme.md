@@ -21,11 +21,13 @@
 ### Used by
 
  - [gb-checkbox](../gb-checkbox)
+ - [gb-checkbox-group-item](../gb-checkbox-group-item)
 
 ### Graph
 ```mermaid
 graph TD;
   gb-checkbox --> gb-checkbox-base
+  gb-checkbox-group-item --> gb-checkbox-base
   style gb-checkbox-base fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

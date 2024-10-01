@@ -7,16 +7,16 @@
 
 ## Properties
 
-| Property        | Attribute         | Description | Type                    | Default     |
-| --------------- | ----------------- | ----------- | ----------------------- | ----------- |
-| `listGroup1`    | `list-group-1`    |             | `boolean`               | `undefined` |
-| `listGroup2`    | `list-group-2`    |             | `boolean`               | `undefined` |
-| `listGroup3`    | `list-group-3`    |             | `boolean`               | `undefined` |
-| `showDarkTheme` | `show-dark-theme` |             | `boolean`               | `undefined` |
-| `showLogOut`    | `show-log-out`    |             | `boolean`               | `undefined` |
-| `showProfile`   | `show-profile`    |             | `boolean`               | `undefined` |
-| `text`          | `text`            |             | `boolean`               | `false`     |
-| `type`          | `type`            |             | `"complex" \| "simple"` | `undefined` |
+| Property         | Attribute          | Description | Type                    | Default     |
+| ---------------- | ------------------ | ----------- | ----------------------- | ----------- |
+| `listGroupOne`   | `list-group-one`   |             | `boolean`               | `undefined` |
+| `listGroupThree` | `list-group-three` |             | `boolean`               | `undefined` |
+| `listGroupTwo`   | `list-group-two`   |             | `boolean`               | `undefined` |
+| `showDarkTheme`  | `show-dark-theme`  |             | `boolean`               | `undefined` |
+| `showLogOut`     | `show-log-out`     |             | `boolean`               | `undefined` |
+| `showProfile`    | `show-profile`     |             | `boolean`               | `undefined` |
+| `text`           | `text`             |             | `boolean`               | `false`     |
+| `type`           | `type`             |             | `"complex" \| "simple"` | `undefined` |
 
 
 ## Dependencies

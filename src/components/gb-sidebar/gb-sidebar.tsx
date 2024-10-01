@@ -1,4 +1,4 @@
-import { Component, Element, h, Prop, Fragment, State, getAssetPath, Method } from "@stencil/core";
+import { Component, Element, h, Prop, Fragment, State, getAssetPath, Method, Event, EventEmitter } from "@stencil/core";
 import { GeneralBackgroundCategories } from "../../models/reusableModels";
 
 @Component({
@@ -36,6 +36,7 @@ export class GbSidebar {
   @Element() el: HTMLElement;
   @State() activeIndex: number = 0;
   @State() leadingIconSvg: string = '';
+  @Event() sidebarItemClicked: EventEmitter<number>;
 
   async loadIcon(iconName: string) {
     const iconPath = getAssetPath(`${iconName}`);
@@ -59,7 +60,7 @@ export class GbSidebar {
   @Method()
   async sideBarItemClicked(index: number) {
     this.activeIndex = index;
-    console.log(index);
+    this.sidebarItemClicked.emit(index);
   }
 
   componentDidLoad() {
@@ -74,21 +75,25 @@ export class GbSidebar {
 
   render() {
     const textClass = this.category === 'plain_background' ? 'plain_background_color' : 'colored_background_color';
+    const patternSrc = getAssetPath(`assets/pattern_wrapper.svg`);
+    const logoSrc = getAssetPath(`assets/globus_bank_logo.svg`);
+    const blueLogoSrc = getAssetPath(`assets/globus_bank_logo_blue.svg`);
+    const whiteLogoSrc = getAssetPath(`assets/globus_bank_logo_white.svg`);
 
     return (
       <div class={`sidebar_div ${this.state} ${this.category}`}>
         {this.category === 'colored_background' && (
           <div class="pattern">
-            <img src="build/assets/pattern_wrapper.svg" alt="" />
+            <img src={patternSrc} alt="" />
           </div>
         )}
         <div class="nav">
           <div class={`sidebar_header ${this.state}`}>
             <div class={`logo_and_name ${this.state}`}>
               {this.state === 'expanded' && (
-                <>{this.category === 'plain_background' ? <img src="build/assets/globus_bank_logo_blue.svg" /> : <img src="build/assets/globus_bank_logo_white.svg" />}</>
+                <>{this.category === 'plain_background' ? <img src={blueLogoSrc} /> : <img src={whiteLogoSrc} />}</>
               )}
-              {this.state === 'collapsed' && <img src="build/assets/globus_bank_logo.svg" alt="" />}
+              {this.state === 'collapsed' && <img src={logoSrc} alt="" />}
             </div>
             <div class={`collapse_button ${this.state}`}>
               <gb-collapse-button
@@ -107,8 +112,7 @@ export class GbSidebar {
                 type={this.state === 'collapsed' ? 'icon_only' : 'full_with_label'}
                 onClick={() => this.sideBarItemClicked(0)}
                 label={this.firstItemLabel}
-              >
-              </gb-side-bar-item>
+              ></gb-side-bar-item>
               <gb-side-bar-item
                 state={this.activeIndex === 1 ? 'active' : 'default'}
                 icon={this.secondItemIcon}
@@ -116,8 +120,7 @@ export class GbSidebar {
                 type={this.state === 'collapsed' ? 'icon_only' : 'full_with_label'}
                 onClick={() => this.sideBarItemClicked(1)}
                 label={this.secondItemLabel}
-              >
-              </gb-side-bar-item>
+              ></gb-side-bar-item>
               {this.thirdItemLabel && (
                 <gb-side-bar-item
                   state={this.activeIndex === 2 ? 'active' : 'default'}
@@ -212,7 +215,7 @@ export class GbSidebar {
             <div class={`wrapper ${this.category}`}>
               {this.category === 'plain_background' && (
                 <div class="application_name_pattern">
-                  <img src="build/assets/pattern_wrapper.svg" alt="" />
+                  <img src={patternSrc} alt="" />
                 </div>
               )}
               <div class={`application_icon ${this.category}`} innerHTML={this.leadingIconSvg}></div>

@@ -1,4 +1,4 @@
-# gb-badge-close
+# gb-toast-button
 
 
 
@@ -10,20 +10,20 @@
 | Property | Attribute | Description | Type                                                                                                                          | Default     |
 | -------- | --------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------- |
 | `color`  | `color`   |             | `"default" \| "discovery" \| "error" \| "gray" \| "information" \| "pink" \| "primary" \| "purple" \| "success" \| "warning"` | `undefined` |
-| `type`   | `type`    |             | `"rounded" \| "square"`                                                                                                       | `undefined` |
+| `state`  | `state`   |             | `StateEnum.Default \| StateEnum.Disabled`                                                                                     | `undefined` |
 
 
 ## Dependencies
 
 ### Used by
 
- - [gb-badge](../gb-badges)
+ - [gb-toast](../gb-toast)
 
 ### Graph
 ```mermaid
 graph TD;
-  gb-badge --> gb-badge-close
-  style gb-badge-close fill:#f9f,stroke:#333,stroke-width:4px
+  gb-toast --> gb-toast-button
+  style gb-toast-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

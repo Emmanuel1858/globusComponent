@@ -19,6 +19,7 @@
 | `showPlaceholder` | `show-placeholder` |             | `boolean`                                                                                                                  | `false`     |
 | `size`            | `size`             |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs" \| "xxs"` | `undefined` |
 | `state`           | `state`            |             | `"default" \| "disabled" \| "filled" \| "focused"`                                                                         | `undefined` |
+| `text`            | `text`             |             | `boolean`                                                                                                                  | `false`     |
 | `type`            | `type`             |             | `"avatar_leading" \| "default" \| "dot_leading" \| "icon_leading" \| "search" \| "tags"`                                   | `undefined` |
 
 

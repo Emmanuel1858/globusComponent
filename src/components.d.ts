@@ -397,9 +397,17 @@ export namespace Components {
     interface GbWysiwygEditorIcon {
     }
 }
+export interface GbHorizontalTabsCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLGbHorizontalTabsElement;
+}
 export interface GbSideBarItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLGbSideBarItemElement;
+}
+export interface GbSidebarCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLGbSidebarElement;
 }
 export interface GbSliderCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -560,7 +568,18 @@ declare global {
         prototype: HTMLGbHelpDropdownElement;
         new (): HTMLGbHelpDropdownElement;
     };
+    interface HTMLGbHorizontalTabsElementEventMap {
+        "tabItemClicked": number;
+    }
     interface HTMLGbHorizontalTabsElement extends Components.GbHorizontalTabs, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLGbHorizontalTabsElementEventMap>(type: K, listener: (this: HTMLGbHorizontalTabsElement, ev: GbHorizontalTabsCustomEvent<HTMLGbHorizontalTabsElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLGbHorizontalTabsElementEventMap>(type: K, listener: (this: HTMLGbHorizontalTabsElement, ev: GbHorizontalTabsCustomEvent<HTMLGbHorizontalTabsElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLGbHorizontalTabsElement: {
         prototype: HTMLGbHorizontalTabsElement;
@@ -661,7 +680,18 @@ declare global {
         prototype: HTMLGbSideBarItemElement;
         new (): HTMLGbSideBarItemElement;
     };
+    interface HTMLGbSidebarElementEventMap {
+        "sidebarItemClicked": number;
+    }
     interface HTMLGbSidebarElement extends Components.GbSidebar, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLGbSidebarElementEventMap>(type: K, listener: (this: HTMLGbSidebarElement, ev: GbSidebarCustomEvent<HTMLGbSidebarElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLGbSidebarElementEventMap>(type: K, listener: (this: HTMLGbSidebarElement, ev: GbSidebarCustomEvent<HTMLGbSidebarElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLGbSidebarElement: {
         prototype: HTMLGbSidebarElement;
@@ -1023,6 +1053,7 @@ declare namespace LocalJSX {
         "fullWidth"?: boolean;
         "ninthTab"?: boolean;
         "ninthTabName"?: string;
+        "onTabItemClicked"?: (event: GbHorizontalTabsCustomEvent<number>) => void;
         "secondTabName"?: string;
         "seventhTab"?: boolean;
         "seventhTabName"?: string;
@@ -1137,6 +1168,7 @@ declare namespace LocalJSX {
         "label"?: string;
         "ninthItemIcon"?: string;
         "ninthItemLabel"?: string;
+        "onSidebarItemClicked"?: (event: GbSidebarCustomEvent<number>) => void;
         "secondItemIcon"?: string;
         "secondItemLabel"?: string;
         "seventhItemIcon"?: string;
