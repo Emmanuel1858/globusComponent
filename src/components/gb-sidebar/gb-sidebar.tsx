@@ -60,6 +60,7 @@ export class GbSidebar {
   @Method()
   async sideBarItemClicked(index: number) {
     this.activeIndex = index;
+    localStorage.setItem('activeIndex', index.toString());
     this.sidebarItemClicked.emit(index);
   }
 
@@ -71,6 +72,10 @@ export class GbSidebar {
 
   componentWillLoad() {
     this.loadIcon(this.iconInstance);
+    const storedIndex = localStorage.getItem('activeIndex');
+    if (storedIndex !== null) {
+      this.activeIndex = parseInt(storedIndex, 10); // Retrieve active index from localStorage
+    }
   }
 
   render() {
@@ -90,9 +95,7 @@ export class GbSidebar {
         <div class="nav">
           <div class={`sidebar_header ${this.state}`}>
             <div class={`logo_and_name ${this.state}`}>
-              {this.state === 'expanded' && (
-                <>{this.category === 'plain_background' ? <img src={blueLogoSrc} /> : <img src={whiteLogoSrc} />}</>
-              )}
+              {this.state === 'expanded' && <>{this.category === 'plain_background' ? <img src={blueLogoSrc} /> : <img src={whiteLogoSrc} />}</>}
               {this.state === 'collapsed' && <img src={logoSrc} alt="" />}
             </div>
             <div class={`collapse_button ${this.state}`}>

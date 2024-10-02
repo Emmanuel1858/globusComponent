@@ -7,16 +7,39 @@
 
 ## Properties
 
-| Property      | Attribute     | Description | Type                                                                                                                                                                                               | Default     |
-| ------------- | ------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| `destructive` | `destructive` |             | `boolean`                                                                                                                                                                                          | `undefined` |
-| `helpIcon`    | `help-icon`   |             | `boolean`                                                                                                                                                                                          | `false`     |
-| `icon`        | `icon`        |             | `string`                                                                                                                                                                                           | `undefined` |
-| `inputType`   | `input-type`  |             | `"count" \| "default" \| "icon_leading" \| "leading_dropdown" \| "leading_text" \| "password" \| "password_icon_leading" \| "payment_input" \| "tags" \| "trailing_button" \| "trailing_dropdown"` | `undefined` |
-| `label`       | `label`       |             | `string`                                                                                                                                                                                           | `''`        |
-| `placeholder` | `placeholder` |             | `string`                                                                                                                                                                                           | `''`        |
-| `size`        | `size`        |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs" \| "xxs"`                                                                         | `undefined` |
+| Property          | Attribute           | Description | Type                                                                                                                                                                                               | Default     |
+| ----------------- | ------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| `destructive`     | `destructive`       |             | `boolean`                                                                                                                                                                                          | `false`     |
+| `hintText`        | `hint-text`         |             | `string`                                                                                                                                                                                           | `''`        |
+| `iconSwap`        | `icon-swap`         |             | `string`                                                                                                                                                                                           | `undefined` |
+| `label`           | `label`             |             | `string`                                                                                                                                                                                           | `''`        |
+| `placeholderText` | `placeholder-text`  |             | `string`                                                                                                                                                                                           | `''`        |
+| `showCloseButton` | `show-close-button` |             | `boolean`                                                                                                                                                                                          | `false`     |
+| `showHelpIcon`    | `show-help-icon`    |             | `boolean`                                                                                                                                                                                          | `false`     |
+| `showHintText`    | `show-hint-text`    |             | `boolean`                                                                                                                                                                                          | `false`     |
+| `showLabel`       | `show-label`        |             | `boolean`                                                                                                                                                                                          | `false`     |
+| `showPlaceholder` | `show-placeholder`  |             | `boolean`                                                                                                                                                                                          | `false`     |
+| `showValidation`  | `show-validation`   |             | `boolean`                                                                                                                                                                                          | `false`     |
+| `size`            | `size`              |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs" \| "xxs"`                                                                         | `undefined` |
+| `state`           | `state`             |             | `"active" \| "disabled" \| "filled" \| "placeholder"`                                                                                                                                              | `undefined` |
+| `type`            | `type`              |             | `"count" \| "default" \| "icon_leading" \| "leading_dropdown" \| "leading_text" \| "password" \| "password_icon_leading" \| "payment_input" \| "tags" \| "trailing_button" \| "trailing_dropdown"` | `undefined` |
 
+
+## Dependencies
+
+### Depends on
+
+- [gb-button](../gb-button)
+- [gb-password-button](../gb-password-button)
+
+### Graph
+```mermaid
+graph TD;
+  gb-input-field --> gb-button
+  gb-input-field --> gb-password-button
+  gb-password-button --> gb-btn
+  style gb-input-field fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

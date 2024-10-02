@@ -21,3 +21,7 @@ gb-dropdown-items-with-shortcut {
     width: fit-content;
     max-width: 213px;
 }
+
+gb-dropdown-items-with-shortcut.shortcut-container {
+    width: 205px;
+}

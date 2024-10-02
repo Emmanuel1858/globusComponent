@@ -20,6 +20,19 @@
 | `state`            | `state`              |             | `"default" \| "disabled" \| "hover" \| "pressed"`                                                                          | `undefined` |
 
 
+## Dependencies
+
+### Used by
+
+ - [gb-password-button](../gb-password-button)
+
+### Graph
+```mermaid
+graph TD;
+  gb-password-button --> gb-btn
+  style gb-btn fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

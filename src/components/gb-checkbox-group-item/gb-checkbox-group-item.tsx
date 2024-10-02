@@ -131,7 +131,6 @@ export class GbCheckboxGroupItem {
   }
 
   render() {
-    console.log(this.selected);
     return [
       <div class={`checkbox_group_item ${this.size} ${this.state} ${this.selected ? 'selected' : ''}`} onClick={() => this.toggleSelection()}>
         <div class="item-content">

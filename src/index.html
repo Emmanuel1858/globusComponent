@@ -71,13 +71,13 @@
     </gb-tab-button-base> -->
     <gb-horizontal-tabs size="sm" 
     type="underline" 
-    full-width="true" breakpoint="desktop"
+    full-width="false" breakpoint="desktop"
     first-tab-name="My Profile" second-tab-name="Settings">
     </gb-horizontal-tabs>
-    <!-- <gb-badge size="lg" type="pill_outline" color="information" icon="avatar" icon-trailing-swap="arrow_pointing_right">
+    <gb-badge size="lg" type="pill_outline" color="information" icon="avatar" icon-trailing-swap="arrow_pointing_right">
       <img src="build/assets/avatar_pic.jpg" alt="" slot="image">
       <p>Label</p>
-    </gb-badge> -->
+    </gb-badge>
     <gb-tag size="lg" icon="avatar" action="count" checkbox="true">
       <img src="build/assets/avatar_pic.jpg" alt="" slot="image">
       <p>Label</p>
@@ -119,5 +119,14 @@
       <p slot="main_text">New feature alert</p>
       <p slot="supporting_text">Lorem ipsum dolor sit amet consectetur.</p>
     </gb-toast>
+    <gb-input-field size="sm" state="default" type="default" show-label="false" label="Label"
+    show-help-icon="false"
+    show-hint-text="false"
+    hint-text="This is a hint text to help user"
+    show-placeholder="true"
+    placeholder-text="Search"
+    show-close-button="true"
+    show-validation="false"
+    destructive="false"></gb-input-field>
   </body>
 </html>

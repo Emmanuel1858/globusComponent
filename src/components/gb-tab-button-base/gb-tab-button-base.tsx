@@ -44,14 +44,7 @@ export class GbTabButtonBase {
   }
 
   componentDidLoad() {
-    const tabName = this.el.querySelector('[slot="name"]');
     const tabCount = this.el.querySelector('[slot="count"]');
-
-    if (this.current) {
-      tabName.classList.add(this.getCurrentTextClasses());
-    } else {
-      tabName.classList.add(this.getTextClasses());
-    }
 
     if(tabCount) {
         tabCount.classList.add(this.getCountTextClasses());

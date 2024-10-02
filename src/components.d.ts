@@ -6,7 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ArrowPositions, BorderWeights, BreakPoints, CheckBoxVariants, FileUploadIconType, FileUploadStates, GeneralBackgroundCategories, GeneralColors, GeneralHierarchies, GeneralSizes, OnlineIndicatorStates, PaginationNumberShapes, PaginationTypes, StateEnum, TabTypes } from "./models/reusableModels";
+import { StateEnum as StateEnum1 } from "./components";
 export { ArrowPositions, BorderWeights, BreakPoints, CheckBoxVariants, FileUploadIconType, FileUploadStates, GeneralBackgroundCategories, GeneralColors, GeneralHierarchies, GeneralSizes, OnlineIndicatorStates, PaginationNumberShapes, PaginationTypes, StateEnum, TabTypes } from "./models/reusableModels";
+export { StateEnum as StateEnum1 } from "./components";
 export namespace Components {
     interface GbAvatar {
         "icon": 'user';
@@ -227,16 +229,24 @@ export namespace Components {
         "type": 'icon_leading' | 'avatar_leading' | 'dot_leading' | 'checkbox';
     }
     interface GbInputField {
-        "destructive"?: boolean;
-        "helpIcon"?: boolean;
-        "icon"?: string;
-        "inputType": 'default' | 'icon_leading' | 'leading_dropdown' | 'trailing_dropdown'|'leading_text'|'payment_input'| 'tags' | 'trailing_button' |'password' | 'password_icon_leading' | 'count';
-        "label"?: string;
-        "placeholder": string;
+        "destructive": boolean;
+        "hintText": string;
+        "iconSwap"?: string;
+        "label": string;
+        "placeholderText": string;
+        "showCloseButton"?: boolean;
+        "showHelpIcon": boolean;
+        "showHintText": boolean;
+        "showLabel": boolean;
+        "showPlaceholder": boolean;
+        "showValidation": boolean;
         "size": GeneralSizes;
+        "state": 'placeholder' | 'filled' | 'active' | 'disabled';
+        "type": 'default' | 'icon_leading' | 'leading_dropdown' | 'trailing_dropdown' | 'leading_text'|'payment_input'| 'tags' | 'trailing_button' |'password' | 'password_icon_leading' | 'count';
     }
     interface GbMegainputField {
         "size": GeneralSizes;
+        "state": 'placeholder' | 'disabled';
     }
     interface GbNotificationContent {
         "icon": string;
@@ -267,6 +277,9 @@ export namespace Components {
     interface GbPaginationNumberBase {
         "shape": PaginationNumberShapes;
     }
+    interface GbPasswordButton {
+        "state": StateEnum1;
+    }
     interface GbProgressBar {
         "el": HTMLElement;
         "labelPosition": 'right' | 'bottom' | 'top_floating' | 'bottom_floating';
@@ -278,6 +291,16 @@ export namespace Components {
         "progress": number;
         "shape": 'circle' | 'half_circle';
         "size": GeneralSizes;
+    }
+    interface GbRichText {
+        "destructive": boolean;
+        "hintText": string;
+        "label": string;
+        "placeholder": string;
+        "showHintText": boolean;
+        "showLabel": boolean;
+        "showPlaceholder": boolean;
+        "state": 'default' | 'disabled';
     }
     interface GbScrollbar {
         "length": '25%' | '50%' | '75%';
@@ -363,9 +386,14 @@ export namespace Components {
         "size": GeneralSizes;
     }
     interface GbTextareaInputField {
-        "destructive"?: boolean;
+        "destructive": boolean;
+        "hintText": string;
         "label": string;
         "placeholder": string;
+        "showHintText": boolean;
+        "showLabel": boolean;
+        "showPlaceholder": boolean;
+        "state": 'placeholder' | 'disabled';
         "type": 'default' | 'tags';
     }
     interface GbToast {
@@ -389,12 +417,48 @@ export namespace Components {
         "size": GeneralSizes;
         "state": StateEnum;
     }
+    interface GbTokenField {
+        "digits": 4 | 6 | 8;
+        "label": string;
+        "showLabel": boolean;
+        "showSupportingText": boolean;
+        "size": GeneralSizes;
+        "supportingText": string;
+    }
     interface GbTooltip {
         "arrow": ArrowPositions;
         "showArrow": boolean;
         "showSupportingText": boolean;
     }
+    interface GbVerificationCodeField {
+        "digits": 4 | 6 | 8;
+        "hintText": string;
+        "label": string;
+        "shoowLabel": boolean;
+        "showHintText": boolean;
+        "size": GeneralSizes;
+    }
     interface GbWysiwygEditorIcon {
+        "active": boolean;
+        "state": 'default' | 'disabled';
+        "type": 'bold' | 'italic' | 'H1' | 'H2' | 'quote' | 'link' | 'photo' | 'list_bullet' | 'list_numbers';
+    }
+    interface GbWysiwygToolbar {
+        "bold": boolean;
+        "breakpoint": 'desktop' | 'mobile';
+        "bulletList": boolean;
+        "fontSelector": boolean;
+        "h1": boolean;
+        "h2": boolean;
+        "image": boolean;
+        "italic": boolean;
+        "link": boolean;
+        "numberList": boolean;
+        "quote": boolean;
+    }
+    interface GbWysiwygTooltip {
+        "arrow": 'center' | 'left' | 'right';
+        "breakpoint": 'default' | 'mobile';
     }
 }
 export interface GbHorizontalTabsCustomEvent<T> extends CustomEvent<T> {
@@ -645,6 +709,12 @@ declare global {
         prototype: HTMLGbPaginationNumberBaseElement;
         new (): HTMLGbPaginationNumberBaseElement;
     };
+    interface HTMLGbPasswordButtonElement extends Components.GbPasswordButton, HTMLStencilElement {
+    }
+    var HTMLGbPasswordButtonElement: {
+        prototype: HTMLGbPasswordButtonElement;
+        new (): HTMLGbPasswordButtonElement;
+    };
     interface HTMLGbProgressBarElement extends Components.GbProgressBar, HTMLStencilElement {
     }
     var HTMLGbProgressBarElement: {
@@ -656,6 +726,12 @@ declare global {
     var HTMLGbProgressCircleElement: {
         prototype: HTMLGbProgressCircleElement;
         new (): HTMLGbProgressCircleElement;
+    };
+    interface HTMLGbRichTextElement extends Components.GbRichText, HTMLStencilElement {
+    }
+    var HTMLGbRichTextElement: {
+        prototype: HTMLGbRichTextElement;
+        new (): HTMLGbRichTextElement;
     };
     interface HTMLGbScrollbarElement extends Components.GbScrollbar, HTMLStencilElement {
     }
@@ -797,17 +873,41 @@ declare global {
         prototype: HTMLGbToggleBaseElement;
         new (): HTMLGbToggleBaseElement;
     };
+    interface HTMLGbTokenFieldElement extends Components.GbTokenField, HTMLStencilElement {
+    }
+    var HTMLGbTokenFieldElement: {
+        prototype: HTMLGbTokenFieldElement;
+        new (): HTMLGbTokenFieldElement;
+    };
     interface HTMLGbTooltipElement extends Components.GbTooltip, HTMLStencilElement {
     }
     var HTMLGbTooltipElement: {
         prototype: HTMLGbTooltipElement;
         new (): HTMLGbTooltipElement;
     };
+    interface HTMLGbVerificationCodeFieldElement extends Components.GbVerificationCodeField, HTMLStencilElement {
+    }
+    var HTMLGbVerificationCodeFieldElement: {
+        prototype: HTMLGbVerificationCodeFieldElement;
+        new (): HTMLGbVerificationCodeFieldElement;
+    };
     interface HTMLGbWysiwygEditorIconElement extends Components.GbWysiwygEditorIcon, HTMLStencilElement {
     }
     var HTMLGbWysiwygEditorIconElement: {
         prototype: HTMLGbWysiwygEditorIconElement;
         new (): HTMLGbWysiwygEditorIconElement;
+    };
+    interface HTMLGbWysiwygToolbarElement extends Components.GbWysiwygToolbar, HTMLStencilElement {
+    }
+    var HTMLGbWysiwygToolbarElement: {
+        prototype: HTMLGbWysiwygToolbarElement;
+        new (): HTMLGbWysiwygToolbarElement;
+    };
+    interface HTMLGbWysiwygTooltipElement extends Components.GbWysiwygTooltip, HTMLStencilElement {
+    }
+    var HTMLGbWysiwygTooltipElement: {
+        prototype: HTMLGbWysiwygTooltipElement;
+        new (): HTMLGbWysiwygTooltipElement;
     };
     interface HTMLElementTagNameMap {
         "gb-avatar": HTMLGbAvatarElement;
@@ -846,8 +946,10 @@ declare global {
         "gb-pagination-button-group-base": HTMLGbPaginationButtonGroupBaseElement;
         "gb-pagination-dot-indicator": HTMLGbPaginationDotIndicatorElement;
         "gb-pagination-number-base": HTMLGbPaginationNumberBaseElement;
+        "gb-password-button": HTMLGbPasswordButtonElement;
         "gb-progress-bar": HTMLGbProgressBarElement;
         "gb-progress-circle": HTMLGbProgressCircleElement;
+        "gb-rich-text": HTMLGbRichTextElement;
         "gb-scrollbar": HTMLGbScrollbarElement;
         "gb-side-bar-item": HTMLGbSideBarItemElement;
         "gb-sidebar": HTMLGbSidebarElement;
@@ -864,8 +966,12 @@ declare global {
         "gb-toast-button": HTMLGbToastButtonElement;
         "gb-toggle": HTMLGbToggleElement;
         "gb-toggle-base": HTMLGbToggleBaseElement;
+        "gb-token-field": HTMLGbTokenFieldElement;
         "gb-tooltip": HTMLGbTooltipElement;
+        "gb-verification-code-field": HTMLGbVerificationCodeFieldElement;
         "gb-wysiwyg-editor-icon": HTMLGbWysiwygEditorIconElement;
+        "gb-wysiwyg-toolbar": HTMLGbWysiwygToolbarElement;
+        "gb-wysiwyg-tooltip": HTMLGbWysiwygTooltipElement;
     }
 }
 declare namespace LocalJSX {
@@ -1088,15 +1194,23 @@ declare namespace LocalJSX {
     }
     interface GbInputField {
         "destructive"?: boolean;
-        "helpIcon"?: boolean;
-        "icon"?: string;
-        "inputType"?: 'default' | 'icon_leading' | 'leading_dropdown' | 'trailing_dropdown'|'leading_text'|'payment_input'| 'tags' | 'trailing_button' |'password' | 'password_icon_leading' | 'count';
+        "hintText"?: string;
+        "iconSwap"?: string;
         "label"?: string;
-        "placeholder"?: string;
+        "placeholderText"?: string;
+        "showCloseButton"?: boolean;
+        "showHelpIcon"?: boolean;
+        "showHintText"?: boolean;
+        "showLabel"?: boolean;
+        "showPlaceholder"?: boolean;
+        "showValidation"?: boolean;
         "size"?: GeneralSizes;
+        "state"?: 'placeholder' | 'filled' | 'active' | 'disabled';
+        "type"?: 'default' | 'icon_leading' | 'leading_dropdown' | 'trailing_dropdown' | 'leading_text'|'payment_input'| 'tags' | 'trailing_button' |'password' | 'password_icon_leading' | 'count';
     }
     interface GbMegainputField {
         "size"?: GeneralSizes;
+        "state"?: 'placeholder' | 'disabled';
     }
     interface GbNotificationContent {
         "icon"?: string;
@@ -1127,6 +1241,9 @@ declare namespace LocalJSX {
     interface GbPaginationNumberBase {
         "shape"?: PaginationNumberShapes;
     }
+    interface GbPasswordButton {
+        "state"?: StateEnum1;
+    }
     interface GbProgressBar {
         "el"?: HTMLElement;
         "labelPosition"?: 'right' | 'bottom' | 'top_floating' | 'bottom_floating';
@@ -1138,6 +1255,16 @@ declare namespace LocalJSX {
         "progress"?: number;
         "shape"?: 'circle' | 'half_circle';
         "size"?: GeneralSizes;
+    }
+    interface GbRichText {
+        "destructive"?: boolean;
+        "hintText"?: string;
+        "label"?: string;
+        "placeholder"?: string;
+        "showHintText"?: boolean;
+        "showLabel"?: boolean;
+        "showPlaceholder"?: boolean;
+        "state"?: 'default' | 'disabled';
     }
     interface GbScrollbar {
         "length"?: '25%' | '50%' | '75%';
@@ -1227,8 +1354,13 @@ declare namespace LocalJSX {
     }
     interface GbTextareaInputField {
         "destructive"?: boolean;
+        "hintText"?: string;
         "label"?: string;
         "placeholder"?: string;
+        "showHintText"?: boolean;
+        "showLabel"?: boolean;
+        "showPlaceholder"?: boolean;
+        "state"?: 'placeholder' | 'disabled';
         "type"?: 'default' | 'tags';
     }
     interface GbToast {
@@ -1252,12 +1384,48 @@ declare namespace LocalJSX {
         "size"?: GeneralSizes;
         "state"?: StateEnum;
     }
+    interface GbTokenField {
+        "digits"?: 4 | 6 | 8;
+        "label"?: string;
+        "showLabel"?: boolean;
+        "showSupportingText"?: boolean;
+        "size"?: GeneralSizes;
+        "supportingText"?: string;
+    }
     interface GbTooltip {
         "arrow"?: ArrowPositions;
         "showArrow"?: boolean;
         "showSupportingText"?: boolean;
     }
+    interface GbVerificationCodeField {
+        "digits"?: 4 | 6 | 8;
+        "hintText"?: string;
+        "label"?: string;
+        "shoowLabel"?: boolean;
+        "showHintText"?: boolean;
+        "size"?: GeneralSizes;
+    }
     interface GbWysiwygEditorIcon {
+        "active"?: boolean;
+        "state"?: 'default' | 'disabled';
+        "type"?: 'bold' | 'italic' | 'H1' | 'H2' | 'quote' | 'link' | 'photo' | 'list_bullet' | 'list_numbers';
+    }
+    interface GbWysiwygToolbar {
+        "bold"?: boolean;
+        "breakpoint"?: 'desktop' | 'mobile';
+        "bulletList"?: boolean;
+        "fontSelector"?: boolean;
+        "h1"?: boolean;
+        "h2"?: boolean;
+        "image"?: boolean;
+        "italic"?: boolean;
+        "link"?: boolean;
+        "numberList"?: boolean;
+        "quote"?: boolean;
+    }
+    interface GbWysiwygTooltip {
+        "arrow"?: 'center' | 'left' | 'right';
+        "breakpoint"?: 'default' | 'mobile';
     }
     interface IntrinsicElements {
         "gb-avatar": GbAvatar;
@@ -1296,8 +1464,10 @@ declare namespace LocalJSX {
         "gb-pagination-button-group-base": GbPaginationButtonGroupBase;
         "gb-pagination-dot-indicator": GbPaginationDotIndicator;
         "gb-pagination-number-base": GbPaginationNumberBase;
+        "gb-password-button": GbPasswordButton;
         "gb-progress-bar": GbProgressBar;
         "gb-progress-circle": GbProgressCircle;
+        "gb-rich-text": GbRichText;
         "gb-scrollbar": GbScrollbar;
         "gb-side-bar-item": GbSideBarItem;
         "gb-sidebar": GbSidebar;
@@ -1314,8 +1484,12 @@ declare namespace LocalJSX {
         "gb-toast-button": GbToastButton;
         "gb-toggle": GbToggle;
         "gb-toggle-base": GbToggleBase;
+        "gb-token-field": GbTokenField;
         "gb-tooltip": GbTooltip;
+        "gb-verification-code-field": GbVerificationCodeField;
         "gb-wysiwyg-editor-icon": GbWysiwygEditorIcon;
+        "gb-wysiwyg-toolbar": GbWysiwygToolbar;
+        "gb-wysiwyg-tooltip": GbWysiwygTooltip;
     }
 }
 export { LocalJSX as JSX };
@@ -1358,8 +1532,10 @@ declare module "@stencil/core" {
             "gb-pagination-button-group-base": LocalJSX.GbPaginationButtonGroupBase & JSXBase.HTMLAttributes<HTMLGbPaginationButtonGroupBaseElement>;
             "gb-pagination-dot-indicator": LocalJSX.GbPaginationDotIndicator & JSXBase.HTMLAttributes<HTMLGbPaginationDotIndicatorElement>;
             "gb-pagination-number-base": LocalJSX.GbPaginationNumberBase & JSXBase.HTMLAttributes<HTMLGbPaginationNumberBaseElement>;
+            "gb-password-button": LocalJSX.GbPasswordButton & JSXBase.HTMLAttributes<HTMLGbPasswordButtonElement>;
             "gb-progress-bar": LocalJSX.GbProgressBar & JSXBase.HTMLAttributes<HTMLGbProgressBarElement>;
             "gb-progress-circle": LocalJSX.GbProgressCircle & JSXBase.HTMLAttributes<HTMLGbProgressCircleElement>;
+            "gb-rich-text": LocalJSX.GbRichText & JSXBase.HTMLAttributes<HTMLGbRichTextElement>;
             "gb-scrollbar": LocalJSX.GbScrollbar & JSXBase.HTMLAttributes<HTMLGbScrollbarElement>;
             "gb-side-bar-item": LocalJSX.GbSideBarItem & JSXBase.HTMLAttributes<HTMLGbSideBarItemElement>;
             "gb-sidebar": LocalJSX.GbSidebar & JSXBase.HTMLAttributes<HTMLGbSidebarElement>;
@@ -1376,8 +1552,12 @@ declare module "@stencil/core" {
             "gb-toast-button": LocalJSX.GbToastButton & JSXBase.HTMLAttributes<HTMLGbToastButtonElement>;
             "gb-toggle": LocalJSX.GbToggle & JSXBase.HTMLAttributes<HTMLGbToggleElement>;
             "gb-toggle-base": LocalJSX.GbToggleBase & JSXBase.HTMLAttributes<HTMLGbToggleBaseElement>;
+            "gb-token-field": LocalJSX.GbTokenField & JSXBase.HTMLAttributes<HTMLGbTokenFieldElement>;
             "gb-tooltip": LocalJSX.GbTooltip & JSXBase.HTMLAttributes<HTMLGbTooltipElement>;
+            "gb-verification-code-field": LocalJSX.GbVerificationCodeField & JSXBase.HTMLAttributes<HTMLGbVerificationCodeFieldElement>;
             "gb-wysiwyg-editor-icon": LocalJSX.GbWysiwygEditorIcon & JSXBase.HTMLAttributes<HTMLGbWysiwygEditorIconElement>;
+            "gb-wysiwyg-toolbar": LocalJSX.GbWysiwygToolbar & JSXBase.HTMLAttributes<HTMLGbWysiwygToolbarElement>;
+            "gb-wysiwyg-tooltip": LocalJSX.GbWysiwygTooltip & JSXBase.HTMLAttributes<HTMLGbWysiwygTooltipElement>;
         }
     }
 }
