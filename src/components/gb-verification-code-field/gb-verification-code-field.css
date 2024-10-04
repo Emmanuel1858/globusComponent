@@ -1,6 +1,6 @@
 @import './../../global/global.css';
 @import './../../global/spacing.css';
-@import './../../global/typo.css';
+@import './../../global/typography.css';
 
 div.container {
     display: inline-flex;
@@ -19,10 +19,10 @@ div.container {
 
 .input-wrapper {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: var(--spacing-Positive-spacing-2, 0.5rem);
 }
 
 p{
-    color: var(--color-boarder-input, #CDD5DF)
+    color: var(--color-border-input, #CDD5DF);
 }

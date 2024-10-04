@@ -26,7 +26,7 @@
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 16.75rem;
+    width: 100%;
 }
 
 .sidebar_div.collapsed{

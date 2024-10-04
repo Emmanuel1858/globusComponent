@@ -11,7 +11,7 @@ export class GbTokenField {
     @Prop() size: GeneralSizes
     @Prop() digits: 4 | 6 | 8;
     @Prop() showLabel: boolean;
-    @Prop() label: string = 'Secure code';
+    @Prop() label: string = '';
     @Prop() showSupportingText: boolean;
     @Prop() supportingText: string = '';
 

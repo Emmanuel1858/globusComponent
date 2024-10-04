@@ -36,7 +36,7 @@ export class GbMegaInputField {
                     disabled: this.state === 'disabled'
                 }}
                 type="number" 
-                min="0" max="9" 
+                min="0" max="1" 
                 placeholder="0"
                 value={this.inputValue}
                 onInput={(event) => this.handleInput(event)}>

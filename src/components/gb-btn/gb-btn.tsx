@@ -1,5 +1,5 @@
 import { Component, Element, getAssetPath, h, Prop, State } from "@stencil/core";
-import { GeneralHierarchies, GeneralSizes } from "../../models/reusableModels";
+import { GeneralHierarchies, GeneralSizes, StateEnum } from "../../models/reusableModels";
 
 @Component({
   tag: 'gb-btn',
@@ -10,7 +10,7 @@ export class GbButton {
   @Prop() hierarchy: GeneralHierarchies;
   @Prop() icon: 'default' | 'only';
   @Prop() destructive: boolean = false;
-  @Prop() state: 'default' | 'hover' | 'disabled' | 'pressed';
+  @Prop() state: StateEnum;
   @Prop() iconLeading: boolean = false;
   @Prop() iconLeadingSwap: string;
   @Prop() iconTrailing: boolean = false;
@@ -34,7 +34,7 @@ export class GbButton {
       buttonSlot.classList.add('nowrap');
     }
 
-    if(!this.iconLeading && !this.iconTrailing) {
+    if (!this.iconLeading && !this.iconTrailing) {
       buttonSlot.classList.add('center');
     }
   }

@@ -32,6 +32,7 @@
     width: 0.625rem;
     height: 0.625rem;
 }
+
 /* State Styles */
 .input_dropdown_div.focused{
     border-color: var(--color-border-selected, #075DB2);

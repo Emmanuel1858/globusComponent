@@ -5,9 +5,9 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { ArrowPositions, BorderWeights, BreakPoints, CheckBoxVariants, FileUploadIconType, FileUploadStates, GeneralBackgroundCategories, GeneralColors, GeneralHierarchies, GeneralSizes, OnlineIndicatorStates, PaginationNumberShapes, PaginationTypes, StateEnum, TabTypes } from "./models/reusableModels";
+import { ArrowPositions, BorderWeights, BreakPoints, CheckBoxVariants, FileUploadIconType, FileUploadStates, GeneralBackgroundCategories, GeneralColors, GeneralHierarchies, GeneralSizes, InputFieldTypes, OnlineIndicatorStates, PaginationNumberShapes, PaginationTypes, StateEnum, TabTypes } from "./models/reusableModels";
 import { StateEnum as StateEnum1 } from "./components";
-export { ArrowPositions, BorderWeights, BreakPoints, CheckBoxVariants, FileUploadIconType, FileUploadStates, GeneralBackgroundCategories, GeneralColors, GeneralHierarchies, GeneralSizes, OnlineIndicatorStates, PaginationNumberShapes, PaginationTypes, StateEnum, TabTypes } from "./models/reusableModels";
+export { ArrowPositions, BorderWeights, BreakPoints, CheckBoxVariants, FileUploadIconType, FileUploadStates, GeneralBackgroundCategories, GeneralColors, GeneralHierarchies, GeneralSizes, InputFieldTypes, OnlineIndicatorStates, PaginationNumberShapes, PaginationTypes, StateEnum, TabTypes } from "./models/reusableModels";
 export { StateEnum as StateEnum1 } from "./components";
 export namespace Components {
     interface GbAvatar {
@@ -171,7 +171,10 @@ export namespace Components {
         "state": FileUploadStates;
     }
     interface GbHeader {
+        "helpIconClicked": () => Promise<void>;
+        "notificationIconClicked": () => Promise<void>;
         "placeholder": boolean;
+        "profileIconClicked": () => Promise<void>;
         "showIndicator": boolean;
         "state": StateEnum;
         "text": boolean;
@@ -242,7 +245,7 @@ export namespace Components {
         "showValidation": boolean;
         "size": GeneralSizes;
         "state": 'placeholder' | 'filled' | 'active' | 'disabled';
-        "type": 'default' | 'icon_leading' | 'leading_dropdown' | 'trailing_dropdown' | 'leading_text'|'payment_input'| 'tags' | 'trailing_button' |'password' | 'password_icon_leading' | 'count';
+        "type": InputFieldTypes;
     }
     interface GbMegainputField {
         "size": GeneralSizes;
@@ -434,8 +437,8 @@ export namespace Components {
         "digits": 4 | 6 | 8;
         "hintText": string;
         "label": string;
-        "shoowLabel": boolean;
         "showHintText": boolean;
+        "showLabel": boolean;
         "size": GeneralSizes;
     }
     interface GbWysiwygEditorIcon {
@@ -464,6 +467,10 @@ export namespace Components {
 export interface GbHorizontalTabsCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLGbHorizontalTabsElement;
+}
+export interface GbInputFieldCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLGbInputFieldElement;
 }
 export interface GbSideBarItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -661,7 +668,19 @@ declare global {
         prototype: HTMLGbInputDropdownMenuItemElement;
         new (): HTMLGbInputDropdownMenuItemElement;
     };
+    interface HTMLGbInputFieldElementEventMap {
+        "tagAdded": string;
+        "valueChanged": string;
+    }
     interface HTMLGbInputFieldElement extends Components.GbInputField, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLGbInputFieldElementEventMap>(type: K, listener: (this: HTMLGbInputFieldElement, ev: GbInputFieldCustomEvent<HTMLGbInputFieldElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLGbInputFieldElementEventMap>(type: K, listener: (this: HTMLGbInputFieldElement, ev: GbInputFieldCustomEvent<HTMLGbInputFieldElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLGbInputFieldElement: {
         prototype: HTMLGbInputFieldElement;
@@ -1197,6 +1216,8 @@ declare namespace LocalJSX {
         "hintText"?: string;
         "iconSwap"?: string;
         "label"?: string;
+        "onTagAdded"?: (event: GbInputFieldCustomEvent<string>) => void;
+        "onValueChanged"?: (event: GbInputFieldCustomEvent<string>) => void;
         "placeholderText"?: string;
         "showCloseButton"?: boolean;
         "showHelpIcon"?: boolean;
@@ -1206,7 +1227,7 @@ declare namespace LocalJSX {
         "showValidation"?: boolean;
         "size"?: GeneralSizes;
         "state"?: 'placeholder' | 'filled' | 'active' | 'disabled';
-        "type"?: 'default' | 'icon_leading' | 'leading_dropdown' | 'trailing_dropdown' | 'leading_text'|'payment_input'| 'tags' | 'trailing_button' |'password' | 'password_icon_leading' | 'count';
+        "type"?: InputFieldTypes;
     }
     interface GbMegainputField {
         "size"?: GeneralSizes;
@@ -1401,8 +1422,8 @@ declare namespace LocalJSX {
         "digits"?: 4 | 6 | 8;
         "hintText"?: string;
         "label"?: string;
-        "shoowLabel"?: boolean;
         "showHintText"?: boolean;
+        "showLabel"?: boolean;
         "size"?: GeneralSizes;
     }
     interface GbWysiwygEditorIcon {

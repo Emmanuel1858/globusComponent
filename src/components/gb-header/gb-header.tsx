@@ -1,4 +1,4 @@
-import { Component, Element, h, Prop } from "@stencil/core";
+import { Component, Element, getAssetPath, h, Method, Prop } from "@stencil/core";
 import { StateEnum } from "../../models/reusableModels";
 
 @Component({
@@ -21,15 +21,27 @@ export class GbHeader {
     }
   }
 
+  @Method()
+  async helpIconClicked() {}
+
+  @Method()
+  async notificationIconClicked() {}
+
+  @Method()
+  async profileIconClicked() {}
+
   render() {
+    const helpIconSrc = getAssetPath(`assets/help-circle.svg`);
+    const notificationIconSrc = getAssetPath(`assets/notification-03.svg`);
+
     return (
       <div class={`header_div`}>
         <div class="content">
           <div class="inner_content">
-            <gb-header-icon state={StateEnum.Default} icon="build/assets/help-circle.svg"></gb-header-icon>
-            <gb-header-icon state={this.state} icon="build/assets/notification-03.svg" show-indicator={this.showIndicator}></gb-header-icon>
-            <gb-avatar size="md" text={this.text} placeholder={this.placeholder}>
-              {this.text ? (<slot slot="initials" name="initials"></slot>) : (<slot name="image" slot="image"></slot>)}
+            <gb-header-icon state={StateEnum.Default} icon={helpIconSrc} onClick={() => this.helpIconClicked()}></gb-header-icon>
+            <gb-header-icon state={this.state} icon={notificationIconSrc} show-indicator={this.showIndicator} onClick={() => this.notificationIconClicked()}></gb-header-icon>
+            <gb-avatar size="md" text={this.text} placeholder={this.placeholder} onClick={() => this.profileIconClicked()}>
+              {this.text ? <slot slot="initials" name="initials"></slot> : <slot name="image" slot="image"></slot>}
             </gb-avatar>
           </div>
         </div>

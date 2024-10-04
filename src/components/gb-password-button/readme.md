@@ -5,6 +5,13 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property | Attribute | Description | Type                                      | Default     |
+| -------- | --------- | ----------- | ----------------------------------------- | ----------- |
+| `state`  | `state`   |             | `StateEnum.Default \| StateEnum.Disabled` | `undefined` |
+
+
 ## Dependencies
 
 ### Used by
@@ -14,11 +21,13 @@
 ### Depends on
 
 - [gb-btn](../gb-btn)
+- [gb-button](../gb-button)
 
 ### Graph
 ```mermaid
 graph TD;
   gb-password-button --> gb-btn
+  gb-password-button --> gb-button
   gb-input-field --> gb-password-button
   style gb-password-button fill:#f9f,stroke:#333,stroke-width:4px
 ```

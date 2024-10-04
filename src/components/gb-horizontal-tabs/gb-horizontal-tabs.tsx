@@ -35,11 +35,21 @@ export class GbHorizontalTabs {
 
   async handleTabClick(index: number) {
     this.activeIndex = index;
+    localStorage.setItem('activeIndex', index.toString());
     this.tabItemClicked.emit(index);
   }
 
-  componentDidLoad() {
-    this.activeIndex = 0;
+  // componentDidLoad() {
+  //   this.activeIndex = 0;
+  // }
+
+  componentWillLoad() {
+    const storedIndex = localStorage.getItem('activeIndex');
+    if (storedIndex !== null) {
+      this.activeIndex = parseInt(storedIndex, 10); // Retrieve active index from localStorage
+    } else if(storedIndex === null){
+      this.activeIndex = 0;
+    }
   }
 
   render() {

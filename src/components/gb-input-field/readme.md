@@ -38,6 +38,7 @@ graph TD;
   gb-input-field --> gb-button
   gb-input-field --> gb-password-button
   gb-password-button --> gb-btn
+  gb-password-button --> gb-button
   style gb-input-field fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

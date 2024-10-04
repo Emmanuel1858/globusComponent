@@ -42,10 +42,23 @@ export type PaginationTypes =
   | 'card_minimal_right_aligned'
   | 'card_minimal_left_aligned'
   | 'card_minimal_center_aligned'
-  | 'card_button_group_right_aligned'
+  | 'card_button_group_ right_aligned'
   | 'card_button_group_left_aligned'
   | 'card_button_group_center_aligned';
 
 export type TabTypes = 'button_primary' | 'button_gray' | 'button_white' | 'rounded_button_white' | 'underline' | 'underline_filled' | 'line' | 'button_white_border' | 'rounded_button_white_border';
 
 export type GeneralBackgroundCategories = 'plain_background' | 'colored_background';
+
+export type InputFieldTypes =
+  | 'default'
+  | 'icon_leading'
+  | 'leading_dropdown'
+  | 'trailing_dropdown'
+  | 'leading_text'
+  | 'payment_input'
+  | 'tags'
+  | 'trailing_button'
+  | 'password'
+  | 'password_icon_leading'
+  | 'count';

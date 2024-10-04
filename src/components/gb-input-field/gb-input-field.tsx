@@ -1,27 +1,43 @@
-import { Component, Prop, getAssetPath, h, Fragment } from '@stencil/core'
-import { GeneralSizes, StateEnum } from '../../models/reusableModels'
+import { Component, Prop, getAssetPath, h, Fragment, State, Event, EventEmitter } from '@stencil/core'
+import { GeneralSizes, InputFieldTypes, StateEnum } from '../../models/reusableModels'
 
 @Component({
   tag: 'gb-input-field',
   styleUrl: 'gb-input-field.css',
-  shadow: true
+  shadow: true,
 })
-
 export class GbInputField {
   @Prop() size: GeneralSizes;
-  @Prop() type: 'default' | 'icon_leading' | 'leading_dropdown' | 'trailing_dropdown' | 'leading_text'|'payment_input'| 'tags' | 'trailing_button' |'password' | 'password_icon_leading' | 'count';
+  @Prop() type: InputFieldTypes;
   @Prop() destructive: boolean = false;
-  @Prop() state: 'placeholder' | 'filled' | 'active' | 'disabled' ;
+  @Prop() state: 'placeholder' | 'filled' | 'active' | 'disabled';
   @Prop() showLabel: boolean = false;
   @Prop() label: string = '';
   @Prop() showHintText: boolean = false;
   @Prop() hintText: string = '';
   @Prop() showPlaceholder: boolean = false;
-  @Prop() placeholderText: string = ''; 
+  @Prop() placeholderText: string = '';
   @Prop() showHelpIcon: boolean = false;
   @Prop() showValidation: boolean = false;
   @Prop() iconSwap?: string;
   @Prop() showCloseButton?: boolean = false;
+  @State() inputValue: string = '';
+  @State() tags: string[] = [];
+  @State() isPasswordVisible: boolean = false;
+  @Event() tagAdded: EventEmitter<string>;
+  @Event() valueChanged: EventEmitter<string>;
+
+  /* Function to handle and emit the inputted values */
+  handleInput(event: Event) {
+    const target = event.target as HTMLInputElement;
+    this.inputValue = target.value;
+    this.valueChanged.emit(this.inputValue);
+  }
+
+  /* Function to handle and emit the inputted values */
+  togglePasswordVisibility() {
+    this.isPasswordVisible = !this.isPasswordVisible;
+  }
 
   render() {
     const iconSwap = this.iconSwap ? getAssetPath(`assets/${this.iconSwap}.svg`) : '';
@@ -31,7 +47,7 @@ export class GbInputField {
       [this.type]: true,
       destructive: this.destructive,
       disabled: this.state === 'disabled',
-    }
+    };
 
     return (
       <div class={classes}>
@@ -42,8 +58,13 @@ export class GbInputField {
             </label>
           )}
           {this.type === 'default' && (
-            <div class={`input-wrapper ${this.state} ${this.destructive ? 'destructive' : ''}`}>
-              <input class={`text-md-regular`} placeholder={this.showPlaceholder ? this.placeholderText : ''}></input>
+            <div class={`input-wrapper ${this.type} ${this.state} ${this.destructive ? 'destructive' : ''}`}>
+              <input
+                class={`text-md-regular`}
+                placeholder={this.showPlaceholder ? this.placeholderText : ''}
+                value={this.inputValue}
+                onInput={event => this.handleInput(event)}
+              ></input>
               {this.showValidation && <span></span>}
               {this.showHelpIcon && (
                 <>
@@ -59,7 +80,7 @@ export class GbInputField {
                         />
                       </svg>
                     </div>
-                  ) : (
+                  ) : this.destructive && this.state !== 'disabled' ? (
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                       <path
                         d="M7.99458 10H8.00057M7.99992 8.00001V5.33334M14.6666 8.00001C14.6666 11.6819 11.6818 14.6667 7.99992 14.6667C4.31802 14.6667 1.33325 11.6819 1.33325 8.00001C1.33325 4.31811 4.31802 1.33334 7.99992 1.33334C11.6818 1.33334 14.6666 4.31811 14.6666 8.00001Z"
@@ -69,6 +90,21 @@ export class GbInputField {
                         stroke-linejoin="round"
                       />
                     </svg>
+                  ) : (
+                    this.destructive &&
+                    this.state === 'disabled' && (
+                      <div class="help-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                          <path
+                            d="M6.66671 5.99998C6.66671 5.2636 7.26366 4.66665 8.00004 4.66665C8.73642 4.66665 9.33337 5.2636 9.33337 5.99998C9.33337 6.26541 9.25581 6.51273 9.12212 6.72051C8.72365 7.33976 8.00004 7.93027 8.00004 8.66665V8.99998M7.9947 11.3333H8.00069M14.6667 7.99998C14.6667 11.6819 11.6819 14.6666 8.00004 14.6666C4.31814 14.6666 1.33337 11.6819 1.33337 7.99998C1.33337 4.31808 4.31814 1.33331 8.00004 1.33331C11.6819 1.33331 14.6667 4.31808 14.6667 7.99998Z"
+                            stroke="#697586"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+                    )
                   )}
                 </>
               )}
@@ -81,7 +117,7 @@ export class GbInputField {
                   {this.iconSwap ? (
                     <img src={iconSwap} alt="Icon" />
                   ) : (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class={`icon_leading_svg ${this.state}`}>
                       <path
                         d="M5.83342 7.08334L8.2851 8.53286C9.71443 9.37794 10.2857 9.37794 11.7151 8.53286L14.1668 7.08334M7.58243 2.94713C9.1995 2.9065 10.8007 2.9065 12.4177 2.94713C15.0415 3.01305 16.3534 3.04602 17.296 3.99221C18.2386 4.9384 18.2658 6.21571 18.3203 8.77032C18.3378 9.59172 18.3378 10.4083 18.3203 11.2297C18.2658 13.7843 18.2386 15.0616 17.296 16.0078C16.3533 16.954 15.0415 16.9869 12.4177 17.0529C10.8007 17.0935 9.19951 17.0935 7.58244 17.0529C4.95869 16.9869 3.64682 16.954 2.70421 16.0078C1.76161 15.0616 1.73437 13.7843 1.67989 11.2297C1.66237 10.4083 1.66237 9.59171 1.67989 8.77031C1.73436 6.21569 1.7616 4.93839 2.70421 3.9922C3.64682 3.046 4.95869 3.01304 7.58243 2.94713Z"
                         stroke="#4B5565"
@@ -92,7 +128,13 @@ export class GbInputField {
                     </svg>
                   )}
                 </div>
-                <input class={`text-md-regular`} placeholder={this.showPlaceholder ? this.placeholderText : ''} type="email"></input>
+                <input
+                  class={`text-md-regular`}
+                  placeholder={this.showPlaceholder ? this.placeholderText : ''}
+                  type="email"
+                  value={this.inputValue}
+                  onInput={event => this.handleInput(event)}
+                ></input>
               </div>
               {this.showValidation && <span></span>}
               {this.showHelpIcon && (
@@ -135,7 +177,7 @@ export class GbInputField {
             </div>
           )}
           {this.type === 'leading_dropdown' && (
-            <div class={`input-wrapper ${this.state} ${this.destructive ? 'destructive' : ''}`}>
+            <div class={`input-wrapper ${this.type} ${this.state} ${this.destructive ? 'destructive' : ''}`}>
               <div class="dropdown">
                 <div class="country-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -154,7 +196,12 @@ export class GbInputField {
                 </select>
               </div>
               <div class="text-input">
-                <input class="text-md-regular" placeholder={this.showPlaceholder ? this.placeholderText : ''}></input>
+                <input
+                  class="text-md-regular"
+                  placeholder={this.showPlaceholder ? this.placeholderText : ''}
+                  value={this.inputValue}
+                  onInput={event => this.handleInput(event)}
+                ></input>
                 {this.showValidation && <span></span>}
                 {this.showHelpIcon && (
                   <>
@@ -187,11 +234,16 @@ export class GbInputField {
             </div>
           )}
           {this.type === 'trailing_dropdown' && (
-            <div class={`input-wrapper ${this.state} ${this.destructive ? 'destructive' : ''}`}>
+            <div class={`input-wrapper ${this.type} ${this.state} ${this.destructive ? 'destructive' : ''}`}>
               <div class="content">
                 <div class="text-input">
                   <p class="text-md-regular">$</p>
-                  <input class="text-md-regular" placeholder={this.showPlaceholder ? this.placeholderText : ''}></input>
+                  <input
+                    class="text-md-regular"
+                    placeholder={this.showPlaceholder ? this.placeholderText : ''}
+                    value={this.inputValue}
+                    onInput={event => this.handleInput(event)}
+                  ></input>
                 </div>
                 {this.showValidation && <span></span>}
                 {this.showHelpIcon && (
@@ -239,7 +291,12 @@ export class GbInputField {
               </div>
               <div class={`leading_text_input_wrapper ${this.state === 'disabled' ? 'disabled' : ''} ${this.state} ${this.destructive ? 'destructive' : ''}`}>
                 <div class="text-input">
-                  <input class="text-md-regular" placeholder={this.showPlaceholder ? this.placeholderText : ''}></input>
+                  <input
+                    class="text-md-regular"
+                    placeholder={this.showPlaceholder ? this.placeholderText : ''}
+                    value={this.inputValue}
+                    onInput={event => this.handleInput(event)}
+                  ></input>
                   {this.showValidation && <span></span>}
                   {this.showHelpIcon && (
                     <>
@@ -297,7 +354,12 @@ export class GbInputField {
                     />
                   </svg>
                 </div>
-                <input class="text-md-regular" placeholder={this.showPlaceholder ? this.placeholderText : ''}></input>
+                <input
+                  class="text-md-regular"
+                  placeholder={this.showPlaceholder ? this.placeholderText : ''}
+                  value={this.inputValue}
+                  onInput={event => this.handleInput(event)}
+                ></input>
               </div>
               {this.showValidation && <span></span>}
               {this.showHelpIcon && (
@@ -337,7 +399,12 @@ export class GbInputField {
                 <div class="tags-box">
                   <slot name="tag-option"></slot>
                 </div>
-                <input class="text-md-regular" placeholder={this.showPlaceholder ? this.placeholderText : ''}></input>
+                <input
+                  class="text-md-regular"
+                  placeholder={this.showPlaceholder ? this.placeholderText : ''}
+                  value={this.inputValue}
+                  onInput={event => this.handleInput(event)}
+                ></input>
               </div>
               {this.showValidation && <span></span>}
               {this.showHelpIcon && (
@@ -374,7 +441,12 @@ export class GbInputField {
           {this.type === 'trailing_button' && (
             <div class={`input-wrapper ${this.state} ${this.destructive ? 'destructive' : ''}`}>
               <div class="text-input">
-                <input class="text-md-regular" placeholder={this.showPlaceholder ? this.placeholderText : ''}></input>
+                <input
+                  class="text-md-regular"
+                  placeholder={this.showPlaceholder ? this.placeholderText : ''}
+                  value={this.inputValue}
+                  onInput={event => this.handleInput(event)}
+                ></input>
                 {this.showValidation && <span></span>}
                 {this.showHelpIcon && (
                   <>
@@ -420,7 +492,13 @@ export class GbInputField {
             <div class={`input-wrapper ${this.state} ${this.destructive ? 'destructive' : ''}`}>
               <div class="content">
                 <div class="text-input">
-                  <input class="text-md-regular" placeholder={this.showPlaceholder ? this.placeholderText : ''} type="password"></input>
+                  <input
+                    class="text-md-regular"
+                    placeholder={this.showPlaceholder ? this.placeholderText : ''}
+                    type={this.isPasswordVisible ? 'text' : 'password'}
+                    value={this.inputValue}
+                    onInput={event => this.handleInput(event)}
+                  ></input>
                 </div>
                 {this.showValidation && <span></span>}
                 {this.showHelpIcon && (
@@ -452,7 +530,7 @@ export class GbInputField {
                 )}
               </div>
               <div class="dropdown">
-                <gb-password-button state={this.state === 'disabled' ? StateEnum.Disabled : StateEnum.Default}></gb-password-button>
+                <gb-password-button state={this.state === 'disabled' ? StateEnum.Disabled : StateEnum.Default} onClick={() => this.togglePasswordVisibility()}></gb-password-button>
               </div>
             </div>
           )}
@@ -469,7 +547,13 @@ export class GbInputField {
                     />
                   </svg>
                 )}
-                <input class="text-md-regular" placeholder={this.showPlaceholder ? this.placeholderText : ''}></input>
+                <input
+                  class="text-md-regular"
+                  type={this.isPasswordVisible ? 'text' : 'password'}
+                  placeholder={this.showPlaceholder ? this.placeholderText : ''}
+                  value={this.inputValue}
+                  onInput={event => this.handleInput(event)}
+                ></input>
               </div>
               {this.showValidation && <span></span>}
               {this.showHelpIcon && (
@@ -499,13 +583,18 @@ export class GbInputField {
                   )}
                 </>
               )}
-              <gb-password-button state={this.state === 'disabled' ? StateEnum.Disabled : StateEnum.Default}></gb-password-button>
+              <gb-password-button state={this.state === 'disabled' ? StateEnum.Disabled : StateEnum.Default} onClick={() => this.togglePasswordVisibility()}></gb-password-button>
             </div>
           )}
           {this.type === 'count' && (
             <div class={`input-wrapper ${this.state} ${this.destructive ? 'destructive' : ''} ${this.size}`}>
               <div class="text-input">
-                <input class="text-md-regular" placeholder={this.showPlaceholder ? this.placeholderText : ''}></input>
+                <input
+                  class="text-md-regular"
+                  placeholder={this.showPlaceholder ? this.placeholderText : ''}
+                  value={this.inputValue}
+                  onInput={event => this.handleInput(event)}
+                ></input>
                 {this.showHelpIcon && (
                   <svg class="help-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path
@@ -527,7 +616,7 @@ export class GbInputField {
             </div>
           )}
         </div>
-        {this.showHintText && <p class={`text-sm-regular hint_text ${this.destructive ? 'destructive' : ''}`}>{this.hintText}</p>}
+        {this.showHintText && <p class={`text-sm-regular hint_text ${this.state} ${this.destructive ? 'destructive' : ''}`}>{this.hintText}</p>}
       </div>
     );
   }

@@ -83,10 +83,10 @@
       <p>Label</p>
       <p slot="count">5</p>
     </gb-tag>
-    <gb-header state="default" show-indicator="true" text="true">
-      <!-- <img src="build/assets/avatar_pic.jpg" alt="" slot="image"> -->
+    <!-- <gb-header state="default" show-indicator="true" text="true">
+      <img src="build/assets/avatar_pic.jpg" alt="" slot="image">
       <h1 slot="initials">NP</h1>
-    </gb-header>
+    </gb-header> -->
     <gb-side-bar-item state="active" label="Label" type="full_with_label" icon="assets/circle.svg" category="plain_background" show-arrow="true" show-badge="true">
       <p slot="label">Label</p>
     </gb-side-bar-item>
@@ -105,11 +105,11 @@
     <!-- <gb-input-dropdown-menu-item type="default" state="default" supporting-text="false" selected="true">
       <p slot="name">10</p>
     </gb-input-dropdown-menu-item> -->
-    <!-- <gb-avatar-dropdown type="simple" show-profile="true" show-log-out="true">
+    <gb-avatar-dropdown type="simple" show-profile="true" show-log-out="true">
       <p slot="name">Noah Pierre</p>
       <p slot="supporting_text">Initiator</p>
       <img src="build/assets/avatar_pic.jpg" alt="" slot="image">
-    </gb-avatar-dropdown> -->
+    </gb-avatar-dropdown>
     <gb-checkbox-group-item type="payment_icon" size="sm" state="default" show-cost="true" selected="false">
       <p slot="label">Basic Plan</p>
       <p slot="cost">$10/month</p>
@@ -119,14 +119,17 @@
       <p slot="main_text">New feature alert</p>
       <p slot="supporting_text">Lorem ipsum dolor sit amet consectetur.</p>
     </gb-toast>
-    <gb-input-field size="sm" state="default" type="default" show-label="false" label="Label"
-    show-help-icon="false"
-    show-hint-text="false"
+    <gb-input-field size="sm" state="default" type="password_icon_leading" show-label="true" label="Label"
+    show-help-icon="true"
+    show-hint-text="true"
     hint-text="This is a hint text to help user"
     show-placeholder="true"
-    placeholder-text="Search"
+    placeholder-text="placeholder text"
     show-close-button="true"
     show-validation="false"
     destructive="false"></gb-input-field>
+    <gb-verification-code-field size="sm" digits="8" show-label="true" label="Secure code" show-hint-text="true" hint-text="This is a hint text to help user."></gb-verification-code-field>
+    <!-- <gb-token-field size="sm" digits="4" show-label="true" label="Secure code" show-supporting-text="true" supporting-text="This is a hint text to help user."></gb-token-field> -->
+    <!-- <gb-rich-text show-label="true" label="Description" show-placeholder="true" placeholder-text="Enter your text" show-hint-text="true" hint-text="This is a hint text to help user"></gb-rich-text> -->
   </body>
 </html>
