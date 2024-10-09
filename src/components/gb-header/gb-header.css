@@ -19,6 +19,6 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: var(--spacing-Positive-spacing-4, 1rem);
+    gap: var(--spacing-4);
     flex: 1 0 0;
 }

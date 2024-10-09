@@ -53,7 +53,7 @@ export class GbAvatarLabelGroup {
     }
 
     componentDidLoad() {
-        const slottedInitials = this.el.querySelector('h1');
+        const slottedInitials = this.el.querySelector('[slot="initials"]');
         const nameSlot = this.el.querySelector('[slot="name"]');
         const othersSlot = this.el.querySelector('[slot="supporting_text"]');
     

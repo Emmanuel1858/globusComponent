@@ -21,6 +21,7 @@
 
 ### Used by
 
+ - [gb-checkbox-group-item](../gb-checkbox-group-item)
  - [gb-dropdown-items-with-shortcut](../gb-dropdown-items-with-shortcut)
  - [gb-input-dropdown-menu-item](../gb-input-dropdown-menu)
 
@@ -32,6 +33,7 @@
 ```mermaid
 graph TD;
   gb-checkbox --> gb-checkbox-base
+  gb-checkbox-group-item --> gb-checkbox
   gb-dropdown-items-with-shortcut --> gb-checkbox
   gb-input-dropdown-menu-item --> gb-checkbox
   style gb-checkbox fill:#f9f,stroke:#333,stroke-width:4px

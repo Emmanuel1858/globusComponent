@@ -16,9 +16,13 @@ export class GbCheckboxGroup {
 
     render() {
         return (
-            <div class={`checkbox_group ${this.breakpoint}`}>
-                <div class="text"></div>
-            </div>
-        )
+          <div class={`checkbox_group`}>
+            <gb-checkbox-group-item size={this.size} type={this.type} breakpoint={this.breakpoint}></gb-checkbox-group-item>
+            <gb-checkbox-group-item size={this.size} type={this.type} breakpoint={this.breakpoint}></gb-checkbox-group-item>
+            <gb-checkbox-group-item size={this.size} type={this.type} breakpoint={this.breakpoint}></gb-checkbox-group-item>
+            <gb-checkbox-group-item size={this.size} type={this.type} breakpoint={this.breakpoint}></gb-checkbox-group-item>
+            <gb-checkbox-group-item size={this.size} type={this.type} breakpoint={this.breakpoint}></gb-checkbox-group-item>
+          </div>
+        );
     }
 }

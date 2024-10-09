@@ -15,6 +15,32 @@
 | `text`          | `text`           |             | `boolean`                                 | `false`     |
 
 
+## Events
+
+| Event               | Description | Type                  |
+| ------------------- | ----------- | --------------------- |
+| `navBarItemClicked` |             | `CustomEvent<number>` |
+
+
+## Methods
+
+### `onNavBarItemClicked(index: number) => Promise<void>`
+
+
+
+#### Parameters
+
+| Name    | Type     | Description |
+| ------- | -------- | ----------- |
+| `index` | `number` |             |
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ## Dependencies
 
 ### Depends on

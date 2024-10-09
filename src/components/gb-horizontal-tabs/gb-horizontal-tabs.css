@@ -16,7 +16,7 @@
 /* Tab Type Styles */
 .horizontal_tab_div.underline,
 .horizontal_tab_div.underline_filled{
-    border-bottom: 1px solid var(--color-border-subtle, #CDD5DF);
+    box-shadow: inset 0 -1px 0 0 var(--color-border-subtle, #CDD5DF);
 }
 
 .horizontal_tab_div.button_white_border,

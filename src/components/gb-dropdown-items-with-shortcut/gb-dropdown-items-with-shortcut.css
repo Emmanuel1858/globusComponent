@@ -4,7 +4,7 @@
 
 .shortcut-container {
     display: flex;
-    width: 240px;
+    width: 100%;
     padding: var(--spacing-half) var(--spacing-1);
     align-items: center;
     gap: var(--spacing-none);

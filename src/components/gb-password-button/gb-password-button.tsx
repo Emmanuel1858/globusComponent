@@ -1,5 +1,4 @@
 import { Component, h, Prop, State } from '@stencil/core';
-import { StateEnum } from '../../components';
 
 @Component({
   tag: 'gb-password-button',
@@ -8,7 +7,7 @@ import { StateEnum } from '../../components';
 })
 export class GbPasswordButton {
   @State() isPasswordVisible: boolean = false;
-  @Prop() state: StateEnum;
+  @Prop() state: 'default' | 'disabled';
 
   togglePasswordVisibility() {
     this.isPasswordVisible = !this.isPasswordVisible;

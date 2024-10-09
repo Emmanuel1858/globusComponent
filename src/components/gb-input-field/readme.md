@@ -25,6 +25,14 @@
 | `type`            | `type`              |             | `"count" \| "default" \| "icon_leading" \| "leading_dropdown" \| "leading_text" \| "password" \| "password_icon_leading" \| "payment_input" \| "tags" \| "trailing_button" \| "trailing_dropdown"` | `undefined` |
 
 
+## Events
+
+| Event          | Description | Type                  |
+| -------------- | ----------- | --------------------- |
+| `tagAdded`     |             | `CustomEvent<string>` |
+| `valueChanged` |             | `CustomEvent<string>` |
+
+
 ## Dependencies
 
 ### Depends on

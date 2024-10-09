@@ -17,7 +17,7 @@
 | `iconTrailing`     | `icon-trailing`      |             | `boolean`                                                                                                                  | `false`     |
 | `iconTrailingSwap` | `icon-trailing-swap` |             | `string`                                                                                                                   | `undefined` |
 | `size`             | `size`               |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs" \| "xxs"` | `undefined` |
-| `state`            | `state`              |             | `"default" \| "disabled" \| "hover" \| "pressed"`                                                                          | `undefined` |
+| `state`            | `state`              |             | `"default" \| "disabled"`                                                                                                  | `undefined` |
 
 
 ## Dependencies
@@ -27,6 +27,7 @@
  - [gb-checkbox-group-item](../gb-checkbox-group-item)
  - [gb-file-upload-item-base](../gb-file-upload-item-base)
  - [gb-input-field](../gb-input-field)
+ - [gb-notification-pane](../gb-notification-pane)
  - [gb-pagination](../gb-pagination)
  - [gb-password-button](../gb-password-button)
  - [gb-toast](../gb-toast)
@@ -37,6 +38,7 @@ graph TD;
   gb-checkbox-group-item --> gb-button
   gb-file-upload-item-base --> gb-button
   gb-input-field --> gb-button
+  gb-notification-pane --> gb-button
   gb-pagination --> gb-button
   gb-password-button --> gb-button
   gb-toast --> gb-button

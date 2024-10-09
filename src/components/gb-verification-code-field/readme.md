@@ -12,8 +12,8 @@
 | `digits`       | `digits`         |             | `4 \| 6 \| 8`                                                                                                              | `undefined` |
 | `hintText`     | `hint-text`      |             | `string`                                                                                                                   | `''`        |
 | `label`        | `label`          |             | `string`                                                                                                                   | `''`        |
-| `shoowLabel`   | `shoow-label`    |             | `boolean`                                                                                                                  | `undefined` |
 | `showHintText` | `show-hint-text` |             | `boolean`                                                                                                                  | `undefined` |
+| `showLabel`    | `show-label`     |             | `boolean`                                                                                                                  | `undefined` |
 | `size`         | `size`           |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs" \| "xxs"` | `undefined` |
 
 

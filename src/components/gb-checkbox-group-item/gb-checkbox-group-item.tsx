@@ -103,9 +103,8 @@ export class GbCheckboxGroupItem {
           </svg>
         );
       case 'icon_simple':
-      default:
         return (
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" class={`icon_simple_svg ${this.state}`}>
             <path
               opacity="0.4"
               d="M11.524 4.19421L9.25088 5.24491C5.75029 6.863 4 7.67204 4 9.00008C4 10.3281 5.7503 11.1372 9.25089 12.7553L11.524 13.806C13.727 14.8243 14.8285 15.3334 16 15.3334C17.1715 15.3334 18.273 14.8243 20.476 13.806L22.7491 12.7553C26.2497 11.1372 28 10.3281 28 9.00008C28 7.67204 26.2497 6.86299 22.7491 5.2449L20.476 4.19421C18.273 3.1759 17.1715 2.66675 16 2.66675C14.8285 2.66675 13.727 3.1759 11.524 4.19421Z"
@@ -120,6 +119,10 @@ export class GbCheckboxGroupItem {
             />
           </svg>
         );
+        case 'radio_button' :
+          return <gb-checkbox size={this.size} type="radio" state={this.state} checked={this.selected}></gb-checkbox>;
+        case 'checkbox' :
+          return <gb-checkbox size={this.size} type='checkbox' state={this.state} checked={this.selected}></gb-checkbox>;
     }
   }
 
@@ -132,38 +135,38 @@ export class GbCheckboxGroupItem {
 
   render() {
     return [
-      <div class={`checkbox_group_item ${this.size} ${this.state} ${this.selected ? 'selected' : ''}`} onClick={() => this.toggleSelection()}>
+      <div class={`checkbox_group_item ${this.size} ${this.state} ${this.selected ? 'selected' : ''} ${this.breakpoint}`} onClick={() => this.toggleSelection()}>
         <div class="item-content">
           {this.renderIcon()}
           <div class="text-container">
             <div class={`label-cost ${this.type}`}>
               <slot name="label"></slot>
-              {this.showCost && (
-                <slot name="cost"></slot>
-              )}
+              {this.showCost && <slot name="cost"></slot>}
             </div>
-              {this.type === 'payment_icon' ? (
-                <div class="buttons">
-                  <gb-button size={this.size} hierarchy="link_gray" icon="default" state={this.state}>
-                    <p>Set as default</p>
-                  </gb-button>
-                  <gb-button size={this.size} hierarchy="link_color" icon="default" state={this.state}>
-                    <p>Edit</p>
-                  </gb-button>
-                </div>
-              ) : (
-                <slot name="supporting_text"></slot>
-              )}
+            {this.type === 'payment_icon' ? (
+              <div class="buttons">
+                <gb-button size={this.size} hierarchy="link_gray" icon="default" state={this.state}>
+                  <p>Set as default</p>
+                </gb-button>
+                <gb-button size={this.size} hierarchy="link_color" icon="default" state={this.state}>
+                  <p>Edit</p>
+                </gb-button>
+              </div>
+            ) : (
+              <slot name="supporting_text"></slot>
+            )}
           </div>
         </div>
-        <div class={`checkbox_container`}>
-          <gb-checkbox-base
-            type={this.type === 'radio_button' ? 'radio' : this.type === 'checkbox' ? 'checkbox' : 'check_circle'}
-            size={this.size}
-            state={this.state}
-            checked={this.selected}
-          ></gb-checkbox-base>
-        </div>
+        {this.type === 'icon_simple' || this.type === 'avatar' || this.type === 'payment_icon' ? (
+          <div class={`checkbox_container`}>
+            <gb-checkbox
+              type='check_circle'
+              size={this.size}
+              state={this.state}
+              checked={this.selected}
+            ></gb-checkbox>
+          </div>
+        ) : null}
       </div>,
     ];
   }

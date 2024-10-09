@@ -2,6 +2,11 @@
 @import './../../global/spacing.css';
 @import './../../global/typography.css';
 
+:host{
+    width: fit-content;
+    height: fit-content;
+}
+
 .label_pic{
     display: flex;
     align-items: center;

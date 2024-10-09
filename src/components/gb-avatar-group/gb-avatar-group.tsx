@@ -12,7 +12,7 @@ export class GbAvatarGroup {
   @Prop() addMoreButton: boolean;
   @Prop() text: boolean = true;
   @Prop() state: StateEnum = StateEnum.Default;
-  @Prop() images: string[] = [];
+  @Prop() images: string[];
   @Element() el: HTMLElement;
 
   getNumberSize() {
@@ -43,14 +43,14 @@ export class GbAvatarGroup {
     if (slottedNumber) {
       slottedNumber.classList.add(this.getNumberSize());
     }
-
   }
 
   render() {
+    console.log(this.images);
     return (
       <div class={`avatar_group ${this.size}`}>
-        {this.images.map(image => (
-          <div class={`avatar ${this.size}`}>
+        {this.images.map((image, index) => (
+          <div class={`avatar ${this.size}`} key={index}>
             <gb-avatar size={this.size} weight={this.setWeight()}>
               <img src={image} alt="" />
             </gb-avatar>

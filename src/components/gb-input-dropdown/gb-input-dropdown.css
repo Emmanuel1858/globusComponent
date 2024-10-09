@@ -54,13 +54,13 @@
 .content{
     display: flex;
     gap: var(--spacing-2);
-    padding-right: 2rem;
+    padding: 0.2rem;
 }
 
 .help_icon{
     display: flex;
     align-items: center;
-    height: 100%;
+    height: fit-content;
 }
 
 .dropdown_icon{

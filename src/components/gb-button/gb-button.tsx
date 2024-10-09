@@ -1,5 +1,5 @@
 import { Component, Element, getAssetPath, h, Prop, State } from '@stencil/core';
-import { GeneralHierarchies, GeneralSizes, StateEnum } from '../../models/reusableModels';
+import { GeneralHierarchies, GeneralSizes } from '../../models/reusableModels';
 
 @Component({
   tag: 'gb-button',
@@ -12,7 +12,7 @@ export class GbButton {
   @Prop() hierarchy: GeneralHierarchies;
   @Prop() icon: 'default' | 'only';
   @Prop() destructive: boolean = false;
-  @Prop() state: StateEnum;
+  @Prop() state: 'default' | 'disabled';
   @Prop() iconLeading: boolean = false;
   @Prop() iconLeadingSwap: string;
   @Prop() iconTrailing: boolean = false;

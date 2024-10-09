@@ -6,9 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ArrowPositions, BorderWeights, BreakPoints, CheckBoxVariants, FileUploadIconType, FileUploadStates, GeneralBackgroundCategories, GeneralColors, GeneralHierarchies, GeneralSizes, InputFieldTypes, OnlineIndicatorStates, PaginationNumberShapes, PaginationTypes, StateEnum, TabTypes } from "./models/reusableModels";
-import { StateEnum as StateEnum1 } from "./components";
 export { ArrowPositions, BorderWeights, BreakPoints, CheckBoxVariants, FileUploadIconType, FileUploadStates, GeneralBackgroundCategories, GeneralColors, GeneralHierarchies, GeneralSizes, InputFieldTypes, OnlineIndicatorStates, PaginationNumberShapes, PaginationTypes, StateEnum, TabTypes } from "./models/reusableModels";
-export { StateEnum as StateEnum1 } from "./components";
 export namespace Components {
     interface GbAvatar {
         "icon": 'user';
@@ -33,11 +31,13 @@ export namespace Components {
         "listGroupOne": boolean;
         "listGroupThree": boolean;
         "listGroupTwo": boolean;
+        "logoutClicked": () => Promise<void>;
         "showDarkTheme": boolean;
         "showLogOut": boolean;
         "showProfile": boolean;
         "text": boolean;
         "type": 'simple' | 'complex';
+        "viewProfileClicked": () => Promise<void>;
     }
     interface GbAvatarGroup {
         "addMoreButton": boolean;
@@ -84,7 +84,7 @@ export namespace Components {
         "iconTrailing": boolean;
         "iconTrailingSwap": string;
         "size": GeneralSizes;
-        "state": 'default' | 'hover' | 'disabled' | 'pressed';
+        "state": 'default' | 'disabled';
     }
     interface GbButton {
         "destructive": boolean;
@@ -95,7 +95,7 @@ export namespace Components {
         "iconTrailing": boolean;
         "iconTrailingSwap": string;
         "size": GeneralSizes;
-        "state": 'default' | 'hover' | 'disabled' | 'pressed';
+        "state": 'default' | 'disabled';
     }
     interface GbButtonClose {
         "color": GeneralColors;
@@ -171,10 +171,8 @@ export namespace Components {
         "state": FileUploadStates;
     }
     interface GbHeader {
-        "helpIconClicked": () => Promise<void>;
-        "notificationIconClicked": () => Promise<void>;
+        "onNavBarItemClicked": (index: number) => Promise<void>;
         "placeholder": boolean;
-        "profileIconClicked": () => Promise<void>;
         "showIndicator": boolean;
         "state": StateEnum;
         "text": boolean;
@@ -185,6 +183,7 @@ export namespace Components {
         "state": StateEnum;
     }
     interface GbHelpDropdown {
+        "downloadUserGuideClicked": () => Promise<void>;
         "showLogError": boolean;
     }
     interface GbHorizontalTabs {
@@ -257,7 +256,7 @@ export namespace Components {
         "supportingText": string;
         "time": string;
     }
-    interface GbNotificationPanel {
+    interface GbNotificationPane {
         "state": 'empty' | 'notification_dropdown';
     }
     interface GbPagination {
@@ -281,7 +280,7 @@ export namespace Components {
         "shape": PaginationNumberShapes;
     }
     interface GbPasswordButton {
-        "state": StateEnum1;
+        "state": 'default' | 'disabled';
     }
     interface GbProgressBar {
         "el": HTMLElement;
@@ -464,6 +463,10 @@ export namespace Components {
         "breakpoint": 'default' | 'mobile';
     }
 }
+export interface GbHeaderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLGbHeaderElement;
+}
 export interface GbHorizontalTabsCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLGbHorizontalTabsElement;
@@ -621,7 +624,18 @@ declare global {
         prototype: HTMLGbFileUploadItemBaseElement;
         new (): HTMLGbFileUploadItemBaseElement;
     };
+    interface HTMLGbHeaderElementEventMap {
+        "navBarItemClicked": number;
+    }
     interface HTMLGbHeaderElement extends Components.GbHeader, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLGbHeaderElementEventMap>(type: K, listener: (this: HTMLGbHeaderElement, ev: GbHeaderCustomEvent<HTMLGbHeaderElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLGbHeaderElementEventMap>(type: K, listener: (this: HTMLGbHeaderElement, ev: GbHeaderCustomEvent<HTMLGbHeaderElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLGbHeaderElement: {
         prototype: HTMLGbHeaderElement;
@@ -698,11 +712,11 @@ declare global {
         prototype: HTMLGbNotificationContentElement;
         new (): HTMLGbNotificationContentElement;
     };
-    interface HTMLGbNotificationPanelElement extends Components.GbNotificationPanel, HTMLStencilElement {
+    interface HTMLGbNotificationPaneElement extends Components.GbNotificationPane, HTMLStencilElement {
     }
-    var HTMLGbNotificationPanelElement: {
-        prototype: HTMLGbNotificationPanelElement;
-        new (): HTMLGbNotificationPanelElement;
+    var HTMLGbNotificationPaneElement: {
+        prototype: HTMLGbNotificationPaneElement;
+        new (): HTMLGbNotificationPaneElement;
     };
     interface HTMLGbPaginationElement extends Components.GbPagination, HTMLStencilElement {
     }
@@ -960,7 +974,7 @@ declare global {
         "gb-input-field": HTMLGbInputFieldElement;
         "gb-megainput-field": HTMLGbMegainputFieldElement;
         "gb-notification-content": HTMLGbNotificationContentElement;
-        "gb-notification-panel": HTMLGbNotificationPanelElement;
+        "gb-notification-pane": HTMLGbNotificationPaneElement;
         "gb-pagination": HTMLGbPaginationElement;
         "gb-pagination-button-group-base": HTMLGbPaginationButtonGroupBaseElement;
         "gb-pagination-dot-indicator": HTMLGbPaginationDotIndicatorElement;
@@ -1068,7 +1082,7 @@ declare namespace LocalJSX {
         "iconTrailing"?: boolean;
         "iconTrailingSwap"?: string;
         "size"?: GeneralSizes;
-        "state"?: 'default' | 'hover' | 'disabled' | 'pressed';
+        "state"?: 'default' | 'disabled';
     }
     interface GbButton {
         "destructive"?: boolean;
@@ -1079,7 +1093,7 @@ declare namespace LocalJSX {
         "iconTrailing"?: boolean;
         "iconTrailingSwap"?: string;
         "size"?: GeneralSizes;
-        "state"?: 'default' | 'hover' | 'disabled' | 'pressed';
+        "state"?: 'default' | 'disabled';
     }
     interface GbButtonClose {
         "color"?: GeneralColors;
@@ -1153,6 +1167,7 @@ declare namespace LocalJSX {
         "state"?: FileUploadStates;
     }
     interface GbHeader {
+        "onNavBarItemClicked"?: (event: GbHeaderCustomEvent<number>) => void;
         "placeholder"?: boolean;
         "showIndicator"?: boolean;
         "state"?: StateEnum;
@@ -1239,7 +1254,7 @@ declare namespace LocalJSX {
         "supportingText"?: string;
         "time"?: string;
     }
-    interface GbNotificationPanel {
+    interface GbNotificationPane {
         "state"?: 'empty' | 'notification_dropdown';
     }
     interface GbPagination {
@@ -1263,7 +1278,7 @@ declare namespace LocalJSX {
         "shape"?: PaginationNumberShapes;
     }
     interface GbPasswordButton {
-        "state"?: StateEnum1;
+        "state"?: 'default' | 'disabled';
     }
     interface GbProgressBar {
         "el"?: HTMLElement;
@@ -1480,7 +1495,7 @@ declare namespace LocalJSX {
         "gb-input-field": GbInputField;
         "gb-megainput-field": GbMegainputField;
         "gb-notification-content": GbNotificationContent;
-        "gb-notification-panel": GbNotificationPanel;
+        "gb-notification-pane": GbNotificationPane;
         "gb-pagination": GbPagination;
         "gb-pagination-button-group-base": GbPaginationButtonGroupBase;
         "gb-pagination-dot-indicator": GbPaginationDotIndicator;
@@ -1548,7 +1563,7 @@ declare module "@stencil/core" {
             "gb-input-field": LocalJSX.GbInputField & JSXBase.HTMLAttributes<HTMLGbInputFieldElement>;
             "gb-megainput-field": LocalJSX.GbMegainputField & JSXBase.HTMLAttributes<HTMLGbMegainputFieldElement>;
             "gb-notification-content": LocalJSX.GbNotificationContent & JSXBase.HTMLAttributes<HTMLGbNotificationContentElement>;
-            "gb-notification-panel": LocalJSX.GbNotificationPanel & JSXBase.HTMLAttributes<HTMLGbNotificationPanelElement>;
+            "gb-notification-pane": LocalJSX.GbNotificationPane & JSXBase.HTMLAttributes<HTMLGbNotificationPaneElement>;
             "gb-pagination": LocalJSX.GbPagination & JSXBase.HTMLAttributes<HTMLGbPaginationElement>;
             "gb-pagination-button-group-base": LocalJSX.GbPaginationButtonGroupBase & JSXBase.HTMLAttributes<HTMLGbPaginationButtonGroupBaseElement>;
             "gb-pagination-dot-indicator": LocalJSX.GbPaginationDotIndicator & JSXBase.HTMLAttributes<HTMLGbPaginationDotIndicatorElement>;

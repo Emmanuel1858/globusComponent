@@ -19,20 +19,26 @@
 
 ## Dependencies
 
+### Used by
+
+ - [gb-checkbox-group](../gb-checkbox-group)
+
 ### Depends on
 
 - [gb-avatar](../gb-avatar)
+- [gb-checkbox](../gb-checkbox)
 - [gb-button](../gb-button)
-- [gb-checkbox-base](../gb-checkbox-base)
 
 ### Graph
 ```mermaid
 graph TD;
   gb-checkbox-group-item --> gb-avatar
+  gb-checkbox-group-item --> gb-checkbox
   gb-checkbox-group-item --> gb-button
-  gb-checkbox-group-item --> gb-checkbox-base
   gb-avatar --> gb-avatar-contrast-inner-border
   gb-avatar --> gb-status-indicator
+  gb-checkbox --> gb-checkbox-base
+  gb-checkbox-group --> gb-checkbox-group-item
   style gb-checkbox-group-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -12,6 +12,19 @@
 | `showLogError` | `show-log-error` |             | `boolean` | `undefined` |
 
 
+## Methods
+
+### `downloadUserGuideClicked() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ## Dependencies
 
 ### Depends on

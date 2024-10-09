@@ -1,12 +1,12 @@
 import {Component, Prop, h, State, Listen } from '@stencil/core';
 
 @Component({
-    tag: 'gb-notification-panel',
-    styleUrl: 'gb-notification-panel.css',
+    tag: 'gb-notification-pane',
+    styleUrl: 'gb-notification-pane.css',
     shadow: true
 })
 
-export class GbNotificationPanel {
+export class GbNotificationPane {
     @Prop() state: 'empty' | 'notification_dropdown';
 
     @State() notifications: HTMLElement[] = [];
@@ -46,7 +46,7 @@ export class GbNotificationPanel {
 
     render(){
         return (
-            <div class="notification-panel">
+            <div class="notification-pane">
                 {this.state === 'empty' && this.notifications.length === 0 && (
                     <div>
                         <div class="empty-state">
@@ -54,13 +54,13 @@ export class GbNotificationPanel {
                             <h3>No notification</h3>
                             <p>Your notification inbox is empty at the moment. Rest assured, you'll be promptly notified of any new events.</p>
                         </div>
-                    <test-button size='sm' hierarchy='tertiary_color' left-icon='blush_brush'>Mark all as read</test-button>
+                    <gb-button size='sm' hierarchy='tertiary_color' left-icon='blush_brush'>Mark all as read</gb-button>
                     </div> 
                 )}  
                 {this.state === 'notification_dropdown' && (
                     <div class="notification-dropdown">
                         <slot></slot> 
-                        <test-button size='sm' hierarchy='tertiary_color' left-icon='blush_brush'>Mark all as read</test-button>
+                        <gb-button size='sm' hierarchy='tertiary_color' left-icon='blush_brush'>Mark all as read</gb-button>
                     </div>
                 )} 
             </div>

@@ -16,6 +16,25 @@
 | `type`       | `type`       |             | `"avatar" \| "checkbox" \| "icon_simple" \| "payment_icon" \| "radio_button"`                                              | `undefined` |
 
 
+## Dependencies
+
+### Depends on
+
+- [gb-checkbox-group-item](../gb-checkbox-group-item)
+
+### Graph
+```mermaid
+graph TD;
+  gb-checkbox-group --> gb-checkbox-group-item
+  gb-checkbox-group-item --> gb-avatar
+  gb-checkbox-group-item --> gb-checkbox
+  gb-checkbox-group-item --> gb-button
+  gb-avatar --> gb-avatar-contrast-inner-border
+  gb-avatar --> gb-status-indicator
+  gb-checkbox --> gb-checkbox-base
+  style gb-checkbox-group fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

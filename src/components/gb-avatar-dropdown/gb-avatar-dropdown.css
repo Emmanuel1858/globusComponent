@@ -9,15 +9,15 @@
     align-items: flex-start;
     gap: 0px;
     border-radius: var(--rounded-sm);
-    border: 1px solid var(--color-boarder-subtler, #E3E8EF);
+    border: 1px solid var(--color-border-subtler, #E3E8EF);
     background: var(--color-surface, #FFFFFF);
     box-shadow: var(--shadow-lg);
 }
 
 .profile {
     display: flex;
-    width: 240px;
-    padding: var(--spacing-2);
+    width: 15rem;
+    padding: var(--spacing-1) var(--spacing-3);
     flex-direction: column;
     align-items: flex-start;
     gap: var(--spacing-none);
@@ -39,7 +39,7 @@
 
 .menu-items {
     display: flex;
-    width: 240px;
+    width: 96.5%;
     padding: var(--spacing-none);
     flex-direction: column;
     align-items: flex-start;
@@ -47,34 +47,40 @@
 }
 
 .list {
-    display: flex;
     padding: var(--spacing-1) var(--spacing-none);
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--spacing-none);
     align-self: stretch;
     border-radius: var(--rounded-none);
-    border-bottom: 1px solid var(--color-boarder-subtler, #E3E8EF);
 }
 
-.list-group-1,
-.list-group-2 {
-    border-radius: var(--rounded-none);
-    border-bottom: 1px solid #E3E8EF;
+.list-group-one,
+.list-group-two,
+.list-group-three{
+    width: 100%;
+    padding: var(--spacing-1) var(--spacing-none);
 }
 
-gb-avatar-label-group {
+.list-group-one,
+.list-group-two{
+    border-bottom: 1px solid var(--color-border-subtler, #E3E8EF);
+}
+
+.one,
+.two,
+.three{
+    width: 96.5%;
+}
+
+.label_group {
     display: flex;
     padding: 0px;
     align-items: center;
     gap: 12px;
     align-self: stretch;
     border-radius: var(--rounded-none);
-    margin-bottom: -8px;
 }
 
 
-::slotted([slot = 'name']) {
+::slotted([slot='name']) {
     color: #4B5565;
     /* Text sm/Semibold */
     font-family: var(--Font-Family-Body, Sora);

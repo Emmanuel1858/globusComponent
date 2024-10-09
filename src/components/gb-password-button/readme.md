@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                                      | Default     |
-| -------- | --------- | ----------- | ----------------------------------------- | ----------- |
-| `state`  | `state`   |             | `StateEnum.Default \| StateEnum.Disabled` | `undefined` |
+| Property | Attribute | Description | Type                      | Default     |
+| -------- | --------- | ----------- | ------------------------- | ----------- |
+| `state`  | `state`   |             | `"default" \| "disabled"` | `undefined` |
 
 
 ## Dependencies

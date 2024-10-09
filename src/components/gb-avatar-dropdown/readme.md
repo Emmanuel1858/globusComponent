@@ -19,6 +19,29 @@
 | `type`           | `type`             |             | `"complex" \| "simple"` | `undefined` |
 
 
+## Methods
+
+### `logoutClicked() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+### `viewProfileClicked() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ## Dependencies
 
 ### Depends on
