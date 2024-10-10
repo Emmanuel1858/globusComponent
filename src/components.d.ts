@@ -416,6 +416,7 @@ export namespace Components {
         "supportingText": boolean;
     }
     interface GbToggleBase {
+        "pressed": boolean;
         "size": GeneralSizes;
         "state": StateEnum;
     }
@@ -1417,6 +1418,7 @@ declare namespace LocalJSX {
         "supportingText"?: boolean;
     }
     interface GbToggleBase {
+        "pressed"?: boolean;
         "size"?: GeneralSizes;
         "state"?: StateEnum;
     }

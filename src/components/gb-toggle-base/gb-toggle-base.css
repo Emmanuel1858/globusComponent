@@ -1,76 +1,108 @@
 @import './../../global/spacing.css';
 
-#customCheckbox{
-    visibility: hidden;
-    width: 0;
-    height: 0;
-    margin: 0;
+/* Basic Styles for the Toggle */
+input[type="checkbox"] {
+  display: none; /* Hide native checkbox */
 }
 
-label.default{
-    position: relative;
+label {
     display: inline-block;
-    background-color: #E3E8EF;
-    border-radius: 0.75rem;
-    transition: 0.3s linear;
+    border-radius: var(--rounded-lg);
+    position: relative;
+    background-color: var(--color-background-gray-subtle, #E3E8EF);
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 0.125rem;
 }
 
 label.sm{
     width: 2.25rem;
-    height: var(--spacing-5);
+    height: 1.25rem;
 }
 
 label.md{
     width: 2.75rem;
-    height: var(--spacing-6);
+    height: 1.5rem;
 }
 
-label::after{
-    content: '';
-    position: absolute;
-    left: 0.125rem;
-    top: 0.125rem;
-    border-radius: 15px;
-    background-color: #FFFFFF;
-    transition: left 0.3s ease-out;
-    filter: drop-shadow(0px 1px 2px rgba(16, 24, 40, 0.06)) drop-shadow(0px 1px 3px rgba(16, 24, 40, 0.10));
+label.pressed.default {
+  background-color: #075DB2; /* Blue background when pressed and in default state */
 }
 
-/* Sizes */
-label.sm::after{
-    width: var(--spacing-4);
-    height: var(--spacing-4);
-}
-
-label.md::after{
-    width: var(--spacing-5);
-    height: var(--spacing-5);
-}
-
-/* States */
 label.disabled{
-    background-color: #F6F8FA;
-    pointer-events: none;
+    background-color: var(--color-background-disabled, #F6F8FA);
 }
 
-label.disabled::after{
-    background-color: #CDD5DF;
+label.pressed.disabled {
+  background-color: #E3E8EF; /* Light gray background when pressed and in disabled state */
 }
 
-/* Here comes the magic */
-#customCheckbox:checked ~ label{
-    background-color: #075DB2;
+/* Circle inside the toggle */
+label::before {
+  content: '';
+  position: absolute;
+  top: 0.28rem;
+  left: 0.25rem;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0px 1px 2px rgba(16, 24, 40, 0.06)) drop-shadow(0px 1px 3px rgba(16, 24, 40, 0.10));
 }
 
-#customCheckbox:checked ~ label:hover{
-    background-color: #064E94;
+label.sm::before{
+    width: 1rem;
+    height: 1rem;
 }
 
-#customCheckbox:checked ~ label.sm::after{
-    left: 18px;
+label.md::before{
+    width: 1.25rem;
+    height: 1.25rem;
 }
 
-#customCheckbox:checked ~ label.md::after{
-    left: 22px;
+label.sm.pressed::before {
+  transform: translateX(16px); /* Move the white circle to the right when pressed */
 }
+
+label.md.pressed::before {
+  transform: translateX(20px); /* Move the white circle to the right when pressed */
+}
+
+label.disabled::before {
+  background-color: var(--color-icon-disabled, #CDD5DF); /* Change circle background when disabled */
+}
+
+label.pressed.disabled::before {
+  background-color: var(--color-background-gray-bold, #9AA4B2); /* Change circle background when disabled */
+}
+
+/* Checkmark SVG Styles */
+.default_checked_svg,
+.disabled_checked_svg {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  display: none; /* Hidden by default */
+}
+
+.pressed .default_checked_svg {
+  display: block; /* Show checkmark when pressed and default */
+}
+
+.pressed .disabled_checked_svg {
+  display: block; /* Show checkmark when pressed and disabled */
+}
+
+.default_checked_svg.sm,
+.disabled_checked_svg.sm{
+    top: 0.7rem;
+    right: 0;
+}
+
+.default_checked_svg.md,
+.disabled_checked_svg.md{
+    top: 0.9rem;
+    right: 0.1rem;
+}
+
+

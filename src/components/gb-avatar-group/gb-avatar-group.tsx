@@ -52,7 +52,7 @@ export class GbAvatarGroup {
         {this.images.map((image, index) => (
           <div class={`avatar ${this.size}`} key={index}>
             <gb-avatar size={this.size} weight={this.setWeight()}>
-              <img src={image} alt="" />
+              <img src={image} alt="" slot="image" />
             </gb-avatar>
           </div>
         ))}

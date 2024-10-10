@@ -43,23 +43,16 @@
       <p slot="name">Emmanuel Kadiri</p>
       <p slot="supporting_text">Kadiri2047@gmail.com</p>
     </gb-avatar-label-group> -->
-
-    <gb-avatar-group size="md" more-users="true" add-more-button="true">
-      <p slot="initials">+5</p>
-      <!-- <img src="build/assets/avatar_pic.jpg" alt="" slot="image"> -->
-      <!-- <img src="build/assets/avatar_pic.jpg" alt="" slot="image"> -->
-    </gb-avatar-group>
-
     <!-- <gb-header-icon state="default" show-indicator="true"></gb-header-icon> -->
     <!-- <gb-collapse-button color="gray" action="expand"></gb-collapse-button> -->
     <!-- <gb-tooltip arrow="right">
       <p slot="main_text">This is a tooltip</p>
     </gb-tooltip> -->
 
-    <!-- <gb-pagination-number-base shape="square">
+    <gb-pagination-number-base shape="square">
       <p slot="page_number">1</p>
-    </gb-pagination-number-base> -->
-    <!-- <gb-pagination-dot-indicator size="lg" type="line" current="true"></gb-pagination-dot-indicator> -->
+    </gb-pagination-number-base>
+    <gb-pagination-dot-indicator size="lg" type="line" current="true"></gb-pagination-dot-indicator>
     <gb-carousel-arrow size="md" chevron="right"></gb-carousel-arrow>
     <gb-pagination type="card_default" current-page="1" breakpoint="desktop"></gb-pagination>
     <gb-pagination-button-group-base icon="leading" icon-leading="assets/circle.svg">
@@ -74,7 +67,7 @@
     full-width="false" breakpoint="desktop"
     first-tab-name="My Profile" second-tab-name="Settings">
     </gb-horizontal-tabs>
-    <gb-badge size="lg" type="pill_outline" color="information" icon="avatar" icon-trailing-swap="arrow_pointing_right">
+    <!-- <gb-badge size="lg" type="pill_outline" color="information" icon="avatar" icon-trailing-swap="arrow_pointing_right">
       <img src="build/assets/avatar_pic.jpg" alt="" slot="image">
       <p>Label</p>
     </gb-badge>
@@ -82,15 +75,15 @@
       <img src="build/assets/avatar_pic.jpg" alt="" slot="image">
       <p>Label</p>
       <p slot="count">5</p>
-    </gb-tag>
+    </gb-tag> -->
     <!-- <gb-header state="default" show-indicator="true" text="true">
       <img src="build/assets/avatar_pic.jpg" alt="" slot="image">
       <h1 slot="initials">NP</h1>
     </gb-header> -->
-    <gb-side-bar-item state="active" label="Label" type="full_with_label" icon="assets/circle.svg" category="plain_background" show-arrow="true" show-badge="true">
+    <!-- <gb-side-bar-item state="active" label="Label" type="full_with_label" icon="assets/circle.svg" category="plain_background" show-arrow="true" show-badge="true">
       <p slot="label">Label</p>
-    </gb-side-bar-item>
-    <gb-sidebar category="colored_background" 
+    </gb-side-bar-item> -->
+    <!-- <gb-sidebar category="colored_background" 
     icon-instance="assets/file-verified.svg" 
     first-item-icon="assets/square-arrow-data-transfer-diagonal.svg" 
     second-item-icon="assets/exchange-01.svg"
@@ -101,20 +94,20 @@
     second-item-label="Exchange"
     third-item-label="Flagged Transaction">
       <p slot="application_name">Automated Call-Over System (ACS)</p>
-    </gb-sidebar>
+    </gb-sidebar> -->
     <gb-input-dropdown-menu-item type="icon_leading" state="default" supporting-text="false" selected="true">
       <p slot="name">10</p>
     </gb-input-dropdown-menu-item>
     <gb-notification-pane state="empty" overflow="false"></gb-notification-pane>
-    <gb-checkbox-group-item type="checkbox" size="sm" state="disabled" show-cost="true" selected="true" breakpoint="mobile">
+    <!-- <gb-checkbox-group-item type="checkbox" size="sm" state="disabled" show-cost="true" selected="true" breakpoint="mobile">
       <p slot="label">Basic Plan</p>
       <p slot="cost">$10/month</p>
       <p slot="supporting_text">Includes up to 10 users, 20GB individual data and access to all features.</p>
-    </gb-checkbox-group-item>
-    <gb-toast color="success" actions="false" show-supporting-text="false" breakpoint="desktop" size="floating">
+    </gb-checkbox-group-item> -->
+    <!-- <gb-toast color="success" actions="false" show-supporting-text="false" breakpoint="desktop" size="floating">
       <p slot="main_text">New feature alert</p>
       <p slot="supporting_text">Lorem ipsum dolor sit amet consectetur.</p>
-    </gb-toast>
+    </gb-toast> -->
     <gb-input-field size="sm" state="default" type="password_icon_leading" show-label="true" label="Label"
     show-help-icon="true"
     show-hint-text="true"
@@ -127,5 +120,6 @@
     <gb-verification-code-field size="sm" digits="8" show-label="true" label="Secure code" show-hint-text="true" hint-text="This is a hint text to help user."></gb-verification-code-field>
     <!-- <gb-token-field size="sm" digits="4" show-label="true" label="Secure code" show-supporting-text="true" supporting-text="This is a hint text to help user."></gb-token-field> -->
     <!-- <gb-rich-text show-label="true" label="Description" show-placeholder="true" placeholder-text="Enter your text" show-hint-text="true" hint-text="This is a hint text to help user"></gb-rich-text> -->
+     <gb-toggle-base size="md" state="disabled" pressed="true"></gb-toggle-base>
   </body>
 </html>
