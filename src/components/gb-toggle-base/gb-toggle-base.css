@@ -1,3 +1,4 @@
+@import './../../global/global.css';
 @import './../../global/spacing.css';
 
 /* Basic Styles for the Toggle */
@@ -9,10 +10,13 @@ label {
     display: inline-block;
     border-radius: var(--rounded-lg);
     position: relative;
-    background-color: var(--color-background-gray-subtle, #E3E8EF);
+    /* background-color: #001C37; */
+    /* background-color: var(--color-background-gray-subtle, #E3E8EF); */
     cursor: pointer;
     transition: background-color 0.3s ease;
     padding: 0.125rem;
+
+    @apply bg-background-success;
 }
 
 label.sm{
