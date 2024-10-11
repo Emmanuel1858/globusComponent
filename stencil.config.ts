@@ -9,10 +9,11 @@ export const config: Config = {
       esmLoaderPath: '../loader',
       copy: [
         {
-          src: 'global', dest: 'global' //copies the stylesheets from the source folder to the destination folder in the dist folder on build
+          src: 'global',
+          dest: 'global', //copies the stylesheets from the source folder to the destination folder in the dist folder on build
         },
-        { src: 'assets', dest: 'assets' }
-      ]
+        { src: 'assets', dest: 'assets' },
+      ],
     },
     {
       type: 'dist-custom-elements',
@@ -25,12 +26,10 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: null, // disable service workers
-      copy: [
-        { src: 'assets', dest: 'build/assets' }
-      ]
+      copy: [{ src: 'assets', dest: 'build/assets' }],
     },
   ],
   testing: {
-    browserHeadless: "new",
+    browserHeadless: 'new',
   },
 };

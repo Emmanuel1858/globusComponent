@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                                                                                                                       | Default     |
-| -------- | --------- | ----------- | -------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| `size`   | `size`    |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs" \| "xxs"` | `undefined` |
-| `state`  | `state`   |             | `StateEnum.Default \| StateEnum.Disabled`                                                                                  | `undefined` |
+| Property  | Attribute | Description | Type                                                                                                                       | Default     |
+| --------- | --------- | ----------- | -------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| `pressed` | `pressed` |             | `boolean`                                                                                                                  | `false`     |
+| `size`    | `size`    |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs" \| "xxs"` | `undefined` |
+| `state`   | `state`   |             | `StateEnum.Default \| StateEnum.Disabled`                                                                                  | `undefined` |
 
 
 ## Dependencies

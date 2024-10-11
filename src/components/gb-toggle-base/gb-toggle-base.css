@@ -26,7 +26,8 @@ label.md{
 }
 
 label.pressed.default {
-  background-color: #075DB2; /* Blue background when pressed and in default state */
+  background-color: var(--color-background-selected, #075db2);
+  /* @apply bg-[blue]; */
 }
 
 label.disabled{
