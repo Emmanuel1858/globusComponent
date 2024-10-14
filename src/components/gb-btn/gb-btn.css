@@ -308,4 +308,9 @@ button.link_color.disabled{
 
 .center{
   flex-grow: 1;
+  text-align: center;
+}
+
+.fit_content{
+  width: fit-content;
 }

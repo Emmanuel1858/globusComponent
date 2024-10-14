@@ -7,20 +7,22 @@
 
 ## Properties
 
-| Property          | Attribute          | Description | Type                                                                                                                       | Default     |
-| ----------------- | ------------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| `hintText`        | `hint-text`        |             | `string`                                                                                                                   | `''`        |
-| `iconSwap`        | `icon-swap`        |             | `string`                                                                                                                   | `''`        |
-| `label`           | `label`            |             | `string`                                                                                                                   | `''`        |
-| `placeholderText` | `placeholder-text` |             | `string`                                                                                                                   | `''`        |
-| `showHelpIcon`    | `show-help-icon`   |             | `boolean`                                                                                                                  | `undefined` |
-| `showHintText`    | `show-hint-text`   |             | `boolean`                                                                                                                  | `undefined` |
-| `showLabel`       | `show-label`       |             | `boolean`                                                                                                                  | `false`     |
-| `showPlaceholder` | `show-placeholder` |             | `boolean`                                                                                                                  | `false`     |
-| `size`            | `size`             |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs" \| "xxs"` | `undefined` |
-| `state`           | `state`            |             | `"default" \| "disabled" \| "filled" \| "focused"`                                                                         | `undefined` |
-| `text`            | `text`             |             | `boolean`                                                                                                                  | `false`     |
-| `type`            | `type`             |             | `"avatar_leading" \| "default" \| "dot_leading" \| "icon_leading" \| "search" \| "tags"`                                   | `undefined` |
+| Property          | Attribute           | Description | Type                                                                                                                       | Default     |
+| ----------------- | ------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| `hintText`        | `hint-text`         |             | `string`                                                                                                                   | `''`        |
+| `iconSwap`        | `icon-swap`         |             | `string`                                                                                                                   | `''`        |
+| `label`           | `label`             |             | `string`                                                                                                                   | `''`        |
+| `leadingIcon`     | `leading-icon`      |             | `string`                                                                                                                   | `''`        |
+| `placeholderText` | `placeholder-text`  |             | `string`                                                                                                                   | `''`        |
+| `showHelpIcon`    | `show-help-icon`    |             | `boolean`                                                                                                                  | `undefined` |
+| `showHintText`    | `show-hint-text`    |             | `boolean`                                                                                                                  | `undefined` |
+| `showLabel`       | `show-label`        |             | `boolean`                                                                                                                  | `false`     |
+| `showLeadingIcon` | `show-leading-icon` |             | `boolean`                                                                                                                  | `false`     |
+| `showPlaceholder` | `show-placeholder`  |             | `boolean`                                                                                                                  | `false`     |
+| `size`            | `size`              |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs" \| "xxs"` | `undefined` |
+| `state`           | `state`             |             | `"default" \| "disabled" \| "filled" \| "focused"`                                                                         | `undefined` |
+| `text`            | `text`              |             | `boolean`                                                                                                                  | `false`     |
+| `type`            | `type`              |             | `"avatar_leading" \| "default" \| "dot_leading" \| "icon_leading" \| "search" \| "tags"`                                   | `undefined` |
 
 
 ## Dependencies

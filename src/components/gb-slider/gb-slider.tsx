@@ -2,7 +2,7 @@ import { Component, Prop, State, Event, EventEmitter, h, Element } from '@stenci
 
 @Component({
   tag: 'gb-slider',
-  styleUrl: 'slider.css',
+  styleUrl: 'gb-slider.css',
   shadow: true,
 })
 export class GbSlider {

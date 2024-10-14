@@ -18,11 +18,11 @@ export class GbPasswordButton {
       <div>
         <gb-btn size="sm" hierarchy="link_gray" state="default" onClick={() => this.togglePasswordVisibility()}>
           {this.isPasswordVisible ? (
-            <gb-button size="sm" hierarchy="link_gray" icon="default" state={this.state}>
+            <gb-button size="sm" hierarchy="tertiary_gray" icon="default" state={this.state}>
               <p>HIDE</p>
             </gb-button>
           ) : (
-            <gb-button size="sm" hierarchy="link_gray" icon="default" state={this.state}>
+            <gb-button size="sm" hierarchy="tertiary_gray" icon="default" state={this.state}>
               <p>SHOW</p>
             </gb-button>
           )}

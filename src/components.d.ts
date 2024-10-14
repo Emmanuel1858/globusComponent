@@ -5,10 +5,11 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { ArrowPositions, BorderWeights, BreakPoints, CheckBoxVariants, FileUploadIconType, FileUploadStates, GeneralBackgroundCategories, GeneralColors, GeneralHierarchies, GeneralSizes, InputFieldTypes, OnlineIndicatorStates, PaginationNumberShapes, PaginationTypes, StateEnum, TabTypes } from "./models/reusableModels";
-export { ArrowPositions, BorderWeights, BreakPoints, CheckBoxVariants, FileUploadIconType, FileUploadStates, GeneralBackgroundCategories, GeneralColors, GeneralHierarchies, GeneralSizes, InputFieldTypes, OnlineIndicatorStates, PaginationNumberShapes, PaginationTypes, StateEnum, TabTypes } from "./models/reusableModels";
+import { ArrowPositions, AvatarColorTypes, BorderWeights, BreakPoints, CheckBoxVariants, DropdownTypes, FileUploadIconType, FileUploadStates, GeneralBackgroundCategories, GeneralColors, GeneralHierarchies, GeneralSizes, InputFieldTypes, OnlineIndicatorStates, PaginationNumberShapes, PaginationTypes, StateEnum, TabTypes } from "./models/reusableModels";
+export { ArrowPositions, AvatarColorTypes, BorderWeights, BreakPoints, CheckBoxVariants, DropdownTypes, FileUploadIconType, FileUploadStates, GeneralBackgroundCategories, GeneralColors, GeneralHierarchies, GeneralSizes, InputFieldTypes, OnlineIndicatorStates, PaginationNumberShapes, PaginationTypes, StateEnum, TabTypes } from "./models/reusableModels";
 export namespace Components {
     interface GbAvatar {
+        "color": AvatarColorTypes;
         "icon": 'user';
         "placeholder": boolean;
         "size": GeneralSizes;
@@ -213,22 +214,25 @@ export namespace Components {
     interface GbInputDropdown {
         "hintText": string;
         "iconSwap": string;
+        "items": any[];
         "label": string;
+        "leadingIcon": string;
         "placeholderText": string;
         "showHelpIcon": boolean;
         "showHintText": boolean;
         "showLabel": boolean;
+        "showLeadingIcon": boolean;
         "showPlaceholder": boolean;
         "size": GeneralSizes;
         "state": 'default' | 'focused' | 'disabled' | 'filled';
         "text": boolean;
-        "type": 'default' | 'icon_leading' | 'avatar_leading' | 'dot_leading' | 'search' | 'tags';
+        "type": DropdownTypes;
     }
     interface GbInputDropdownMenuItem {
         "selected": boolean;
-        "state": 'default' | 'disabled';
+        "state": StateEnum;
         "supportingText": boolean;
-        "type": 'icon_leading' | 'avatar_leading' | 'dot_leading' | 'checkbox';
+        "type": DropdownTypes;
     }
     interface GbInputField {
         "destructive": boolean;
@@ -1010,6 +1014,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface GbAvatar {
+        "color"?: AvatarColorTypes;
         "icon"?: 'user';
         "placeholder"?: boolean;
         "size"?: GeneralSizes;
@@ -1210,22 +1215,25 @@ declare namespace LocalJSX {
     interface GbInputDropdown {
         "hintText"?: string;
         "iconSwap"?: string;
+        "items"?: any[];
         "label"?: string;
+        "leadingIcon"?: string;
         "placeholderText"?: string;
         "showHelpIcon"?: boolean;
         "showHintText"?: boolean;
         "showLabel"?: boolean;
+        "showLeadingIcon"?: boolean;
         "showPlaceholder"?: boolean;
         "size"?: GeneralSizes;
         "state"?: 'default' | 'focused' | 'disabled' | 'filled';
         "text"?: boolean;
-        "type"?: 'default' | 'icon_leading' | 'avatar_leading' | 'dot_leading' | 'search' | 'tags';
+        "type"?: DropdownTypes;
     }
     interface GbInputDropdownMenuItem {
         "selected"?: boolean;
-        "state"?: 'default' | 'disabled';
+        "state"?: StateEnum;
         "supportingText"?: boolean;
-        "type"?: 'icon_leading' | 'avatar_leading' | 'dot_leading' | 'checkbox';
+        "type"?: DropdownTypes;
     }
     interface GbInputField {
         "destructive"?: boolean;

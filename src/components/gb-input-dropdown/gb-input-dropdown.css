@@ -2,16 +2,21 @@
 @import './../../global/spacing.css';
 @import './../../global/typography.css';
 
+:host{
+    width: 100%;
+    position: relative;
+}
+
 .input_dropdown_div{
     display: flex;
     align-items: center;
-    width: fit-content;
     border-radius: 0.5rem;
     gap: var(--spacing-3);
     border: 1px solid var(--color-border-input, #CDD5DF);
     background-color: var(--color-background-card, #FFFFFF);
     padding: var(--spacing-none) var(--spacing-3);
     cursor: pointer;
+    margin: var(--spacing-2) 0;
 }
 
 /* Size Styles */
@@ -46,7 +51,7 @@
     display: flex;
     align-items: center;
     gap: var(--spacing-2);
-    width: 200px;
+    width: 100%;
     white-space: nowrap;
     overflow: hidden;
 }
@@ -70,4 +75,21 @@
 
 svg.disabled path{
     stroke: var(--color-icon-disabled, #CDD5DF);
+}
+
+.dropdown_menu{
+    display: flex;
+    width: 100%;
+    padding: var(--spacing-none);
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: stretch;
+    border-radius: var(--rounded-sm);
+    border: 1px solid var(--color-border-subtler, #E3E8EF);
+    background: var(--color-surface, #FFFFFF);
+    box-shadow: var(--shadow-sm);
+    position: absolute;
+    top: 4.5rem;
+    z-index: 10;
+    gap: var(--spacing-none);
 }

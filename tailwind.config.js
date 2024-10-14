@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'background-success': '#001C37',
+        // 'background-selected': 'var(--color-background-selected)',
+        // 'background-gray-subtle': 'var(--color-background-gray-subtle)',
       },
     },
   },

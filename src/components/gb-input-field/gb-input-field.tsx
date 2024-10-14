@@ -529,7 +529,7 @@ export class GbInputField {
                   </>
                 )}
               </div>
-              <div class="dropdown">
+              <div class="password_dropdown">
                 <gb-password-button state={this.state === 'disabled' ? StateEnum.Disabled : StateEnum.Default} onClick={() => this.togglePasswordVisibility()}></gb-password-button>
               </div>
             </div>
@@ -583,7 +583,9 @@ export class GbInputField {
                   )}
                 </>
               )}
-              <gb-password-button state={this.state === 'disabled' ? StateEnum.Disabled : StateEnum.Default} onClick={() => this.togglePasswordVisibility()}></gb-password-button>
+              <div class="password_dropdown">
+                <gb-password-button state={this.state === 'disabled' ? StateEnum.Disabled : StateEnum.Default} onClick={() => this.togglePasswordVisibility()}></gb-password-button>
+              </div>
             </div>
           )}
           {this.type === 'count' && (

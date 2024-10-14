@@ -28,6 +28,7 @@ export class GbButton {
     }
 
     const buttonSlot = this.el.querySelector('p');
+    const buttonDiv = this.el.querySelector('button');
 
     if (buttonSlot) {
       buttonSlot.classList.add(this.getButtonTextClasses());
@@ -36,6 +37,10 @@ export class GbButton {
 
     if (!this.iconLeading && !this.iconTrailing) {
       buttonSlot.classList.add('center');
+    }
+
+    if (!this.iconLeading || !this.iconTrailing) {
+      buttonDiv.classList.add('fit_content');
     }
   }
 

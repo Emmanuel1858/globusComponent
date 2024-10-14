@@ -1,11 +1,11 @@
 import { Config } from '@stencil/core';
-import {postcss} from '@stencil/postcss';
-import autoprefixer from 'autoprefixer';
+// import {postcss} from '@stencil/postcss';
+// import autoprefixer from 'autoprefixer';
 
-const purgecss = require("@fullhuman/postcss-purgecss")({
-  content: ["./src/**/*.tsx", "./src/**/*.css", "./src/index.html"],
-  defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
-});
+// const purgecss = require("@fullhuman/postcss-purgecss")({
+//   content: ["./src/**/*.tsx", "./src/**/*.css", "./src/index.html"],
+//   defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
+// });
 
 export const config: Config = {
   namespace: 'globuscomponents',
@@ -40,15 +40,15 @@ export const config: Config = {
     browserHeadless: 'new',
   },
   plugins : [
-    postcss({
-      plugins: [
-        require("postcss-import"),
-        require("tailwindcss")("./tailwind.config.js"),
-        autoprefixer(),
-        ...(process.env.NODE_ENV === "production"
-          ? [purgecss, require("cssnano")]
-          : [])
-      ]
-    })
+    // postcss({
+    //   plugins: [
+    //     require("postcss-import"),
+    //     require("tailwindcss")("./tailwind.config.js"),
+    //     autoprefixer(),
+    //     ...(process.env.NODE_ENV === "production"
+    //       ? [purgecss, require("cssnano")]
+    //       : [])
+    //   ]
+    // })
   ],
 };

@@ -10,7 +10,7 @@ div {
 
 div.sm {
   display: flex;
-  width: 20rem;
+  width: 24.3125rem;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--spacing-2);
@@ -18,7 +18,7 @@ div.sm {
 
 div.md {
   display: flex;
-  width: 20rem;
+  width: 24.3125rem;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--spacing-2);
@@ -301,4 +301,12 @@ label{
 .trailing_dropdown.disabled select{
   background: var(--color-background-disabled, #F6F8FA);
   color: var(--color-text-subtle, #697586);
+}
+
+.password_dropdown{
+  display: flex;
+  padding-left: var(--spacing-3);
+  align-items: center;
+  gap: var(--spacing-1);
+  align-self: stretch;
 }

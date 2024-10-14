@@ -1,5 +1,5 @@
 import { Component, Element, h, Prop } from "@stencil/core";
-import { BorderWeights, GeneralSizes, OnlineIndicatorStates } from "../../models/reusableModels";
+import { AvatarColorTypes, BorderWeights, GeneralSizes, OnlineIndicatorStates } from "../../models/reusableModels";
 
 @Component({
     tag: 'gb-avatar',
@@ -14,6 +14,7 @@ export class GbAvatar {
     @Prop() statusIcon: string = '';
     @Prop() state: OnlineIndicatorStates = OnlineIndicatorStates.Online;
     @Prop() icon: 'user' = 'user';
+    @Prop() color: AvatarColorTypes;
     @Element() el: HTMLElement;
     @Prop() weight: BorderWeights = BorderWeights.Light;
 

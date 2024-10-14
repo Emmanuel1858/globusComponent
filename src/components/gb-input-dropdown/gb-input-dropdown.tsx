@@ -1,5 +1,5 @@
-import { Component, Prop, h, Fragment, Element } from "@stencil/core";
-import { GeneralSizes } from "../../models/reusableModels";
+import { Component, Prop, h, Fragment, Element, State, getAssetPath } from "@stencil/core";
+import { DropdownTypes, GeneralSizes, StateEnum } from "../../models/reusableModels";
 
 @Component({
   tag: 'gb-input-dropdown',
@@ -7,7 +7,7 @@ import { GeneralSizes } from "../../models/reusableModels";
   shadow: true,
 })
 export class GbInputDropdown {
-  @Prop() type: 'default' | 'icon_leading' | 'avatar_leading' | 'dot_leading' | 'search' | 'tags';
+  @Prop() type: DropdownTypes;
   @Prop() state: 'default' | 'focused' | 'disabled' | 'filled';
   @Prop() size: GeneralSizes;
   @Prop() showLabel: boolean = false;
@@ -17,9 +17,22 @@ export class GbInputDropdown {
   @Prop() showHintText: boolean;
   @Prop() hintText: string = '';
   @Prop() showHelpIcon: boolean;
+  @Prop() showLeadingIcon: boolean = false;
   @Prop() iconSwap: string = '';
   @Prop() text: boolean = false;
+  @Prop() leadingIcon: string = '';
+  @Prop() items: any[] = [];
+  @State() leadingIconSvg: string = '';
+  @State() showDropdown: boolean = false;
+  @State() selectedItems: any[] = [];
   @Element() el: HTMLElement;
+
+  async loadIcon(iconName: string) {
+    const iconPath = getAssetPath(`${iconName}`);
+    const response = await fetch(iconPath);
+    const svg = await response.text();
+    this.leadingIconSvg = svg;
+  }
 
   getAvatarSize() {
     switch (this.size) {
@@ -30,6 +43,24 @@ export class GbInputDropdown {
     }
   }
 
+  handleItemSelect(item) {
+    if (this.type === 'tags') {
+      // For 'tags' type, allow multiple selections
+      if (this.selectedItems.includes(item)) {
+        this.selectedItems = this.selectedItems.filter(i => i !== item); // Remove item if already selected
+      } else {
+        this.selectedItems = [...this.selectedItems, item]; // Add item to selected list
+      }
+    } else {
+      // For other types, allow only one selection
+      this.selectedItems = [item]; // Set the selected item (single select)
+    }
+  }
+
+  componentWillLoad() {
+    this.loadIcon(this.leadingIcon);
+  }
+
   componentDidLoad() {
     const slottedInitials = this.el.querySelector('[slot="initials"]');
 
@@ -37,8 +68,10 @@ export class GbInputDropdown {
   }
 
   render() {
-    return (
-      <div class={`input_dropdown_container`}>
+    const items = ['Emmanuel', 'Gideon', 'Precious', 'Efe'];
+
+    return [
+      <div class={`input_dropdown_container`} onClick={() => (this.showDropdown = !this.showDropdown)}>
         {this.showLabel && (
           <p class="text-sm-regular" style={{ color: '#4B5565' }}>
             {this.label}
@@ -61,22 +94,10 @@ export class GbInputDropdown {
           )}
           {this.type === 'avatar_leading' && (
             <gb-avatar size="xs" text={this.text}>
-              {!this.text ? (<slot slot="image" name="image"></slot>) : 
-              (<slot slot="initials" name="initials"></slot>)
-              }
+              {!this.text ? <slot slot="image" name="image"></slot> : <slot slot="initials" name="initials"></slot>}
             </gb-avatar>
           )}
-          {this.type === 'search' && (
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path
-                d="M14.5833 14.5833L18.3333 18.3333M16.6667 9.16667C16.6667 5.02454 13.3088 1.66667 9.16667 1.66667C5.02454 1.66667 1.66667 5.02454 1.66667 9.16667C1.66667 13.3088 5.02454 16.6667 9.16667 16.6667C13.3088 16.6667 16.6667 13.3088 16.6667 9.16667Z"
-                stroke="#697586"
-                stroke-width="1.66667"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          )}
+          {this.showLeadingIcon && <>{this.type === 'search' || this.type === 'tags' ? <div class={`icon`} innerHTML={this.leadingIconSvg}></div> : null}</>}
           {this.type === 'dot_leading' && (
             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none" class={`dot ${this.size}`}>
               <circle cx="5" cy="5" r="4" fill="#079455" />
@@ -120,25 +141,43 @@ export class GbInputDropdown {
               </svg>
             </div>
           )}
-          <div class="dropdown_icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class={`${this.state}`}>
-              <path
-                d="M15 7.50004C15 7.50004 11.3176 12.5 9.99996 12.5C8.68237 12.5 5 7.5 5 7.5"
-                stroke="#697586"
-                stroke-width="1.66667"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </div>
+          {this.type !== 'search' && (
+            <div class="dropdown_icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class={`${this.state}`}>
+                <path
+                  d="M15 7.50004C15 7.50004 11.3176 12.5 9.99996 12.5C8.68237 12.5 5 7.5 5 7.5"
+                  stroke="#697586"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          )}
         </div>
         {this.showHintText && (
           <p class="text-sm-regular" style={{ color: '#697586' }}>
             {this.hintText}
           </p>
         )}
-      </div>
-    );
+      </div>,
+      <>
+        {this.showDropdown && (
+          <div class="dropdown_menu">
+            {items.map(item => (
+              <gb-input-dropdown-menu-item
+                type={this.type === 'search' ? 'checkbox' : this.type === 'tags' ? 'checkbox' : this.type}
+                state={StateEnum.Default}
+                selected={this.selectedItems.includes(item)}
+                onClick={() => this.handleItemSelect(item)}
+              >
+                <p slot="name">{item}</p>
+              </gb-input-dropdown-menu-item>
+            ))}
+          </div>
+        )}
+      </>,
+    ];
   }
 }    
         

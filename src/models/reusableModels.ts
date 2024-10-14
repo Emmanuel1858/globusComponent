@@ -62,3 +62,7 @@ export type InputFieldTypes =
   | 'password'
   | 'password_icon_leading'
   | 'count';
+
+  export type DropdownTypes = 'default' | 'icon_leading' | 'avatar_leading' | 'dot_leading' | 'checkbox' | 'search' | 'tags'; 
+
+  export type AvatarColorTypes = 'gray' | 'blue' | 'cyan' | 'pink' | 'purple' | 'green' | 'yellow';

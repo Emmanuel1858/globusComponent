@@ -17,7 +17,7 @@
 
 ### Used by
 
- - [gb-slider](../gb-sliders)
+ - [gb-slider](../gb-slider)
 
 ### Depends on
 
