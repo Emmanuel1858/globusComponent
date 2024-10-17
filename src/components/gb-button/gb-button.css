@@ -309,4 +309,11 @@ button.link_color.disabled{
 
 .center{
   flex-grow: 1;
+  text-align: center;
+}
+
+button.lefticon,
+button.righticon{
+  justify-content: center;
+  gap: var(--spacing-2);
 }

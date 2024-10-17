@@ -13,6 +13,7 @@ export class GbCheckbox {
     @Prop() size: GeneralSizes;
     @Prop() type: CheckBoxVariants;
     @Prop() state: StateEnum;
+    @Prop() text: boolean = false;
     @Prop() supportingText: boolean = false;
     @Element() el: HTMLElement;
 
@@ -50,23 +51,17 @@ export class GbCheckbox {
 
     render() {
         return (
-            <div class={`checkbox_div ${this.size}`}>
-                <div class="checkbox_base">
-                    <gb-checkbox-base 
-                    size={this.size} 
-                    type={this.type} 
-                    checked={this.checked}
-                    state={this.state}
-                    indeterminate={this.indeterminate}
-                    ></gb-checkbox-base>
-                </div>
-                <div class="text">
-                    <slot name="label"></slot>
-                    {this.supportingText && (
-                        <slot name="supporting_text"></slot>
-                    )}
-                </div>
+          <div class={`checkbox_div ${this.size} ${this.text ? 'text' : ''}`}>
+            <div class="checkbox_base">
+              <gb-checkbox-base size={this.size} type={this.type} checked={this.checked} state={this.state} indeterminate={this.indeterminate}></gb-checkbox-base>
             </div>
-        )
+            {this.text && (
+              <div class="text">
+                <slot name="label"></slot>
+                {this.supportingText && <slot name="supporting_text"></slot>}
+              </div>
+            )}
+          </div>
+        );
     }
 }

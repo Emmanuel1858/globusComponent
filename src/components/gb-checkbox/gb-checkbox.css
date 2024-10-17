@@ -7,11 +7,15 @@
     width: fit-content;
 }
 
-.checkbox_div.sm{
+.checkbox_div{
+    gap: var(--spacing-none);
+}
+
+.checkbox_div.text.sm{
     gap: var(--spacing-2);
 }
 
-.checkbox_div.md{
+.checkbox_div.text.md{
     gap: var(--spacing-3);
 }
 

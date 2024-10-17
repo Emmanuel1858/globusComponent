@@ -13,12 +13,16 @@
   </head>
   <body>
     <div style="width: 12.25rem">
-      <gb-btn size="xl" state="default" hierarchy="primary" icon="default" icon-trailing="true" icon-trailing-swap="assets/arrow_pointing_right.svg">
+      <gb-btn size="xl" state="default" hierarchy="primary" icon="default" >
       <p>Upload</p>
     </gb-btn>
     </div>
     <!-- <gb-file-upload height-size="lg" state="default" show-label="true" destructive="true"></gb-file-upload> -->
-      <gb-input-dropdown 
+     <!-- <gb-avatar size="xl" text="true" color="yellow">
+      <h1 slot="initials">EK</h1>
+     </gb-avatar> -->
+      <div style="width: 300px">
+        <gb-input-dropdown 
     show-placeholder="true" 
     size="md"
     state="default" 
@@ -26,15 +30,18 @@
     label="Team member" 
     show-help-icon="true"
     show-hint-text="true"
+    placeholder="Select a team member"
     hint-text="This is a hint text to help user."
-    type="avatar_leading"
+    type="tags"
     text="true"
     show-leading-icon="false"
     leading-icon="assets/search-01.svg"
+    supporting-text="false"
     >
       <h1 slot="initials">EK</h1>
       <!-- <img src="build/assets/avatar_pic.jpg" alt="" slot="image"> -->
   </gb-input-dropdown>
+      </div>
     <!-- <gb-avatar size="xl2" text="false" status-icon="company">
       <img slot="image" src="build/assets/avatar_pic.jpg" alt="">
       <h1 slot="initials">EK</h1>
@@ -87,25 +94,28 @@
     <!-- <gb-side-bar-item state="active" label="Label" type="full_with_label" icon="assets/circle.svg" category="plain_background" show-arrow="true" show-badge="true">
       <p slot="label">Label</p>
     </gb-side-bar-item> -->
-    <gb-sidebar category="colored_background" 
+    <gb-sidebar category="plain_background" 
     icon-instance="assets/file-verified.svg" 
     first-item-icon="assets/square-arrow-data-transfer-diagonal.svg" 
     second-item-icon="assets/exchange-01.svg"
     third-item-icon="assets/calendar-02.svg"
     fourth-item-icon="assets/database-sync.svg"
+    fifth-item-icon="assets/user-group.svg"
     state="expanded" 
     show-second-category="false"
     first-item-label="Overview"
     second-item-label="Exchange"
     third-item-label="Flagged Transaction"
-    fourth-item-label="Switches">
-      <p slot="application_name">Automated Call-Over System (ACS)</p>
+    fourth-item-label="Switches"
+    fifth-item-label="Branch Tellers"
+    >
+      <h1 slot="application_name">Automated Call-Over System (ACS)</h1>
     </gb-sidebar>
     <gb-input-dropdown-menu-item type="avatar_leading" state="default" supporting-text="false" selected="true">
       <p slot="name">10</p>
       <img src="build/assets/avatar_pic.jpg" alt="" slot="image">
     </gb-input-dropdown-menu-item>
-    <!-- <gb-notification-pane state="empty" overflow="false"></gb-notification-pane> -->
+    <gb-notification-pane state="empty" overflow="false"></gb-notification-pane>
     <!-- <gb-checkbox-group-item type="checkbox" size="sm" state="disabled" show-cost="true" selected="true" breakpoint="mobile">
       <p slot="label">Basic Plan</p>
       <p slot="cost">$10/month</p>
@@ -115,15 +125,15 @@
       <p slot="main_text">New feature alert</p>
       <p slot="supporting_text">Lorem ipsum dolor sit amet consectetur.</p>
     </gb-toast> -->
-    <gb-input-field size="sm" state="default" type="password_icon_leading" show-label="true" label="Label"
+    <gb-input-field size="md" state="default" type="default" show-label="true" label="Label"
     show-help-icon="true"
     show-hint-text="true"
     hint-text="This is a hint text to help user"
-    show-placeholder="true"
-    placeholder-text="placeholder text"
+    placeholder="placeholder text"
     show-close-button="true"
     show-validation="false"
     destructive="false"></gb-input-field>
+    <h1 class="text-lg-bold">Application Name</h1>
     <!-- <gb-verification-code-field size="sm" digits="8" show-label="true" label="Secure code" show-hint-text="true" hint-text="This is a hint text to help user."></gb-verification-code-field> -->
     <!-- <gb-token-field size="sm" digits="4" show-label="true" label="Secure code" show-supporting-text="true" supporting-text="This is a hint text to help user."></gb-token-field> -->
     <!-- <gb-rich-text show-label="true" label="Description" show-placeholder="true" placeholder-text="Enter your text" show-hint-text="true" hint-text="This is a hint text to help user"></gb-rich-text> -->

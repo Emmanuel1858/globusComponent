@@ -61,7 +61,9 @@ export class GbButton {
       destructive: this.destructive,
       disabled: this.state === 'disabled',
       default: this.icon === 'default',
-      only: this.icon === 'only'
+      only: this.icon === 'only',
+      lefticon: this.iconLeading,
+      righticon: this.iconTrailing
     };
   }
 

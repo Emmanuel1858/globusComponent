@@ -13,8 +13,6 @@
 
 .dropdown-item {
     display: flex;
-    height: 2.5rem;
-    padding: var(--spacing-2);
     justify-content: flex-start;
     align-items: center;
     gap: var(--spacing-2);
@@ -58,7 +56,6 @@
 
 .dropdown-item--selected {
     display: flex;
-    justify-content: space-between;
     background-color: #E4F0FC;
 }
 
@@ -84,12 +81,14 @@ gb-checkbox {
     padding-top: 4px;
 }
 
-.text {
+.content {
     display: flex;
-    padding: var(--spacing-none);
+    min-height: 2.5rem;
+    padding: 0 var(--spacing-2);
+    justify-content: flex-start;
     align-items: center;
     gap: var(--spacing-2);
-    align-self: stretch;
+    flex: 1 0 0;
 }
 
 .dropdown-item--selected slot {

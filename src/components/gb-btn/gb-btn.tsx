@@ -28,7 +28,6 @@ export class GbButton {
     }
 
     const buttonSlot = this.el.querySelector('p');
-    const buttonDiv = this.el.querySelector('button');
 
     if (buttonSlot) {
       buttonSlot.classList.add(this.getButtonTextClasses());
@@ -37,10 +36,6 @@ export class GbButton {
 
     if (!this.iconLeading && !this.iconTrailing) {
       buttonSlot.classList.add('center');
-    }
-
-    if (!this.iconLeading || !this.iconTrailing) {
-      buttonDiv.classList.add('fit_content');
     }
   }
 
@@ -65,6 +60,9 @@ export class GbButton {
       disabled: this.state === 'disabled',
       default: this.icon === 'default',
       only: this.icon === 'only',
+      lefticon: !this.iconTrailing,
+      righticon: !this.iconLeading,
+      // leftandrighticon: this.iconLeading && this.iconTrailing
     };
   }
 

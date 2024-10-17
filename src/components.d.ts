@@ -112,6 +112,7 @@ export namespace Components {
         "size": GeneralSizes;
         "state": StateEnum;
         "supportingText": boolean;
+        "text": boolean;
         "type": CheckBoxVariants;
     }
     interface GbCheckboxBase {
@@ -217,14 +218,14 @@ export namespace Components {
         "items": any[];
         "label": string;
         "leadingIcon": string;
-        "placeholderText": string;
+        "placeholder": string;
         "showHelpIcon": boolean;
         "showHintText": boolean;
         "showLabel": boolean;
         "showLeadingIcon": boolean;
-        "showPlaceholder": boolean;
         "size": GeneralSizes;
         "state": 'default' | 'focused' | 'disabled' | 'filled';
+        "supportingText": boolean;
         "text": boolean;
         "type": DropdownTypes;
     }
@@ -239,7 +240,7 @@ export namespace Components {
         "hintText": string;
         "iconSwap"?: string;
         "label": string;
-        "placeholderText": string;
+        "placeholder": string;
         "showCloseButton"?: boolean;
         "showHelpIcon": boolean;
         "showHintText": boolean;
@@ -378,6 +379,7 @@ export namespace Components {
         "checkbox"?: boolean;
         "flagSwap": string;
         "icon"?: 'country' | 'avatar' | 'dot';
+        "onTagClose": () => Promise<void>;
         "size": 'sm' | 'md' | 'lg';
     }
     interface GbTagCheckbox {
@@ -1115,6 +1117,7 @@ declare namespace LocalJSX {
         "size"?: GeneralSizes;
         "state"?: StateEnum;
         "supportingText"?: boolean;
+        "text"?: boolean;
         "type"?: CheckBoxVariants;
     }
     interface GbCheckboxBase {
@@ -1218,14 +1221,14 @@ declare namespace LocalJSX {
         "items"?: any[];
         "label"?: string;
         "leadingIcon"?: string;
-        "placeholderText"?: string;
+        "placeholder"?: string;
         "showHelpIcon"?: boolean;
         "showHintText"?: boolean;
         "showLabel"?: boolean;
         "showLeadingIcon"?: boolean;
-        "showPlaceholder"?: boolean;
         "size"?: GeneralSizes;
         "state"?: 'default' | 'focused' | 'disabled' | 'filled';
+        "supportingText"?: boolean;
         "text"?: boolean;
         "type"?: DropdownTypes;
     }
@@ -1242,7 +1245,7 @@ declare namespace LocalJSX {
         "label"?: string;
         "onTagAdded"?: (event: GbInputFieldCustomEvent<string>) => void;
         "onValueChanged"?: (event: GbInputFieldCustomEvent<string>) => void;
-        "placeholderText"?: string;
+        "placeholder"?: string;
         "showCloseButton"?: boolean;
         "showHelpIcon"?: boolean;
         "showHintText"?: boolean;

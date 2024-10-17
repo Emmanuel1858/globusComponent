@@ -16,7 +16,7 @@
 
 ### Used by
 
- - [gb-tag](../gb-tags)
+ - [gb-tag](../gb-tag)
 
 ### Graph
 ```mermaid

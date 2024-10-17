@@ -16,7 +16,24 @@
 | `size`     | `size`      |             | `"lg" \| "md" \| "sm"`                | `undefined` |
 
 
+## Methods
+
+### `onTagClose() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ## Dependencies
+
+### Used by
+
+ - [gb-input-dropdown](../gb-input-dropdown)
 
 ### Depends on
 
@@ -34,6 +51,7 @@ graph TD;
   gb-tag --> gb-tag-close
   gb-avatar --> gb-avatar-contrast-inner-border
   gb-avatar --> gb-status-indicator
+  gb-input-dropdown --> gb-tag
   style gb-tag fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

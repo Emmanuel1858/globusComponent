@@ -3,6 +3,12 @@
 @import './../../global/typo.css';
 @import './../../global/typography.css';
 
+:host{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
 .container {
     display: inline-flex;
     justify-content: center;

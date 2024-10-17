@@ -311,6 +311,12 @@ button.link_color.disabled{
   text-align: center;
 }
 
-.fit_content{
-  width: fit-content;
+button.lefticon{
+  justify-content: center;
+  gap: var(--spacing-2);
+}
+
+button.righticon{
+  justify-content: center;
+  gap: var(--spacing-2);
 }

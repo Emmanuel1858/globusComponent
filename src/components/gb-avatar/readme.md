@@ -9,6 +9,7 @@
 
 | Property      | Attribute     | Description | Type                                                                                                                       | Default                        |
 | ------------- | ------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| `color`       | `color`       |             | `"blue" \| "cyan" \| "gray" \| "green" \| "pink" \| "purple" \| "yellow"`                                                  | `undefined`                    |
 | `icon`        | `icon`        |             | `"user"`                                                                                                                   | `'user'`                       |
 | `placeholder` | `placeholder` |             | `boolean`                                                                                                                  | `false`                        |
 | `size`        | `size`        |             | `"lg" \| "md" \| "profile_lg" \| "profile_md" \| "profile_sm" \| "sm" \| "xl" \| "xl2" \| "xl3" \| "xl4" \| "xs" \| "xxs"` | `undefined`                    |
@@ -29,8 +30,8 @@
  - [gb-checkbox-group-item](../gb-checkbox-group-item)
  - [gb-header](../gb-header)
  - [gb-input-dropdown](../gb-input-dropdown)
- - [gb-input-dropdown-menu-item](../gb-input-dropdown-menu)
- - [gb-tag](../gb-tags)
+ - [gb-input-dropdown-menu-item](../gb-input-dropdown-menu-item)
+ - [gb-tag](../gb-tag)
 
 ### Depends on
 

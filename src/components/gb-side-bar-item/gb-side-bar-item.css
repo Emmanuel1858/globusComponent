@@ -82,6 +82,10 @@
 
 /* Icon Color Styles */
 .icon.plain_background path[stroke] {
+    stroke: var(--color-icon, #4B5565);
+}
+
+.icon.plain_background.active path[stroke] {
     stroke: var(--color-icon-information-bold, #042F59);
 }
 
@@ -89,8 +93,20 @@
     fill: var(--color-icon-information-bold, #042F59);
 }
 
+.icon.plain_background path#Icon[fill] {
+    fill: var(--color-icon, #4B5565);
+}
+
+.icon.plain_background.active path#Icon[fill] {
+    fill: var(--color-icon-information-bold, #042F59);
+}
+
+.icon.plain_background.active path#Accent[fill] {
+    fill: var(--color-icon-information-bold, #042F59);
+}
+
 .icon.plain_background circle[stroke] {
-    stroke: var(--color-icon-information-bold, #042F59);
+    stroke: var(--color-icon, #4B5565);
 }
 
 .icon.plain_background.active circle[fill] {
@@ -102,6 +118,14 @@
 }
 
 .icon.colored_background.active path[fill] {
+    fill: var(--color-icon-inverse, #FFFFFF);
+}
+
+.icon.colored_background path#Icon[fill] {
+    fill: var(--color-icon-inverse, #FFFFFF);
+}
+
+.icon.colored_background.active path#Accent[fill] {
     fill: var(--color-icon-inverse, #FFFFFF);
 }
 

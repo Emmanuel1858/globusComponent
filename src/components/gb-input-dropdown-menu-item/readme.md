@@ -7,15 +7,19 @@
 
 ## Properties
 
-| Property         | Attribute         | Description | Type                                                                | Default     |
-| ---------------- | ----------------- | ----------- | ------------------------------------------------------------------- | ----------- |
-| `selected`       | `selected`        |             | `boolean`                                                           | `false`     |
-| `state`          | `state`           |             | `"default" \| "disabled"`                                           | `'default'` |
-| `supportingText` | `supporting-text` |             | `boolean`                                                           | `false`     |
-| `type`           | `type`            |             | `"avatar_leading" \| "checkbox" \| "dot_leading" \| "icon_leading"` | `undefined` |
+| Property         | Attribute         | Description | Type                                                                                                   | Default     |
+| ---------------- | ----------------- | ----------- | ------------------------------------------------------------------------------------------------------ | ----------- |
+| `selected`       | `selected`        |             | `boolean`                                                                                              | `false`     |
+| `state`          | `state`           |             | `StateEnum.Default \| StateEnum.Disabled`                                                              | `undefined` |
+| `supportingText` | `supporting-text` |             | `boolean`                                                                                              | `false`     |
+| `type`           | `type`            |             | `"avatar_leading" \| "checkbox" \| "default" \| "dot_leading" \| "icon_leading" \| "search" \| "tags"` | `undefined` |
 
 
 ## Dependencies
+
+### Used by
+
+ - [gb-input-dropdown](../gb-input-dropdown)
 
 ### Depends on
 
@@ -30,6 +34,7 @@ graph TD;
   gb-avatar --> gb-avatar-contrast-inner-border
   gb-avatar --> gb-status-indicator
   gb-checkbox --> gb-checkbox-base
+  gb-input-dropdown --> gb-input-dropdown-menu-item
   style gb-input-dropdown-menu-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

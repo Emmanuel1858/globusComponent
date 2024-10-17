@@ -16,7 +16,7 @@ export class GbInputField {
   @Prop() showHintText: boolean = false;
   @Prop() hintText: string = '';
   @Prop() showPlaceholder: boolean = false;
-  @Prop() placeholderText: string = '';
+  @Prop() placeholder: string = '';
   @Prop() showHelpIcon: boolean = false;
   @Prop() showValidation: boolean = false;
   @Prop() iconSwap?: string;
@@ -61,11 +61,21 @@ export class GbInputField {
             <div class={`input-wrapper ${this.type} ${this.state} ${this.destructive ? 'destructive' : ''}`}>
               <input
                 class={`text-md-regular`}
-                placeholder={this.showPlaceholder ? this.placeholderText : ''}
+                placeholder={this.placeholder ? this.placeholder : ''}
                 value={this.inputValue}
                 onInput={event => this.handleInput(event)}
               ></input>
-              {this.showValidation && <span></span>}
+              {this.showValidation && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="validation_svg">
+                  <path
+                    d="M4.16675 12.0833C4.16675 12.0833 5.41675 12.0833 7.08341 15C7.08341 15 11.7158 7.36112 15.8334 5.83334"
+                    stroke="#079455"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              )}
               {this.showHelpIcon && (
                 <>
                   {!this.destructive ? (
@@ -130,13 +140,23 @@ export class GbInputField {
                 </div>
                 <input
                   class={`text-md-regular`}
-                  placeholder={this.showPlaceholder ? this.placeholderText : ''}
+                  placeholder={this.placeholder ? this.placeholder : ''}
                   type="email"
                   value={this.inputValue}
                   onInput={event => this.handleInput(event)}
                 ></input>
               </div>
-              {this.showValidation && <span></span>}
+              {this.showValidation && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="validation_svg">
+                  <path
+                    d="M4.16675 12.0833C4.16675 12.0833 5.41675 12.0833 7.08341 15C7.08341 15 11.7158 7.36112 15.8334 5.83334"
+                    stroke="#079455"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              )}
               {this.showHelpIcon && (
                 <>
                   {!this.destructive ? (
@@ -198,11 +218,21 @@ export class GbInputField {
               <div class="text-input">
                 <input
                   class="text-md-regular"
-                  placeholder={this.showPlaceholder ? this.placeholderText : ''}
+                  placeholder={this.placeholder ? this.placeholder : ''}
                   value={this.inputValue}
                   onInput={event => this.handleInput(event)}
                 ></input>
-                {this.showValidation && <span></span>}
+                {this.showValidation && (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="validation_svg">
+                    <path
+                      d="M4.16675 12.0833C4.16675 12.0833 5.41675 12.0833 7.08341 15C7.08341 15 11.7158 7.36112 15.8334 5.83334"
+                      stroke="#079455"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                )}
                 {this.showHelpIcon && (
                   <>
                     {!this.destructive ? (
@@ -240,12 +270,22 @@ export class GbInputField {
                   <p class="text-md-regular">$</p>
                   <input
                     class="text-md-regular"
-                    placeholder={this.showPlaceholder ? this.placeholderText : ''}
+                    placeholder={this.placeholder ? this.placeholder : ''}
                     value={this.inputValue}
                     onInput={event => this.handleInput(event)}
                   ></input>
                 </div>
-                {this.showValidation && <span></span>}
+                {this.showValidation && (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="validation_svg">
+                    <path
+                      d="M4.16675 12.0833C4.16675 12.0833 5.41675 12.0833 7.08341 15C7.08341 15 11.7158 7.36112 15.8334 5.83334"
+                      stroke="#079455"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                )}
                 {this.showHelpIcon && (
                   <>
                     {!this.destructive ? (
@@ -293,11 +333,21 @@ export class GbInputField {
                 <div class="text-input">
                   <input
                     class="text-md-regular"
-                    placeholder={this.showPlaceholder ? this.placeholderText : ''}
+                    placeholder={this.placeholder ? this.placeholder : ''}
                     value={this.inputValue}
                     onInput={event => this.handleInput(event)}
                   ></input>
-                  {this.showValidation && <span></span>}
+                  {this.showValidation && (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="validation_svg">
+                      <path
+                        d="M4.16675 12.0833C4.16675 12.0833 5.41675 12.0833 7.08341 15C7.08341 15 11.7158 7.36112 15.8334 5.83334"
+                        stroke="#079455"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  )}
                   {this.showHelpIcon && (
                     <>
                       {!this.destructive ? (
@@ -356,12 +406,22 @@ export class GbInputField {
                 </div>
                 <input
                   class="text-md-regular"
-                  placeholder={this.showPlaceholder ? this.placeholderText : ''}
+                  placeholder={this.placeholder ? this.placeholder : ''}
                   value={this.inputValue}
                   onInput={event => this.handleInput(event)}
                 ></input>
               </div>
-              {this.showValidation && <span></span>}
+              {this.showValidation && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="validation_svg">
+                  <path
+                    d="M4.16675 12.0833C4.16675 12.0833 5.41675 12.0833 7.08341 15C7.08341 15 11.7158 7.36112 15.8334 5.83334"
+                    stroke="#079455"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              )}
               {this.showHelpIcon && (
                 <div class="help-icon">
                   <>
@@ -401,12 +461,22 @@ export class GbInputField {
                 </div>
                 <input
                   class="text-md-regular"
-                  placeholder={this.showPlaceholder ? this.placeholderText : ''}
+                  placeholder={this.placeholder ? this.placeholder : ''}
                   value={this.inputValue}
                   onInput={event => this.handleInput(event)}
                 ></input>
               </div>
-              {this.showValidation && <span></span>}
+              {this.showValidation && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="validation_svg">
+                  <path
+                    d="M4.16675 12.0833C4.16675 12.0833 5.41675 12.0833 7.08341 15C7.08341 15 11.7158 7.36112 15.8334 5.83334"
+                    stroke="#079455"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              )}
               {this.showHelpIcon && (
                 <div class="help-icon">
                   <>
@@ -443,11 +513,21 @@ export class GbInputField {
               <div class="text-input">
                 <input
                   class="text-md-regular"
-                  placeholder={this.showPlaceholder ? this.placeholderText : ''}
+                  placeholder={this.placeholder ? this.placeholder : ''}
                   value={this.inputValue}
                   onInput={event => this.handleInput(event)}
                 ></input>
-                {this.showValidation && <span></span>}
+                {this.showValidation && (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="validation_svg">
+                    <path
+                      d="M4.16675 12.0833C4.16675 12.0833 5.41675 12.0833 7.08341 15C7.08341 15 11.7158 7.36112 15.8334 5.83334"
+                      stroke="#079455"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                )}
                 {this.showHelpIcon && (
                   <>
                     {!this.destructive ? (
@@ -494,13 +574,23 @@ export class GbInputField {
                 <div class="text-input">
                   <input
                     class="text-md-regular"
-                    placeholder={this.showPlaceholder ? this.placeholderText : ''}
+                    placeholder={this.placeholder ? this.placeholder : ''}
                     type={this.isPasswordVisible ? 'text' : 'password'}
                     value={this.inputValue}
                     onInput={event => this.handleInput(event)}
                   ></input>
                 </div>
-                {this.showValidation && <span></span>}
+                {this.showValidation && (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="validation_svg">
+                    <path
+                      d="M4.16675 12.0833C4.16675 12.0833 5.41675 12.0833 7.08341 15C7.08341 15 11.7158 7.36112 15.8334 5.83334"
+                      stroke="#079455"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                )}
                 {this.showHelpIcon && (
                   <>
                     {!this.destructive ? (
@@ -550,12 +640,22 @@ export class GbInputField {
                 <input
                   class="text-md-regular"
                   type={this.isPasswordVisible ? 'text' : 'password'}
-                  placeholder={this.showPlaceholder ? this.placeholderText : ''}
+                  placeholder={this.placeholder ? this.placeholder : ''}
                   value={this.inputValue}
                   onInput={event => this.handleInput(event)}
                 ></input>
               </div>
-              {this.showValidation && <span></span>}
+              {this.showValidation && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="validation_svg">
+                  <path
+                    d="M4.16675 12.0833C4.16675 12.0833 5.41675 12.0833 7.08341 15C7.08341 15 11.7158 7.36112 15.8334 5.83334"
+                    stroke="#079455"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              )}
               {this.showHelpIcon && (
                 <>
                   {!this.destructive ? (
@@ -593,7 +693,7 @@ export class GbInputField {
               <div class="text-input">
                 <input
                   class="text-md-regular"
-                  placeholder={this.showPlaceholder ? this.placeholderText : ''}
+                  placeholder={this.placeholder ? this.placeholder : ''}
                   value={this.inputValue}
                   onInput={event => this.handleInput(event)}
                 ></input>

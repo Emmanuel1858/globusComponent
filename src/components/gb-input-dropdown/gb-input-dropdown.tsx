@@ -8,12 +8,11 @@ import { DropdownTypes, GeneralSizes, StateEnum } from "../../models/reusableMod
 })
 export class GbInputDropdown {
   @Prop() type: DropdownTypes;
-  @Prop() state: 'default' | 'focused' | 'disabled' | 'filled';
+  @Prop({ mutable: true }) state: 'default' | 'focused' | 'disabled' | 'filled';
   @Prop() size: GeneralSizes;
   @Prop() showLabel: boolean = false;
   @Prop() label: string = '';
-  @Prop() showPlaceholder: boolean = false;
-  @Prop() placeholderText: string = '';
+  @Prop() placeholder: string = '';
   @Prop() showHintText: boolean;
   @Prop() hintText: string = '';
   @Prop() showHelpIcon: boolean;
@@ -22,10 +21,29 @@ export class GbInputDropdown {
   @Prop() text: boolean = false;
   @Prop() leadingIcon: string = '';
   @Prop() items: any[] = [];
+  @Prop() supportingText: boolean = false;
   @State() leadingIconSvg: string = '';
-  @State() showDropdown: boolean = false;
+  @State() dropdownOpen: boolean = false;
   @State() selectedItems: any[] = [];
+  @State() selectedItem: any;
+  @State() isSelected: boolean = false;
   @Element() el: HTMLElement;
+
+  dropdownRef!: HTMLDivElement;
+
+  disconnectedCallback() {
+    document.removeEventListener('click', this.handleOutsideClick);
+  }
+
+  handleOutsideClick = (event: MouseEvent) => {
+    if (this.dropdownOpen && !this.dropdownRef.contains(event.target as Node)) {
+      this.dropdownOpen = false; // Close the dropdown
+    }
+  };
+
+  toggleDropdown() {
+    this.dropdownOpen = !this.dropdownOpen;
+  }
 
   async loadIcon(iconName: string) {
     const iconPath = getAssetPath(`${iconName}`);
@@ -45,16 +63,49 @@ export class GbInputDropdown {
 
   handleItemSelect(item) {
     if (this.type === 'tags') {
-      // For 'tags' type, allow multiple selections
+      // For 'tags', allow multiple selections
       if (this.selectedItems.includes(item)) {
-        this.selectedItems = this.selectedItems.filter(i => i !== item); // Remove item if already selected
+        // Deselect if already selected
+        this.selectedItems = this.selectedItems.filter(i => i !== item);
       } else {
-        this.selectedItems = [...this.selectedItems, item]; // Add item to selected list
+        // Add to selected items
+        this.selectedItem = item;
+        this.selectedItems = [...this.selectedItems, this.selectedItem];
       }
+      // Update state based on whether there are selected items
+      this.state = this.selectedItems.length > 0 ? 'filled' : 'default';
     } else {
       // For other types, allow only one selection
-      this.selectedItems = [item]; // Set the selected item (single select)
+      this.selectedItems = [item]; // Only one item in selectedItems
+      this.selectedItem = item; // Store the selected item
+      this.state = 'filled'; // Update state to 'filled'
+      this.dropdownOpen = false; // Close the dropdown after selection
     }
+  }
+
+  isItemSelected() {
+    if (this.type === 'tags') {
+      this.selectedItems.map(item => {
+        if (this.selectedItem === item) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+    }
+  }
+
+  handleTagRemove(item) {
+    // Remove the item from selectedItems array
+    this.selectedItems = this.selectedItems.filter(i => i !== item);
+
+    // For non-tags type, set selectedItem to null if that item is removed
+    if (this.type !== 'tags' && this.selectedItem === item) {
+      this.selectedItem = null;
+    }
+
+    // Update state based on whether there are selected items
+    this.state = this.selectedItems.length > 0 ? 'filled' : 'default';
   }
 
   componentWillLoad() {
@@ -62,22 +113,45 @@ export class GbInputDropdown {
   }
 
   componentDidLoad() {
+    if(this.type !== 'tags') {
+      document.addEventListener('click', this.handleOutsideClick);
+    }
     const slottedInitials = this.el.querySelector('[slot="initials"]');
 
-    slottedInitials.classList.add('text-xs-semi-bold');
+    slottedInitials.classList.add('text-xxs-semi-bold');
   }
 
   render() {
-    const items = ['Emmanuel', 'Gideon', 'Precious', 'Efe'];
+    const items = [
+      {
+        name: 'Emmanuel Kadiri',
+        username: 'kadiri2047',
+      },
+      {
+        name: 'Gideon Ogunkola',
+        username: 'gideon',
+      },
+      {
+        name: 'Precious Okon',
+        username: 'presh',
+      },
+      {
+        name: 'Efe Dakara',
+        username: 'efe',
+      },
+    ];
+
+    console.log(this.selectedItems);
+    console.log(this.selectedItem);
 
     return [
-      <div class={`input_dropdown_container`} onClick={() => (this.showDropdown = !this.showDropdown)}>
+      <div class={`input_dropdown_container ${this.type === 'tags' ? 'tag' : ''}`} onClick={() => this.toggleDropdown()}>
         {this.showLabel && (
           <p class="text-sm-regular" style={{ color: '#4B5565' }}>
             {this.label}
           </p>
         )}
-        <div class={`input_dropdown_div ${this.size} ${this.state}`}>
+        <div class={`input_dropdown_div ${this.size} ${this.state} ${this.type === 'tags' ? 'tag' : ''}`}>
           {this.type === 'icon_leading' && (
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path
@@ -93,7 +167,7 @@ export class GbInputDropdown {
             </svg>
           )}
           {this.type === 'avatar_leading' && (
-            <gb-avatar size="xs" text={this.text}>
+            <gb-avatar size="xs" text={this.text} color="blue">
               {!this.text ? <slot slot="image" name="image"></slot> : <slot slot="initials" name="initials"></slot>}
             </gb-avatar>
           )}
@@ -107,22 +181,35 @@ export class GbInputDropdown {
             <>
               {this.state === 'default' && (
                 <>
-                  {this.showPlaceholder && (
+                  {this.placeholder && (
                     <p class="text-md-regular" style={{ color: '#CDD5DF' }}>
-                      Select team member
+                      {this.placeholder}
                     </p>
                   )}
                 </>
               )}
               {this.state === 'filled' && (
                 <>
-                  <div class="content">
-                    <div class="text text-md-regular" style={{ color: '#4B5565' }}>
-                      Olivia Rhye
+                  <div class={`content`}>
+                    <div class={`text text-md-regular ${this.type === 'tags' ? 'tag' : ''}`} style={{ color: '#4B5565' }}>
+                      {this.type === 'tags'
+                        ? this.selectedItems.map((item, index) => (
+                            <div class="tag">
+                              <gb-tag size="sm" icon="avatar" action="X_close" key={index} onClick={() => this.handleTagRemove(item)}>
+                                <p class="text-xs-medium">{item.name.split(' ')[0]}</p>
+                                <h1 slot="initials" class="text-xxs-semi-bold">{item.name.split(' ').map(part => part.charAt(0).toUpperCase())}</h1>
+                              </gb-tag>
+                            </div>
+                          ))
+                        : this.selectedItem.name}
                     </div>
-                    <div class="supporting_text text-sm-regular" style={{ color: '#697586' }}>
-                      @olivia
-                    </div>
+                    {this.supportingText && (
+                      <div class="supporting_text text-sm-regular" style={{ color: '#697586' }}>
+                        {this.type === 'tags'
+                          ? this.selectedItems.map(item => item.username).join(', ') // For multiple selections
+                          : this.selectedItem.username}
+                      </div>
+                    )}
                   </div>
                 </>
               )}
@@ -142,7 +229,7 @@ export class GbInputDropdown {
             </div>
           )}
           {this.type !== 'search' && (
-            <div class="dropdown_icon">
+            <div class={`dropdown_icon ${this.dropdownOpen ? 'opened' : ''}`}>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class={`${this.state}`}>
                 <path
                   d="M15 7.50004C15 7.50004 11.3176 12.5 9.99996 12.5C8.68237 12.5 5 7.5 5 7.5"
@@ -162,16 +249,18 @@ export class GbInputDropdown {
         )}
       </div>,
       <>
-        {this.showDropdown && (
-          <div class="dropdown_menu">
+        {this.dropdownOpen && (
+          <div class="dropdown_menu" ref={el => (this.dropdownRef = el as HTMLDivElement)}>
             {items.map(item => (
               <gb-input-dropdown-menu-item
                 type={this.type === 'search' ? 'checkbox' : this.type === 'tags' ? 'checkbox' : this.type}
                 state={StateEnum.Default}
-                selected={this.selectedItems.includes(item)}
+                supporting-text={this.supportingText}
+                selected={this.isSelected}
                 onClick={() => this.handleItemSelect(item)}
               >
-                <p slot="name">{item}</p>
+                <p slot="name">{item.name}</p>
+                <p slot="supporting_text">@{item.username}</p>
               </gb-input-dropdown-menu-item>
             ))}
           </div>

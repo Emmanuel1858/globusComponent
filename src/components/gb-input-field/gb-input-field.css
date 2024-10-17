@@ -35,8 +35,9 @@ div.md {
 .input-wrapper {
   display: flex;
   justify-content: space-between;
+  height: fit-content;
   align-items: center;
-  gap: var(--spacing-2);
+  gap: var(--spacing-none);
   align-self: stretch;
   border-radius: var(--rounded-sm);
   border: 1px solid var(--color-border-input, #CDD5DF);
@@ -44,13 +45,11 @@ div.md {
 }
 
 .sm .input-wrapper {
-  height: var(--spacing-Positive-spacing-8, 2.5rem);
-  padding: 0.25rem var(--spacing-3, 0.75rem);
+  height: 2.5rem;
 }
 
 .md .input-wrapper{
   height: 3rem;
-  padding: 0.45rem var(--spacing-3, 0.75rem);
 }
 
 .leading_text .input-wrapper.sm,
@@ -112,6 +111,7 @@ div.md {
   display: flex;
   align-items: center;
   gap: var(--spacing-1);
+  padding: var(--spacing-none) var(--spacing-1) var(--spacing-none) var(--spacing-2);
   align-self: stretch;
   margin-top: 0.1rem;
 }
@@ -148,7 +148,7 @@ select:focus {
 }
 
 .leading_dropdown .text-input {
-  padding: var(--spacing-Positive-spacing-2, 0.5rem) var(--spacing-Positive-spacing-3, 0.75rem) var(--spacing-Positive-spacing-2, 0.5rem) 0rem;
+  padding: var(--spacing-none) var(--spacing-3);
 }
 
 .leading_text .text-input {
@@ -309,4 +309,25 @@ label{
   align-items: center;
   gap: var(--spacing-1);
   align-self: stretch;
+}
+
+option{
+  display: flex;
+  padding: var(--spacing-none);
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: stretch;
+    border-radius: var(--rounded-sm);
+    border: 1px solid var(--color-border-subtler, red);
+    background: var(--color-surface, #FFFFFF);
+    box-shadow: var(--shadow-sm);
+    position: absolute;
+    top: 4.5rem;
+    z-index: 10;
+    gap: var(--spacing-none);
+}
+
+.validation_svg{
+  width: 1.25rem;
+  height: 1.25rem;
 }

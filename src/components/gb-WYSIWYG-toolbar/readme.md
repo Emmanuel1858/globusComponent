@@ -39,8 +39,17 @@ graph TD;
   gb-wysiwyg-toolbar --> gb-input-dropdown
   gb-wysiwyg-toolbar --> gb-wysiwyg-editor-icon
   gb-input-dropdown --> gb-avatar
+  gb-input-dropdown --> gb-tag
+  gb-input-dropdown --> gb-input-dropdown-menu-item
   gb-avatar --> gb-avatar-contrast-inner-border
   gb-avatar --> gb-status-indicator
+  gb-tag --> gb-tag-checkbox
+  gb-tag --> gb-avatar
+  gb-tag --> gb-tag-count
+  gb-tag --> gb-tag-close
+  gb-input-dropdown-menu-item --> gb-avatar
+  gb-input-dropdown-menu-item --> gb-checkbox
+  gb-checkbox --> gb-checkbox-base
   gb-rich-text --> gb-wysiwyg-toolbar
   style gb-wysiwyg-toolbar fill:#f9f,stroke:#333,stroke-width:4px
 ```

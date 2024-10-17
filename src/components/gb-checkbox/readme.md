@@ -23,7 +23,7 @@
 
  - [gb-checkbox-group-item](../gb-checkbox-group-item)
  - [gb-dropdown-items-with-shortcut](../gb-dropdown-items-with-shortcut)
- - [gb-input-dropdown-menu-item](../gb-input-dropdown-menu)
+ - [gb-input-dropdown-menu-item](../gb-input-dropdown-menu-item)
 
 ### Depends on
 

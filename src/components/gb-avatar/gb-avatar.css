@@ -68,26 +68,14 @@
     border-radius: var(--rounded-full);
 }
 
-::slotted([slot="initials"]){
-    color: #4B5565;
-}
-
-.placeholder, .text{
+.placeholder,
+.initials{
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #EEF2F6;
     border-radius: var(--rounded-full);
-}
-
-.placeholder:hover, .initials:hover{
-    background-color: #E3E8EF;
-}
-
-.placeholder:active, .initials:active{
-    background-color: #E3E8EF;
 }
 
 .indicator{
@@ -96,6 +84,7 @@
     right: -0.03rem;
 }
 
+/* Size Styles */
 .user_avatar.xxs{
     width: 0.75rem;
     height: 0.75rem;
@@ -146,12 +135,164 @@
     height: 5rem;
 }
 
-.initials{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Avatar Color Styles */
+.initials.gray,
+.placeholder.gray{
     background-color: #EEF2F6;
-    border-radius: var(--rounded-full);
+}
+
+.initials.gray:hover,
+.placeholder.gray:hover{
+    background-color: #E3E8EF;
+}
+
+.initials.gray:active,
+.placeholder.gray:active{
+    background-color: var(--color-background-gray-subtlest, #F6F8FA);
+}
+
+.initials.blue,
+.placeholder.blue{
+    background-color: var(--color-background-information-subtler, #C8E0F9);
+}
+
+.initials.blue:hover,
+.placeholder.blue:hover{
+    background-color: var(--color-background-information-subtle, #9AC7F4);
+}
+
+.initials.blue:active,
+.placeholder.blue:active{
+    background-color: var(--color-background-information-subtlest, #E4F0FC);
+}
+
+.initials.cyan,
+.placeholder.cyan{
+    background-color: var(--color-background-discovery-subtler, #E0F2FE);
+}
+
+.initials.cyan:hover,
+.placeholder.cyan:hover{
+    background-color: var(--color-background-discovery-subtle, #B9E6FE);
+}
+
+.initials.cyan:active,
+.placeholder.cyan:active{
+    background-color: var(--color-background-discovery-subtlest, #F0F9FF);
+}
+
+.initials.pink,
+.placeholder.pink{
+    background-color: var(--color-background-pink-subtler, #FCE7F6);
+}
+
+.initials.pink:hover,
+.placeholder.pink:hover{
+    background-color: var(--color-background-pink-subtle, #FCCEEE);
+}
+
+.initials.pink:active,
+.placeholder.pink:active{
+    background-color: var(--color-background-pink-subtlest, #FDF2FA);
+}
+
+.initials.purple,
+.placeholder.purple{
+    background-color: var(--color-background-purple-subtler, #EBE9FE);
+}
+
+.initials.purple:hover,
+.placeholder.purple:hover{
+    background-color: var(--color-background-purple-subtle, #D9D6FE);
+}
+
+.initials.purple:active,
+.placeholder.purple:active{
+    background-color: var(--color-background-purple-subtlest, #F4F3FF);
+}
+
+.initials.green,
+.placeholder.green{
+    background-color: var(--color-background-success-subtler, #DCFAE6);
+}
+
+.initials.green:hover,
+.placeholder.green:hover{
+    background-color: var(--color-background-success-subtle, #A9EFC5);
+}
+
+.initials.green:active,
+.placeholder.green:active{
+    background-color: var(--color-background-success-subtlest, #ECFDF3);
+}
+
+.initials.yellow,
+.placeholder.yellow{
+    background-color: var(--color-background-warning-subtler, #FEF0C7);
+}
+
+.initials.yellow:hover,
+.placeholder.yellow:hover{
+    background-color: var(--color-background-warning-subtle, #FEDF89);
+}
+
+.initials.yellow:active,
+.placeholder.yellow:active{
+    background-color: var(--color-background-warning-subtlest, #FFFAEB);
+}
+
+::slotted([slot="initials"].gray){
+    color: #4B5565;
+}
+
+::slotted([slot="initials"].blue){
+    color: var(--color-text-information, #064E94);
+}
+
+::slotted([slot="initials"].cyan){
+    color: var(--color-text-discovery, #0086C9);
+}
+
+::slotted([slot="initials"].pink){
+    color: var(--color-text-pink, #DD2590);
+}
+
+::slotted([slot="initials"].purple){
+    color: var(--color-text-purple, #6938EF);
+}
+
+::slotted([slot="initials"].green){
+    color: var(--color-text-success, #079455);
+}
+
+::slotted([slot="initials"].yellow){
+    color: var(--color-text-warning, #DC6803);
+}
+
+.user_avatar.gray path{
+    fill: var(--color-icon-subtle, #697586);
+}
+
+.user_avatar.blue path{
+    fill: var(--color-icon-information, #064E94);
+}
+
+.user_avatar.cyan path{
+    fill: var(--color-icon-discovery, #0086C9);
+}
+
+.user_avatar.pink path{
+    fill: var(--color-icon-pink, #DD2590);
+}
+
+.user_avatar.purple path{
+    fill: var(--color-icon-purple, #6938EF);
+}
+
+.user_avatar.green path{
+    fill: var(--color-icon-success, #079455);
+}
+
+.user_avatar.yellow path{
+    fill: var(--color-icon-warning, #DC6803);
 }
