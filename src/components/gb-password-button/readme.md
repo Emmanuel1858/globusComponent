@@ -14,10 +14,6 @@
 
 ## Dependencies
 
-### Used by
-
- - [gb-input-field](../gb-input-field)
-
 ### Depends on
 
 - [gb-btn](../gb-btn)
@@ -28,7 +24,6 @@
 graph TD;
   gb-password-button --> gb-btn
   gb-password-button --> gb-button
-  gb-input-field --> gb-password-button
   style gb-password-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

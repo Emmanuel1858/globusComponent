@@ -74,8 +74,8 @@
     padding: 0.4rem 0;
 }
 
-.tag{
-    flex-grow: 1;
+.added_tag{
+    width: fit-content;
 }
 
 .help_icon{
@@ -130,4 +130,16 @@ svg.disabled path{
 .opened{
     transform: rotate(180deg);
     transition: 0.2s ease-in-out;
+}
+
+::slotted([slot="tooltip_label"]){
+  white-space: nowrap;
+  color: var(--color-text, #4B5565);
+}
+
+::slotted([slot="tooltip_supporting_text"]){
+  min-width: fit-content;
+  max-width: 18.5rem;
+  color: var(--color-text-subtle, #697586);
+  margin-top: 5rem;
 }

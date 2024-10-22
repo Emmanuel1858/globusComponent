@@ -7,12 +7,13 @@
 
 ## Properties
 
-| Property        | Attribute        | Description | Type                                      | Default     |
-| --------------- | ---------------- | ----------- | ----------------------------------------- | ----------- |
-| `placeholder`   | `placeholder`    |             | `boolean`                                 | `false`     |
-| `showIndicator` | `show-indicator` |             | `boolean`                                 | `false`     |
-| `state`         | `state`          |             | `StateEnum.Default \| StateEnum.Disabled` | `undefined` |
-| `text`          | `text`           |             | `boolean`                                 | `false`     |
+| Property        | Attribute        | Description | Type                                                                      | Default     |
+| --------------- | ---------------- | ----------- | ------------------------------------------------------------------------- | ----------- |
+| `color`         | `color`          |             | `"blue" \| "cyan" \| "gray" \| "green" \| "pink" \| "purple" \| "yellow"` | `undefined` |
+| `placeholder`   | `placeholder`    |             | `boolean`                                                                 | `false`     |
+| `showIndicator` | `show-indicator` |             | `boolean`                                                                 | `false`     |
+| `state`         | `state`          |             | `StateEnum.Default \| StateEnum.Disabled`                                 | `undefined` |
+| `text`          | `text`           |             | `boolean`                                                                 | `false`     |
 
 
 ## Events

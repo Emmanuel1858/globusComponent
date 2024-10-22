@@ -1,0 +1,16 @@
+@import './../../global/global.css';
+@import './../../global/spacing.css';
+@import './../../global/typography.css';
+
+:host{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: fit-content;
+}
+
+.tooltip{
+    position: absolute;
+    top: -8rem;
+    right: 5.75rem;
+}

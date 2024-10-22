@@ -1,6 +1,6 @@
 @import '../../global/global.css';
 @import '../../global/spacing.css';
-@import '../../global/typo.css';
+@import '../../global/typography.css';
 
 .shortcut-container {
     display: flex;

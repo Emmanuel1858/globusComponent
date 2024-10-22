@@ -36,9 +36,9 @@ export class GbButton {
       buttonSlot.classList.add('nowrap');
     }
 
-    if (!this.iconLeading && !this.iconTrailing) {
-      buttonSlot.classList.add('center');
-    }
+    // if (!this.iconLeading && !this.iconTrailing) {
+    //   buttonSlot.classList.add('center');
+    // }
   }
 
   async loadIcon(iconName: string, type: 'leading' | 'trailing') {

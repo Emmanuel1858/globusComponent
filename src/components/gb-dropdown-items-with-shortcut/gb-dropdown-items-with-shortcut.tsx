@@ -1,4 +1,4 @@
-import {Component, Prop, h, getAssetPath} from '@stencil/core';
+import {Component, Prop, h, getAssetPath, Element} from '@stencil/core';
 import {StateEnum } from '../../models/reusableModels';
 
 @Component({
@@ -15,6 +15,7 @@ export class GbDropdownShortcut {
     @Prop() shortcutIcon: string = 'C';
     @Prop() label: string = '';
     @Prop() state: 'default' | 'disabled' = 'default';
+    @Element() el: HTMLElement;
 
     render() {
         const iconSrc = this.iconSrc ? getAssetPath(`assets/${this.iconSrc}.svg`) : '';
@@ -31,7 +32,7 @@ export class GbDropdownShortcut {
                         <gb-checkbox class="checkbox" size="sm" type='checkbox' state={StateEnum.Default}></gb-checkbox>
                     )}
                     <span class="label">
-                        <slot>{this.label}</slot>
+                        <p class={`text-sm-medium`}>{this.label}</p>
                     </span>
                     {this.shortcut && (
                         <span class="shortcut-icon">

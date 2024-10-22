@@ -26,7 +26,6 @@
 
  - [gb-checkbox-group-item](../gb-checkbox-group-item)
  - [gb-file-upload-item-base](../gb-file-upload-item-base)
- - [gb-input-field](../gb-input-field)
  - [gb-notification-pane](../gb-notification-pane)
  - [gb-pagination](../gb-pagination)
  - [gb-password-button](../gb-password-button)
@@ -37,7 +36,6 @@
 graph TD;
   gb-checkbox-group-item --> gb-button
   gb-file-upload-item-base --> gb-button
-  gb-input-field --> gb-button
   gb-notification-pane --> gb-button
   gb-pagination --> gb-button
   gb-password-button --> gb-button

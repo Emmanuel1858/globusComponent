@@ -7,16 +7,17 @@
 
 ## Properties
 
-| Property         | Attribute          | Description | Type                    | Default     |
-| ---------------- | ------------------ | ----------- | ----------------------- | ----------- |
-| `listGroupOne`   | `list-group-one`   |             | `boolean`               | `undefined` |
-| `listGroupThree` | `list-group-three` |             | `boolean`               | `undefined` |
-| `listGroupTwo`   | `list-group-two`   |             | `boolean`               | `undefined` |
-| `showDarkTheme`  | `show-dark-theme`  |             | `boolean`               | `undefined` |
-| `showLogOut`     | `show-log-out`     |             | `boolean`               | `undefined` |
-| `showProfile`    | `show-profile`     |             | `boolean`               | `undefined` |
-| `text`           | `text`             |             | `boolean`               | `false`     |
-| `type`           | `type`             |             | `"complex" \| "simple"` | `undefined` |
+| Property         | Attribute          | Description | Type                                                                      | Default     |
+| ---------------- | ------------------ | ----------- | ------------------------------------------------------------------------- | ----------- |
+| `color`          | `color`            |             | `"blue" \| "cyan" \| "gray" \| "green" \| "pink" \| "purple" \| "yellow"` | `undefined` |
+| `listGroupOne`   | `list-group-one`   |             | `boolean`                                                                 | `undefined` |
+| `listGroupThree` | `list-group-three` |             | `boolean`                                                                 | `undefined` |
+| `listGroupTwo`   | `list-group-two`   |             | `boolean`                                                                 | `undefined` |
+| `showDarkTheme`  | `show-dark-theme`  |             | `boolean`                                                                 | `undefined` |
+| `showLogOut`     | `show-log-out`     |             | `boolean`                                                                 | `undefined` |
+| `showProfile`    | `show-profile`     |             | `boolean`                                                                 | `undefined` |
+| `text`           | `text`             |             | `boolean`                                                                 | `false`     |
+| `type`           | `type`             |             | `"complex" \| "simple"`                                                   | `undefined` |
 
 
 ## Methods

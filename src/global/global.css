@@ -176,11 +176,11 @@
         --color-text-subtle: var(--gray-500);
     }
 
-    [data-theme="light"] {
+    [data-theme="dark"] {
         --color-text-subtle: var(--gray-500);
     }
 
-    [data-theme="dark"] {
+    [data-theme="light"] {
         --color-text-disabled: var(--gray-300);
     }
 

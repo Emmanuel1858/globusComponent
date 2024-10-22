@@ -44,9 +44,9 @@ export class GbCheckbox {
             supportingTextSlot.classList.add(this.getSupportingTextClass());
         }
 
-        if(!this.supportingText) {
-            mainDiv.classList.add('div_centered');
-        }
+        // if(!this.supportingText) {
+        //     mainDiv.classList.add('div_centered');
+        // }
     }
 
     render() {

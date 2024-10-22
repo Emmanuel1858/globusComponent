@@ -26,7 +26,8 @@ export class GbInputDropdownMenuItem {
 
   render() {
     return (
-      <div class="dropdown-container" onClick={() => (this.selected = !this.selected)}>
+      // <div class="dropdown-container" onClick={() => (this.selected = !this.selected)}>
+      <div class="dropdown-container">
         <div
           class={{
             'dropdown-item': true,

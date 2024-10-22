@@ -14,14 +14,31 @@
   <body>
     <div style="width: 12.25rem">
       <gb-btn size="xl" state="default" hierarchy="primary" icon="default" >
-      <p>Upload</p>
-    </gb-btn>
+        <p>Upload</p>
+      </gb-btn>
     </div>
     <!-- <gb-file-upload height-size="lg" state="default" show-label="true" destructive="true"></gb-file-upload> -->
-     <!-- <gb-avatar size="xl" text="true" color="yellow">
+     <gb-avatar size="xl" text="true" color="blue">
       <h1 slot="initials">EK</h1>
-     </gb-avatar> -->
-      <div style="width: 300px">
+     </gb-avatar>
+     <gb-input-field size="md" state="default" type="count" show-label="true" label="Label"
+    show-help-icon="true"
+    show-hint-text="true"
+    hint-text="This is a hint text to help user"
+    placeholder="placeholder text"
+    show-close-button="true"
+    show-validation="true"
+    icon-swap="assets/mail-02.svg"
+    destructive="false">
+      <p slot="tooltip_label">This is a label</p>
+      <p slot="tooltip_supporting_text">This is a supporting text for the tooltip</p>
+    </gb-input-field>
+     <!-- <gb-avatar-dropdown type="simple" show-profile="true" show-log-out="true">
+            <p slot="name">Noah Pierre</p>
+            <p slot="supporting_text">Initiator</p>
+            <img src="assets/avatar_pic.jpg" alt="" slot="image">
+        </gb-avatar-dropdown> -->
+      <div style="width: 500px">
         <gb-input-dropdown 
     show-placeholder="true" 
     size="md"
@@ -40,12 +57,10 @@
     >
       <h1 slot="initials">EK</h1>
       <!-- <img src="build/assets/avatar_pic.jpg" alt="" slot="image"> -->
+      <p slot="tooltip_label">This is a label</p>
+      <p slot="tooltip_supporting_text">This is a supporting text for the tooltip</p>
   </gb-input-dropdown>
       </div>
-    <!-- <gb-avatar size="xl2" text="false" status-icon="company">
-      <img slot="image" src="build/assets/avatar_pic.jpg" alt="">
-      <h1 slot="initials">EK</h1>
-    </gb-avatar> -->
     <!-- <gb-avatar-profile-photo size="lg" text="true" verified="true">
       <h1 slot="initials">EK</h1>
     </gb-avatar-profile-photo> -->
@@ -59,7 +74,6 @@
     <!-- <gb-tooltip arrow="right">
       <p slot="main_text">This is a tooltip</p>
     </gb-tooltip> -->
-
     <gb-pagination-number-base shape="square">
       <p slot="page_number">1</p>
     </gb-pagination-number-base>
@@ -87,10 +101,10 @@
       <p>Label</p>
       <p slot="count">5</p>
     </gb-tag> -->
-    <!-- <gb-header state="default" show-indicator="true" text="true">
+    <gb-header state="default" show-indicator="true" text="true" color="blue">
       <img src="build/assets/avatar_pic.jpg" alt="" slot="image">
       <h1 slot="initials">NP</h1>
-    </gb-header> -->
+    </gb-header>
     <!-- <gb-side-bar-item state="active" label="Label" type="full_with_label" icon="assets/circle.svg" category="plain_background" show-arrow="true" show-badge="true">
       <p slot="label">Label</p>
     </gb-side-bar-item> -->
@@ -125,15 +139,14 @@
       <p slot="main_text">New feature alert</p>
       <p slot="supporting_text">Lorem ipsum dolor sit amet consectetur.</p>
     </gb-toast> -->
-    <gb-input-field size="md" state="default" type="default" show-label="true" label="Label"
-    show-help-icon="true"
-    show-hint-text="true"
-    hint-text="This is a hint text to help user"
-    placeholder="placeholder text"
-    show-close-button="true"
-    show-validation="false"
-    destructive="false"></gb-input-field>
-    <h1 class="text-lg-bold">Application Name</h1>
+    <gb-tooltip show-arrow="true" arrow="bottom_left" show-supporting-text="true">
+      <p slot="label">Go to previous week</p>
+      <p slot="supporting_text">Jul 1 to Jul 5, 2024</p>
+    </gb-tooltip>
+    <!-- <gb-help-tooltip show-supporting-text="true">
+      <p slot="label">This is a label</p>
+      <p slot="supporting_text">This is a supporting text for the tooltip</p>
+    </gb-help-tooltip> -->
     <!-- <gb-verification-code-field size="sm" digits="8" show-label="true" label="Secure code" show-hint-text="true" hint-text="This is a hint text to help user."></gb-verification-code-field> -->
     <!-- <gb-token-field size="sm" digits="4" show-label="true" label="Secure code" show-supporting-text="true" supporting-text="This is a hint text to help user."></gb-token-field> -->
     <!-- <gb-rich-text show-label="true" label="Description" show-placeholder="true" placeholder-text="Enter your text" show-hint-text="true" hint-text="This is a hint text to help user"></gb-rich-text> -->

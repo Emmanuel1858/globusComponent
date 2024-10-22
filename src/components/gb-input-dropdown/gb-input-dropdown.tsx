@@ -25,6 +25,7 @@ export class GbInputDropdown {
   @State() leadingIconSvg: string = '';
   @State() dropdownOpen: boolean = false;
   @State() selectedItems: any[] = [];
+  @State() unselectedItems: any[] = [];
   @State() selectedItem: any;
   @State() isSelected: boolean = false;
   @Element() el: HTMLElement;
@@ -45,6 +46,11 @@ export class GbInputDropdown {
     this.dropdownOpen = !this.dropdownOpen;
   }
 
+  isItemSelected(selectedItem) {
+    const found = this.selectedItems.find(item => item.name === selectedItem.name);
+    return found !== undefined;
+  }
+
   async loadIcon(iconName: string) {
     const iconPath = getAssetPath(`${iconName}`);
     const response = await fetch(iconPath);
@@ -61,12 +67,29 @@ export class GbInputDropdown {
     }
   }
 
+  sortDropdownItems(menuItems: any[]): any[] {
+    return menuItems.sort((a, b) => {
+      if (a.selected && !b.selected) {
+        return -1; // Move selected items up
+      } else if (!a.selected && b.selected) {
+        return 1; // Keep unselected items down
+      }
+      return 0; // Keep order if both are selected or unselected
+    });
+  }
+
   handleItemSelect(item) {
+    console.log('item clicked');
+
+    console.log(item.selected);
+    item.selected = true;
+
     if (this.type === 'tags') {
       // For 'tags', allow multiple selections
       if (this.selectedItems.includes(item)) {
         // Deselect if already selected
-        this.selectedItems = this.selectedItems.filter(i => i !== item);
+        // this.selectedItems = this.selectedItems.filter(i => i !== item);
+        this.selectedItems = this.sortDropdownItems(this.selectedItems);
       } else {
         // Add to selected items
         this.selectedItem = item;
@@ -80,18 +103,6 @@ export class GbInputDropdown {
       this.selectedItem = item; // Store the selected item
       this.state = 'filled'; // Update state to 'filled'
       this.dropdownOpen = false; // Close the dropdown after selection
-    }
-  }
-
-  isItemSelected() {
-    if (this.type === 'tags') {
-      this.selectedItems.map(item => {
-        if (this.selectedItem === item) {
-          return true;
-        } else {
-          return false;
-        }
-      });
     }
   }
 
@@ -113,12 +124,23 @@ export class GbInputDropdown {
   }
 
   componentDidLoad() {
-    if(this.type !== 'tags') {
+    if (this.type !== 'tags') {
       document.addEventListener('click', this.handleOutsideClick);
     }
     const slottedInitials = this.el.querySelector('[slot="initials"]');
 
+    const mainTextSlot = this.el.querySelector('[slot="tooltip_label"]');
+    const supportingTextSlot = this.el.querySelector('[slot="tooltip_supporting_text"]');
+
     slottedInitials.classList.add('text-xxs-semi-bold');
+
+    if (mainTextSlot) {
+      mainTextSlot.classList.add('text-xs-semi-bold');
+    }
+
+    if (supportingTextSlot) {
+      supportingTextSlot.classList.add('text-xs-regular');
+    }
   }
 
   render() {
@@ -126,18 +148,22 @@ export class GbInputDropdown {
       {
         name: 'Emmanuel Kadiri',
         username: 'kadiri2047',
+        selected: false,
       },
       {
         name: 'Gideon Ogunkola',
         username: 'gideon',
+        selected: false,
       },
       {
         name: 'Precious Okon',
         username: 'presh',
+        selected: false,
       },
       {
         name: 'Efe Dakara',
         username: 'efe',
+        selected: false,
       },
     ];
 
@@ -194,10 +220,12 @@ export class GbInputDropdown {
                     <div class={`text text-md-regular ${this.type === 'tags' ? 'tag' : ''}`} style={{ color: '#4B5565' }}>
                       {this.type === 'tags'
                         ? this.selectedItems.map((item, index) => (
-                            <div class="tag">
+                            <div class="added_tag">
                               <gb-tag size="sm" icon="avatar" action="X_close" key={index} onClick={() => this.handleTagRemove(item)}>
                                 <p class="text-xs-medium">{item.name.split(' ')[0]}</p>
-                                <h1 slot="initials" class="text-xxs-semi-bold">{item.name.split(' ').map(part => part.charAt(0).toUpperCase())}</h1>
+                                <h1 slot="initials" class="text-xxs-semi-bold">
+                                  {item.name.split(' ').map(part => part.charAt(0).toUpperCase())}
+                                </h1>
                               </gb-tag>
                             </div>
                           ))
@@ -217,15 +245,10 @@ export class GbInputDropdown {
           </div>
           {this.showHelpIcon && (
             <div class={`help_icon`}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path
-                  d="M6.66665 6C6.66665 5.26362 7.2636 4.66667 7.99998 4.66667C8.73636 4.66667 9.33331 5.26362 9.33331 6C9.33331 6.26543 9.25575 6.51275 9.12205 6.72053C8.72358 7.33978 7.99998 7.93029 7.99998 8.66667V9M7.99464 11.3333H8.00063M14.6666 8C14.6666 11.6819 11.6819 14.6667 7.99998 14.6667C4.31808 14.6667 1.33331 11.6819 1.33331 8C1.33331 4.3181 4.31808 1.33333 7.99998 1.33333C11.6819 1.33333 14.6666 4.3181 14.6666 8Z"
-                  stroke="#697586"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              <gb-help-tooltip show-supporting-text={true}>
+                <slot name="tooltip_label" slot="label"></slot>
+                <slot name="tooltip_supporting_text" slot="supporting_text"></slot>
+              </gb-help-tooltip>
             </div>
           )}
           {this.type !== 'search' && (
@@ -256,7 +279,7 @@ export class GbInputDropdown {
                 type={this.type === 'search' ? 'checkbox' : this.type === 'tags' ? 'checkbox' : this.type}
                 state={StateEnum.Default}
                 supporting-text={this.supportingText}
-                selected={this.isSelected}
+                selected={this.isItemSelected(item)}
                 onClick={() => this.handleItemSelect(item)}
               >
                 <p slot="name">{item.name}</p>

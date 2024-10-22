@@ -29,6 +29,7 @@ export namespace Components {
         "weight": BorderWeights;
     }
     interface GbAvatarDropdown {
+        "color": AvatarColorTypes;
         "listGroupOne": boolean;
         "listGroupThree": boolean;
         "listGroupTwo": boolean;
@@ -49,6 +50,7 @@ export namespace Components {
         "text": boolean;
     }
     interface GbAvatarLabelGroup {
+        "color": AvatarColorTypes;
         "placeholder": boolean;
         "size": GeneralSizes;
         "state": OnlineIndicatorStates;
@@ -173,6 +175,7 @@ export namespace Components {
         "state": FileUploadStates;
     }
     interface GbHeader {
+        "color": AvatarColorTypes;
         "onNavBarItemClicked": (index: number) => Promise<void>;
         "placeholder": boolean;
         "showIndicator": boolean;
@@ -187,6 +190,10 @@ export namespace Components {
     interface GbHelpDropdown {
         "downloadUserGuideClicked": () => Promise<void>;
         "showLogError": boolean;
+    }
+    interface GbHelpTooltip {
+        "showArrow": boolean;
+        "showSupportingText": boolean;
     }
     interface GbHorizontalTabs {
         "breakpoint": BreakPoints;
@@ -237,6 +244,7 @@ export namespace Components {
     }
     interface GbInputField {
         "destructive": boolean;
+        "errorText": string;
         "hintText": string;
         "iconSwap"?: string;
         "label": string;
@@ -660,6 +668,12 @@ declare global {
         prototype: HTMLGbHelpDropdownElement;
         new (): HTMLGbHelpDropdownElement;
     };
+    interface HTMLGbHelpTooltipElement extends Components.GbHelpTooltip, HTMLStencilElement {
+    }
+    var HTMLGbHelpTooltipElement: {
+        prototype: HTMLGbHelpTooltipElement;
+        new (): HTMLGbHelpTooltipElement;
+    };
     interface HTMLGbHorizontalTabsElementEventMap {
         "tabItemClicked": number;
     }
@@ -975,6 +989,7 @@ declare global {
         "gb-header": HTMLGbHeaderElement;
         "gb-header-icon": HTMLGbHeaderIconElement;
         "gb-help-dropdown": HTMLGbHelpDropdownElement;
+        "gb-help-tooltip": HTMLGbHelpTooltipElement;
         "gb-horizontal-tabs": HTMLGbHorizontalTabsElement;
         "gb-input-dropdown": HTMLGbInputDropdownElement;
         "gb-input-dropdown-menu-item": HTMLGbInputDropdownMenuItemElement;
@@ -1036,6 +1051,7 @@ declare namespace LocalJSX {
         "weight"?: BorderWeights;
     }
     interface GbAvatarDropdown {
+        "color"?: AvatarColorTypes;
         "listGroupOne"?: boolean;
         "listGroupThree"?: boolean;
         "listGroupTwo"?: boolean;
@@ -1054,6 +1070,7 @@ declare namespace LocalJSX {
         "text"?: boolean;
     }
     interface GbAvatarLabelGroup {
+        "color"?: AvatarColorTypes;
         "placeholder"?: boolean;
         "size"?: GeneralSizes;
         "state"?: OnlineIndicatorStates;
@@ -1176,6 +1193,7 @@ declare namespace LocalJSX {
         "state"?: FileUploadStates;
     }
     interface GbHeader {
+        "color"?: AvatarColorTypes;
         "onNavBarItemClicked"?: (event: GbHeaderCustomEvent<number>) => void;
         "placeholder"?: boolean;
         "showIndicator"?: boolean;
@@ -1189,6 +1207,10 @@ declare namespace LocalJSX {
     }
     interface GbHelpDropdown {
         "showLogError"?: boolean;
+    }
+    interface GbHelpTooltip {
+        "showArrow"?: boolean;
+        "showSupportingText"?: boolean;
     }
     interface GbHorizontalTabs {
         "breakpoint"?: BreakPoints;
@@ -1240,6 +1262,7 @@ declare namespace LocalJSX {
     }
     interface GbInputField {
         "destructive"?: boolean;
+        "errorText"?: string;
         "hintText"?: string;
         "iconSwap"?: string;
         "label"?: string;
@@ -1502,6 +1525,7 @@ declare namespace LocalJSX {
         "gb-header": GbHeader;
         "gb-header-icon": GbHeaderIcon;
         "gb-help-dropdown": GbHelpDropdown;
+        "gb-help-tooltip": GbHelpTooltip;
         "gb-horizontal-tabs": GbHorizontalTabs;
         "gb-input-dropdown": GbInputDropdown;
         "gb-input-dropdown-menu-item": GbInputDropdownMenuItem;
@@ -1570,6 +1594,7 @@ declare module "@stencil/core" {
             "gb-header": LocalJSX.GbHeader & JSXBase.HTMLAttributes<HTMLGbHeaderElement>;
             "gb-header-icon": LocalJSX.GbHeaderIcon & JSXBase.HTMLAttributes<HTMLGbHeaderIconElement>;
             "gb-help-dropdown": LocalJSX.GbHelpDropdown & JSXBase.HTMLAttributes<HTMLGbHelpDropdownElement>;
+            "gb-help-tooltip": LocalJSX.GbHelpTooltip & JSXBase.HTMLAttributes<HTMLGbHelpTooltipElement>;
             "gb-horizontal-tabs": LocalJSX.GbHorizontalTabs & JSXBase.HTMLAttributes<HTMLGbHorizontalTabsElement>;
             "gb-input-dropdown": LocalJSX.GbInputDropdown & JSXBase.HTMLAttributes<HTMLGbInputDropdownElement>;
             "gb-input-dropdown-menu-item": LocalJSX.GbInputDropdownMenuItem & JSXBase.HTMLAttributes<HTMLGbInputDropdownMenuItemElement>;

@@ -22,3 +22,8 @@
     gap: var(--spacing-4);
     flex: 1 0 0;
 }
+
+.action{
+    display: flex;
+    gap: var(--spacing-2);
+}

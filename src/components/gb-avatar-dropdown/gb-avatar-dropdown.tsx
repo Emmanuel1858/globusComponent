@@ -1,4 +1,5 @@
 import {Component, Element, Method, Prop, h} from '@stencil/core';
+import { AvatarColorTypes } from '../../models/reusableModels';
 
 @Component({
   tag: 'gb-avatar-dropdown',
@@ -14,13 +15,27 @@ export class GbAvatarDropdown {
   @Prop() listGroupOne: boolean;
   @Prop() listGroupTwo: boolean;
   @Prop() listGroupThree: boolean;
+  @Prop() color: AvatarColorTypes;
   @Element() el: HTMLElement;
+
+  applyColorToInitials() {
+        switch(this.color) {
+            case 'gray': return 'gray';
+            case 'blue': return 'blue';
+            case 'cyan': return 'cyan';
+            case 'pink': return 'pink';
+            case 'purple': return 'purple';
+            case 'green': return 'green';
+            case 'yellow': return 'yellow';
+        }
+    }
 
   componentDidLoad() {
     const slottedInitials = this.el.querySelector('[slot="initials"]');
 
     if (slottedInitials) {
       slottedInitials.classList.add('text-md-semi-bold');
+      slottedInitials.classList.add(this.applyColorToInitials());
     }
   }
 
@@ -35,7 +50,7 @@ export class GbAvatarDropdown {
       return (
         <div class="simple-dropdown">
           <div class="profile">
-            <gb-avatar-label-group size="md" text={this.text}>
+            <gb-avatar-label-group size="md" text={this.text} color={this.color}>
               <slot name="name" slot="name"></slot>
               {!this.text ? <slot name="image" slot="image"></slot> : <slot name="initials" slot="initials"></slot>}
               <slot name="supporting_text" slot="supporting_text"></slot>
@@ -74,7 +89,7 @@ export class GbAvatarDropdown {
       return (
         <div class="complex-dropdown">
           <div class="profile">
-            <gb-avatar-label-group size="md" class="label_group" text={this.text}>
+            <gb-avatar-label-group size="md" class="label_group" text={this.text} color={this.color}>
               <slot name="name" slot="name"></slot>
               {!this.text ? <slot name="image" slot="image"></slot> : <slot name="initials" slot="initials"></slot>}
               <slot name="supporting_text" slot="supporting_text"></slot>
